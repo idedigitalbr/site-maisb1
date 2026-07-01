@@ -149,23 +149,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Ícone Customizado do Mapa ---
   function createCustomIcon(unit) {
     // Sempre exibe o logo do Grupo +B nos pins para fidelidade absoluta com o design do Photoshop
-    const logoUrl = 'https://drive.google.com/thumbnail?id=1h45ZtRB69uuR8mrqvqNbpvX5MgGIul06&sz=100';
+    const logoUrl = '../assets/Logos Grupo MaisB/supermercados-mais-b.webp';
 
     const badgeConfig = {
       farma: {
-        logo: 'https://drive.google.com/thumbnail?id=1DK2agKZL_pTJdBaI6aXAAvkrsYGJWpuQ&sz=50',
+        logo: '../assets/Logos Grupo MaisB/farma-mais-b.webp',
         color: '#F20D18'
       },
       wine: {
-        logo: 'https://drive.google.com/thumbnail?id=1IFmd7lo260WXs0ptayhiLt0qFIBFQz1S&sz=50',
+        logo: '../assets/Logos Grupo MaisB/the-wine-experience.webp',
         color: '#7a132b'
       },
       plaza: {
-        logo: 'https://drive.google.com/thumbnail?id=1X3YzrPNZIZRE5ayqM6B5PbYj_iHfQPM_&sz=50',
+        logo: '../assets/Logos Grupo MaisB/villa-plaza.webp',
         color: '#f97316'
       },
       park: {
-        logo: 'https://drive.google.com/thumbnail?id=1hqnhf0a-uPp5Fzg5LWkPWkikWNG0VlrZ&sz=50',
+        logo: '../assets/Logos Grupo MaisB/villa-plaza-park.webp',
         color: '#10b981'
       }
     };
@@ -988,12 +988,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const brandBadges = unit.subbrands.map(sub => {
       let label = sub;
       let imgUrl = "";
-      if (sub === 'super') { label = 'Supermercados'; imgUrl = "https://drive.google.com/thumbnail?id=1h45ZtRB69uuR8mrqvqNbpvX5MgGIul06&sz=100"; }
-      if (sub === 'farma') { label = 'Farma +B'; imgUrl = "https://drive.google.com/thumbnail?id=1DK2agKZL_pTJdBaI6aXAAvkrsYGJWpuQ&sz=100"; }
-      if (sub === 'wine') { label = 'Wine Experience'; imgUrl = "https://drive.google.com/thumbnail?id=1IFmd7lo260WXs0ptayhiLt0qFIBFQz1S&sz=100"; }
-      if (sub === 'plaza') { label = 'Villa Plaza'; imgUrl = "https://drive.google.com/thumbnail?id=1X3YzrPNZIZRE5ayqM6B5PbYj_iHfQPM_&sz=100"; }
-      if (sub === 'park') { label = 'Plaza Park'; imgUrl = "https://drive.google.com/thumbnail?id=1hqnhf0a-uPp5Fzg5LWkPWkikWNG0VlrZ&sz=100"; }
-      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "https://drive.google.com/thumbnail?id=1h45ZtRB69uuR8mrqvqNbpvX5MgGIul06&sz=100"; }
+      if (sub === 'super') { label = 'Supermercados'; imgUrl = "../assets/Logos Grupo MaisB/supermercados-mais-b.webp"; }
+      if (sub === 'farma') { label = 'Farma +B'; imgUrl = "../assets/Logos Grupo MaisB/farma-mais-b.webp"; }
+      if (sub === 'wine') { label = 'Wine Experience'; imgUrl = "../assets/Logos Grupo MaisB/the-wine-experience.webp"; }
+      if (sub === 'plaza') { label = 'Villa Plaza'; imgUrl = "../assets/Logos Grupo MaisB/villa-plaza.webp"; }
+      if (sub === 'park') { label = 'Plaza Park'; imgUrl = "../assets/Logos Grupo MaisB/villa-plaza-park.webp"; }
+      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "../assets/Logos Grupo MaisB/supermercados-mais-b.webp"; }
       
       const imgTag = imgUrl ? `<img src="${imgUrl}" alt="${label}" class="brand-badge-icon">` : '';
       return `<div class="detail-brand-badge">${imgTag}<span>${label}</span></div>`;
