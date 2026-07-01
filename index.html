@@ -127,7 +127,7 @@
           <div class="container slide-container">
             <div class="slide-content left-align">
               <span class="eyebrow light">Bem-vindo</span>
-              <h1 class="slide-headline-huge">Somos o Grupo +B <span class="site-version" style="font-size: 0.9rem; font-weight: 500; vertical-align: middle; background: rgba(255, 255, 255, 0.2); color: #fff; padding: 3px 8px; border-radius: 12px; margin-left: 12px; display: inline-block; font-family: 'DM Sans', sans-serif; letter-spacing: 0.5px;">v1.jul.17h43</span></h1>
+              <h1 class="slide-headline-huge">Somos o Grupo +B</h1>
               <p class="slide-lead">Grandes marcas e experiências em supermercado, farmácia, gastronomia e lazer no Norte.</p>
               <div class="slide-actions">
                 <a href="./sobre-nos.html" class="btn primary">Saber mais</a>
@@ -1384,7 +1384,237 @@
     </div>
   </div>
 
+  <!-- Floating Version Tag & Changelog Widget -->
+  <style>
+    .changelog-badge {
+      position: fixed;
+      bottom: 20px;
+      left: -88px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26, 26, 26, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0 20px 20px 0;
+      padding: 10px 16px 10px 20px;
+      color: #ffc400;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.4;
+    }
+    .changelog-badge:hover {
+      left: 0px;
+      opacity: 1;
+      background: rgba(36, 36, 36, 0.95);
+      border-color: rgba(255, 196, 0, 0.4);
+      box-shadow: 0 6px 25px rgba(255, 196, 0, 0.15);
+    }
+    .changelog-badge svg {
+      transition: transform 0.3s ease;
+    }
+    .changelog-badge:hover svg {
+      transform: rotate(15deg);
+    }
+    .changelog-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .changelog-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    .changelog-modal-content {
+      background: #121212;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'DM Sans', sans-serif;
+      color: #e0e0e0;
+    }
+    .changelog-modal.active .changelog-modal-content {
+      transform: scale(1);
+    }
+    .changelog-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .changelog-modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+    }
+    .changelog-modal-title span {
+      font-size: 0.8rem;
+      background: rgba(255, 196, 0, 0.15);
+      color: #ffc400;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .changelog-modal-close {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.75rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      transition: color 0.2s ease;
+    }
+    .changelog-modal-close:hover {
+      color: #ffffff;
+    }
+    .changelog-section {
+      margin-bottom: 20px;
+    }
+    .changelog-section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffc400;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .changelog-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .changelog-item {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .changelog-item.resolved::before {
+      content: "✓";
+      color: #4caf50;
+      font-weight: bold;
+    }
+    .changelog-item.pending::before {
+      content: "⚡";
+      color: #ff9800;
+      font-weight: bold;
+    }
+    .changelog-footer {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 15px;
+      margin-top: 25px;
+    }
+  </style>
 
+  <div id="changelog-trigger" class="changelog-badge">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v-6h-2v6z"/>
+    </svg>
+    <span>v1.jul.17h43</span>
+  </div>
+
+  <div id="changelog-modal" class="changelog-modal">
+    <div class="changelog-modal-content">
+      <div class="changelog-modal-header">
+        <h3 class="changelog-modal-title">Atualizações <span>v1.jul.17h43</span></h3>
+        <button id="changelog-close" class="changelog-modal-close">&times;</button>
+      </div>
+      
+      <div class="changelog-section">
+        <div class="changelog-section-title">Resolvido</div>
+        <ul class="changelog-list">
+          <li class="changelog-item resolved">Conexão direta com o GitHub configurada e autorizada.</li>
+          <li class="changelog-item resolved">Clonagem do repositório local na pasta de projetos do usuário.</li>
+          <li class="changelog-item resolved">Reversão da tag estática da headline e criação do painel de changelog interativo.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-section">
+        <div class="changelog-section-title">Pendências</div>
+        <ul class="changelog-list">
+          <li class="changelog-item pending">Revisar SEO e meta tags do site.</li>
+          <li class="changelog-item pending">Otimização de carregamento de imagens.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-footer">
+        Última modificação em: 01/07/2026 às 17h43 (GMT-3)
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const trigger = document.getElementById('changelog-trigger');
+      const modal = document.getElementById('changelog-modal');
+      const closeBtn = document.getElementById('changelog-close');
+
+      if (trigger && modal && closeBtn) {
+        trigger.addEventListener('click', () => {
+          modal.style.display = 'flex';
+          setTimeout(() => {
+            modal.classList.add('active');
+          }, 10);
+        });
+
+        const closeModal = () => {
+          modal.classList.remove('active');
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 300);
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+        // Esc para fechar
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+          }
+        });
+      }
+    });
+  </script>
 
   <script src="./src/data/drive-assets.js" defer></script>
   <script src="./src/data/brands.js" defer></script>
