@@ -1,0 +1,1917 @@
+.brand-section {
+  overflow: hidden;
+  color: #15110b;
+}
+
+.brand-section.market {
+  background: var(--yellow);
+}
+
+.brand-section.farma {
+  background: var(--red);
+  color: #fff;
+}
+
+.brand-section.plaza {
+  background: var(--orange);
+}
+
+.brand-section.park {
+  background: var(--green);
+  color: #06240e;
+}
+
+.brand-section.wine {
+  background: var(--wine);
+  color: #fff;
+}
+
+.brand-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.brand-layout.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.brand-info {
+  padding: 10px 0;
+}
+
+.brand-logo {
+  max-width: 230px;
+  max-height: 110px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+.brand-section.farma .brand-logo,
+.brand-section.wine .brand-logo {
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.brand-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 900;
+  opacity: 0.78;
+}
+
+.brand-info h2 {
+  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+  margin-bottom: 18px;
+}
+
+.brand-section.wine h2 {
+  font-family: 'Fraunces', serif;
+  letter-spacing: -0.04em;
+}
+
+.brand-info p {
+  color: currentColor;
+  opacity: 0.76;
+  max-width: 600px;
+}
+
+.brand-info ul {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.brand-info li {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+}
+
+.brand-section.farma li,
+.brand-section.wine li {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.brand-info li:before {
+  content: "+";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.brand-photo {
+  height: 520px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.brand-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-photo.abstract {
+  display: flex;
+  align-items: flex-end;
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.brand-photo.abstract span {
+  font-size: clamp(2.5rem, 5vw, 5.6rem);
+  line-height: 0.86;
+  letter-spacing: -0.08em;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.brand-photo.playful span {
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+.brand-photo.wine-card span {
+  font-family: 'Fraunces', serif;
+  text-transform: none;
+  letter-spacing: -0.05em;
+}
+
+/* ==========================================================================
+   Rede Interativa de Marcas (Seção Marcas - Dark Mode)
+   ========================================================================== */
+
+.brands.dark-slice {
+  background: #050505;
+  color: #fff;
+  padding: 100px 0 120px;
+  position: relative;
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+.brands.dark-slice .section-head h2 {
+  background: linear-gradient(135deg, #ffffff 60%, rgba(255,255,255,0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brands.dark-slice .section-head p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.brands-network-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conexões SVG */
+.network-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.network-orbit-line {
+  fill: none;
+  stroke: rgba(255, 196, 0, 0.75);
+  stroke-width: 2px;
+  stroke-dasharray: 3 5;
+  filter: drop-shadow(0 0 8px rgba(255, 196, 0, 0.85));
+}
+
+.network-line {
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+  animation: dashflow 20s linear infinite;
+  opacity: 0.55;
+  transition: opacity 0.3s ease, stroke-width 0.3s ease;
+}
+
+@keyframes dashflow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Hub Central Holding */
+.network-hub {
+  position: relative;
+  z-index: 10;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 50px rgba(255, 196, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  animation: hub-pulse-glow 4s ease-in-out infinite;
+}
+
+.network-hub img {
+  width: 86%;
+  height: auto;
+  max-height: 50px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.network-hub span {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  color: var(--yellow);
+  margin-top: 10px;
+}
+
+@keyframes hub-pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Nós Satélites (Marcas) */
+.network-node {
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.node-logo-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: orbit-floating 6s ease-in-out infinite;
+}
+
+.node-logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hover Cards Ricos das Marcas */
+.node-hover-card {
+  position: absolute;
+  width: 290px;
+  background: linear-gradient(135deg, rgba(10, 16, 28, 0.98) 0%, rgba(6, 10, 18, 0.98) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.card-banner {
+  height: 110px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-body strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.card-keywords {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--yellow);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.card-body p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72) !important;
+  line-height: 1.4;
+  margin: 4px 0 6px;
+}
+
+.card-cta-btn {
+  display: none;
+}
+
+/* Hub Central Holding - Monochromatic to Colored Transition */
+.network-hub {
+  position: relative;
+  z-index: 10;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 50px rgba(255, 196, 0, 0.28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: hub-pulse-glow 4s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.network-hub img {
+  position: absolute;
+  width: 76%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.network-hub .hub-logo-color {
+  opacity: 0;
+}
+
+.network-hub:hover .hub-logo-white {
+  opacity: 0;
+}
+
+.network-hub:hover .hub-logo-color {
+  opacity: 1;
+}
+
+
+
+/* Posicionamentos estratégicos dos cartões para fora (outward) */
+
+/* Supermercado (Topo): Abre para cima */
+.node-super .node-hover-card {
+  bottom: 112px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(-12px) scale(0.95);
+}
+.node-super:hover .node-hover-card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Farma e Plaza (Lado Direito): Abrem para a direita */
+.node-farma .node-hover-card,
+.node-plaza .node-hover-card {
+  left: 112px;
+  top: 50%;
+  transform: translateY(-50%) translateX(12px) scale(0.95);
+}
+.node-farma:hover .node-hover-card,
+.node-plaza:hover .node-hover-card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+/* Wine e Park (Lado Esquerdo): Abrem para a esquerda */
+.node-wine .node-hover-card,
+.node-park .node-hover-card {
+  right: 112px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-12px) scale(0.95);
+}
+.node-wine:hover .node-hover-card,
+.node-park:hover .node-hover-card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+/* Posicionamentos baseados no SVG 600x600 */
+.node-super { top: 25px; left: calc(50% - 48px); }
+.node-farma { top: 165px; right: 25px; }
+.node-plaza { bottom: 65px; right: 110px; }
+.node-park { bottom: 65px; left: 110px; }
+.node-wine { top: 165px; left: 25px; }
+
+/* Cores das conexões por marca */
+.line-super { stroke: var(--yellow); }
+.line-farma { stroke: var(--red); }
+.line-plaza { stroke: var(--orange); }
+.line-park { stroke: var(--green); }
+.line-wine { stroke: var(--wine); }
+
+/* Efeitos Hover temáticos por marca */
+.network-node:hover {
+  transform: translateY(-6px);
+  z-index: 200;
+}
+
+.network-node:hover .node-logo-wrapper {
+  transform: scale(1.12);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover específico para a linha e borda */
+.node-super:hover .node-logo-wrapper { border-color: var(--yellow); box-shadow: 0 0 25px rgba(255, 196, 0, 0.6); }
+.node-farma:hover .node-logo-wrapper { border-color: var(--red); box-shadow: 0 0 25px rgba(242, 13, 24, 0.6); }
+.node-plaza:hover .node-logo-wrapper { border-color: #a82330; box-shadow: 0 0 25px rgba(168, 35, 48, 0.65); }
+.node-park:hover .node-logo-wrapper { border-color: var(--green); box-shadow: 0 0 25px rgba(22, 163, 74, 0.6); }
+.node-wine:hover .node-logo-wrapper { border-color: #eabb75; box-shadow: 0 0 25px rgba(223, 186, 107, 0.7); }
+
+/* Cores de Fundo Sólidas dos Cards Ricos Orbitais */
+.node-super .node-hover-card {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+.node-super .node-hover-card strong { color: #000; }
+.node-super .node-hover-card .card-keywords { color: rgba(0, 0, 0, 0.65); }
+.node-super .node-hover-card p { color: rgba(0, 0, 0, 0.8) !important; }
+
+.node-farma .node-hover-card {
+  background: var(--red);
+  border-color: var(--red);
+}
+.node-farma .node-hover-card strong { color: #fff; }
+.node-farma .node-hover-card .card-keywords { color: #ffeb3b; }
+.node-farma .node-hover-card p { color: rgba(255, 255, 255, 0.9) !important; }
+
+.node-plaza .node-hover-card {
+  background: #3c070e;
+  border-color: #a82330;
+}
+.node-plaza .node-hover-card strong { color: #fff; }
+.node-plaza .node-hover-card .card-keywords { color: #d5be9b; }
+.node-plaza .node-hover-card p { color: rgba(255, 255, 255, 0.9) !important; }
+
+.node-park .node-hover-card {
+  background: var(--green);
+  border-color: var(--green);
+}
+.node-park .node-hover-card strong { color: #fff; }
+.node-park .node-hover-card .card-keywords { color: #fff; }
+.node-park .node-hover-card p { color: rgba(255, 255, 255, 0.9) !important; }
+
+.node-wine .node-hover-card {
+  background: #0d0d0d;
+  border-color: #eabb75;
+}
+.node-wine .node-hover-card strong { color: #fff; }
+.node-wine .node-hover-card .card-keywords { color: #eabb75; }
+.node-wine .node-hover-card p { color: rgba(255, 255, 255, 0.9) !important; }
+
+/* ==========================================================================
+   OPÇÃO B: Estilização do Grid Lateral (Brands Split) - Fiel aos Prints
+   ========================================================================== */
+
+.brands-scroll-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  overflow: visible;
+  padding: 0;
+  z-index: 1;
+  margin-bottom: -160px;
+}
+
+.brands-sticky-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands-black-block {
+  position: relative;
+  width: calc(100% - var(--brands-width-margin, 0px));
+  max-width: 100%;
+  height: auto;
+  background-color: #030303;
+  border-radius: 120px 120px 0 0;
+  padding: var(--brands-padding, 120px 32px 380px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* Efeitos Luminosos de Fundo */
+.brands-bg-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brands-bg-glow.glow-yellow {
+  background: #ffd000;
+  top: -100px;
+  left: -100px;
+}
+
+.brands-bg-glow.glow-red {
+  background: #da171e;
+  bottom: -100px;
+  right: -100px;
+}
+
+.brands-card-radial-glow {
+  position: absolute;
+  right: -150px;
+  top: 15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 45, 70, 0.09) 0%, rgba(255, 45, 70, 0) 70%);
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+.brands-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.brands-section-container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 40px; /* Recuo lateral moderado, card não encosta na borda */
+}
+
+/* Headline Superior */
+.brands-section-head {
+  text-align: center;
+  position: relative;
+  margin-bottom: 48px;
+  z-index: 10;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.brands-eyebrow-tag {
+  display: inline-block;
+  color: #ffd000;
+  border: 1.5px solid #ffd000;
+  padding: 4px 18px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 14px rgba(255, 208, 0, 0.35), inset 0 0 8px rgba(255, 208, 0, 0.15);
+  margin-bottom: 16px;
+}
+
+.brands-headline-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.brands-headline-title .highlight-yellow {
+  color: #ffd000;
+}
+
+.brands-subtitle-badge-wrapper {
+  display: inline-block;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 8px 24px;
+  border-radius: 12px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.brands-subtitle-text {
+  font-size: 0.92rem;
+  color: #d7d7d7;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Layout Split */
+.brands-layout-split {
+  display: grid;
+  grid-template-columns: 45% 55%; /* Coluna esquerda e direita */
+  gap: 36px;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  position: relative; /* Permite ancorar as setas de forma absoluta fora dos cards */
+}
+
+.brands-layout-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Espiral / Órbita */
+.brands-orbit-box {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: none !important;
+  opacity: 1 !important;
+  flex-shrink: 0;
+}
+
+.brands-orbit-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: visible; /* Permite estender linhas para fora */
+}
+
+.orbit-path-line {
+  fill: none;
+  stroke: rgba(255, 196, 0, 0.18);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+}
+
+/* Órbita interna (segundo círculo pontilhado menor) */
+.orbit-inner {
+  stroke: rgba(255, 196, 0, 0.55) !important;
+  filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.65)) !important;
+  r: 120;
+}
+
+.split-connect-line {
+  fill: none;
+  stroke-dasharray: 6 5;
+  opacity: 0.65;
+  transform-origin: 250px 250px;
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.85s ease,
+              stroke 0.85s ease,
+              stroke-width 0.85s ease,
+              filter 0.85s ease;
+  stroke-dashoffset: 0;
+  animation: split-dashflow 25s linear infinite;
+}
+
+.split-connect-line.active {
+  opacity: 1;
+  animation: split-dashflow 10s linear infinite;
+}
+
+/* Arco de progresso do hub — cor muda conforme a marca ativa */
+#hub-progress-arc {
+  stroke: var(--yellow);
+  transition: stroke 0.4s ease;
+}
+
+@keyframes split-dashflow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.split-connect-line.to-super { stroke: var(--yellow); }
+.split-connect-line.to-farma { stroke: var(--red); }
+.split-connect-line.to-park { stroke: var(--green); }
+.split-connect-line.to-wine { stroke: #eabb75; }
+.split-connect-line.to-plaza { stroke: #da171e; }
+
+/* Hub Central */
+.brands-hub-center {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #000000;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 30px rgba(255, 196, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.brands-hub-center img {
+  position: absolute;
+  width: 80%;
+  height: auto;
+  max-height: 50px;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+}
+
+.brands-hub-center .hub-logo-color {
+  opacity: 0;
+}
+
+.brands-hub-center:hover {
+  transform: scale(1.02);
+}
+
+.brands-hub-center:hover .hub-logo-white {
+  opacity: 0;
+}
+
+.brands-hub-center:hover .hub-logo-color {
+  opacity: 1;
+}
+
+/* Nós Satélites Posicionamentos */
+/* O JS posiciona cada nó dinamicamente em círculo — apenas definimos o estilo base aqui */
+.brands-orbit-box .node-logo-wrapper {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  border-width: 2.5px;
+  transform: scale(0.85);
+  opacity: 1;
+  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Os nós do carrossel são posicionados pelo JS com left/top */
+@keyframes orbit-floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.carousel-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto !important;
+  right: auto !important;
+  transform-origin: center center;
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+  z-index: 15;
+}
+
+.carousel-node.active {
+  z-index: 30;
+}
+
+.carousel-node.active .node-logo-wrapper {
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+/* Rótulos dos nós satélites */
+.brands-orbit-box .node-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: color 0.4s ease, font-weight 0.4s ease, opacity 0.4s ease;
+  text-align: center;
+  opacity: 1;
+}
+
+/* Brilho e borda ativos por padrão em todos os ícones da órbita */
+.brands-orbit-box .node-plaza .node-logo-wrapper { border-color: #da171e; box-shadow: 0 0 25px rgba(218, 23, 30, 0.85); }
+.brands-orbit-box .node-super .node-logo-wrapper { border-color: var(--yellow); box-shadow: 0 0 25px rgba(255, 196, 0, 0.85); }
+.brands-orbit-box .node-farma .node-logo-wrapper { border-color: var(--red); box-shadow: 0 0 25px rgba(242, 13, 24, 0.85); }
+.brands-orbit-box .node-park .node-logo-wrapper { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.85); }
+.brands-orbit-box .node-wine .node-logo-wrapper { border-color: #eabb75; box-shadow: 0 0 25px rgba(223, 186, 107, 0.85); }
+
+/* Remoção suave do destaque ao passar o mouse sobre qualquer ícone */
+.brands-orbit-box .split-node:hover .node-logo-wrapper {
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  animation-play-state: paused;
+  z-index: 50;
+}
+
+.brands-orbit-box .split-node:hover .node-label {
+  color: #ffffff;
+}
+
+/* Rótulo em destaque ativo no slide correspondente */
+.brands-orbit-box .split-node.active .node-label {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Coluna Direita: Cards */
+.brands-layout-right {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.brand-detail-card {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s step-end,
+              box-shadow 0.5s ease,
+              border-color 0.5s ease;
+  flex-direction: column;
+  width: 100%;
+  height: 520px;
+  --card-gallery-h: 210px;
+  border-radius: 36px;
+  overflow: visible; /* Contorna bug de clipping do Chromium */
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.brand-detail-card.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(var(--brands-card-scale, 1));
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0s linear,
+              box-shadow 0.5s ease,
+              border-color 0.5s ease;
+  z-index: 10;
+}
+
+/* Intensifica o destaque do card ativo no hover, adicionando uma borda neon brilhante e mais brilho */
+.brand-detail-card.active:hover {
+  transform: translateY(-4px) scale(1.015);
+}
+.brand-detail-card.theme-plaza.active:hover {
+  border-color: #da171e !important;
+  box-shadow: 
+    0 0 35px rgba(255, 45, 70, 0.8), 
+    0 0 85px rgba(218, 23, 30, 0.7), 
+    inset 0 0 35px rgba(255, 70, 90, 0.15) !important;
+}
+.brand-detail-card.theme-wine.active:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: rgba(255, 210, 130, 0.75) !important;
+  box-shadow: 
+    0 12px 45px rgba(0, 0, 0, 0.75),
+    0 0 20px rgba(255, 180, 60, 0.55),
+    0 0 50px rgba(255, 155, 40, 0.35),
+    0 0 100px rgba(255, 140, 30, 0.18),
+    inset 0 1px 0 rgba(255, 200, 110, 0.2),
+    inset 0 0 40px rgba(180, 110, 30, 0.1) !important;
+}
+.brand-detail-card.theme-super.active:hover {
+  border-color: var(--yellow) !important;
+  box-shadow: 
+    0 0 35px rgba(255, 208, 0, 0.8), 
+    0 0 85px rgba(255, 208, 0, 0.7), 
+    inset 0 0 35px rgba(255, 208, 0, 0.25) !important;
+}
+.brand-detail-card.theme-farma.active:hover {
+  border-color: var(--red) !important;
+  box-shadow: 
+    0 0 35px rgba(255, 50, 70, 0.8), 
+    0 0 85px rgba(242, 13, 24, 0.7), 
+    inset 0 0 35px rgba(255, 50, 70, 0.15) !important;
+}
+.brand-detail-card.theme-park.active:hover {
+  border-color: #22c55e !important;
+  box-shadow: 
+    0 0 35px rgba(34, 197, 94, 0.8), 
+    0 0 85px rgba(34, 197, 94, 0.7), 
+    inset 0 0 35px rgba(34, 197, 94, 0.15) !important;
+}
+
+/* Temas dos Cards */
+.brand-detail-card.theme-plaza {
+  background: linear-gradient(145deg, #2b0204 0%, #1c0102 100%);
+  color: #ffffff;
+  border: 2.5px solid rgba(218, 23, 30, 0.7);
+  box-shadow: 
+    0 0 30px rgba(255, 45, 70, var(--brands-glow-opacity, 0.6)), 
+    0 0 80px rgba(218, 23, 30, calc(var(--brands-glow-opacity, 0.6) * 0.5)), 
+    inset 0 0 40px rgba(255, 70, 90, 0.05);
+}
+
+.brand-detail-card.theme-wine {
+  background: 
+    radial-gradient(ellipse at 85% 15%, rgba(180, 120, 50, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 85%, rgba(140, 80, 20, 0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 0%, rgba(160, 100, 40, 0.12) 0%, transparent 60%),
+    linear-gradient(155deg, #2a1a0a 0%, #1a0e04 25%, #120804 50%, #0d0602 75%, #080301 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 200, 110, 0.55) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(255, 180, 60, 0.35),
+    0 0 40px rgba(255, 160, 40, 0.2),
+    0 0 80px rgba(255, 140, 30, 0.1),
+    inset 0 1px 0 rgba(255, 200, 110, 0.12),
+    inset 0 0 60px rgba(180, 110, 30, 0.06) !important;
+}
+
+.brand-detail-card.theme-super {
+  background: #ffd000;
+  color: #030303;
+  border: 2.5px solid #ffbb00;
+  box-shadow: 
+    0 0 30px rgba(255, 208, 0, var(--brands-glow-opacity, 0.5)), 
+    0 0 80px rgba(255, 208, 0, calc(var(--brands-glow-opacity, 0.5) * 0.5));
+}
+
+.brand-detail-card.theme-farma {
+  background: linear-gradient(145deg, #e30613 0%, #ab020b 100%);
+  color: #ffffff;
+  border: 2.5px solid rgba(255, 50, 70, 0.7);
+  box-shadow: 
+    0 0 30px rgba(255, 50, 70, var(--brands-glow-opacity, 0.5)), 
+    0 0 80px rgba(255, 50, 70, calc(var(--brands-glow-opacity, 0.5) * 0.5));
+}
+
+.brand-detail-card.theme-park {
+  background: linear-gradient(145deg, #032b14 0%, #011409 100%);
+  color: #ffffff;
+  border: 2.5px solid rgba(34, 197, 94, 0.7);
+  box-shadow: 
+    0 0 30px rgba(34, 197, 94, var(--brands-glow-opacity, 0.5)), 
+    0 0 80px rgba(34, 197, 94, calc(var(--brands-glow-opacity, 0.5) * 0.5));
+}
+
+/* Galeria Superior (4 colunas) */
+.card-top-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  height: var(--card-gallery-h, 210px); /* Altura fixa no desktop para caber nos 520px de altura do card */
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 36px 36px 0 0; /* Cantos arredondados na galeria */
+  overflow: hidden; /* Corta as imagens nos cantos superiores arredondados */
+}
+
+.theme-plaza .card-top-gallery { border-bottom: 2px solid rgba(218, 23, 30, 0.35); }
+.theme-wine .card-top-gallery { border-bottom: 2px solid rgba(234, 187, 117, 0.35); }
+.theme-super .card-top-gallery { border-bottom: 2px solid rgba(255, 208, 0, 0.35); }
+.theme-farma .card-top-gallery { border-bottom: 2px solid rgba(255, 50, 70, 0.35); }
+.theme-park .card-top-gallery { border-bottom: 2px solid rgba(34, 197, 94, 0.35); }
+
+.gallery-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* Ocupa a altura total da galeria no desktop */
+  box-sizing: border-box;
+}
+
+.theme-plaza .gallery-panel { border-right: 2px solid rgba(218, 23, 30, 0.25); }
+.theme-wine .gallery-panel { border-right: 2px solid rgba(234, 187, 117, 0.25); }
+.theme-super .gallery-panel { border-right: 2px solid rgba(255, 208, 0, 0.25); }
+.theme-farma .gallery-panel { border-right: 2px solid rgba(255, 50, 70, 0.25); }
+.theme-park .gallery-panel { border-right: 2px solid rgba(34, 197, 94, 0.25); }
+
+.gallery-panel:last-child {
+  border-right: none !important;
+}
+
+.gallery-panel.panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.brand-detail-card:hover .gallery-panel.panel-image img {
+  transform: scale(1.05);
+}
+
+/* Painel de Slogan */
+.gallery-panel.panel-slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.slogan-icon-wrapper {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.slogan-desc {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Badges nos slogãs */
+.highlight-badge-plaza { background: #ffffff; color: #8d1017; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; display: inline-block; }
+.highlight-badge-wine { background: #ab020b; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; display: inline-block; }
+.highlight-badge-super { background: #ffffff; color: #e30613; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; display: inline-block; }
+.highlight-badge-farma { background: #ffffff; color: #e30613; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; display: inline-block; }
+.highlight-badge-park { background: #ffffff; color: #032b14; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; display: inline-block; }
+
+.bg-plaza-slogan { background: #500609; }
+.bg-plaza-slogan .slogan-icon-wrapper { color: rgba(255, 75, 95, 0.9); }
+
+.bg-wine-slogan { background: #151310; }
+.bg-wine-slogan .slogan-icon-wrapper { color: #eabb75; }
+
+.bg-super-slogan { background: #ffd000; }
+.bg-super-slogan .slogan-icon-wrapper { color: #e30613; }
+
+.bg-farma-slogan { background: #e30613; }
+.bg-farma-slogan .slogan-icon-wrapper { color: #ffffff; }
+
+.bg-park-slogan { background: #011f0d; }
+.bg-park-slogan .slogan-icon-wrapper { color: rgba(34, 197, 94, 0.9); }
+
+/* Logo sobreposta */
+/* Logo sobreposta */
+.card-logo-overlap {
+  position: absolute;
+  left: -30px;
+  top: -10px; /* Posiciona o logo no canto superior-esquerdo do corpo, sobrepondo a galeria */
+  z-index: 150;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease,
+              filter 0.4s ease,
+              opacity 0.4s ease;
+  opacity: 1;
+}
+
+/* Card Logo Overlap Hover / Focus */
+.card-logo-overlap {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s ease,
+              border-color 0.5s ease,
+              filter 0.5s ease,
+              opacity 0.4s ease;
+}
+
+.brand-detail-card.active:hover .card-logo-overlap,
+.card-logo-overlap:hover {
+  transform: scale(1.1);
+}
+
+.theme-plaza .card-logo-overlap { border: 4.5px solid #da171e; box-shadow: 0 0 35px rgba(218, 23, 30, 0.95); }
+.theme-wine .card-logo-overlap {
+  border: 3px solid #eabb75;
+  box-shadow:
+    0 0 18px rgba(255, 180, 60, 0.5),
+    0 0 40px rgba(255, 155, 40, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.theme-wine .card-logo-overlap img {
+  width: 65% !important;
+  height: 65% !important;
+  object-fit: contain;
+}
+.theme-super .card-logo-overlap { border: 4.5px solid var(--yellow); box-shadow: 0 0 35px rgba(255, 196, 0, 0.95); }
+.theme-farma .card-logo-overlap { border: 4.5px solid var(--red); box-shadow: 0 0 35px rgba(242, 13, 24, 0.95); }
+.theme-park .card-logo-overlap { border: 4.5px solid #22c55e; box-shadow: 0 0 35px rgba(34, 197, 94, 0.95); }
+
+/* Intensifica o brilho e destaque da logo no hover */
+.theme-plaza.brand-detail-card.active:hover .card-logo-overlap,
+.theme-plaza .card-logo-overlap:hover { border-color: #da171e !important; box-shadow: 0 0 50px rgba(218, 23, 30, 0.98) !important; }
+.theme-wine.brand-detail-card.active:hover .card-logo-overlap,
+.theme-wine .card-logo-overlap:hover {
+  border-color: #ffd184 !important;
+  box-shadow:
+    0 0 25px rgba(255, 180, 60, 0.7),
+    0 0 50px rgba(255, 155, 40, 0.3),
+    0 10px 28px rgba(0, 0, 0, 0.6) !important;
+  transform: scale(1.1) !important;
+}
+.theme-super.brand-detail-card.active:hover .card-logo-overlap,
+.theme-super .card-logo-overlap:hover { border-color: var(--yellow) !important; box-shadow: 0 0 50px rgba(255, 196, 0, 0.98) !important; }
+.theme-farma.brand-detail-card.active:hover .card-logo-overlap,
+.theme-farma .card-logo-overlap:hover { border-color: var(--red) !important; box-shadow: 0 0 50px rgba(242, 13, 24, 0.98) !important; }
+.theme-park.brand-detail-card.active:hover .card-logo-overlap,
+.theme-park .card-logo-overlap:hover { border-color: #22c55e !important; box-shadow: 0 0 50px rgba(34, 197, 94, 0.98) !important; }
+
+/* Estilização da ponte ativa estática compartilhada */
+.active-bridge {
+  transition: stroke 0.6s ease, filter 0.6s ease, transform 0.4s ease;
+  z-index: 10;
+}
+
+.card-logo-overlap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Corpo do Card */
+.card-details-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 44px 36px 32px 100px;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.card-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px !important;
+}
+
+.card-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 2px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0 !important;
+}
+
+.theme-wine .card-badge {
+  color: #eabb75 !important;
+  border-color: rgba(234, 187, 117, 0.35) !important;
+  background: rgba(234, 187, 117, 0.08) !important;
+}
+
+/* Ornamental keyword separator (◆) */
+.card-brand-keywords {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 6px !important;
+}
+
+.card-brand-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 !important;
+  margin-top: 2px !important;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.card-brand-title.serif-font {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+}
+
+.card-brand-subtitle {
+  font-family: 'Cormorant Garamond', 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.65em;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  display: block;
+  margin-top: -2px;
+}
+
+.card-brand-keywords {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.keyword-plaza { color: #ffd000; } /* Dourado / Amarelo */
+.keyword-wine { color: #eabb75; }
+.keyword-super { color: #ffd000; }
+.keyword-farma { color: #ffd000; }
+.keyword-park { color: #c2f16a; }
+
+.card-brand-description {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 8px 0 16px;
+  max-width: 80%;
+  color: #d7d7d7;
+}
+
+/* Botões */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 10;
+}
+
+.btn-card-primary {
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-plaza .btn-card-primary { color: #8d1017; }
+.theme-wine .btn-card-primary { color: #0d0d0d; }
+.theme-super .btn-card-primary { color: #292003; }
+.theme-farma .btn-card-primary { color: #75080e; }
+.theme-park .btn-card-primary { color: #02200e; }
+
+.arrow-diagonal {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.btn-card-primary:hover {
+  transform: translateY(-2px);
+  background: #f4f4f4;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-card-primary:hover .arrow-diagonal {
+  transform: translate(2px, -2px);
+}
+
+.btn-card-secondary {
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-card-secondary:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-icon-pin {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-width: 2.2px;
+  display: inline-block;
+}
+
+/* Marca d'água no fundo */
+.card-watermark {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.85;
+}
+
+.theme-plaza .card-watermark { color: rgba(255, 75, 95, 0.16); }
+.theme-wine .card-watermark { color: rgba(234, 187, 117, 0.18); }
+.theme-super .card-watermark { color: rgba(90, 65, 0, 0.48); }
+.theme-farma .card-watermark { color: rgba(255, 255, 255, 0.26); }
+.theme-park .card-watermark { color: rgba(34, 197, 94, 0.16); }
+
+.brand-detail-card:hover .card-watermark {
+  transform: rotate(5deg) scale(1.08);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE E RESPONSIVO MOBILE
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  .brands-scroll-container {
+    height: auto !important; /* Desativa a rolagem travada no tablet/mobile */
+    margin-bottom: -60px !important;
+  }
+  
+  .brands-sticky-wrapper {
+    position: relative !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+  
+  .brands-black-block {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 40px 40px 0 0 !important;
+    padding: 80px 24px 240px !important;
+  }
+  
+  .brands-section-head {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .brands-layout-split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .brands-orbit-box {
+    transform: none !important;
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+  }
+  
+  .brands-orbit-box .brands-hub-center {
+    width: 106px !important;
+    height: 106px !important;
+    box-shadow: 0 0 25px rgba(255, 196, 0, 0.3) !important;
+  }
+  
+  .brands-orbit-box .brands-hub-center img {
+    max-height: 40px !important;
+  }
+  
+  .brands-orbit-box .node-logo-wrapper {
+    width: 68px !important;
+    height: 68px !important;
+    padding: 8px !important;
+    border-width: 2px !important;
+  }
+  
+  .brands-orbit-box .node-label {
+    font-size: 0.62rem !important;
+    bottom: -20px !important;
+  }
+  
+  .brand-detail-card {
+    transform: scale(1) !important;
+    height: auto;
+    min-height: 480px;
+  }
+
+  .card-top-gallery {
+    height: auto !important; /* Desativa altura fixa no responsivo */
+  }
+
+  .gallery-panel {
+    height: auto !important;
+    aspect-ratio: 3/4 !important; /* Restaura aspect-ratio no responsivo */
+  }
+
+  .brands-section-container {
+    padding: 0 16px !important; /* Reseta o padding no tablet/mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-top-gallery {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  .card-top-gallery .gallery-panel:nth-child(3),
+  .card-top-gallery .gallery-panel:nth-child(4) {
+    display: block !important;
+  }
+  
+  .card-brand-description {
+    max-width: 100%;
+  }
+  
+  .card-logo-overlap {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 72px !important;
+    height: 72px !important;
+  }
+  
+  .card-details-body {
+    padding: 48px 20px 24px !important;
+  }
+  
+  .card-brand-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .brands-orbit-box {
+    transform: none !important;
+    width: 300px;
+    height: 300px;
+    margin: -30px auto -20px;
+  }
+  
+  .brands-orbit-box .brands-hub-center {
+    width: 88px !important;
+    height: 88px !important;
+    box-shadow: 0 0 20px rgba(255, 196, 0, 0.3) !important;
+  }
+  
+  .brands-orbit-box .brands-hub-center img {
+    max-height: 32px !important;
+  }
+  
+  .brands-orbit-box .node-logo-wrapper {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 6px !important;
+    border-width: 2px !important;
+  }
+  
+  .brands-orbit-box .node-label {
+    font-size: 0.58rem !important;
+    bottom: -18px !important;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .btn-card-primary,
+  .btn-card-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Instagram Feed Zoom-Crop Logic for Farma and Park Cards */
+.farma-panel-1 img,
+.park-panel-1 img {
+  object-fit: cover !important;
+  object-position: 5% 5% !important;
+  transform: scale(2.4) !important;
+}
+
+.farma-panel-2 img,
+.park-panel-2 img {
+  object-fit: cover !important;
+  object-position: 50% 10% !important;
+  transform: scale(2.4) !important;
+}
+
+.farma-panel-3 img,
+.park-panel-3 img {
+  object-fit: cover !important;
+  object-position: 95% 5% !important;
+  transform: scale(2.4) !important;
+}
+
+.farma-panel-4 img,
+.park-panel-4 img {
+  object-fit: cover !important;
+  object-position: 50% 90% !important;
+  transform: scale(2.4) !important;
+}
+
+/* ==========================================================================
+   Setas de Navegação Minimalistas para o Carrossel
+   ========================================================================== */
+.brands-nav-arrow {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 80px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5) !important;
+  cursor: pointer;
+  z-index: 120;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform: translateY(-50%) !important;
+}
+
+.brands-nav-arrow svg {
+  width: 36px !important;
+  height: 36px !important;
+  stroke-width: 2px !important;
+}
+
+.brands-nav-arrow:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+  transform: translateY(-50%) scale(1.1) !important;
+  box-shadow: none !important;
+}
+
+.brands-nav-arrow.arrow-left {
+  left: 12px; /* Na borda esquerda da seção preta */
+}
+
+.brands-nav-arrow.arrow-right {
+  right: 12px; /* Na borda direita da seção preta, encostado na lateral */
+}
+
+/* Ocultar as setas no tablet/mobile para preservar responsividade */
+@media (max-width: 980px) {
+  .brands-nav-arrow {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Overrides Temáticos Internos dos Cards de Marca
+   ========================================================================== */
+
+/* 1. Supermercados (Inversão para Fundo Amarelo + Texto Preto) */
+.theme-super .card-brand-title {
+  color: #030303 !important;
+}
+
+.theme-super .card-brand-keywords {
+  color: #e30613 !important;
+}
+
+.theme-super .card-brand-description {
+  color: #1a1a1a !important;
+}
+
+.theme-super .card-badge {
+  color: #030303 !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+
+.theme-super .btn-card-primary {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+.theme-super .btn-card-primary:hover {
+  background: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+.theme-super .btn-card-primary .arrow-diagonal {
+  color: #ffd000 !important;
+}
+
+.theme-super .btn-card-secondary {
+  color: #030303 !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.theme-super .btn-card-secondary:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+/* 2. Farma (Ajustes de Botões) */
+.theme-farma .card-brand-keywords {
+  color: #ffd000 !important;
+}
+
+.theme-farma .btn-card-primary {
+  background: #ffffff !important;
+  color: #e30613 !important;
+}
+
+.theme-farma .btn-card-primary:hover {
+  background: #f4f4f4 !important;
+}
+
+.theme-farma .btn-card-primary .arrow-diagonal {
+  color: #e30613 !important;
+}
+
+/* 3. Restaurante Plaza */
+.theme-plaza .card-brand-keywords {
+  color: #eabb75 !important;
+}
+
+.theme-plaza .btn-card-primary {
+  background: #ffffff !important;
+  color: #61080d !important;
+}
+
+.theme-plaza .btn-card-primary:hover {
+  background: #f4f4f4 !important;
+}
+
+.theme-plaza .btn-card-primary .arrow-diagonal {
+  color: #61080d !important;
+}
+
+/* 4. Wine Styles & Overrides */
+.theme-wine .card-brand-keywords {
+  color: #eabb75 !important;
+}
+
+.theme-wine .btn-card-primary {
+  background: linear-gradient(135deg, #eabb75 0%, #c9943e 50%, #eabb75 100%) !important;
+  color: #1a0f05 !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.05em !important;
+  border: 1px solid rgba(234, 187, 117, 0.5) !important;
+  box-shadow: 0 4px 18px rgba(255, 180, 60, 0.25) !important;
+}
+
+.theme-wine .btn-card-primary:hover {
+  background: linear-gradient(135deg, #f0c98a 0%, #d4a44a 50%, #f0c98a 100%) !important;
+  box-shadow: 0 6px 24px rgba(255, 180, 60, 0.4) !important;
+}
+
+.theme-wine .btn-card-primary .arrow-diagonal {
+  color: #1a0f05 !important;
+}
+
+.theme-wine .btn-card-secondary {
+  border-color: rgba(234, 187, 117, 0.45) !important;
+  color: #eabb75 !important;
+  font-weight: 800 !important;
+}
+
+.theme-wine .btn-card-secondary:hover {
+  background: rgba(234, 187, 117, 0.08) !important;
+  border-color: rgba(234, 187, 117, 0.7) !important;
+}
+
+/* Custom Typography Overrides */
+.theme-wine .card-brand-title {
+  font-size: 2.6rem !important;
+  font-weight: 700 !important;
+  line-height: 0.95 !important;
+  margin-bottom: 2px !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em !important;
+}
+
+.theme-wine .card-brand-subtitle {
+  font-family: 'Pinyon Script', cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 3.6rem !important;
+  color: #eabb75 !important;
+  display: block !important;
+  margin-top: -12px !important;
+  margin-left: 2px !important;
+  opacity: 1 !important;
+  text-transform: none !important;
+}
+
+/* Divisor Decorativo com Losangos */
+.card-brand-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 12px 0;
+  width: 100%;
+  max-width: 320px;
+}
+
+.card-brand-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(234, 187, 117, 0.5));
+}
+
+.card-brand-divider .divider-line.right {
+  background: linear-gradient(to left, transparent, rgba(234, 187, 117, 0.5));
+}
+
+.card-brand-divider .divider-diamonds {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-brand-divider .divider-diamond {
+  width: 5px;
+  height: 5px;
+  background-color: #eabb75;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px rgba(234, 187, 117, 0.7);
+}
+
+.card-brand-divider .divider-diamond.large {
+  width: 8px;
+  height: 8px;
+}
+
+/* Taça de Vinho Watermark */
+.theme-wine .card-watermark {
+  position: absolute;
+  bottom: 16px !important;
+  right: 25px !important;
+  width: 95px !important;
+  height: 210px !important; /* Aumenta ligeiramente para destaque harmônico */
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.32 !important; /* Aumenta o destaque/visibilidade */
+  color: rgba(234, 187, 117, 0.75) !important;
+  transform: none !important;
+}
+
+.theme-wine:hover .card-watermark {
+  transform: translateY(-4px) rotate(2deg) !important;
+  opacity: 0.45 !important;
+}
+
+/* Ajustes responsivos para os elementos customizados */
+@media (max-width: 980px) {
+  .theme-wine .card-brand-title {
+    font-size: 2.1rem !important;
+  }
+  .theme-wine .card-brand-subtitle {
+    font-size: 2.8rem !important;
+    margin-top: -9px !important;
+  }
+  .theme-wine .card-watermark {
+    bottom: 12px !important;
+    right: 15px !important;
+    width: 72px !important;
+    height: 160px !important;
+    opacity: 0.22 !important;
+  }
+  .card-brand-divider {
+    margin: 12px 0 10px 0;
+    max-width: 260px;
+  }
+}
+
+/* 5. Park (Ajustes de Botões e Grid Galeria) */
+.theme-park .card-brand-keywords {
+  color: #c2f16a !important;
+}
+
+.theme-park .btn-card-primary {
+  background: #c2f16a !important;
+  color: #032b14 !important;
+}
+
+.theme-park .btn-card-primary:hover {
+  background: #b5ef4f !important;
+}
+
+.theme-park .btn-card-primary .arrow-diagonal {
+  color: #032b14 !important;
+}
+
+.brand-detail-card.theme-park .card-top-gallery {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.theme-park .card-top-gallery .gallery-panel {
+  border-right: 1.5px solid rgba(34, 197, 94, 0.2) !important;
+}
+
+.theme-park .card-top-gallery .gallery-panel:last-child {
+  border-right: none !important;
+}
+

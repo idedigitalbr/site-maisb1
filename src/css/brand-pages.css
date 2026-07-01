@@ -1,0 +1,1225 @@
+/* ==========================================================================
+   Brand Pages Custom Styling & Themes — Grupo +B
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Theme: Villa Plaza Restaurante (Laranja)
+   -------------------------------------------------------------------------- */
+body.theme-villa-plaza {
+  background: radial-gradient(circle at 12% 0%, rgba(255, 138, 0, 0.1), transparent 40%), 
+              radial-gradient(circle at 88% 14%, rgba(255, 138, 0, 0.04), transparent 30%), 
+              #050505;
+}
+.theme-villa-plaza .btn.primary {
+  background: var(--orange);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 138, 0, 0.18);
+}
+.theme-villa-plaza .btn.primary:hover {
+  background: #e07a00;
+  box-shadow: 0 12px 30px rgba(255, 138, 0, 0.3);
+  transform: translateY(-2px);
+}
+.theme-villa-plaza .eyebrow {
+  color: var(--orange);
+}
+.theme-villa-plaza .eyebrow:before {
+  background: var(--orange);
+}
+
+/* --------------------------------------------------------------------------
+   2. Theme: The Wine Experience (Vinho + Dourado)
+   -------------------------------------------------------------------------- */
+body.theme-the-wine {
+  background: radial-gradient(circle at 12% 0%, rgba(75, 16, 32, 0.22), transparent 40%), 
+              radial-gradient(circle at 88% 14%, rgba(255, 196, 0, 0.06), transparent 30%), 
+              #050505;
+}
+body.theme-the-wine h1, 
+body.theme-the-wine h2, 
+body.theme-the-wine h3,
+body.theme-the-wine .serif-font {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+.theme-the-wine .btn.primary {
+  background: var(--wine);
+  color: #ffffff;
+  border: 1px solid rgba(255, 196, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(75, 16, 32, 0.35);
+}
+.theme-the-wine .btn.primary:hover {
+  background: #5d1428;
+  border-color: var(--yellow);
+  box-shadow: 0 12px 30px rgba(75, 16, 32, 0.5);
+  transform: translateY(-2px);
+}
+.theme-the-wine .eyebrow {
+  color: var(--yellow);
+}
+.theme-the-wine .eyebrow:before {
+  background: var(--yellow);
+}
+
+/* --------------------------------------------------------------------------
+   3. Theme: +B Farma (Vermelho)
+   -------------------------------------------------------------------------- */
+body.theme-farma {
+  background: radial-gradient(circle at 12% 0%, rgba(242, 13, 24, 0.12), transparent 40%), 
+              radial-gradient(circle at 88% 14%, rgba(255, 255, 255, 0.04), transparent 30%), 
+              #050505;
+}
+.theme-farma .btn.primary {
+  background: var(--red);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(242, 13, 24, 0.18);
+}
+.theme-farma .btn.primary:hover {
+  background: #d10a14;
+  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.3);
+  transform: translateY(-2px);
+}
+.theme-farma .eyebrow {
+  color: var(--red);
+}
+.theme-farma .eyebrow:before {
+  background: var(--red);
+}
+
+/* --------------------------------------------------------------------------
+   4. Theme: Villa Plaza Park (Verde)
+   -------------------------------------------------------------------------- */
+body.theme-park {
+  background: radial-gradient(circle at 12% 0%, rgba(22, 163, 74, 0.12), transparent 40%), 
+              radial-gradient(circle at 88% 14%, rgba(22, 163, 74, 0.04), transparent 30%), 
+              #050505;
+}
+.theme-park .btn.primary {
+  background: var(--green);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.18);
+}
+.theme-park .btn.primary:hover {
+  background: #15803d;
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.3);
+  transform: translateY(-2px);
+}
+.theme-park .eyebrow {
+  color: var(--green);
+}
+.theme-park .eyebrow:before {
+  background: var(--green);
+}
+
+/* --------------------------------------------------------------------------
+   5. Custom Page Specific Layouts
+   -------------------------------------------------------------------------- */
+
+/* Header brand adjustments */
+.brand-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.25s ease;
+  margin-right: 20px;
+}
+.brand-back-link:hover {
+  color: var(--yellow);
+}
+.brand-back-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Cards de Menu / Destaques Cardápio */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.menu-card {
+  background: var(--graphite);
+  border: 1px solid var(--line-dark);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.menu-card-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.menu-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.menu-card-price {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--yellow);
+}
+
+.menu-card-desc {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Galeria do Ambiente simples e responsiva */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Static Map Box (para performance) */
+.static-map-box {
+  background: var(--graphite);
+  border: 1px solid var(--line-dark);
+  border-radius: 28px;
+  overflow: hidden;
+  height: 380px;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.static-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) invert(0.9) contrast(1.2);
+  opacity: 0.6;
+}
+
+.static-map-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(11, 11, 11, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 768px) {
+  .static-map-card {
+    width: 360px;
+    right: auto;
+  }
+}
+
+/* ==========================================================================
+   6. Theme: Holding Corporativa (theme-holding) & Global Contrast Fixes
+   ========================================================================== */
+
+/* Correção de fundo do wrapper global para páginas de tema escuro */
+body.theme-holding #wf-main-content,
+body.theme-villa-plaza #wf-main-content,
+body.theme-the-wine #wf-main-content,
+body.theme-farma #wf-main-content,
+body.theme-park #wf-main-content {
+  background: transparent !important;
+}
+
+/* Ajuste para exibir os cantos arredondados do rodapé sobre o fundo branco das seções anteriores nos temas escuros */
+body.theme-holding .footer,
+body.theme-villa-plaza .footer,
+body.theme-the-wine .footer,
+body.theme-farma .footer,
+body.theme-park .footer {
+  margin-top: -28px !important;
+  z-index: 11 !important;
+}
+
+/* Tema Holding Corporativo */
+body.theme-holding {
+  background: var(--bg-gradient);
+  color: #ffffff;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+body.theme-holding h1, 
+body.theme-holding h2, 
+body.theme-holding h3,
+body.theme-holding .serif-font {
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+body.theme-holding h1.serif-font,
+body.theme-holding h2.serif-font,
+body.theme-holding h3.serif-font,
+body.theme-holding .serif-accent {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+}
+
+/* --- Alternância de Seções Dinâmicas (Light & Dark) --- */
+
+/* 1. Seções Escuras (Dark Mode) */
+body.theme-holding .dark-section {
+  background: #050505 !important;
+  background: radial-gradient(circle at 50% 50%, #161616, #050505) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.theme-holding .dark-section h2,
+body.theme-holding .dark-section h3 {
+  color: #ffffff !important;
+}
+
+body.theme-holding .dark-section p {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Cards em Seções Escuras (Glassmorphism) */
+body.theme-holding .dark-section .menu-card {
+  background: rgba(26, 26, 26, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.theme-holding .dark-section .menu-card:hover {
+  border-color: rgba(255, 196, 0, 0.25) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 196, 0, 0.06) !important;
+}
+
+body.theme-holding .dark-section .menu-card p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* 2. Seções Claras (White Mode) */
+body.theme-holding .light-section {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.04) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+body.theme-holding .light-section h2,
+body.theme-holding .light-section h3 {
+  color: var(--ink) !important;
+}
+
+body.theme-holding .light-section p {
+  color: var(--muted) !important;
+}
+
+/* Cards em Seções Claras */
+body.theme-holding .light-section .menu-card {
+  background: #fcfcfc !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.theme-holding .light-section .menu-card:hover {
+  border-color: rgba(255, 196, 0, 0.45) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-holding .light-section .menu-card h3 {
+  color: var(--ink) !important;
+}
+
+body.theme-holding .light-section .menu-card p {
+  color: var(--muted) !important;
+}
+
+body.theme-holding .light-section .menu-card ul {
+  color: var(--muted) !important;
+}
+
+body.theme-holding .light-section .menu-card ul li::marker {
+  color: #C99B00;
+}
+
+/* Blocos de Parceria em Seções Claras */
+body.theme-holding .light-section .partner-row-block {
+  background: #fcfcfc !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.theme-holding .light-section .partner-row-block:hover {
+  border-color: rgba(255, 196, 0, 0.4) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-holding .light-section .partner-row-block h3 {
+  color: var(--ink) !important;
+}
+
+body.theme-holding .light-section .partner-row-block p,
+body.theme-holding .light-section .partner-row-block ul {
+  color: var(--muted) !important;
+}
+
+/* Indicadores de Sucesso em Seção Clara */
+body.theme-holding .light-section .about-indicators-infographic {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+body.theme-holding .light-section .infographic-col::before {
+  background: #C99B00 !important;
+}
+
+body.theme-holding .light-section .infographic-number {
+  color: #C99B00 !important;
+  font-weight: 900;
+  text-shadow: none !important;
+}
+
+body.theme-holding .light-section .infographic-label {
+  color: var(--muted) !important;
+}
+
+/* 3. Seções Amarelas da Identidade (+B Holding/Supermercados) */
+body.theme-holding .brand-yellow-section {
+  background: linear-gradient(135deg, #ffc400 0%, #ffa200 100%) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  color: #0b0b0b !important;
+  box-shadow: 0 10px 30px rgba(255, 196, 0, 0.08) !important;
+}
+
+body.theme-holding .brand-yellow-section h2,
+body.theme-holding .brand-yellow-section h3 {
+  color: #0b0b0b !important;
+}
+
+body.theme-holding .brand-yellow-section p {
+  color: rgba(11, 11, 11, 0.85) !important;
+}
+
+body.theme-holding .brand-yellow-section .eyebrow {
+  color: #7a5e00 !important;
+}
+
+body.theme-holding .brand-yellow-section .eyebrow::before {
+  background: #7a5e00 !important;
+}
+
+/* Cards em Seções Amarelas */
+body.theme-holding .brand-yellow-section .menu-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #0b0b0b !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.theme-holding .brand-yellow-section .menu-card:hover {
+  background: #ffffff !important;
+  border-color: #0b0b0b !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+body.theme-holding .brand-yellow-section .menu-card h3 {
+  color: #0b0b0b !important;
+}
+
+body.theme-holding .brand-yellow-section .menu-card p {
+  color: rgba(11, 11, 11, 0.8) !important;
+}
+
+body.theme-holding .brand-yellow-section .menu-card ul {
+  color: rgba(11, 11, 11, 0.8) !important;
+}
+
+body.theme-holding .brand-yellow-section .menu-card ul li::marker {
+  color: #7a5e00 !important;
+}
+
+/* 4. Seções Vermelhas da Identidade (+B Farma) */
+body.theme-holding .brand-red-section {
+  background: linear-gradient(135deg, #f20d18 0%, #b8050e 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+body.theme-holding .brand-red-section h2,
+body.theme-holding .brand-red-section h3 {
+  color: #ffffff !important;
+}
+
+body.theme-holding .brand-red-section p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.theme-holding .brand-red-section ul {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.theme-holding .brand-red-section ul li strong {
+  color: #ffffff !important;
+}
+
+body.theme-holding .brand-red-section .eyebrow {
+  color: #ffc400 !important;
+}
+
+body.theme-holding .brand-red-section .eyebrow::before {
+  background: #ffc400 !important;
+}
+
+/* Cards em Seções Vermelhas */
+body.theme-holding .brand-red-section .menu-card {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+body.theme-holding .brand-red-section .menu-card:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffc400 !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.theme-holding .brand-red-section .menu-card h3 {
+  color: #ffffff !important;
+}
+
+body.theme-holding .brand-red-section .menu-card p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.theme-holding .brand-red-section .menu-card ul {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.theme-holding .brand-red-section .menu-card ul li::marker {
+  color: #ffc400 !important;
+}
+
+
+/* --- Ícones Outlined Modernos com Efeitos Neon de Luz --- */
+
+.neon-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-icon-wrapper svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.5px;
+}
+
+/* Variação Neon 1: Gold / Amarelo (Holding, Supermercado, Missão) */
+.neon-icon-wrapper.neon-gold {
+  color: #ffc400;
+  background: rgba(255, 196, 0, 0.03);
+  border-color: rgba(255, 196, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 196, 0, 0.05), inset 0 0 8px rgba(255, 196, 0, 0.02);
+}
+.neon-icon-wrapper.neon-gold svg {
+  filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.7));
+}
+.neon-icon-wrapper.neon-gold:hover {
+  background: rgba(255, 196, 0, 0.08);
+  border-color: rgba(255, 196, 0, 0.45);
+  box-shadow: 0 0 25px rgba(255, 196, 0, 0.25), inset 0 0 10px rgba(255, 196, 0, 0.05);
+}
+
+/* Variação Neon 2: Red / Vermelho (Farma) */
+.neon-icon-wrapper.neon-red {
+  color: #f20d18;
+  background: rgba(242, 13, 24, 0.03);
+  border-color: rgba(242, 13, 24, 0.15);
+  box-shadow: 0 0 15px rgba(242, 13, 24, 0.05), inset 0 0 8px rgba(242, 13, 24, 0.02);
+}
+.neon-icon-wrapper.neon-red svg {
+  filter: drop-shadow(0 0 6px rgba(242, 13, 24, 0.7));
+}
+.neon-icon-wrapper.neon-red:hover {
+  background: rgba(242, 13, 24, 0.08);
+  border-color: rgba(242, 13, 24, 0.45);
+  box-shadow: 0 0 25px rgba(242, 13, 24, 0.25), inset 0 0 10px rgba(242, 13, 24, 0.05);
+}
+
+/* Variação Neon 3: Orange / Laranja (Vila Plaza) */
+.neon-icon-wrapper.neon-orange {
+  color: #ff8a00;
+  background: rgba(255, 138, 0, 0.03);
+  border-color: rgba(255, 138, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.05), inset 0 0 8px rgba(255, 138, 0, 0.02);
+}
+.neon-icon-wrapper.neon-orange svg {
+  filter: drop-shadow(0 0 6px rgba(255, 138, 0, 0.7));
+}
+.neon-icon-wrapper.neon-orange:hover {
+  background: rgba(255, 138, 0, 0.08);
+  border-color: rgba(255, 138, 0, 0.45);
+  box-shadow: 0 0 25px rgba(255, 138, 0, 0.25), inset 0 0 10px rgba(255, 138, 0, 0.05);
+}
+
+/* Variação Neon 4: Blue / Azul (Visão, CD) */
+.neon-icon-wrapper.neon-blue {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.03);
+  border-color: rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.05), inset 0 0 8px rgba(59, 130, 246, 0.02);
+}
+.neon-icon-wrapper.neon-blue svg {
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.7));
+}
+.neon-icon-wrapper.neon-blue:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.25), inset 0 0 10px rgba(59, 130, 246, 0.05);
+}
+
+/* Variação Neon 5: Green / Verde (Valores, Plaza Park) */
+.neon-icon-wrapper.neon-green {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.03);
+  border-color: rgba(22, 163, 74, 0.15);
+  box-shadow: 0 0 15px rgba(22, 163, 74, 0.05), inset 0 0 8px rgba(22, 163, 74, 0.02);
+}
+.neon-icon-wrapper.neon-green svg {
+  filter: drop-shadow(0 0 6px rgba(22, 163, 74, 0.7));
+}
+.neon-icon-wrapper.neon-green:hover {
+  background: rgba(22, 163, 74, 0.08);
+  border-color: rgba(22, 163, 74, 0.45);
+  box-shadow: 0 0 25px rgba(22, 163, 74, 0.25), inset 0 0 10px rgba(22, 163, 74, 0.05);
+}
+
+/* Variação Neon 6: Wine / Rosa Escuro (The Wine) */
+.neon-icon-wrapper.neon-wine {
+  color: #e21d52;
+  background: rgba(226, 29, 82, 0.03);
+  border-color: rgba(226, 29, 82, 0.15);
+  box-shadow: 0 0 15px rgba(226, 29, 82, 0.05), inset 0 0 8px rgba(226, 29, 82, 0.02);
+}
+.neon-icon-wrapper.neon-wine svg {
+  filter: drop-shadow(0 0 6px rgba(226, 29, 82, 0.7));
+}
+.neon-icon-wrapper.neon-wine:hover {
+  background: rgba(226, 29, 82, 0.08);
+  border-color: rgba(226, 29, 82, 0.45);
+  box-shadow: 0 0 25px rgba(226, 29, 82, 0.25), inset 0 0 10px rgba(226, 29, 82, 0.05);
+}
+
+/* --- Botões e Detalhes da Holding --- */
+
+.theme-holding .btn.primary {
+  background: var(--yellow) !important;
+  color: var(--black) !important;
+  border: 1px solid var(--yellow) !important;
+  box-shadow: 0 10px 25px rgba(255, 196, 0, 0.2) !important;
+}
+
+.theme-holding .btn.primary:hover {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+.theme-holding .btn:not(.primary) {
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.theme-holding .light-section .btn:not(.primary) {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  color: var(--ink) !important;
+}
+
+.theme-holding .btn:not(.primary):hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.theme-holding .light-section .btn:not(.primary):hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: var(--ink) !important;
+}
+
+.theme-holding .eyebrow {
+  color: #C99B00 !important;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.theme-holding .dark-section .eyebrow {
+  color: var(--yellow) !important;
+}
+
+.theme-holding .eyebrow::before {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background: #C99B00;
+  display: inline-block;
+}
+
+body.theme-holding .dark-section .eyebrow::before {
+  background: var(--yellow);
+}
+
+/* Linha do Tempo (Alternada Premium) */
+@media (min-width: 769px) {
+  .wf-timeline {
+    position: relative;
+    max-width: 900px !important;
+    margin: 60px auto 0 !important;
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+  
+  .wf-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--yellow), rgba(255, 196, 0, 0.15) 80%, transparent) !important;
+    transform: translateX(-50%);
+  }
+  
+  .wf-timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 45px !important;
+    padding: 0 40px !important;
+  }
+  
+  .wf-timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+  }
+  
+  .wf-timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+  }
+  
+  .wf-timeline-item::before {
+    left: auto !important;
+    right: -6px !important;
+    top: 6px !important;
+    width: 12px !important;
+    height: 12px !important;
+    background-color: var(--yellow) !important;
+    border: 3px solid #050505 !important;
+    box-shadow: 0 0 10px var(--yellow) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+  
+  .wf-timeline-item:nth-child(even)::before {
+    left: -6px !important;
+    right: auto !important;
+  }
+  
+  .wf-timeline-content {
+    background-color: rgba(26, 26, 26, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    padding: 24px 28px !important;
+    border-radius: 20px !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+  }
+  
+  .wf-timeline-item:hover::before {
+    transform: scale(1.4);
+    box-shadow: 0 0 18px var(--yellow), 0 0 8px var(--yellow) !important;
+  }
+  
+  .wf-timeline-content:hover {
+    border-color: rgba(255, 196, 0, 0.25) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .wf-timeline {
+    border-left: 2px solid rgba(255, 196, 0, 0.2) !important;
+    padding-left: 24px !important;
+  }
+  
+  .wf-timeline-item::before {
+    left: -31px !important;
+    top: 6px !important;
+    border: 2px solid #050505 !important;
+    box-shadow: 0 0 8px var(--yellow) !important;
+  }
+  
+  .wf-timeline-content {
+    background-color: rgba(26, 26, 26, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   Seção de Missão, Visão e Valores (Diretrizes Neon) – REDESIGN v2
+   ========================================================================== */
+
+/* Seção com Fundo Escuro para Destacar o Neon */
+body.theme-holding #diretrizes.diretrizes-neon-section {
+  background: #050507 !important;
+  color: #ffffff !important;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden !important;
+  border-top: none;
+  border-bottom: none;
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+  z-index: 2 !important; /* Mantém a seção acima do topo da seção de trajetória */
+  transform: translateZ(0); /* Garante o funcionamento correto das bordas arredondadas e overflow no Safari/Chrome */
+}
+
+/* Background fotográfico da seção (corredor da loja escurecido) */
+body.theme-holding .diretrizes-neon-section .diretrizes-section-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.18) blur(3px) saturate(0.6);
+  z-index: 0;
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+}
+
+/* Background ambient glow extra element */
+.diretrizes-bg-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(255, 196, 0, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 50% 40%, rgba(242, 13, 24, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(255, 196, 0, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+}
+
+/* Ambient glow no fundo da seção */
+body.theme-holding .diretrizes-neon-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 16% 50%, rgba(255, 196, 0, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(242, 13, 24, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 84% 50%, rgba(255, 196, 0, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+}
+
+/* Layout em Grid com 3 Colunas no Desktop */
+.neon-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cartão Neon com Borda Brilhante */
+.neon-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Staggered active animation on scroll */
+.neon-cards-grid .neon-card.active:nth-child(1) { transition-delay: 0s; }
+.neon-cards-grid .neon-card.active:nth-child(2) { transition-delay: 0.1s; }
+.neon-cards-grid .neon-card.active:nth-child(3) { transition-delay: 0.2s; }
+
+/* Wrapper para o conteúdo (garante z-index acima do bg) */
+.neon-card-content {
+  position: relative;
+  z-index: 3;
+  padding: 38px 28px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+}
+
+/* Efeito de hover */
+.neon-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Background individual de cada card */
+.neon-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.38) contrast(1.1) saturate(0.95);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+/* Card-specific background images */
+.neon-card.card-missao .neon-card-bg {
+  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp');
+}
+
+.neon-card.card-visao .neon-card-bg {
+  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp');
+  background-position: 85% center;
+}
+
+.neon-card.card-valores .neon-card-bg {
+  background-image: url('../../../assets/Fotografias/Supermercado +B/09_Equipe-e-Atendimento/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp');
+}
+
+.neon-card:hover .neon-card-bg,
+.neon-card.active .neon-card-bg {
+  filter: brightness(0.48) contrast(1.15) saturate(1);
+  transform: scale(1.04);
+}
+
+/* Dark gradient overlay para legibilidade do texto */
+.neon-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 7, 0.15) 0%,
+    rgba(5, 5, 7, 0.45) 45%,
+    rgba(5, 5, 7, 0.8) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 18px;
+}
+
+/* ===== ÍCONE NEON (Grande, sem container circular) ===== */
+.card-icon-neon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 28px;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-icon-neon svg {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-card:hover .card-icon-neon,
+.neon-card.active .card-icon-neon {
+  transform: scale(1.08);
+}
+
+/* Título Grande, Bold, Sem Serifas como na referência */
+.neon-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  font-style: normal;
+  color: #ffffff !important;
+  margin: 0 0 18px 0;
+  position: relative;
+  padding-bottom: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Sem underline decorativa – mais limpo como na referência */
+.neon-card h3::after {
+  display: none;
+}
+
+/* Descrição Principal */
+.neon-card p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Lista de Valores */
+.neon-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.neon-card ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+}
+
+.neon-card ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== TEMA NEON GOLD / AMARELO (Missão, Valores) ===== */
+.neon-card.theme-gold {
+  border: 2px solid rgba(255, 196, 0, 0.5);
+  box-shadow:
+    0 0 18px rgba(255, 196, 0, 0.15),
+    0 0 40px rgba(255, 196, 0, 0.06),
+    inset 0 0 18px rgba(255, 196, 0, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.neon-card.theme-gold .card-icon-neon {
+  color: #ffc400;
+  filter: drop-shadow(0 0 12px rgba(255, 196, 0, 0.6));
+}
+
+.neon-card.theme-gold ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ffc400;
+  text-shadow: 0 0 6px rgba(255, 196, 0, 0.9);
+  font-size: 1.3rem;
+  top: -2px;
+}
+
+/* Hover Gold / Active Gold */
+.neon-card.theme-gold:hover,
+.neon-card.theme-gold.active {
+  border-color: rgba(255, 196, 0, 0.9);
+  box-shadow:
+    0 0 30px rgba(255, 196, 0, 0.35),
+    0 0 60px rgba(255, 196, 0, 0.15),
+    0 0 100px rgba(255, 196, 0, 0.06),
+    inset 0 0 30px rgba(255, 196, 0, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.neon-card.theme-gold:hover .card-icon-neon,
+.neon-card.theme-gold.active .card-icon-neon {
+  filter: drop-shadow(0 0 20px rgba(255, 196, 0, 0.9));
+}
+
+/* ===== TEMA NEON RED / VERMELHO (Visão) ===== */
+.neon-card.theme-red {
+  border: 2px solid rgba(242, 13, 24, 0.5);
+  box-shadow:
+    0 0 18px rgba(242, 13, 24, 0.15),
+    0 0 40px rgba(242, 13, 24, 0.06),
+    inset 0 0 18px rgba(242, 13, 24, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.neon-card.theme-red .card-icon-neon {
+  color: #f20d18;
+  filter: drop-shadow(0 0 12px rgba(242, 13, 24, 0.6));
+}
+
+/* Hover Red / Active Red */
+.neon-card.theme-red:hover,
+.neon-card.theme-red.active {
+  border-color: rgba(242, 13, 24, 0.9);
+  box-shadow:
+    0 0 30px rgba(242, 13, 24, 0.35),
+    0 0 60px rgba(242, 13, 24, 0.15),
+    0 0 100px rgba(242, 13, 24, 0.06),
+    inset 0 0 30px rgba(242, 13, 24, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+.neon-card.theme-red:hover .card-icon-neon,
+.neon-card.theme-red.active .card-icon-neon {
+  filter: drop-shadow(0 0 20px rgba(242, 13, 24, 0.9));
+}
+
+/* ===== Neon pulse animation on borders ===== */
+@keyframes neonPulseGold {
+  0%, 100% { box-shadow: 0 0 18px rgba(255, 196, 0, 0.15), 0 0 40px rgba(255, 196, 0, 0.06), inset 0 0 18px rgba(255, 196, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 24px rgba(255, 196, 0, 0.22), 0 0 50px rgba(255, 196, 0, 0.1), inset 0 0 22px rgba(255, 196, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes neonPulseRed {
+  0%, 100% { box-shadow: 0 0 18px rgba(242, 13, 24, 0.15), 0 0 40px rgba(242, 13, 24, 0.06), inset 0 0 18px rgba(242, 13, 24, 0.04), 0 8px 32px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 24px rgba(242, 13, 24, 0.22), 0 0 50px rgba(242, 13, 24, 0.1), inset 0 0 22px rgba(242, 13, 24, 0.06), 0 8px 32px rgba(0, 0, 0, 0.5); }
+}
+
+/* Infinite pulse animations removed to resolve layout repaints and lock scrolling at 60FPS+ */
+
+/* ===== Responsividade ===== */
+@media (max-width: 991px) {
+  .neon-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .neon-card {
+    min-height: auto;
+  }
+  .neon-card-content {
+    padding: 36px 28px;
+  }
+  .card-icon-neon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  body.theme-holding #diretrizes.diretrizes-neon-section {
+    padding: 60px 0 100px;
+  }
+  .neon-card-content {
+    padding: 28px 22px;
+  }
+  .neon-card h3 {
+    font-size: 1.8rem;
+  }
+}
+

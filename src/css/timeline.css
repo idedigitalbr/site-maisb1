@@ -1,0 +1,611 @@
+/* ===================================================================
+   Trajetória / Timeline Section — Fiel à Referência v3
+   =================================================================== */
+
+/* --- Seção Principal --- */
+body.theme-holding #linha-tempo.trajetoria-section {
+  background: #faf8f4 !important;
+  color: var(--ink) !important;
+  padding: 150px 0 40px; /* Aumentado de 50px para 150px para compensar o margin-top negativo de 100px */
+  position: relative;
+  overflow: hidden;
+  margin-top: -100px !important; /* Puxa a seção para cima, preenchendo o fundo atrás dos cantos arredondados de diretrizes */
+  z-index: 1; /* Fica posicionado abaixo da diretrizes-neon-section */
+}
+
+/* Formas orgânicas de fundo (blobs decorativos) */
+.trajetoria-section::before,
+.trajetoria-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.trajetoria-section::before {
+  width: 500px;
+  height: 500px;
+  top: -120px;
+  right: -100px;
+  background: radial-gradient(ellipse, rgba(218, 195, 150, 0.12) 0%, transparent 70%);
+}
+
+.trajetoria-section::after {
+  width: 350px;
+  height: 350px;
+  bottom: -60px;
+  left: -100px;
+  background: radial-gradient(ellipse, rgba(218, 195, 150, 0.08) 0%, transparent 70%);
+}
+
+/* --- Container --- */
+.trajetoria-container {
+  position: relative;
+  z-index: 2;
+  width: min(1260px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* --- Layout Principal: 2 Colunas --- */
+.trajetoria-content-wrapper {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* ================================
+   COLUNA ESQUERDA: IMAGEM
+   ================================ */
+.trajetoria-image-column {
+  position: relative;
+}
+
+.trajetoria-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow:
+    0 0 0 1px rgba(230, 168, 0, 0.2),
+    0 0 25px rgba(230, 168, 0, 0.45),
+    0 15px 45px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.trajetoria-image-frame:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(230, 168, 0, 0.3),
+    0 0 35px rgba(230, 168, 0, 0.65),
+    0 20px 55px rgba(0, 0, 0, 0.18);
+}
+
+.trajetoria-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  transition: opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.trajetoria-image-frame img.fade-out {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* ================================
+   COLUNA DIREITA: TEXTO
+   ================================ */
+.trajetoria-text-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* --- Tag "TIMELINE" --- */
+.timeline-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #FFC400 0%, #E69A00 100%) !important;
+  border: none !important;
+  border-radius: 999px;
+  padding: 5px 16px 5px 6px;
+  box-shadow: 0 4px 15px rgba(230, 154, 0, 0.2);
+  margin-bottom: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-pill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 154, 0, 0.3);
+}
+
+.timeline-pill-icon-wrapper {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0A0A0C !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFC400 !important;
+  box-shadow: none;
+}
+
+.timeline-pill-icon {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.timeline-pill-text {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #0A0A0C !important;
+  text-transform: uppercase;
+}
+
+/* --- Título "Nossa Trajetória" com fontes mistas --- */
+.trajetoria-title {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.01em;
+}
+
+.trajetoria-title em,
+.trajetoria-title .serif-accent {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* --- Ano Gigante --- */
+.trajetoria-year-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 3.4rem);
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.03em;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.trajetoria-year-display.fade-out {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* --- Linha Divisória (Amarelo + Vermelho) --- */
+.trajetoria-divider-line {
+  display: flex;
+  width: 100px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.trajetoria-divider-line::before {
+  content: "";
+  width: 35%;
+  height: 100%;
+  background-color: var(--yellow);
+}
+
+.trajetoria-divider-line::after {
+  content: "";
+  width: 65%;
+  height: 100%;
+  background-color: var(--red);
+}
+
+/* --- Detalhes do Evento --- */
+.trajetoria-event-details {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  margin-bottom: 14px;
+}
+
+.trajetoria-event-details.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.trajetoria-event-title {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.trajetoria-event-desc {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #666;
+  max-width: 420px;
+  margin: 0;
+}
+
+/* ================================
+   SETAS DE NAVEGAÇÃO (Prev + Next)
+   ================================ */
+.trajetoria-arrow-btn {
+  position: absolute;
+  top: 27px; /* Aligned exactly on the horizontal track line and dots */
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--red);
+  background-color: var(--red);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 12px rgba(242, 13, 24, 0.2);
+}
+
+.trajetoria-prev-btn {
+  left: 0;
+}
+
+.trajetoria-next-btn {
+  right: 0;
+}
+
+.trajetoria-arrow-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .trajetoria-arrow-btn:hover {
+    background-color: #d99a00 !important;
+    border-color: #d99a00 !important;
+    box-shadow: 0 6px 15px rgba(217, 154, 0, 0.35) !important;
+    transform: translateY(-50%) scale(1.08);
+  }
+  .trajetoria-prev-btn:hover svg {
+    transform: translateX(-2px);
+  }
+  .trajetoria-next-btn:hover svg {
+    transform: translateX(2px);
+  }
+}
+
+.trajetoria-arrow-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.trajetoria-arrow-btn.is-disabled {
+  opacity: 0.15 !important;
+  pointer-events: none;
+  background-color: #cccccc !important;
+  border-color: #cccccc !important;
+  color: #888888 !important;
+  box-shadow: none !important;
+}
+
+/* ================================
+   BARRA DE NAVEGAÇÃO INFERIOR (TIMELINE)
+   ================================ */
+.trajetoria-nav-timeline {
+  position: relative;
+  padding-top: 0;
+}
+
+/* Linha cinza de fundo */
+.trajetoria-track-line {
+  position: absolute;
+  top: 27px; /* Align with dots after padding-top */
+  left: 24px; /* Starts behind the center of left arrow button (width 48px) */
+  right: 24px; /* Ends behind the center of right arrow button */
+  height: 2px;
+  background-color: rgba(21, 17, 11, 0.1);
+  z-index: 1;
+}
+
+/* Progresso amarelo */
+.trajetoria-track-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--yellow), #e6a800);
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 1px;
+}
+
+/* Container dos nós */
+.trajetoria-nodes-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 80px 0; /* padding-top: 20px to prevent clipping of the active dot halo */
+}
+
+/* Cada nó */
+.trajetoria-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* Ano no nó */
+.trajetoria-node-year {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #999;
+  transition: all 0.35s ease;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+
+.trajetoria-node:hover .trajetoria-node-year {
+  color: var(--ink);
+}
+
+.trajetoria-node.active .trajetoria-node-year {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+/* Bolinha/Dot do nó */
+.trajetoria-node-dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #e0d6c6;
+  border: 3px solid #faf8f4;
+  box-shadow: 0 0 0 2px #e0d6c6;
+  margin-bottom: 10px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.trajetoria-node:hover .trajetoria-node-dot {
+  background-color: #c9b898;
+  box-shadow: 0 0 0 2px rgba(217, 154, 0, 0.4);
+  transform: scale(1.15);
+}
+
+.trajetoria-node.completed .trajetoria-node-dot {
+  background-color: #d99a00;
+  border-color: #faf8f4;
+  box-shadow: 0 0 0 2px #d99a00;
+}
+
+.trajetoria-node.active .trajetoria-node-dot {
+  background-color: var(--red);
+  border-color: #faf8f4;
+  box-shadow: 0 0 0 2px #d99a00, 0 0 10px rgba(217, 154, 0, 0.4);
+  transform: scale(1.3);
+}
+
+/* Thumbnail */
+.trajetoria-node-thumb {
+  width: 120px;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: linear-gradient(145deg, #ece3d4, #d9ccb8);
+  padding: 3px;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  opacity: 0.7;
+}
+
+.trajetoria-node:hover .trajetoria-node-thumb {
+  opacity: 0.95;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.trajetoria-node.active .trajetoria-node-thumb {
+  opacity: 1;
+  border-color: #d99a00;
+  background: linear-gradient(145deg, #e0d3be, #c8b89a);
+  box-shadow:
+    0 0 15px rgba(217, 154, 0, 0.5),
+    0 8px 25px rgba(21, 17, 11, 0.12);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.trajetoria-node-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ================================
+   RESPONSIVIDADE
+   ================================ */
+
+@media (max-width: 1100px) {
+  .trajetoria-content-wrapper {
+    gap: 40px;
+  }
+  .trajetoria-node-thumb {
+    width: 115px;
+  }
+}
+
+@media (max-width: 980px) {
+  .trajetoria-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .trajetoria-image-frame {
+    aspect-ratio: 16 / 10;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .trajetoria-text-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-pill-tag {
+    align-self: center !important;
+  }
+
+  .trajetoria-tagline {
+    align-items: center;
+  }
+
+  .trajetoria-title {
+    text-align: center;
+  }
+
+  .trajetoria-year-display {
+    text-align: center;
+  }
+
+  .trajetoria-divider-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .trajetoria-event-desc {
+    max-width: 100%;
+  }
+
+  .trajetoria-arrows {
+    justify-content: center;
+  }
+
+  .trajetoria-node-thumb {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.theme-holding #linha-tempo.trajetoria-section {
+    padding: 120px 0 35px; /* Compensação para o margin-top de -100px no mobile */
+  }
+
+  .trajetoria-year-display {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  .trajetoria-arrow-btn {
+    display: flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    top: 26px !important; /* Shifted down to match dot center on mobile */
+    box-shadow: 0 3px 8px rgba(242, 13, 24, 0.15) !important;
+  }
+
+  .trajetoria-prev-btn {
+    left: 8px !important;
+  }
+
+  .trajetoria-next-btn {
+    right: 8px !important;
+  }
+
+  /* Scroll container handles scrolling and safe padding space for thumbnails */
+  .trajetoria-scroll-container {
+    overflow-x: auto !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 110px !important;
+    width: 100%;
+  }
+
+  .trajetoria-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trajetoria-nav-timeline {
+    overflow-x: visible !important;
+    position: relative;
+  }
+
+  .trajetoria-track-line {
+    width: 700px;
+    left: 40px;
+    right: auto;
+    top: 26px; /* Shifted down to match dot center on mobile */
+  }
+
+  .trajetoria-nodes-row {
+    width: 740px;
+    padding: 20px 20px 0; /* padding-top: 20px on mobile to prevent clipping of the active dot halo */
+  }
+
+  .trajetoria-node-thumb {
+    width: 90px;
+    border-radius: 10px;
+  }
+
+  .trajetoria-node-year {
+    font-size: 0.8rem;
+  }
+
+  .trajetoria-node-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trajetoria-container {
+    width: calc(100% - 32px);
+  }
+
+  .trajetoria-title {
+    font-size: 1.6rem;
+  }
+
+  .trajetoria-event-title {
+    font-size: 1.05rem;
+  }
+
+  .trajetoria-event-desc {
+    font-size: 0.85rem;
+  }
+}

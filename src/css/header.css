@@ -1,0 +1,362 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px max(48px, (100% - 1180px) / 2);
+  background: transparent;
+  color: #fff;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.hidden {
+  transform: translateY(-100%);
+}
+
+.site-header.scrolled {
+  background: var(--glass-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--glass-border);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.brand-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .16);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 6px;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+}
+
+.brand-main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 196, 0, 0.8);
+  border-color: #FFC400;
+}
+
+.brand-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-sub-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(-15px);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(11, 11, 11, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.brand-group:hover .brand-sub-logos {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.sub-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 4px;
+  border: 1.5px solid transparent;
+}
+
+.sub-logo-link:hover {
+  transform: scale(1.18) translateY(-2px);
+}
+
+.sub-logo-link[href*="supermercados"]:hover {
+  box-shadow: 0 0 15px rgba(242, 13, 24, 0.8), inset 0 0 0 2px #F20D18;
+  border-color: #F20D18;
+}
+
+.sub-logo-link[href*="farma"]:hover {
+  box-shadow: 0 0 15px rgba(242, 13, 24, 0.8), inset 0 0 0 2px #F20D18;
+  border-color: #F20D18;
+}
+
+.sub-logo-link[href*="villa-plaza"]:hover {
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.8), inset 0 0 0 2px #ff8a00;
+  border-color: #ff8a00;
+}
+
+.sub-logo-link[href*="villa-park"]:hover {
+  box-shadow: 0 0 15px rgba(22, 163, 74, 0.8), inset 0 0 0 2px #16a34a;
+  border-color: #16a34a;
+}
+
+.sub-logo-link[href*="wine"]:hover {
+  box-shadow: 0 0 15px rgba(75, 16, 32, 0.8), inset 0 0 0 2px #4b1020;
+  border-color: #4b1020;
+}
+
+.sub-logo-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Fallback para compatibilidade do editor de wireframe */
+.brand {
+  display: none;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .9rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, .94);
+}
+
+.main-menu > a,
+.drop-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 13px;
+  border-radius: 999px;
+  transition: .22s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de hover jateado (spray) — brilho sutil em vez de fundo escuro radial */
+.main-menu > a::before,
+.drop-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(255, 196, 0, 0.25) 0%, rgba(255, 196, 0, 0.05) 55%, rgba(255, 196, 0, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.main-menu > a:hover::before,
+.drop-link:hover::before {
+  opacity: 1;
+}
+
+.main-menu > a:hover,
+.drop-link:hover {
+  color: var(--yellow);
+  text-shadow: 0 0 8px rgba(255, 196, 0, 0.6), 0 0 15px rgba(255, 196, 0, 0.3);
+}
+
+/* Botão CTA Contatos */
+.main-menu .btn-contacts-menu {
+  background: var(--yellow) !important;
+  color: var(--black) !important;
+  font-weight: 800;
+  padding: 0 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 15px rgba(255, 196, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-menu .btn-contacts-menu::before {
+  display: none !important;
+}
+
+.main-menu .btn-contacts-menu:hover {
+  background: var(--red) !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: 0 0 20px rgba(242, 13, 24, 0.6), 0 4px 20px rgba(242, 13, 24, 0.5);
+  transform: translateY(-2px);
+}
+
+.dropdown {
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: -14px;
+}
+
+.drop-panel {
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 265px;
+  padding: 10px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  z-index: 1001;
+}
+
+.dropdown:hover .drop-panel,
+.dropdown:focus-within .drop-panel,
+.dropdown.is-open .drop-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.drop-panel a {
+  display: block;
+  padding: 12px 13px;
+  border-radius: 14px;
+  color: #30291d;
+  font-weight: 800;
+}
+
+.drop-panel a:hover {
+  background: var(--yellow);
+  color: #111;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  margin: 7px 0;
+  border-radius: 10px;
+}
+
+/* Submenu Rico com Logos à Esquerda e Glow temático */
+.dropdown-rich-menu {
+  background: rgba(11, 11, 11, 0.9) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 260px !important;
+  z-index: 1100 !important;
+}
+
+.dropdown-item-rich {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 999px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.dropdown-item-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.dropdown-item-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dropdown-item-text {
+  flex-grow: 1;
+}
+
+/* Efeito Glow Temático de Hover por marca */
+.dropdown-item-rich.brand-super:hover {
+  background: rgba(242, 13, 24, 0.12) !important;
+  border-color: #F20D18 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(242, 13, 24, 0.45) !important;
+}
+
+.dropdown-item-rich.brand-farma:hover {
+  background: rgba(242, 13, 24, 0.12) !important;
+  border-color: #F20D18 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(242, 13, 24, 0.45) !important;
+}
+
+.dropdown-item-rich.brand-plaza:hover {
+  background: rgba(255, 138, 0, 0.12) !important;
+  border-color: #ff8a00 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.45) !important;
+}
+
+.dropdown-item-rich.brand-park:hover {
+  background: rgba(22, 163, 74, 0.12) !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(22, 163, 74, 0.45) !important;
+}
+
+.dropdown-item-rich.brand-wine:hover {
+  background: rgba(75, 16, 32, 0.2) !important;
+  border-color: #4b1020 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(75, 16, 32, 0.45) !important;
+}

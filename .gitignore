@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências futuras
+node_modules/
+
+# Builds futuros
+dist/
+build/
