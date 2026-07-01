@@ -1,0 +1,35 @@
+name: Deploy VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-grupomaisb
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 161.97.108.92
+          username: root
+          port: 22
+          key: ${{ secrets.VPS_SSH_KEY }}
+          fingerprint: SHA256:8t59KrIspxmOiPKsLydWUMDMVnrJ/NKRSio5dpEDovE
+          script_stop: true
+          command_timeout: 30m
+          script: |
+            set -e
+            cd /opt/grupomaisb-site/app
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fd
+            cd /opt/grupomaisb-site
+            docker compose up -d --build --remove-orphans
