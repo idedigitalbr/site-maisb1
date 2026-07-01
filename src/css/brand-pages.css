@@ -897,7 +897,7 @@ body.theme-holding .diretrizes-neon-section .diretrizes-section-bg {
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp');
+  background-image: url('/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -999,16 +999,16 @@ body.theme-holding .diretrizes-neon-section::before {
 
 /* Card-specific background images */
 .neon-card.card-missao .neon-card-bg {
-  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp');
+  background-image: url('/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp');
 }
 
 .neon-card.card-visao .neon-card-bg {
-  background-image: url('../../../assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp');
+  background-image: url('/assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp');
   background-position: 85% center;
 }
 
 .neon-card.card-valores .neon-card-bg {
-  background-image: url('../../../assets/Fotografias/Supermercado +B/09_Equipe-e-Atendimento/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp');
+  background-image: url('/assets/Fotografias/Supermercado +B/09_Equipe-e-Atendimento/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp');
 }
 
 .neon-card:hover .neon-card-bg,

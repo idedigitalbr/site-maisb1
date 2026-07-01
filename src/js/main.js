@@ -1545,31 +1545,31 @@
         year: "2015",
         title: "Fundação do Grupo +B",
         desc: "Nasce o Grupo +B com o propósito de oferecer qualidade, confiança e soluções completas para construir o futuro. Uma trajetória marcada pelo trabalho sério, parcerias sólidas e foco em pessoas.",
-        img: "../assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
+        img: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
       },
       {
         year: "2017",
         title: "Expansão Logística e Unidade Tapanã",
         desc: "Inauguração da segunda loja física em Tapanã e estruturação do Centro de Distribuição (CD) integrado para frota própria de abastecimento.",
-        img: "../assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
+        img: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
       },
       {
         year: "2019",
         title: "Nascimento da Rede +B Farma",
         desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas para comodidade e facilidade de compra.",
-        img: "../assets/Fotografias/Insta/feed-instagram-b-farma.webp"
+        img: "/assets/Fotografias/Insta/feed-instagram-b-farma.webp"
       },
       {
         year: "2021",
         title: "Complexo Plaza e +B Bistrô",
         desc: "Inauguração da unidade de São Brás. Criação das submarcas de lazer e gastronomia Villa Plaza Restaurante e Villa Plaza Park Infantil, o maior parquinho monitorado da cidade.",
-        img: "../assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
+        img: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
       },
       {
         year: "2024",
         title: "Liderança Regional e Inovação Digital",
         desc: "Marca de 10.000 colaboradores diretos e indiretos, lançamento do aplicativo Clube+ Fidelidade e planejamento de expansão regional.",
-        img: "../assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada.webp"
+        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada.webp"
       }
     ];
 
