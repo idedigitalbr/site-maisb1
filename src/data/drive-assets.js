@@ -3,13 +3,13 @@
 
 window.driveAssets = {
   logos: {
-    grupoMaisBaratoColorPositivo: '/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp',
-    grupoMaisBaratoColorNegativo: '/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp',
-    supermercadosMaisB: '/assets/Logos Grupo MaisB/supermercados-mais-b.webp',
-    farmaMaisB: '/assets/Logos Grupo MaisB/farma-mais-b.webp',
-    villaPlaza: '/assets/Logos Grupo MaisB/villa-plaza.webp',
-    villaPlazaPark: '/assets/Logos Grupo MaisB/villa-plaza-park.webp',
-    theWineExperience: '/assets/Logos Grupo MaisB/the-wine-experience.webp'
+    grupoMaisBaratoColorPositivo: '/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp',
+    grupoMaisBaratoColorNegativo: '/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp',
+    supermercadosMaisB: '/assets/Logos SubMarcas/logo-supermercados -maisB.png',
+    farmaMaisB: '/assets/Logos SubMarcas/logo-farma-mais-b.webp',
+    villaPlaza: '/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp',
+    villaPlazaPark: '/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp',
+    theWineExperience: '/assets/Logos SubMarcas/logo-the-wine-experience.webp'
   },
   photos: {
     corredorAlcindoCacela: '/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp'

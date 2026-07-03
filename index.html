@@ -14,44 +14,115 @@
   <meta property="og:url" content="https://grupomaisbarato.com.br/index.html" />
   <meta property="og:title" content="Grupo +B | Varejo, Saúde, Lazer & Gastronomia" />
   <meta property="og:description" content="O maior ecossistema integrado de marcas e experiências da Região Norte." />
-  <meta property="og:image" content="https://grupomaisbarato.com.br/assets/Logos%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+  <meta property="og:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://grupomaisbarato.com.br/index.html" />
   <meta name="twitter:title" content="Grupo +B | Varejo, Saúde, Lazer & Gastronomia" />
   <meta name="twitter:description" content="O maior ecossistema integrado de marcas e experiências da Região Norte." />
-  <meta name="twitter:image" content="https://grupomaisbarato.com.br/assets/Logos%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+  <meta name="twitter:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
 
-  <link rel="icon" type="image/webp" href="/assets/Logos Grupo MaisB/Icone Grupo Mais Barato (Color Negativo).webp" />
+  <link rel="icon" type="image/webp" href="/assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="preload" href="/assets/Videos/video-b-home-poster.webp" as="image" />
-  <link rel="preload" href="/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" as="image" />
+  <link rel="preload" href="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" as="image" />
   <link rel="stylesheet" href="./src/css/main.css?v=5.6" />
+  <!-- Script de Fallback Automático de Imagens e Vídeos -->
+  <script>
+    document.addEventListener('error', function(event) {
+      const target = event.target;
+      const tagName = target.tagName.toLowerCase();
+      
+      if (tagName === 'img' || tagName === 'video' || tagName === 'source') {
+        const element = target;
+        let fallbackCount = parseInt(element.getAttribute('data-fallback-count') || '0', 10);
+        const srcUrl = element.getAttribute('src');
+        if (!srcUrl || !srcUrl.includes('/assets/')) return;
+        
+        const assetPath = 'assets/' + srcUrl.split('/assets/')[1];
+        
+        // Priorizar o caminho local (./assets) para carregar offline da própria pasta do projeto
+        const fallbacks = [
+          './' + assetPath,                                     // 1º Fallback: Local
+          'https://grupomaisb.suporteide.digital/' + assetPath  // 2º Fallback: Online VPS
+        ];
+        
+        if (fallbackCount < fallbacks.length) {
+          const nextFallback = fallbacks[fallbackCount];
+          element.setAttribute('data-fallback-count', fallbackCount + 1);
+          element.src = nextFallback;
+          
+          if (tagName === 'source') {
+            const videoParent = element.parentNode;
+            if (videoParent && videoParent.tagName.toLowerCase() === 'video') {
+              videoParent.load();
+              if (videoParent.hasAttribute('autoplay')) {
+                videoParent.play().catch(function() {});
+              }
+            }
+          } else if (tagName === 'video') {
+            element.load();
+            if (element.hasAttribute('autoplay')) {
+              element.play().catch(function() {});
+            }
+          }
+        }
+      }
+    }, true);
+
+    // Corrigir Background Images do CSS quando aberto localmente
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.protocol === 'file:') {
+        for (let i = 0; i < document.styleSheets.length; i++) {
+          try {
+            const sheet = document.styleSheets[i];
+            const rules = sheet.cssRules || sheet.rules;
+            if (!rules) continue;
+            for (let j = 0; j < rules.length; j++) {
+              const rule = rules[j];
+              if (rule.style && rule.style.backgroundImage) {
+                const bg = rule.style.backgroundImage;
+                if (bg && bg.includes('/assets/')) {
+                  const parts = bg.split('/assets/');
+                  const assetPath = 'assets/' + parts[1].replace(/['"\)]/g, '');
+                  
+                  // Aponta para a pasta local assets/ do próprio projeto
+                  rule.style.backgroundImage = "url('./" + assetPath + "')";
+                }
+              }
+            }
+          } catch (e) {
+            // Ignorar erros de cross-origin em CDN
+          }
+        }
+      }
+    });
+  </script>
 </head>
 <body>
   <header class="site-header" id="topo">
     <div class="brand-group">
       <a class="brand-main" href="#home" aria-label="Grupo +B">
-        <img src="/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" alt="Logo +B" />
+        <img src="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" alt="Logo +B" />
       </a>
       <div class="brand-sub-logos">
         <a href="#marca-super" class="sub-logo-link" title="+B Supermercados">
-          <img src="/assets/Logos Grupo MaisB/supermercados-mais-b.webp" alt="+B Supermercados" />
+          <img src="/assets/Logos SubMarcas/logo-supermercados -maisB.png" alt="+B Supermercados" />
         </a>
         <a href="#marca-farma" class="sub-logo-link" title="+B Farma">
-          <img src="/assets/Logos Grupo MaisB/farma-mais-b.webp" alt="+B Farma" />
+          <img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma" />
         </a>
         <a href="#marca-plaza" class="sub-logo-link" title="Villa Plaza">
-          <img src="/assets/Logos Grupo MaisB/villa-plaza.webp" alt="Villa Plaza" />
+          <img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza" />
         </a>
         <a href="#marca-park" class="sub-logo-link" title="Villa Plaza Park">
-          <img src="/assets/Logos Grupo MaisB/villa-plaza-park.webp" alt="Villa Plaza Park" />
+          <img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park" />
         </a>
         <a href="#marca-wine" class="sub-logo-link" title="The Wine Experience">
-          <img src="/assets/Logos Grupo MaisB/the-wine-experience.webp" alt="The Wine Experience" />
+          <img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience" />
         </a>
       </div>
     </div>
@@ -67,23 +138,23 @@
         <a href="#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
         <div class="drop-panel dropdown-rich-menu" aria-label="Submenu Nossas Marcas">
           <a href="#marca-super" class="dropdown-item-rich brand-super">
-            <span class="dropdown-item-logo"><img src="/assets/Logos Grupo MaisB/supermercados-mais-b.webp" alt="+B Supermercados"></span>
+            <span class="dropdown-item-logo"><img src="/assets/Logos SubMarcas/logo-supermercados -maisB.png" alt="+B Supermercados"></span>
             <span class="dropdown-item-text">+B Supermercados</span>
           </a>
           <a href="#marca-farma" class="dropdown-item-rich brand-farma">
-            <span class="dropdown-item-logo"><img src="/assets/Logos Grupo MaisB/farma-mais-b.webp" alt="+B Farma"></span>
+            <span class="dropdown-item-logo"><img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma"></span>
             <span class="dropdown-item-text">+B Farma</span>
           </a>
           <a href="#marca-plaza" class="dropdown-item-rich brand-plaza">
-            <span class="dropdown-item-logo"><img src="/assets/Logos Grupo MaisB/villa-plaza.webp" alt="Villa Plaza"></span>
+            <span class="dropdown-item-logo"><img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza"></span>
             <span class="dropdown-item-text">Villa Plaza</span>
           </a>
           <a href="#marca-park" class="dropdown-item-rich brand-park">
-            <span class="dropdown-item-logo"><img src="/assets/Logos Grupo MaisB/villa-plaza-park.webp" alt="Villa Plaza Park"></span>
+            <span class="dropdown-item-logo"><img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park"></span>
             <span class="dropdown-item-text">Villa Plaza Park</span>
           </a>
           <a href="#marca-wine" class="dropdown-item-rich brand-wine">
-            <span class="dropdown-item-logo"><img src="/assets/Logos Grupo MaisB/the-wine-experience.webp" alt="The Wine Experience"></span>
+            <span class="dropdown-item-logo"><img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience"></span>
             <span class="dropdown-item-text">The Wine Experience</span>
           </a>
         </div>
@@ -121,7 +192,6 @@
           <!-- Vídeo de background específico do Slide 1 -->
           <video class="carousel-bg-video" autoplay loop muted playsinline poster="/assets/Videos/video-b-home-poster.webp">
             <source src="/assets/Videos/video-b-home-compressed.mp4" type="video/mp4">
-            <source src="/assets/Videos/video-b-home-compressed.webm" type="video/webm">
           </video>
           <div class="slide-overlay slide1-overlay"></div>
           <div class="container slide-container">
@@ -243,7 +313,7 @@
           <!-- Right Column: Photo Card with Frame and Floating Glass Card -->
           <div class="about-photo-col reveal delay-1">
             <div class="about-photo-wrapper">
-              <img src="/assets/Paginas/Home/foto-minisobrenos.webp" alt="Equipe Grupo +B" class="about-team-photo" loading="lazy">
+              <img src="/assets/Paginas (Imagens)/Home/foto-minisobrenos.webp" alt="Equipe Grupo +B" class="about-team-photo" loading="lazy">
               
               <!-- Floating Glass Card (Overlay bottom-right) -->
               <div class="about-floating-glass-card">
@@ -421,43 +491,43 @@
                   <!-- Hub Central Holding (Logo do Grupo +B) -->
                   <div class="brands-hub-center" id="brands-hub-center">
                     <div class="hub-yellow-glow"></div>
-                    <img class="hub-logo-white" src="/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" width="160" height="160" loading="lazy" alt="Logo Grupo +B" />
-                    <img class="hub-logo-color" src="/assets/Logos Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp" width="160" height="160" loading="lazy" alt="Logo Grupo +B" />
+                    <img class="hub-logo-white" src="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" width="160" height="160" loading="lazy" alt="Logo Grupo +B" />
+                    <img class="hub-logo-color" src="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp" width="160" height="160" loading="lazy" alt="Logo Grupo +B" />
                   </div>
                   
                   <!-- Satélites com Logos (4 Marcas Orbitando) -->
                   <!-- A posição de cada nó é definida por JavaScript (posicionamento dinâmico em círculo) -->
                   <div class="network-node split-node carousel-node node-plaza" data-brand="plaza" role="button" tabindex="0" aria-label="Ver Villa Plaza Restaurante">
                     <div class="node-logo-wrapper">
-                      <img src="/assets/Logos Grupo MaisB/villa-plaza.webp" width="70" height="70" loading="lazy" alt="Logo Villa Plaza Restaurante">
+                      <img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" width="70" height="70" loading="lazy" alt="Logo Villa Plaza Restaurante">
                     </div>
                     <span class="node-label">Villa Plaza</span>
                   </div>
 
                   <div class="network-node split-node carousel-node node-super" data-brand="super" role="button" tabindex="0" aria-label="Ver +B Supermercados">
                     <div class="node-logo-wrapper">
-                      <img src="/assets/Logos Grupo MaisB/supermercados-mais-b.webp" width="70" height="70" loading="lazy" alt="Logo Supermercados">
+                      <img src="/assets/Logos SubMarcas/logo-supermercados -maisB.png" width="70" height="70" loading="lazy" alt="Logo Supermercados">
                     </div>
                     <span class="node-label">Supermercados +B</span>
                   </div>
                   
                   <div class="network-node split-node carousel-node node-wine" data-brand="wine" role="button" tabindex="0" aria-label="Ver The Wine">
                     <div class="node-logo-wrapper">
-                      <img src="/assets/Logos Grupo MaisB/the-wine-experience.webp" width="70" height="70" loading="lazy" alt="Logo The Wine">
+                      <img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" width="70" height="70" loading="lazy" alt="Logo The Wine">
                     </div>
                     <span class="node-label">The Wine</span>
                   </div>
 
                   <div class="network-node split-node carousel-node node-park" data-brand="park" role="button" tabindex="0" aria-label="Ver Villa Plaza Park">
                     <div class="node-logo-wrapper">
-                      <img src="/assets/Logos Grupo MaisB/villa-plaza-park.webp" width="70" height="70" loading="lazy" alt="Logo Park Infantil">
+                      <img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" width="70" height="70" loading="lazy" alt="Logo Park Infantil">
                     </div>
                     <span class="node-label">Villa Plaza Park</span>
                   </div>
 
                   <div class="network-node split-node carousel-node node-farma" data-brand="farma" role="button" tabindex="0" aria-label="Ver +B Farma">
                     <div class="node-logo-wrapper">
-                      <img src="/assets/Logos Grupo MaisB/farma-mais-b.webp" width="70" height="70" loading="lazy" alt="Logo Farma">
+                      <img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" width="70" height="70" loading="lazy" alt="Logo Farma">
                     </div>
                     <span class="node-label">+B Farma</span>
                   </div>
@@ -486,7 +556,7 @@
                   </div>
                   <div class="card-details-body">
                     <div class="card-logo-overlap">
-                      <img src="/assets/Logos Grupo MaisB/the-wine-experience.webp" width="80" height="80" loading="lazy" alt="Logo The Wine">
+                      <img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" width="80" height="80" loading="lazy" alt="Logo The Wine">
                     </div>
                     <div class="card-header-info">
                       <span class="card-badge">MARCA EM DESTAQUE</span>
@@ -547,7 +617,7 @@
                   </div>
                   <div class="card-details-body">
                     <div class="card-logo-overlap">
-                      <img src="/assets/Logos Grupo MaisB/supermercados-mais-b.webp" width="80" height="80" loading="lazy" alt="Logo Supermercados">
+                      <img src="/assets/Logos SubMarcas/logo-supermercados -maisB.png" width="80" height="80" loading="lazy" alt="Logo Supermercados">
                     </div>
                     <div class="card-header-info">
                       <span class="card-badge">MARCA EM DESTAQUE</span>
@@ -585,21 +655,21 @@
                 <div class="brand-detail-card theme-farma" data-brand="farma">
                   <div class="card-top-gallery">
                     <div class="gallery-panel panel-image farma-panel-1">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Atendimento Farmácia">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Atendimento Farmácia">
                     </div>
                     <div class="gallery-panel panel-image farma-panel-2">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Cosméticos e Saúde">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Cosméticos e Saúde">
                     </div>
                     <div class="gallery-panel panel-image farma-panel-3">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Cuidados e Medicamentos">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Cuidados e Medicamentos">
                     </div>
                     <div class="gallery-panel panel-image farma-panel-4">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Unidade Farma">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp" width="300" height="200" loading="lazy" alt="Unidade Farma">
                     </div>
                   </div>
                   <div class="card-details-body">
                     <div class="card-logo-overlap">
-                      <img src="/assets/Logos Grupo MaisB/farma-mais-b.webp" width="80" height="80" loading="lazy" alt="Logo Farma">
+                      <img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" width="80" height="80" loading="lazy" alt="Logo Farma">
                     </div>
                     <div class="card-header-info">
                       <span class="card-badge">MARCA EM DESTAQUE</span>
@@ -636,21 +706,21 @@
                 <div class="brand-detail-card theme-park" data-brand="park">
                   <div class="card-top-gallery">
                     <div class="gallery-panel panel-image park-panel-1">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Parque Brinquedos">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Parque Brinquedos">
                     </div>
                     <div class="gallery-panel panel-image park-panel-2">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Área de Lazer">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Área de Lazer">
                     </div>
                     <div class="gallery-panel panel-image park-panel-3">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Diversão Infantil">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Diversão Infantil">
                     </div>
                     <div class="gallery-panel panel-image park-panel-4">
-                      <img src="/assets/Fotografias/Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Brinquedos Monitorados">
+                      <img src="/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp" width="300" height="200" loading="lazy" alt="Brinquedos Monitorados">
                     </div>
                   </div>
                   <div class="card-details-body">
                     <div class="card-logo-overlap">
-                      <img src="/assets/Logos Grupo MaisB/villa-plaza-park.webp" width="80" height="80" loading="lazy" alt="Logo Park Infantil">
+                      <img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" width="80" height="80" loading="lazy" alt="Logo Park Infantil">
                     </div>
                     <div class="card-header-info">
                       <span class="card-badge">MARCA EM DESTAQUE</span>
@@ -703,7 +773,7 @@
                   </div>
                   <div class="card-details-body">
                     <div class="card-logo-overlap">
-                      <img src="/assets/Logos Grupo MaisB/villa-plaza.webp" width="80" height="80" loading="lazy" alt="Logo Villa Plaza">
+                      <img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" width="80" height="80" loading="lazy" alt="Logo Villa Plaza">
                     </div>
                     <div class="card-header-info">
                       <span class="card-badge">MARCA EM DESTAQUE</span>
@@ -1048,7 +1118,7 @@
 
           <!-- Card 1: Trabalhe Conosco -->
           <div class="oportunidades-card reveal delay-1">
-            <img src="/assets/Paginas/Home/foto-trabalhe-conosco-gpt.webp" alt="Equipe Grupo +B sorrindo usando uniforme" class="oportunidades-card-img" loading="lazy" />
+            <img src="/assets/Paginas (Imagens)/Home/foto-trabalhe-conosco-gpt.webp" alt="Equipe Grupo +B sorrindo usando uniforme" class="oportunidades-card-img" loading="lazy" />
             <div class="oportunidades-card-overlay"></div>
             <div class="oportunidades-card-content">
               <div class="oportunidades-card-badge-group oportunidades-card-badge-group--carreiras">
@@ -1070,7 +1140,7 @@
 
           <!-- Card 2: Seja um Parceiro +B -->
           <div class="oportunidades-card reveal delay-2">
-            <img src="/assets/Paginas/Home/foto-seja-parceiro-gpt.webp" alt="Parceiros de negócios apertando as mãos no armazém" class="oportunidades-card-img" loading="lazy" />
+            <img src="/assets/Paginas (Imagens)/Home/foto-seja-parceiro-gpt.webp" alt="Parceiros de negócios apertando as mãos no armazém" class="oportunidades-card-img" loading="lazy" />
             <div class="oportunidades-card-overlay"></div>
             <div class="oportunidades-card-content">
               <div class="oportunidades-card-badge-group oportunidades-card-badge-group--parcerias">
@@ -1198,11 +1268,11 @@
             <!-- Linha 1: Filtros Base -->
             <div class="filters-row row-base">
               <button class="panel-filter-pill brand-super-base" data-filter="super" disabled>
-                <span class="pill-logo"><img src="/assets/Logos Grupo MaisB/supermercados-mais-b.webp" alt="Supermercados +B"></span>
+                <span class="pill-logo"><img src="/assets/Logos SubMarcas/logo-supermercados -maisB.png" alt="Supermercados +B"></span>
                 Supermercados +B
               </button>
               <button class="panel-filter-pill brand-farma-base" data-filter="farma" disabled>
-                <span class="pill-logo"><img src="/assets/Logos Grupo MaisB/farma-mais-b.webp" alt="Farma +B"></span>
+                <span class="pill-logo"><img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="Farma +B"></span>
                 Farma +B
               </button>
             </div>
@@ -1210,15 +1280,15 @@
             <div class="filters-row row-brands">
               <span class="filters-plus-badge">+</span>
               <button class="panel-filter-pill brand-wine" data-filter="wine">
-                <span class="pill-logo"><img src="/assets/Logos Grupo MaisB/the-wine-experience.webp" alt="The Wine Experience"></span>
+                <span class="pill-logo"><img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience"></span>
                 The Wine Experience
               </button>
               <button class="panel-filter-pill brand-plaza" data-filter="plaza">
-                <span class="pill-logo"><img src="/assets/Logos Grupo MaisB/villa-plaza.webp" alt="Villa Plaza"></span>
+                <span class="pill-logo"><img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza"></span>
                 Villa Plaza
               </button>
               <button class="panel-filter-pill brand-park" data-filter="park">
-                <span class="pill-logo"><img src="/assets/Logos Grupo MaisB/villa-plaza-park.webp" alt="Villa Plaza Park"></span>
+                <span class="pill-logo"><img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park"></span>
                 Villa Plaza Park
               </button>
             </div>
@@ -1242,7 +1312,7 @@
         <!-- Bloco 1: Logo e Redes Sociais -->
         <div class="footer-block social-block">
           <div class="footer-logo-container">
-            <img class="footer-logo" src="/assets/Logos Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" alt="Logo +B" loading="lazy">
+            <img class="footer-logo" src="/assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" alt="Logo +B" loading="lazy">
           </div>
           <p style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.55); line-height: 1.5; margin-bottom: 20px;">
             Somos o Grupo +B: supermercado, farmácia, gastronomia e lazer em grandes marcas e experiências no Norte.

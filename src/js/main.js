@@ -1557,7 +1557,7 @@
         year: "2019",
         title: "Nascimento da Rede +B Farma",
         desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas para comodidade e facilidade de compra.",
-        img: "/assets/Fotografias/Insta/feed-instagram-b-farma.webp"
+        img: "/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp"
       },
       {
         year: "2021",
@@ -1569,7 +1569,7 @@
         year: "2024",
         title: "Liderança Regional e Inovação Digital",
         desc: "Marca de 10.000 colaboradores diretos e indiretos, lançamento do aplicativo Clube+ Fidelidade e planejamento de expansão regional.",
-        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada.webp"
+        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
       }
     ];
 

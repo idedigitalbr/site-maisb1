@@ -11,3 +11,7 @@ node_modules/
 # Builds futuros
 dist/
 build/
+
+# Pastas locais pesadas ignoradas
+assets/
+assets-nao-usados/

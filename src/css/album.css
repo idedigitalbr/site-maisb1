@@ -1,0 +1,1509 @@
+/* ==========================================================================
+   ALBUM DE FOTOS - GRUPO MAIS B
+   ========================================================================== */
+
+/* Seção do Álbum com Fundo Branco */
+.album-section {
+    background-color: #ffffff !important;
+    color: #1A1A1A !important;
+    font-family: 'DM Sans', sans-serif !important;
+    padding: 6rem 1.5rem !important;
+    width: 100%;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+    z-index: 10;
+}
+
+.album-section .album-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Header */
+.album-section header {
+    text-align: center !important;
+    margin-bottom: 0 !important; /* Margem de rodapé controlada inteiramente pelas pílulas */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.album-badge-kicker {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: center !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.15em !important;
+    color: #ffffff !important;
+    background: #000000 !important;
+    padding: 8px 18px !important;
+    border-radius: 999px !important;
+    border: none !important;
+    margin-bottom: 12px !important; /* reduzido de 24px */
+}
+
+.album-badge-kicker .badge-dot {
+    width: 6px !important;
+    height: 6px !important;
+    background-color: #ff0000 !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+}
+
+.album-section h2.album-main-title {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: clamp(2rem, 3.4vw, 3rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
+    color: #000000 !important;
+    margin-top: 0 !important; /* reduzido de 0.5rem */
+    margin-bottom: 1.5rem !important; /* reduzido de 2.5rem */
+    text-align: center !important;
+}
+
+/* Controles de Filtros e Busca */
+.album-filter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important; /* Sempre vertical (busca no topo, pílulas embaixo) */
+    gap: 1.5rem !important;
+    margin-bottom: 1.8rem !important; /* espaçamento otimizado para o grid */
+    width: 100%;
+}
+
+.album-filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap !important; /* Sempre quebra linha (sem scroll) no desktop e mobile */
+    gap: 0.65rem;
+    padding: 5px 0;
+}
+
+.album-filter-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(26, 26, 26, 0.05) !important;
+    border: 1.5px solid rgba(26, 26, 26, 0.12) !important;
+    color: rgba(26, 26, 26, 0.7) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.52rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    white-space: nowrap !important; /* impede quebras de linha em +B */
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.album-filter-btn.hidden-filter {
+    display: none !important;
+}
+
+.album-filter-btn.voltar-filtros-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 10px !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(26, 26, 26, 0.45) !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.album-filter-btn.voltar-filtros-btn.hidden {
+    display: none !important;
+}
+
+.album-filter-btn.voltar-filtros-btn:hover {
+    background: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+    transform: none !important;
+}
+
+/* Hover e Active por Categoria da Marca */
+.album-filter-btn[data-filter="all"]:hover,
+.album-filter-btn[data-filter="all"].active {
+    background-color: #1A1A1A !important;
+    border-color: #1A1A1A !important;
+    color: #ffffff !important;
+}
+
+.album-filter-btn[data-filter="grupo-b"]:hover,
+.album-filter-btn[data-filter="grupo-b"].active {
+    background-color: #2b2106 !important;
+    border-color: #FFC400 !important;
+    color: #FFC400 !important;
+}
+
+.album-filter-btn[data-filter="supermercados-b"]:hover,
+.album-filter-btn[data-filter="supermercados-b"].active {
+    background-color: #2b0609 !important;
+    border-color: #F20D18 !important;
+    color: #F20D18 !important;
+}
+
+.album-filter-btn[data-filter="farma-b"]:hover,
+.album-filter-btn[data-filter="farma-b"].active {
+    background-color: #2b0609 !important;
+    border-color: #F20D18 !important;
+    color: #F20D18 !important;
+}
+
+.album-filter-btn[data-filter="villa-plaza"]:hover,
+.album-filter-btn[data-filter="villa-plaza"].active {
+    background-color: #2a1703 !important;
+    border-color: #ff8a00 !important;
+    color: #ff8a00 !important;
+}
+
+.album-filter-btn[data-filter="villa-plaza-park"]:hover,
+.album-filter-btn[data-filter="villa-plaza-park"].active {
+    background-color: #041f0f !important;
+    border-color: #16a34a !important;
+    color: #16a34a !important;
+}
+
+.album-filter-btn[data-filter="the-wine"]:hover,
+.album-filter-btn[data-filter="the-wine"].active {
+    background-color: #1a060b !important;
+    border-color: #a31d3f !important;
+    color: #ff5c82 !important;
+}
+
+/* Barra de Busca */
+.album-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 280px;
+    max-width: 100%;
+    order: -1 !important; /* Joga a busca para o topo, abaixo do título */
+}
+
+#album-photo-search {
+    width: 100%;
+    padding: 0.52rem 2.2rem 0.52rem 1.1rem;
+    border: 1.5px solid rgba(26, 26, 26, 0.18);
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #1A1A1A;
+    background-color: rgba(26, 26, 26, 0.03);
+    outline: none;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#album-photo-search:focus {
+    border-color: #1A1A1A;
+    background-color: rgba(26, 26, 26, 0.06);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.album-search-icon {
+    position: absolute;
+    right: 1.1rem;
+    color: rgba(26, 26, 26, 0.4);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+#album-photo-search:focus + .album-search-icon {
+    color: #1A1A1A;
+}
+
+/* Filtros Filhos (Secundários) */
+.album-child-filter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: -0.75rem !important; /* aproxima dos controles de filtro principais */
+    margin-bottom: 1.8rem !important; /* espaçamento otimizado para o grid no desktop */
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.album-child-filter-controls.hidden {
+    display: none !important;
+}
+
+/* Botões de Unidade (Sub-filtro) */
+.album-unit-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(26, 26, 26, 0.03) !important;
+    border: 1px solid rgba(26, 26, 26, 0.08) !important;
+    color: rgba(26, 26, 26, 0.55) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.64rem !important; /* menor tamanho para hierarquia visual */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    padding: 0.32rem 0.8rem !important; /* menor padding */
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.album-unit-btn.hidden-filter {
+    display: none !important;
+}
+
+.album-unit-btn:hover {
+    background: rgba(26, 26, 26, 0.06) !important;
+    color: #1A1A1A !important;
+}
+
+/* Soft active (enfraquecendo a cor da pílula ativa) por marca */
+.album-unit-btn.active.unit-theme-all,
+.album-unit-btn.active.unit-theme-grupo-b {
+    background-color: rgba(255, 196, 0, 0.12) !important; /* amarelo suave */
+    border-color: rgba(255, 196, 0, 0.3) !important;
+    color: #b58b00 !important; /* amarelo escuro legível */
+}
+
+.album-unit-btn.active.unit-theme-supermercados-b,
+.album-unit-btn.active.unit-theme-farma-b {
+    background-color: rgba(242, 13, 24, 0.08) !important; /* vermelho suave */
+    border-color: rgba(242, 13, 24, 0.25) !important;
+    color: #F20D18 !important;
+}
+
+.album-unit-btn.active.unit-theme-villa-plaza {
+    background-color: rgba(255, 138, 0, 0.08) !important; /* laranja suave */
+    border-color: rgba(255, 138, 0, 0.25) !important;
+    color: #ff8a00 !important;
+}
+
+.album-unit-btn.active.unit-theme-villa-plaza-park {
+    background-color: rgba(22, 163, 74, 0.08) !important; /* verde suave */
+    border-color: rgba(22, 163, 74, 0.25) !important;
+    color: #16a34a !important;
+}
+
+.album-unit-btn.active.unit-theme-the-wine {
+    background-color: rgba(163, 29, 63, 0.08) !important; /* vinho suave */
+    border-color: rgba(163, 29, 63, 0.25) !important;
+    color: #a31d3f !important;
+}
+
+.album-child-filter-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: 1px solid rgba(26, 26, 26, 0.12) !important;
+    color: rgba(26, 26, 26, 0.6) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.64rem !important; /* menor tamanho para hierarquia visual */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.32rem 0.8rem !important; /* menor padding */
+    border-radius: 20px !important;
+    cursor: pointer;
+    white-space: nowrap !important; /* impede quebras de linha */
+    transition: all 0.25s ease;
+}
+
+.album-child-filter-btn:hover,
+.album-child-filter-btn.active {
+    background: rgba(26, 26, 26, 0.08) !important;
+    color: #1A1A1A !important;
+    border-color: #1A1A1A !important;
+}
+
+/* Temas específicos para botões ativos dos filtros filhos (Soft Active) */
+.album-child-filter-btn.active-theme-supermercados-b:hover,
+.album-child-filter-btn.active-theme-supermercados-b.active {
+    background-color: rgba(242, 13, 24, 0.08) !important;
+    border-color: rgba(242, 13, 24, 0.25) !important;
+    color: #F20D18 !important;
+}
+
+.album-child-filter-btn.active-theme-farma-b:hover,
+.album-child-filter-btn.active-theme-farma-b.active {
+    background-color: rgba(242, 13, 24, 0.08) !important;
+    border-color: rgba(242, 13, 24, 0.25) !important;
+    color: #F20D18 !important;
+}
+
+.album-child-filter-btn.active-theme-villa-plaza:hover,
+.album-child-filter-btn.active-theme-villa-plaza.active {
+    background-color: rgba(255, 138, 0, 0.08) !important;
+    border-color: rgba(255, 138, 0, 0.25) !important;
+    color: #ff8a00 !important;
+}
+
+.album-child-filter-btn.active-theme-villa-plaza-park:hover,
+.album-child-filter-btn.active-theme-villa-plaza-park.active {
+    background-color: rgba(22, 163, 74, 0.08) !important;
+    border-color: rgba(22, 163, 74, 0.25) !important;
+    color: #16a34a !important;
+}
+
+.album-child-filter-btn.active-theme-the-wine:hover,
+.album-child-filter-btn.active-theme-the-wine.active {
+    background-color: rgba(163, 29, 63, 0.08) !important;
+    border-color: rgba(163, 29, 63, 0.25) !important;
+    color: #a31d3f !important;
+}
+
+.album-child-filter-btn.active-theme-grupo-b:hover,
+.album-child-filter-btn.active-theme-grupo-b.active {
+    background-color: rgba(255, 196, 0, 0.12) !important;
+    border-color: rgba(255, 196, 0, 0.3) !important;
+    color: #b58b00 !important;
+}
+
+/* Sugestões de Busca */
+.album-search-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    max-height: 220px;
+    overflow-y: auto;
+    transition: all 0.2s ease;
+}
+
+.album-search-suggestions.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+}
+
+.album-suggestion-item {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #1A1A1A;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.album-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.album-suggestion-item:hover {
+    background-color: rgba(22, 163, 74, 0.06);
+    color: #16a34a;
+}
+
+.album-suggestion-type {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6f6658;
+    background-color: #f1f5f9;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Grid Layout */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Card */
+.album-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+}
+
+.album-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 28px;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    pointer-events: none;
+    transition: border-width 0.3s ease, border-color 0.3s ease;
+    z-index: 5;
+}
+
+/* Efeito Hover Geral */
+.album-grid:hover > .album-card:not(:hover) {
+    opacity: 0.55;
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Efeitos Neon por Marca */
+.album-card[data-category="grupo-b"]:hover {
+    box-shadow: 0 8px 24px rgba(255, 196, 0, 0.25), 0 0 25px rgba(255, 196, 0, 0.45) !important;
+}
+.album-card[data-category="grupo-b"]:hover::after {
+    border: 3px solid #FFC400 !important;
+}
+.album-card[data-category="grupo-b"] .album-zoom-icon svg {
+    stroke: #FFC400 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.8)) !important;
+}
+
+.album-card[data-category="supermercados-b"]:hover {
+    box-shadow: 0 8px 24px rgba(242, 13, 24, 0.25), 0 0 25px rgba(242, 13, 24, 0.45) !important;
+}
+.album-card[data-category="supermercados-b"]:hover::after {
+    border: 3px solid #F20D18 !important;
+}
+.album-card[data-category="supermercados-b"] .album-zoom-icon svg {
+    stroke: #F20D18 !important;
+    filter: drop-shadow(0 0 6px rgba(242, 13, 24, 0.8)) !important;
+}
+
+.album-card[data-category="farma-b"]:hover {
+    box-shadow: 0 8px 24px rgba(242, 13, 24, 0.25), 0 0 25px rgba(242, 13, 24, 0.45) !important;
+}
+.album-card[data-category="farma-b"]:hover::after {
+    border: 3px solid #F20D18 !important;
+}
+.album-card[data-category="farma-b"] .album-zoom-icon svg {
+    stroke: #F20D18 !important;
+    filter: drop-shadow(0 0 6px rgba(242, 13, 24, 0.8)) !important;
+}
+
+.album-card[data-category="villa-plaza"]:hover {
+    box-shadow: 0 8px 24px rgba(255, 138, 0, 0.25), 0 0 25px rgba(255, 138, 0, 0.45) !important;
+}
+.album-card[data-category="villa-plaza"]:hover::after {
+    border: 3px solid #ff8a00 !important;
+}
+.album-card[data-category="villa-plaza"] .album-zoom-icon svg {
+    stroke: #ff8a00 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 138, 0, 0.8)) !important;
+}
+
+.album-card[data-category="villa-plaza-park"]:hover {
+    box-shadow: 0 8px 24px rgba(22, 163, 74, 0.25), 0 0 25px rgba(22, 163, 74, 0.45) !important;
+}
+.album-card[data-category="villa-plaza-park"]:hover::after {
+    border: 3px solid #16a34a !important;
+}
+.album-card[data-category="villa-plaza-park"] .album-zoom-icon svg {
+    stroke: #16a34a !important;
+    filter: drop-shadow(0 0 6px rgba(22, 163, 74, 0.8)) !important;
+}
+
+.album-card[data-category="the-wine"]:hover {
+    box-shadow: 0 8px 24px rgba(163, 29, 63, 0.25), 0 0 25px rgba(163, 29, 63, 0.45) !important;
+}
+.album-card[data-category="the-wine"]:hover::after {
+    border: 3px solid #a31d3f !important;
+}
+.album-card[data-category="the-wine"] .album-zoom-icon svg {
+    stroke: #ff5c82 !important;
+    filter: drop-shadow(0 0 6px rgba(255, 92, 130, 0.8)) !important;
+}
+
+/* Estado Visited */
+.album-card.visited::after {
+    border-width: 3px !important;
+}
+.album-card[data-category="grupo-b"].visited::after { border-color: #FFC400 !important; }
+.album-card[data-category="supermercados-b"].visited::after { border-color: #F20D18 !important; }
+.album-card[data-category="farma-b"].visited::after { border-color: #F20D18 !important; }
+.album-card[data-category="villa-plaza"].visited::after { border-color: #ff8a00 !important; }
+.album-card[data-category="villa-plaza-park"].visited::after { border-color: #16a34a !important; }
+.album-card[data-category="the-wine"].visited::after { border-color: #a31d3f !important; }
+
+/* Image Container */
+.album-img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 133.33%; /* 3:4 Aspect Ratio */
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+.album-img-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 2;
+}
+
+.album-card:hover .album-img-container::after {
+    opacity: 1;
+}
+
+.album-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    will-change: transform;
+    z-index: 1;
+}
+
+.album-card:hover .album-img-container img {
+    transform: scale(1.06);
+}
+
+/* Lupa */
+.album-zoom-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.album-card:hover .album-zoom-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Text Container */
+.album-info-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 1.35rem 0.2rem 1.35rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0.15) 75%, transparent 100%);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 3;
+    /* garante que nunca cresça além do card */
+    overflow: hidden;
+}
+
+/* Badges Container - Estilo Carrossel Horizontal Sem Quebra */
+.album-badges-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    align-items: center !important;
+    margin-bottom: 0.45rem !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    pointer-events: auto !important; /* permite scroll/swipe com o mouse/dedo */
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important;  /* IE and Edge */
+}
+
+.album-badges-container::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Edge and Opera */
+}
+
+.album-badges-container .album-badge {
+    flex-shrink: 0 !important;
+}
+
+.album-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.52rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 30px;
+    line-height: 1;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.album-unit-badge,
+.album-sub-badge {
+    font-size: 0.46rem !important; /* menor tamanho para hierarquia visual */
+    padding: 0.15rem 0.55rem !important;
+}
+
+/* Badges de Unidade Soft (Enfraquecendo a cor da pílula) */
+.badge-grupo-b-soft {
+    background-color: rgba(255, 196, 0, 0.15) !important; /* amarelo suave */
+    border: 1px solid rgba(255, 196, 0, 0.3) !important;
+    color: #ffca18 !important;
+}
+
+.badge-supermercados-b-soft,
+.badge-farma-b-soft {
+    background-color: rgba(242, 13, 24, 0.15) !important; /* vermelho suave */
+    border: 1px solid rgba(242, 13, 24, 0.3) !important;
+    color: #ff4a54 !important;
+}
+
+.badge-villa-plaza-soft {
+    background-color: rgba(255, 138, 0, 0.15) !important; /* laranja suave */
+    border: 1px solid rgba(255, 138, 0, 0.3) !important;
+    color: #ff9824 !important;
+}
+
+.badge-villa-plaza-park-soft {
+    background-color: rgba(22, 163, 74, 0.15) !important; /* verde suave */
+    border: 1px solid rgba(22, 163, 74, 0.3) !important;
+    color: #22c55e !important;
+}
+
+.badge-the-wine-soft {
+    background-color: rgba(163, 29, 63, 0.15) !important; /* vinho suave */
+    border: 1px solid rgba(163, 29, 63, 0.3) !important;
+    color: #ff5c82 !important;
+}
+
+/* Badges de Subcategoria Softest (Mais suave ainda) */
+.badge-grupo-b-softest {
+    background-color: rgba(255, 196, 0, 0.08) !important;
+    border: 1.5px dashed rgba(255, 196, 0, 0.25) !important;
+    color: rgba(255, 202, 24, 0.8) !important;
+}
+
+.badge-supermercados-b-softest,
+.badge-farma-b-softest {
+    background-color: rgba(242, 13, 24, 0.08) !important;
+    border: 1.5px dashed rgba(242, 13, 24, 0.22) !important;
+    color: rgba(255, 74, 84, 0.85) !important;
+}
+
+.badge-villa-plaza-softest {
+    background-color: rgba(255, 138, 0, 0.08) !important;
+    border: 1.5px dashed rgba(255, 138, 0, 0.22) !important;
+    color: rgba(255, 152, 36, 0.85) !important;
+}
+
+.badge-villa-plaza-park-softest {
+    background-color: rgba(22, 163, 74, 0.08) !important;
+    border: 1.5px dashed rgba(22, 163, 74, 0.22) !important;
+    color: rgba(34, 197, 94, 0.85) !important;
+}
+
+.badge-the-wine-softest {
+    background-color: rgba(163, 29, 63, 0.08) !important;
+    border: 1.5px dashed rgba(163, 29, 63, 0.22) !important;
+    color: rgba(255, 92, 130, 0.85) !important;
+}
+
+/* Removido mais-badge */
+
+.badge-grupo-b {
+    background-color: rgba(45, 38, 0, 0.4) !important;
+    border: 1px solid rgba(255, 196, 0, 0.35) !important;
+    color: #FFC400 !important;
+}
+
+.badge-supermercados-b {
+    background-color: rgba(45, 6, 8, 0.4) !important;
+    border: 1px solid rgba(242, 13, 24, 0.35) !important;
+    color: #F20D18 !important;
+}
+
+.badge-farma-b {
+    background-color: rgba(45, 6, 8, 0.4) !important;
+    border: 1px solid rgba(242, 13, 24, 0.35) !important;
+    color: #F20D18 !important;
+}
+
+.badge-villa-plaza {
+    background-color: rgba(45, 25, 3, 0.4) !important;
+    border: 1px solid rgba(255, 138, 0, 0.35) !important;
+    color: #ff8a00 !important;
+}
+
+.badge-villa-plaza-park {
+    background-color: rgba(4, 40, 20, 0.4) !important;
+    border: 1px solid rgba(22, 163, 74, 0.35) !important;
+    color: #16a34a !important;
+}
+
+.badge-the-wine {
+    background-color: rgba(45, 6, 12, 0.4) !important;
+    border: 1px solid rgba(163, 29, 63, 0.35) !important;
+    color: #ff5c82 !important;
+}
+
+.album-photo-title {
+    color: #ffffff !important;
+    margin-bottom: 0.15rem;
+    line-height: 1.15 !important;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.album-photo-title-first {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff !important;
+}
+
+.album-photo-title-rest {
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff !important;
+}
+
+/* Hint de hover (setinha) — visível por padrão, some no hover */
+.album-hover-hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+    margin-bottom: 0rem;
+    height: 1rem;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 1;
+    transform: translateY(0);
+    width: 100%;
+}
+
+.album-hover-hint svg {
+    flex-shrink: 0;
+    opacity: 0.85;
+    transition: filter 0.25s ease, stroke 0.25s ease;
+}
+
+/* Efeitos Neon Leves na Setinha por Categoria */
+.album-card[data-category="grupo-b"] .album-hover-hint svg {
+    stroke: #FFC400 !important;
+    filter: drop-shadow(0 0 3px rgba(255, 196, 0, 0.8)) !important;
+}
+.album-card[data-category="supermercados-b"] .album-hover-hint svg,
+.album-card[data-category="farma-b"] .album-hover-hint svg {
+    stroke: #F20D18 !important;
+    filter: drop-shadow(0 0 3px rgba(242, 13, 24, 0.8)) !important;
+}
+.album-card[data-category="villa-plaza"] .album-hover-hint svg {
+    stroke: #ff8a00 !important;
+    filter: drop-shadow(0 0 3px rgba(255, 138, 0, 0.8)) !important;
+}
+.album-card[data-category="villa-plaza-park"] .album-hover-hint svg {
+    stroke: #16a34a !important;
+    filter: drop-shadow(0 0 3px rgba(22, 163, 74, 0.8)) !important;
+}
+.album-card[data-category="the-wine"] .album-hover-hint svg {
+    stroke: #ff5c82 !important;
+    filter: drop-shadow(0 0 3px rgba(255, 92, 130, 0.8)) !important;
+}
+
+/* Desc — escondida por padrão, desliza de baixo pra cima no hover */
+.album-photo-desc {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #FFC400;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.3s ease,
+                transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                margin-top 0.3s ease;
+    margin-top: 0;
+}
+
+/* No hover do card: mostra desc, esconde hint */
+.album-card:hover .album-photo-desc {
+    max-height: 3rem;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 0.28rem;
+    margin-bottom: 0.35rem;
+}
+
+.album-card:hover .album-hover-hint {
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    height: 0;
+    margin-top: 0;
+}
+
+/* Modificações por Categoria para a cor do texto da descrição */
+.album-card[data-category="supermercados-b"] .album-photo-desc { color: #ff8087; }
+.album-card[data-category="farma-b"] .album-photo-desc { color: #ff8087; }
+.album-card[data-category="villa-plaza"] .album-photo-desc { color: #ffbc75; }
+.album-card[data-category="villa-plaza-park"] .album-photo-desc { color: #8cf0aa; }
+.album-card[data-category="the-wine"] .album-photo-desc { color: #ff9cb3; }
+
+/* Animações e Visibilidade */
+.album-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.album-card.visible {
+    animation: albumFadeIn 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes albumFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão Ver Mais (Verde Escuro) */
+.album-load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.album-load-more-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 52px !important;
+    padding: 0 28px !important;
+    border-radius: 999px !important;
+    border: 1px solid transparent !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 0.94rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all .25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.album-load-more-btn:active {
+    transform: translateY(-1px) !important;
+}
+
+/* Estilização Temática do Botão Ver Mais de acordo com a Marca Ativa */
+
+/* Supermercados +B, Grupo +B e Todos (Padrão: Amarelo com hover Vermelho) */
+.album-load-more-btn.theme-all,
+.album-load-more-btn.theme-grupo-b,
+.album-load-more-btn.theme-supermercados-b {
+    background: var(--yellow) !important;
+    color: #000000 !important;
+    box-shadow: 0 10px 25px rgba(255, 196, 0, 0.18) !important;
+}
+.album-load-more-btn.theme-all:hover,
+.album-load-more-btn.theme-grupo-b:hover,
+.album-load-more-btn.theme-supermercados-b:hover {
+    background: var(--red) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(242, 13, 24, 0.4) !important;
+}
+
+/* +B Farma (Vermelho) */
+.album-load-more-btn.theme-farma-b {
+    background: var(--red) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(242, 13, 24, 0.18) !important;
+}
+.album-load-more-btn.theme-farma-b:hover {
+    background: #b8050e !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(242, 13, 24, 0.35) !important;
+}
+
+/* Villa Plaza (Laranja) */
+.album-load-more-btn.theme-villa-plaza {
+    background: #ff8a00 !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(255, 138, 0, 0.18) !important;
+}
+.album-load-more-btn.theme-villa-plaza:hover {
+    background: #d47300 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(255, 138, 0, 0.35) !important;
+}
+
+/* Villa Plaza Park (Verde) */
+.album-load-more-btn.theme-villa-plaza-park {
+    background: #16a34a !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.18) !important;
+}
+.album-load-more-btn.theme-villa-plaza-park:hover {
+    background: #117d38 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(22, 163, 74, 0.35) !important;
+}
+
+/* The Wine Experience (Vinho) */
+.album-load-more-btn.theme-the-wine {
+    background: #a31d3f !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(163, 29, 63, 0.18) !important;
+}
+.album-load-more-btn.theme-the-wine:hover {
+    background: #7a152e !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(163, 29, 63, 0.35) !important;
+}
+
+.album-load-more-btn.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   LIGHTBOX OVERLAY (MODAL EM TELA CHEIA)
+   ========================================================================== */
+.album-lightbox {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.92) !important;
+    z-index: 99999999 !important; /* Mantém na frente do cabeçalho */
+    display: flex !important;
+    flex-direction: column !important; /* Stack do card e das bolinhas */
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.35s ease;
+}
+
+.album-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.album-lightbox-wrapper {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: min(90vw, 67.5vh) !important;
+    max-width: 500px !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.album-lightbox-card-container {
+    width: 100% !important;
+    height: min(120vw, 90vh) !important;
+    max-width: 500px !important;
+    max-height: 666px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    border-radius: 28px !important;
+    overflow: hidden !important;
+    background-color: #000000 !important;
+    transform: scale(0.88);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.album-lightbox.active .album-lightbox-card-container {
+    transform: scale(1);
+}
+
+/* Fullscreen Card */
+.album-fullscreen-card {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 28px !important;
+    pointer-events: auto !important;
+    cursor: default !important;
+    background-color: #000000 !important;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 30px 80px -10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.album-fullscreen-card,
+.album-fullscreen-card .album-img-container,
+.album-fullscreen-card .album-img-container img {
+    border: none !important;
+    outline: none !important;
+}
+
+.album-fullscreen-card::after {
+    content: '' !important;
+    border: none !important;
+}
+
+.album-fullscreen-card .album-img-container::after {
+    opacity: 0 !important;
+}
+
+.album-fullscreen-card .album-img-container img {
+    transform: none !important;
+}
+
+.album-fullscreen-card .album-zoom-icon {
+    display: none !important;
+}
+
+.album-fullscreen-card .album-info-container {
+    padding: 5rem 1.8rem 1.20rem 1.8rem !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.1) 75%, transparent 100%) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease !important;
+    /* Padrão: texto visível quando o mouse está fora da foto */
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* Oculta ao adicionar class info-hidden via clique (focando na foto) */
+.album-fullscreen-card.info-hidden .album-info-container {
+    transform: translateY(100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.album-fullscreen-card .album-hover-hint {
+    display: none !important;
+}
+
+.album-fullscreen-card .album-badges-container {
+    margin-bottom: 0.35rem !important;
+    justify-content: flex-start !important;
+}
+
+.album-fullscreen-card .album-badge {
+    font-size: 0.52rem !important;
+    padding: 0.22rem 0.65rem !important;
+    margin-bottom: 0 !important;
+}
+
+.album-fullscreen-card .album-photo-title {
+    height: auto !important;
+    margin-bottom: 0.35rem !important;
+}
+
+.album-fullscreen-card .album-photo-title-first {
+    font-size: 1.55rem !important;
+    font-weight: 800 !important;
+}
+
+.album-fullscreen-card .album-photo-title-rest {
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+}
+
+.album-fullscreen-card .album-photo-desc {
+    font-size: 0.88rem !important;
+    height: auto !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 0.35rem !important;
+    -webkit-line-clamp: unset !important;
+    line-height: 1.35 !important;
+}
+
+/* Botão Fechar (X) do Lightbox */
+.album-lightbox-close {
+    position: absolute !important;
+    top: 16px !important;
+    right: -22px !important;
+    background: #FFC400 !important; /* Fallback amarelo */
+    color: #000000 !important;
+    font-size: 1.7rem !important;
+    font-weight: 800 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    z-index: 1100 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.album-lightbox-close:hover {
+    transform: scale(1.12) !important;
+    filter: brightness(1.15) !important;
+}
+
+/* Cores do Botão Fechar (X) por Categoria do Card */
+.album-lightbox[data-category="grupo-b"] .album-lightbox-close {
+    background: #2b2106 !important;
+    color: #FFC400 !important;
+    box-shadow: 0 4px 12px rgba(255, 196, 0, 0.4) !important;
+}
+.album-lightbox[data-category="supermercados-b"] .album-lightbox-close {
+    background: #2b0609 !important;
+    color: #F20D18 !important;
+    box-shadow: 0 4px 12px rgba(242, 13, 24, 0.4) !important;
+}
+.album-lightbox[data-category="farma-b"] .album-lightbox-close {
+    background: #2b0609 !important;
+    color: #F20D18 !important;
+    box-shadow: 0 4px 12px rgba(242, 13, 24, 0.4) !important;
+}
+.album-lightbox[data-category="villa-plaza"] .album-lightbox-close {
+    background: #2a1703 !important;
+    color: #ff8a00 !important;
+    box-shadow: 0 4px 12px rgba(255, 138, 0, 0.4) !important;
+}
+.album-lightbox[data-category="villa-plaza-park"] .album-lightbox-close {
+    background: #041f0f !important;
+    color: #16a34a !important;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4) !important;
+}
+.album-lightbox[data-category="the-wine"] .album-lightbox-close {
+    background: #1a060b !important;
+    color: #ff5c82 !important;
+    box-shadow: 0 4px 12px rgba(163, 29, 63, 0.4) !important;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE E TABLET)
+   ========================================================================== */
+@media (max-width: 640px) {
+    .album-section {
+        padding: 2.5rem 1rem !important; /* reduz o padding da seção */
+    }
+    
+    .album-section h2.album-main-title {
+        font-size: 2.1rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
+    }
+    
+    .album-filter-controls {
+        gap: 0.8rem !important;
+        margin-bottom: 1.2rem !important; /* reduz espaçamento inferior no mobile */
+    }
+    
+    .album-filter-buttons {
+        gap: 0.5rem !important;
+    }
+
+    .album-search-container {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .album-filter-btn {
+        padding: 0.45rem 0.9rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Estilos responsivos para filtros filhos */
+    .album-child-filter-controls {
+        margin-top: -0.4rem !important;
+        margin-bottom: 1.2rem !important; /* reduz espaçamento inferior no mobile */
+        gap: 0.5rem !important;
+    }
+    .album-child-filter-btn {
+        padding: 0.35rem 0.8rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    .album-info-container {
+        padding: 2rem 0.8rem 0.65rem 0.8rem !important;
+    }
+    
+    .album-photo-title {
+        height: auto !important;
+        min-height: 2.2rem !important;
+        margin-bottom: 0.05rem !important;
+    }
+
+    .album-photo-title-first {
+        font-size: 1.05rem !important;
+    }
+
+    .album-photo-title-rest {
+        font-size: 0.85rem !important;
+    }
+    
+    .album-photo-desc {
+        font-size: 0.70rem !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.25 !important;
+    }
+
+    .album-badge {
+        font-size: 0.52rem !important;
+        padding: 0.15rem 0.5rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    /* Modal no celular */
+    .album-lightbox-wrapper {
+        width: min(85vw, 60vh) !important;
+    }
+    .album-lightbox-card-container {
+        width: 100% !important;
+        height: min(113vw, 80vh) !important;
+    }
+
+    .album-lightbox .album-fullscreen-card .album-info-container {
+        padding: 2.2rem 1.2rem 0.95rem 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    .album-lightbox .album-fullscreen-card .album-badges-container {
+        justify-content: center !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .album-lightbox .album-fullscreen-card .album-photo-title {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-bottom: 0.2rem !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .album-lightbox .album-fullscreen-card .album-photo-title-first {
+        font-size: 1.3rem !important;
+    }
+
+    .album-lightbox .album-fullscreen-card .album-photo-title-rest {
+        font-size: 1.05rem !important;
+    }
+    
+    .album-lightbox .album-fullscreen-card .album-photo-desc {
+        font-size: 0.8rem !important;
+        height: auto !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .album-lightbox .album-fullscreen-card .album-badge {
+        font-size: 0.46rem !important;
+        padding: 0.15rem 0.55rem !important;
+        margin-bottom: 0 !important;
+        align-self: center !important;
+    }
+
+    .album-lightbox-close {
+        top: -22px !important;
+        right: 10px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.4rem !important;
+    }
+}
+
+/* ==========================================================================
+   NAVEGAÇÃO E DOTS (LIGHTBOX CARROSSEL ESTILO INSTAGRAM)
+   ========================================================================== */
+.album-lightbox-nav {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(26, 26, 26, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 10000000 !important;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    outline: none !important;
+}
+
+.album-lightbox-nav.nav-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+.album-lightbox-nav:hover {
+    background: rgba(26, 26, 26, 0.7) !important;
+    transform: translateY(-50%) scale(1.08) !important;
+}
+
+.album-lightbox-nav.prev {
+    left: -70px !important;
+}
+
+.album-lightbox-nav.next {
+    right: -70px !important;
+}
+
+/* Cores ativas das setas baseadas na marca ao dar hover */
+.album-lightbox[data-category="grupo-b"] .album-lightbox-nav:hover { color: #FFC400 !important; border-color: #FFC400 !important; }
+.album-lightbox[data-category="supermercados-b"] .album-lightbox-nav:hover { color: #F20D18 !important; border-color: #F20D18 !important; }
+.album-lightbox[data-category="farma-b"] .album-lightbox-nav:hover { color: #F20D18 !important; border-color: #F20D18 !important; }
+.album-lightbox[data-category="villa-plaza"] .album-lightbox-nav:hover { color: #ff8a00 !important; border-color: #ff8a00 !important; }
+.album-lightbox[data-category="villa-plaza-park"] .album-lightbox-nav:hover { color: #16a34a !important; border-color: #16a34a !important; }
+.album-lightbox[data-category="the-wine"] .album-lightbox-nav:hover { color: #ff5c82 !important; border-color: #ff5c82 !important; }
+
+/* Dots Indicadores (Estilo Instagram) */
+.album-lightbox-dots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+    width: 100% !important;
+    pointer-events: auto !important;
+}
+
+.album-lightbox-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.album-lightbox-dot:hover {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.album-lightbox-dot.active {
+    background-color: #ffffff !important;
+    transform: scale(1.3) !important;
+}
+
+/* Cores dos dots ativos por submarca */
+.album-lightbox[data-category="grupo-b"] .album-lightbox-dot.active { background-color: #FFC400 !important; }
+.album-lightbox[data-category="supermercados-b"] .album-lightbox-dot.active { background-color: #F20D18 !important; }
+.album-lightbox[data-category="farma-b"] .album-lightbox-dot.active { background-color: #F20D18 !important; }
+.album-lightbox[data-category="villa-plaza"] .album-lightbox-dot.active { background-color: #ff8a00 !important; }
+.album-lightbox[data-category="villa-plaza-park"] .album-lightbox-dot.active { background-color: #16a34a !important; }
+.album-lightbox[data-category="the-wine"] .album-lightbox-dot.active { background-color: #ff5c82 !important; }
+
+/* Setas responsivas em tablets e ocultação completa em celulares */
+@media (max-width: 768px) {
+    .album-lightbox-nav {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .album-lightbox-nav.prev {
+        left: 10px !important;
+    }
+    .album-lightbox-nav.next {
+        right: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .album-lightbox-nav {
+        display: none !important;
+    }
+}
+
+/* Otimização de Performance e Aceleração por Hardware (GPU) */
+.album-card,
+.album-img-container img,
+.album-hover-hint,
+.album-photo-desc,
+.album-info-container,
+.album-lightbox,
+.album-lightbox-card-container,
+.album-lightbox-nav,
+.album-lightbox-dot {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}

@@ -87,7 +87,7 @@ window.units = [
         { title: "Hortifrúti Central", url: "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-hortifruti-com-clientes.webp" },
         { title: "Visão Geral Hortifrúti", url: "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-visao-geral-do-hortifruti.webp" },
         { title: "Açougue e Carnes", url: "/assets/Fotografias/Supermercado +B/03_Carnes/unid-tapana-foto-de-secao-de-carnes.webp" },
-        { title: "Corredor Central Mercearia", url: "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-corredor-central-da-mercearia.webp" },
+        { title: "Corredor Central Mercearia", url: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp" },
         { title: "Laticínios e Frios", url: "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-tapana-foto-de-secao-de-lacteos.webp" },
         { title: "Setor de Congelados", url: "/assets/Fotografias/Supermercado +B/07_Congelados/unid-tapana-foto-de-congelados.webp" }
       ]
@@ -141,8 +141,8 @@ window.units = [
         { title: "Atendimento Parede Verde", url: "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-parede-verde-do-hortifruti.webp" },
         { title: "Açougue / Carnes Embaladas", url: "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-secao-de-carnes.webp" },
         { title: "Carnes Embaladas Especiais", url: "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-carnes-embaladas.webp" },
-        { title: "Parquinho Villa Plaza Park", url: "/assets/Fotografias/Insta/feed-instagram-villa-plaza-park-infantil.webp" },
-        { title: "Restaurante Villa Plaza", url: "/assets/Fotografias/Insta/feed-instagram-villa-plaza.webp" }
+        { title: "Parquinho Villa Plaza Park", url: "/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp" },
+        { title: "Restaurante Villa Plaza", url: "/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza.webp" }
       ]
     },
     googleReviews: [
