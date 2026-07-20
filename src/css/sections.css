@@ -3924,3 +3924,20 @@ textarea.form-control {
     padding: 0 16px;
   }
 }
+
+/* ==========================================================================
+   Seção Banner Run (Inserida antes do FAQ)
+   ========================================================================== */
+.section-banner-run {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black, #000);
+}
+
+.banner-run-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
