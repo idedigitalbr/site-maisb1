@@ -3926,16 +3926,68 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   Seção Banner Run (Inserida antes do FAQ)
+   Seção Eventos (Inserida antes do FAQ)
    ========================================================================== */
-.section-banner-run {
+.section-events {
+  padding: 60px 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: var(--black, #000);
 }
 
-.banner-run-img {
+.section-events .section-head {
+  text-align: center;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.events-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 208, 0, 0.1);
+  border: 1px solid rgba(255, 208, 0, 0.3);
+  color: #c98e00;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.events-badge-icon {
+  width: 12px;
+  height: 12px;
+  fill: #ffd000;
+  stroke: #c98e00;
+  stroke-width: 2px;
+}
+
+.events-title {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.events-banner-wrapper {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+}
+
+.events-banner-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+}
+
+.events-banner-img {
   width: 100%;
   height: auto;
   display: block;

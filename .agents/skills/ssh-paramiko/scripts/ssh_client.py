@@ -34,7 +34,7 @@ class FingerprintVerificationPolicy(paramiko.MissingHostKeyPolicy):
 def load_pkey_from_string(key_string, password=None):
     errors = []
     # Attempt parsing using supported key types
-    for key_class in [paramiko.Ed25519Key, paramiko.RSAKey, paramiko.ECDSAKey, paramiko.DSSKey]:
+    for key_class in [paramiko.Ed25519Key, paramiko.RSAKey, paramiko.ECDSAKey]:
         try:
             key_file = io.StringIO(key_string.strip())
             return key_class.from_private_key(key_file, password=password)
