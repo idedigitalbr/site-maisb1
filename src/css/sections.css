@@ -234,7 +234,7 @@ p {
 .testimonials-section-premium {
   position: relative;
   background: #ffc400 url('/assets/Paginas (Imagens)/Home/bg-depoimentos-amarelo.webp') no-repeat center center / cover !important;
-  padding: 90px 0;
+  padding: clamp(50px, 5.5vw, 90px) 0 !important;
   overflow: hidden;
   color: #000 !important;
   border-radius: 28px !important;
@@ -242,6 +242,7 @@ p {
   width: 100% !important;
   max-width: 100% !important;
   z-index: 3;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .testimonials-section-premium {
@@ -249,12 +250,15 @@ p {
   }
 }
 
-/* Seção depoimentos: container full-width com padding interno */
+/* Seção depoimentos: container responsivo com largura máxima e centralização para TVs e Monitores Grandes */
 .testimonials-section-premium > .container {
   width: 100% !important;
-  max-width: 100% !important;
-  padding-left: 0 !important; /* Permite encostar totalmente na lateral esquerda */
-  padding-right: clamp(32px, 5vw, 80px) !important;
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(20px, 4vw, 60px) !important;
+  padding-right: clamp(20px, 4vw, 60px) !important;
+  box-sizing: border-box !important;
 }
 
 /* Pontos de luz/glow degradê desativados porque já estão na imagem de fundo */
@@ -266,10 +270,11 @@ p {
   display: none !important;
 }
 
+/* Grid de Depoimentos: 2 Colunas Fluídas no Desktop (>= 992px) */
 .testimonials-premium-grid {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
+  gap: clamp(24px, 3.5vw, 48px);
   align-items: center;
   position: relative;
   z-index: 2;
@@ -278,11 +283,11 @@ p {
 .testimonials-carousel-wrapper {
   position: relative;
   width: 100%;
-  max-width: 920px !important; /* Ideal para 2 cards grandes + setas nas laterais */
+  max-width: 860px;
   margin-left: 0 !important;
   margin-right: auto !important;
-  overflow: visible; /* to avoid clipping of card shadows during slide animation */
-  padding: 0 48px; /* 48px padding on both sides to house the arrows precisely */
+  overflow: visible; /* evitação de corte nas sombras dos cards */
+  padding: 0 48px; /* 48px de respiro lateral para abrigar as setas */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -293,13 +298,17 @@ p {
 
 .testimonials-copy-col {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonials-carousel-track-wrapper {
   overflow: hidden;
   width: 100%;
-  padding: 60px 80px; /* 80px bleed room for shadows, hides adjacent cards using opacity */
-  margin: -60px -80px;
+  padding: 24px 8px;
+  margin: -24px -8px;
+  box-sizing: border-box;
 }
 
 .testimonials-carousel-track {
@@ -309,11 +318,11 @@ p {
   will-change: transform;
 }
 
-/* Navigation Buttons Positioned Absolutely */
+/* Botões de navegação centralizados verticalmente em relação ao carrossel */
 .testimonials-prev-btn,
 .testimonials-next-btn {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 18px); /* Alinhamento correto com o centro dos cards */
   transform: translateY(-50%);
   z-index: 10;
   width: 48px;
@@ -332,11 +341,11 @@ p {
 }
 
 .testimonials-prev-btn {
-  left: 0; /* Alinhado exatamente na borda do padding, 48px longe da coluna de texto */
+  left: 0;
 }
 
 .testimonials-next-btn {
-  right: 0; /* Alinhado exatamente na borda do padding direito */
+  right: 0;
 }
 
 .testimonials-prev-btn:hover,
@@ -379,74 +388,22 @@ p {
 }
 
 .testimonial-dot.active {
-  background-color: #e30613; /* Active dot is red */
+  background-color: #e30613;
   transform: scale(1.2);
 }
 
-@media (max-width: 1320px) {
-  .testimonials-section-premium > .container {
-    padding-left: clamp(24px, 5vw, 48px) !important;
-    padding-right: clamp(24px, 5vw, 48px) !important;
-  }
+/* Transição fluida para 1 Coluna apenas em telas menores que 992px (Tablets e Mobile) */
+@media (max-width: 991px) {
   .testimonials-premium-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 32px;
   }
   .testimonials-copy-col {
-    grid-column: auto;
-  }
-  .testimonials-carousel-wrapper {
-    grid-column: auto;
-    grid-row: auto;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonials-carousel-wrapper {
-    padding: 0 44px; /* Espaço nas laterais para as setas no mobile */
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .testimonials-carousel-track-wrapper {
-    padding: 16px 0 40px 0;
-    margin: 0;
-    overflow: hidden;
-  }
-  .testimonials-prev-btn,
-  .testimonials-next-btn {
-    display: flex !important; /* Mostrar as setas no mobile */
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-  }
-  .testimonials-prev-btn {
-    left: 2px !important;
-  }
-  .testimonials-next-btn {
-    right: 2px !important;
-  }
-  .testimonials-dots {
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-  }
-  .dep-video-card {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    flex: 0 0 100% !important; /* Força largura de coluna cheia flexível */
-    width: 100% !important;
-  }
-  /* Centralização e controle de largura dos textos da seção de depoimentos no mobile */
-  .testimonials-copy-col {
+    grid-column: 1;
+    grid-row: 1;
     align-items: center !important;
     text-align: center !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -461,19 +418,67 @@ p {
   }
   .testimonials-heading {
     text-align: center !important;
-    font-size: 1.7rem !important; /* Tamanho confortável para mobile */
-    line-height: 1.25 !important;
-    max-width: 100% !important;
-    word-break: break-word !important;
+    font-size: clamp(1.75rem, 4vw, 2.3rem) !important;
+    line-height: 1.2 !important;
   }
   .testimonials-heading br {
-    display: none !important; /* Oculta quebras manuais de linha no mobile */
+    display: none !important;
   }
   .testimonials-subheading {
     text-align: center !important;
-    max-width: 100%;
+    max-width: 650px;
     margin: 0 auto;
-    font-size: 0.95rem !important; /* Leitura confortável */
+    font-size: 1rem !important;
+  }
+  .testimonials-carousel-wrapper {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-carousel-wrapper {
+    padding: 0 44px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .testimonials-carousel-track-wrapper {
+    padding: 16px 0 32px 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .testimonials-prev-btn,
+  .testimonials-next-btn {
+    display: flex !important;
+    top: calc(50% - 16px) !important;
+    transform: translateY(-50%) !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+  }
+  .testimonials-prev-btn {
+    left: 2px !important;
+  }
+  .testimonials-next-btn {
+    right: 2px !important;
+  }
+  .testimonials-dots {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .dep-video-card {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto;
   }
 }
 
@@ -1229,7 +1234,7 @@ p {
 }
 
 /* Tamanho do card em breakpoints */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .dep-video-card {
     flex: 0 0 calc(50% - 12px) !important;
     width: calc(50% - 12px) !important;
@@ -1241,8 +1246,11 @@ p {
 
 @media (max-width: 768px) {
   .dep-video-card {
-    flex: 0 0 80vw;
-    max-width: 320px;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
     opacity: 1 !important;
     pointer-events: auto !important;
   }
