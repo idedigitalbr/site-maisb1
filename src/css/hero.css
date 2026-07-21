@@ -555,10 +555,10 @@
 .carousel-slide.theme-yellow .slide-content h2,
 .carousel-slide.theme-yellow .slide-content p,
 .carousel-slide.theme-yellow .slide-content h1 {
-  color: #fff !important;
+  color: #000000 !important;
 }
 .carousel-slide.theme-yellow .slide-content h2 span.slide-headline-highlight {
-  color: #FFC400 !important;
+  color: #F20D18 !important;
 }
 .carousel-slide.theme-yellow .btn.primary {
   background: #000000 !important;
