@@ -622,10 +622,12 @@
 .carousel-slide.theme-red .slide-overlay {
   background: transparent !important;
 }
+.carousel-slide.theme-red .slide-content,
 .carousel-slide.theme-red .slide-content h2,
 .carousel-slide.theme-red .slide-content p,
 .carousel-slide.theme-red .slide-content h1,
-.carousel-slide.theme-red .slide-content h2 span.slide-headline-highlight,
+.carousel-slide.theme-red .slide-content .slide-lead,
+.carousel-slide.theme-red .slide-content h2 span,
 .carousel-slide.theme-red .slide-content p strong {
   color: #000000 !important;
 }
