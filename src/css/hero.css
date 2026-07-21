@@ -550,33 +550,71 @@
 
 /* Tema 2: Amarelo (Parcerias) */
 .carousel-slide.theme-yellow .slide-overlay {
-  background: linear-gradient(to right, #FFC400 0%, #E5AF00 35%, rgba(229,175,0,0.88) 48%, rgba(229,175,0,0.2) 75%, rgba(229,175,0,0) 100%) !important;
+  background: transparent !important;
 }
 .carousel-slide.theme-yellow .slide-content h2,
 .carousel-slide.theme-yellow .slide-content p,
 .carousel-slide.theme-yellow .slide-content h1 {
-  color: #000 !important;
+  color: #fff !important;
+}
+.carousel-slide.theme-yellow .slide-content h2 span.slide-headline-highlight {
+  color: #FFC400 !important;
 }
 .carousel-slide.theme-yellow .btn.primary {
-  background: #000 !important;
-  color: var(--yellow) !important;
-  border: 1px solid #000 !important;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25) !important;
+  background: #000000 !important;
+  color: #F20D18 !important;
+  border: 1.5px solid #F20D18 !important;
+  box-shadow: 0 10px 25px rgba(242, 13, 24, 0.1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .carousel-slide.theme-yellow .btn.primary:hover {
-  background: #1a1a1a !important;
+  background: #F20D18 !important;
+  color: #fff !important;
+  border-color: #F20D18 !important;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35) !important;
+  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.3) !important;
 }
-.carousel-slide.theme-yellow .eyebrow.light {
-  background: rgba(0, 0, 0, 0.85) !important;
-  color: var(--yellow) !important;
-  border: 1px solid rgba(0, 0, 0, 0.9) !important;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2) !important;
+/* Estilo para a tag e grupo de badges */
+.partner-badge-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.partner-badge-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000000;
+  border: 1.5px solid #F20D18;
+  color: #F20D18;
+}
+.partner-badge-circle svg {
+  width: 22px;
+  height: 22px;
+}
+.partner-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 100px;
+  background: #000000;
+  border: 1.5px solid #F20D18;
+  color: #F20D18;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 @media (max-width: 991px) {
   .carousel-slide.theme-yellow .slide-overlay {
-    background: linear-gradient(to bottom, rgba(255,196,0,0.95) 0%, rgba(255,196,0,0.8) 50%, rgba(255,196,0,0.95) 100%) !important;
+    background: transparent !important;
   }
 }
 
@@ -586,27 +624,61 @@
 }
 .carousel-slide.theme-red .slide-content h2,
 .carousel-slide.theme-red .slide-content p,
-.carousel-slide.theme-red .slide-content h1 {
-  color: #000 !important;
+.carousel-slide.theme-red .slide-content h1,
+.carousel-slide.theme-red .slide-content h2 span.slide-headline-highlight {
+  color: #000000 !important;
 }
 .carousel-slide.theme-red .btn.primary {
-  background: #000 !important;
-  color: #fff !important;
-  border: 1px solid #000 !important;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+  background: #000000 !important;
+  color: #FFC400 !important;
+  border: 1.5px solid #FFC400 !important;
+  box-shadow: 0 10px 25px rgba(255, 196, 0, 0.1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .carousel-slide.theme-red .btn.primary:hover {
-  background: #222 !important;
-  color: #fff !important;
-  border-color: #222 !important;
+  background: #F20D18 !important;
+  color: #ffffff !important;
+  border-color: #F20D18 !important;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25) !important;
+  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.35) !important;
 }
-.carousel-slide.theme-red .eyebrow.light {
-  background: #000 !important;
-  color: #fff !important;
-  border: 1px solid #000 !important;
-  box-shadow: 0 0 12px rgba(0,0,0,0.15) !important;
+/* Estilo para a tag e grupo de badges de carreiras */
+.careers-badge-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.careers-badge-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000000;
+  border: 1.5px solid #FFC400;
+  color: #FFC400;
+}
+.careers-badge-circle svg {
+  width: 22px;
+  height: 22px;
+}
+.careers-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 100px;
+  background: #000000;
+  border: 1.5px solid #FFC400;
+  color: #FFC400;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 @media (max-width: 991px) {
   .carousel-slide.theme-red .slide-overlay {
