@@ -1042,12 +1042,12 @@
     0 0 80px rgba(34, 197, 94, calc(var(--brands-glow-opacity, 0.5) * 0.5));
 }
 
-/* Galeria Superior (4 colunas com proporção nativa 3:4) */
+/* Galeria Superior (4 colunas preenchidas 100%) */
 .card-top-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  height: auto; /* Ajusta automaticamente a altura para manter a proporção 3:4 exata */
+  height: 220px; /* Garante altura completa e estável de 220px no topo do card */
   position: relative;
   box-sizing: border-box;
   border-radius: 36px 36px 0 0; /* Cantos arredondados na galeria */
@@ -1064,7 +1064,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 3 / 4; /* Garante que o painel tenha a proporção 3:4 exata sem zoom */
+  height: 100%; /* Preenche 100% da altura da galeria */
   box-sizing: border-box;
 }
 
@@ -1082,6 +1082,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform 0.8s ease;
 }
 
