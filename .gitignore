@@ -13,5 +13,4 @@ dist/
 build/
 
 # Pastas locais pesadas ignoradas
-assets/
 assets-nao-usados/
