@@ -921,8 +921,8 @@
               border-color 0.5s ease;
   flex-direction: column;
   width: 100%;
-  height: 520px;
-  --card-gallery-h: 210px;
+  height: auto;
+  min-height: 500px;
   border-radius: 36px;
   overflow: visible; /* Contorna bug de clipping do Chromium */
   position: relative;
@@ -1042,12 +1042,12 @@
     0 0 80px rgba(34, 197, 94, calc(var(--brands-glow-opacity, 0.5) * 0.5));
 }
 
-/* Galeria Superior (4 colunas) */
+/* Galeria Superior (4 colunas com proporção nativa 3:4) */
 .card-top-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  height: var(--card-gallery-h, 210px); /* Altura fixa no desktop para caber nos 520px de altura do card */
+  height: auto; /* Ajusta automaticamente a altura para manter a proporção 3:4 exata */
   position: relative;
   box-sizing: border-box;
   border-radius: 36px 36px 0 0; /* Cantos arredondados na galeria */
@@ -1064,7 +1064,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%; /* Ocupa a altura total da galeria no desktop */
+  aspect-ratio: 3 / 4; /* Garante que o painel tenha a proporção 3:4 exata sem zoom */
   box-sizing: border-box;
 }
 
