@@ -552,10 +552,13 @@
 .carousel-slide.theme-yellow .slide-overlay {
   background: transparent !important;
 }
+.carousel-slide.theme-yellow .slide-content,
 .carousel-slide.theme-yellow .slide-content h2,
 .carousel-slide.theme-yellow .slide-content p,
-.carousel-slide.theme-yellow .slide-content h1 {
-  color: #000000 !important;
+.carousel-slide.theme-yellow .slide-content h1,
+.carousel-slide.theme-yellow .slide-content .slide-lead,
+.carousel-slide.theme-yellow .slide-content p strong {
+  color: #ffffff !important;
 }
 .carousel-slide.theme-yellow .slide-content h2 span.slide-headline-highlight {
   color: #F20D18 !important;
