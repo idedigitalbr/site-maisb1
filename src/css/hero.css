@@ -624,11 +624,10 @@
 }
 .carousel-slide.theme-red .slide-content h2,
 .carousel-slide.theme-red .slide-content p,
-.carousel-slide.theme-red .slide-content h1 {
-  color: #ffffff !important;
-}
-.carousel-slide.theme-red .slide-content h2 span.slide-headline-highlight {
-  color: #FFC400 !important;
+.carousel-slide.theme-red .slide-content h1,
+.carousel-slide.theme-red .slide-content h2 span.slide-headline-highlight,
+.carousel-slide.theme-red .slide-content p strong {
+  color: #000000 !important;
 }
 .carousel-slide.theme-red .btn.primary {
   background: #000000 !important;
