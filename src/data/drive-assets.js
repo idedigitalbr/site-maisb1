@@ -5,7 +5,7 @@ window.driveAssets = {
   logos: {
     grupoMaisBaratoColorPositivo: '/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp',
     grupoMaisBaratoColorNegativo: '/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp',
-    supermercadosMaisB: '/assets/Logos SubMarcas/logo-supermercados -maisB.png',
+    supermercadosMaisB: '/assets/Logos SubMarcas/logo-supermercados-maisb.webp',
     farmaMaisB: '/assets/Logos SubMarcas/logo-farma-mais-b.webp',
     villaPlaza: '/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp',
     villaPlazaPark: '/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp',

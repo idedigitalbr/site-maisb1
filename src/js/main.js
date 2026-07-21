@@ -1569,7 +1569,7 @@
         year: "2024",
         title: "Liderança Regional e Inovação Digital",
         desc: "Marca de 10.000 colaboradores diretos e indiretos, lançamento do aplicativo Clube+ Fidelidade e planejamento de expansão regional.",
-        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-frente-fachada.webp"
       }
     ];
 

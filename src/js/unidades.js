@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Ícone Customizado do Mapa ---
   function createCustomIcon(unit) {
     // Sempre exibe o logo do Grupo +B nos pins para fidelidade absoluta com o design do Photoshop
-    const logoUrl = '/assets/Logos SubMarcas/logo-supermercados -maisB.png';
+    const logoUrl = '/assets/Logos SubMarcas/logo-supermercados-maisb.webp';
 
     const badgeConfig = {
       farma: {
@@ -988,12 +988,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const brandBadges = unit.subbrands.map(sub => {
       let label = sub;
       let imgUrl = "";
-      if (sub === 'super') { label = 'Supermercados'; imgUrl = "/assets/Logos SubMarcas/logo-supermercados -maisB.png"; }
+      if (sub === 'super') { label = 'Supermercados'; imgUrl = "/assets/Logos SubMarcas/logo-supermercados-maisb.webp"; }
       if (sub === 'farma') { label = 'Farma +B'; imgUrl = "/assets/Logos SubMarcas/logo-farma-mais-b.webp"; }
       if (sub === 'wine') { label = 'Wine Experience'; imgUrl = "/assets/Logos SubMarcas/logo-the-wine-experience.webp"; }
       if (sub === 'plaza') { label = 'Villa Plaza'; imgUrl = "/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp"; }
       if (sub === 'park') { label = 'Plaza Park'; imgUrl = "/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp"; }
-      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "/assets/Logos SubMarcas/logo-supermercados -maisB.png"; }
+      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "/assets/Logos SubMarcas/logo-supermercados-maisb.webp"; }
       
       const imgTag = imgUrl ? `<img src="${imgUrl}" alt="${label}" class="brand-badge-icon">` : '';
       return `<div class="detail-brand-badge">${imgTag}<span>${label}</span></div>`;

@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Equipe unida em frente à sede administrativa do Grupo.",
             "category": "grupo-b",
             "subcategory": "Institucional",
-            "photo": "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+            "photo": "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-frente-fachada.webp"
         },
         {
             "name": "Presença Digital Holding",
             "role": "Conexão diária e humanizada com nossos clientes nas redes.",
             "category": "grupo-b",
             "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-GrupoMaisB.png"
+            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-GrupoMaisB.webp"
         },
         
         // Supermercados +B
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Ofertas, receitas e novidades compartilhadas diariamente.",
             "category": "supermercados-b",
             "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-supermercado-maisB.png"
+            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-supermercado-maisB.webp"
         },
         
         // +B Farma
@@ -239,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Saúde, bem-estar e atendimento farmacêutico humanizado.",
             "category": "farma-b",
             "subcategory": "Institucional",
-            "photo": "/assets/Fotografias/Mais B Farma/farma_mais_b__IA.png"
+            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-atendimento.webp"
         },
         {
             "name": "Cuidado e Cosméticos",
             "role": "Grande mix de medicamentos, higiene e cosméticos especiais.",
             "category": "farma-b",
             "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-b-farma.webp"
+            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-medicamentos.webp"
         },
         
         // Villa Plaza
@@ -255,21 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Ambiente sofisticado e menu diversificado para toda a família.",
             "category": "villa-plaza",
             "subcategory": "Restaurante",
-            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/villa_plaza_restaurante__IA.png"
+            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-restaurante-ambiente.webp"
         },
         {
             "name": "Ilha de Frios e Rotisseria",
             "role": "Produtos nobres e preparados especiais na nossa Rotisseria.",
             "category": "villa-plaza",
             "subcategory": "Rotisseria",
-            "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-ilha-de-frios-e-rotisserie.webp"
+            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_pratos_quentes.webp"
         },
         {
             "name": "Gastronomia Vila Plaza",
             "role": "Experiências e sabores inesquecíveis compartilhados com você.",
             "category": "villa-plaza",
             "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza.webp"
+            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_saladas_selecao.webp"
         },
         
         // Villa Plaza Park
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Espaço de lazer lúdico, seguro e monitorado para as crianças.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa_plaza_park__IA.png"
+            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-infantil.webp"
         },
         {
             "name": "Área de Recreação Infantil",
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Boutique adega com vinhos premium das principais regiões do mundo.",
             "category": "the-wine",
             "subcategory": "Adega",
-            "photo": "/assets/Fotografias/The Wine Experience/the_wine_experience__IA.png"
+            "photo": "/assets/Fotografias/The Wine Experience/parede-vinhos-decoracao.webp"
         },
         {
             "name": "Adega Premium Alcindo",
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Curadoria exclusiva e eventos de degustação em nossas redes.",
             "category": "the-wine",
             "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-the-wine.png"
+            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-the-wine.webp"
         }
     ];
 
