@@ -274,18 +274,32 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Villa Plaza Park
         {
-            "name": "Villa Plaza Park Infantil",
+            "name": "Brinquedão Villa Plaza Park",
             "role": "Espaço de lazer lúdico, seguro e monitorado para as crianças.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-infantil.webp"
+            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-brinquedao.webp"
+        },
+        {
+            "name": "Piscina de Bolinhas",
+            "role": "Muitas cores e diversão em área de jogos infantis.",
+            "category": "villa-plaza-park",
+            "subcategory": "Park Infantil",
+            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-piscina-bolinhas.webp"
         },
         {
             "name": "Área de Recreação Infantil",
             "role": "Brinquedos modernos e equipe dedicada para a diversão dos pequenos.",
             "category": "villa-plaza-park",
-            "subcategory": "Instagram",
-            "photo": "/assets/Fotografias/.Ref - Insta/feed-instagram-villa-plaza-park-infantil.webp"
+            "subcategory": "Park Infantil",
+            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-recreacao.webp"
+        },
+        {
+            "name": "Escorregador e Jogos",
+            "role": "Atrações alegres para momentos inesquecíveis em família.",
+            "category": "villa-plaza-park",
+            "subcategory": "Park Infantil",
+            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-escorregador.webp"
         },
         
         // The Wine Experience
