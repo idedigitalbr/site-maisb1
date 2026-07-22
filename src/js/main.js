@@ -1565,7 +1565,7 @@
         year: "2019",
         title: "Nascimento da Rede +B Farma",
         desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas, oferecendo conveniência e atendimento farmacêutico dedicado.",
-        img: "./assets/Fotografias/Mais B Farma/foto-farma-b (1).webp"
+        img: "./assets/Paginas (Imagens)/Sobre Nós/S4 NOSSA HISTORIA/foto-banner-maisb-farmacia.webp"
       },
       {
         year: "2021",
