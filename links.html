@@ -10,8 +10,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Links Úteis | Grupo +B" />
   <meta property="og:description" content="Acesse todos os canais de atendimento, redes sociais e páginas das marcas do Grupo +B." />
-  <meta property="og:image" content="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" />
-  <link rel="icon" type="image/webp" href="/assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
+  <meta property="og:image" content="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" />
+  <link rel="icon" type="image/webp" href="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,9 +32,9 @@
         const element = target;
         let fallbackCount = parseInt(element.getAttribute('data-fallback-count') || '0', 10);
         const srcUrl = element.getAttribute('src');
-        if (!srcUrl || !srcUrl.includes('/assets/')) return;
+        if (!srcUrl || !srcUrl.includes('./assets/')) return;
         
-        const assetPath = 'assets/' + srcUrl.split('/assets/')[1];
+        const assetPath = 'assets/' + srcUrl.split('./assets/')[1];
         
         // Priorizar o caminho local (./assets) para carregar offline da própria pasta do projeto
         const fallbacks = [
@@ -77,8 +77,8 @@
               const rule = rules[j];
               if (rule.style && rule.style.backgroundImage) {
                 const bg = rule.style.backgroundImage;
-                if (bg && bg.includes('/assets/')) {
-                  const parts = bg.split('/assets/');
+                if (bg && bg.includes('./assets/')) {
+                  const parts = bg.split('./assets/');
                   const assetPath = 'assets/' + parts[1].replace(/['"\)]/g, '');
                   
                   // Aponta para a pasta local assets/ do próprio projeto
@@ -112,7 +112,7 @@
 
         <!-- Logo Circular -->
         <div class="profile-logo">
-          <img src="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp" alt="Grupo +B" />
+          <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp" alt="Grupo +B" />
         </div>
         
         <!-- Username -->
@@ -190,7 +190,7 @@
           <!-- +B Supermercados -->
           <a href="https://www.instagram.com/maisbsupermercados" target="_blank" rel="noopener" class="brand-item brand-super">
             <span class="brand-logo-container">
-              <img src="/assets/Logos SubMarcas/logo-supermercados-maisb.webp" alt="+B Supermercados">
+              <img src="./assets/Logos SubMarcas/logo-supermercados-maisb.webp" alt="+B Supermercados">
             </span>
             <span class="brand-text">+B Supermercados</span>
           </a>
@@ -198,7 +198,7 @@
           <!-- +B Farma -->
           <a href="https://www.instagram.com/maisbfarma" target="_blank" rel="noopener" class="brand-item brand-farma">
             <span class="brand-logo-container">
-              <img src="/assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma">
+              <img src="./assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma">
             </span>
             <span class="brand-text">+B Farma</span>
           </a>
@@ -206,7 +206,7 @@
           <!-- Villa Plaza -->
           <a href="https://www.instagram.com/villaplazabelem" target="_blank" rel="noopener" class="brand-item brand-plaza">
             <span class="brand-logo-container">
-              <img src="/assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza">
+              <img src="./assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza">
             </span>
             <span class="brand-text">Villa Plaza</span>
           </a>
@@ -214,7 +214,7 @@
           <!-- Villa Plaza Park -->
           <a href="https://www.instagram.com/villaplazapark" target="_blank" rel="noopener" class="brand-item brand-park">
             <span class="brand-logo-container">
-              <img src="/assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park">
+              <img src="./assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park">
             </span>
             <span class="brand-text">Villa Plaza Park</span>
           </a>
@@ -222,7 +222,7 @@
           <!-- The Wine Experience -->
           <a href="https://www.instagram.com/thewinebelem" target="_blank" rel="noopener" class="brand-item brand-wine">
             <span class="brand-logo-container">
-              <img src="/assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience">
+              <img src="./assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience">
             </span>
             <span class="brand-text">The Wine Experience</span>
           </a>

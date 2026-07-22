@@ -11,28 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Estrutura corporativa e sede administrativa do Grupo +B.",
             "category": "grupo-b",
             "subcategory": "Institucional",
-            "photo": "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+            "photo": "./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
         },
         {
             "name": "Equipe Institucional Grupo +B",
             "role": "Colaboradores e lideranças reunidos celebrando o crescimento do Grupo.",
             "category": "grupo-b",
             "subcategory": "Time",
-            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
+            "photo": "./assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
         },
         {
             "name": "Integração e Propósito",
             "role": "União e cultura forte impulsionando os resultados de nossas marcas.",
             "category": "grupo-b",
             "subcategory": "Time",
-            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (2).webp"
+            "photo": "./assets/Fotografias/Grupo Institucional +B/grupob-time (2).webp"
         },
         {
             "name": "Encontro de Lideranças",
             "role": "Fortalecimento de equipe e alinhamento estratégico corporativo.",
             "category": "grupo-b",
             "subcategory": "Time",
-            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (3).webp"
+            "photo": "./assets/Fotografias/Grupo Institucional +B/grupob-time (3).webp"
         },
         
         // Supermercados +B
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Fachadas",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
         },
         {
             "name": "Exposição e Mercearia",
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Mercearia",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp"
         },
         {
             "name": "Fachada Unidade Plaza",
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Fachadas",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
         },
         {
             "name": "Fachada Frontal Tapanã",
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Fachadas",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
         },
         {
             "name": "Fachada Lateral Tapanã",
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Fachadas",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-lateral-da-loja.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-lateral-da-loja.webp"
         },
         {
             "name": "Corredor de Mercearia",
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Mercearia",
-            "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp"
         },
         {
             "name": "Hortifrúti Selecionado",
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp"
         },
         {
             "name": "Atendimento no Hortifrúti",
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-atendimento-no-hortifruti.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-atendimento-no-hortifruti.webp"
         },
         {
             "name": "Variedade no Hortifrúti",
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-hortifruti.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-hortifruti.webp"
         },
         {
             "name": "Espaço Verde no Hortifrúti",
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-parede-verde-do-hortifruti.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-parede-verde-do-hortifruti.webp"
         },
         {
             "name": "Corredor de Hortifrúti",
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-corredor-de-hortifruti.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-corredor-de-hortifruti.webp"
         },
         {
             "name": "Visão Geral do Hortifrúti",
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Hortifrúti",
-            "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-visao-geral-do-hortifruti.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-visao-geral-do-hortifruti.webp"
         },
         {
             "name": "Cortes Nobres e Especiais",
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Carnes",
-            "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-alcindo-foto-de-setor-de-carnes-nobres.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/03_Carnes/unid-alcindo-foto-de-setor-de-carnes-nobres.webp"
         },
         {
             "name": "Açougue e Cortes Resfriados",
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Carnes",
-            "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-corredor-de-frios-e-embutidos.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-corredor-de-frios-e-embutidos.webp"
         },
         {
             "name": "Praticidade em Carnes Embaladas",
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Carnes",
-            "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-carnes-embaladas.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-carnes-embaladas.webp"
         },
         {
             "name": "Açougue e Atendimento",
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Carnes",
-            "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-secao-de-carnes.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-secao-de-carnes.webp"
         },
         {
             "name": "Açougue e Cortes Selecionados",
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Carnes",
-            "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-tapana-foto-de-secao-de-carnes.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/03_Carnes/unid-tapana-foto-de-secao-de-carnes.webp"
         },
         {
             "name": "Padaria e Confeitaria",
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Padaria",
-            "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-padaria-e-reposicao-de-paes.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-padaria-e-reposicao-de-paes.webp"
         },
         {
             "name": "Rotisseria e Pizzas",
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Padaria",
-            "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-pizzas-e-salgados.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-pizzas-e-salgados.webp"
         },
         {
             "name": "Sushi e Pratos Prontos",
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Padaria",
-            "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-sushi-e-pratos-prontos.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-sushi-e-pratos-prontos.webp"
         },
         {
             "name": "Padaria e Confeitaria",
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Padaria",
-            "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-padaria-com-reposicao.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-padaria-com-reposicao.webp"
         },
         {
             "name": "Salgados e Pizzas Assadas",
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Padaria",
-            "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-pizza-e-salgados.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-pizza-e-salgados.webp"
         },
         {
             "name": "Adega e Seleção de Bebidas",
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Bebidas",
-            "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-alcindo-foto-de-adega-e-bebidas.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/05_Bebidas/unid-alcindo-foto-de-adega-e-bebidas.webp"
         },
         {
             "name": "Adega e Bebidas Especiais",
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Bebidas",
-            "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-adega-e-bebidas.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-adega-e-bebidas.webp"
         },
         {
             "name": "Bebidas Importadas e Especiais",
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Bebidas",
-            "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-bebidas-especiais.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-bebidas-especiais.webp"
         },
         {
             "name": "Espaço de Bebidas Self-Service",
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Plaza",
             "subcategory": "Bebidas",
-            "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-cliente-em-area-de-bebidas-self-service.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-cliente-em-area-de-bebidas-self-service.webp"
         },
         {
             "name": "Ilha de Frios e Embutidos",
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Lácteos e Frios",
-            "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-ilha-de-frios-e-rotisserie.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-ilha-de-frios-e-rotisserie.webp"
         },
         {
             "name": "Laticínios e Derivados",
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Lácteos e Frios",
-            "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-tapana-foto-de-secao-de-lacteos.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-tapana-foto-de-secao-de-lacteos.webp"
         },
         {
             "name": "Setor de Congelados",
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Congelados",
-            "photo": "/assets/Fotografias/Supermercado +B/07_Congelados/unid-alcindo-foto-de-setor-de-congelados.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/07_Congelados/unid-alcindo-foto-de-setor-de-congelados.webp"
         },
         {
             "name": "Ilha de Congelados",
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Tapanã",
             "subcategory": "Congelados",
-            "photo": "/assets/Fotografias/Supermercado +B/07_Congelados/unid-tapana-foto-de-congelados.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/07_Congelados/unid-tapana-foto-de-congelados.webp"
         },
         {
             "name": "Equipe de Preparação de Alimentos",
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "category": "supermercados-b",
             "unit": "Alcindo",
             "subcategory": "Time",
-            "photo": "/assets/Fotografias/Supermercado +B/09_Lanchonete/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/09_Lanchonete/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp"
         },
         
         // +B Farma
@@ -291,28 +291,28 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Saúde, bem-estar e atendimento farmacêutico atencioso.",
             "category": "farma-b",
             "subcategory": "Atendimento",
-            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-b (1).webp"
+            "photo": "./assets/Fotografias/Mais B Farma/foto-farma-b (1).webp"
         },
         {
             "name": "Medicamentos e Suplementos",
             "role": "Estoque completo de remédios, vitaminas e suplementos para sua saúde.",
             "category": "farma-b",
             "subcategory": "Medicamentos",
-            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-b (2).webp"
+            "photo": "./assets/Fotografias/Mais B Farma/foto-farma-b (2).webp"
         },
         {
             "name": "Cosméticos e Cuidados Pessoais",
             "role": "Corredor com produtos de dermo-cosméticos, higiene e beleza.",
             "category": "farma-b",
             "subcategory": "Cosméticos",
-            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-b (3).webp"
+            "photo": "./assets/Fotografias/Mais B Farma/foto-farma-b (3).webp"
         },
         {
             "name": "Estrutura e Conveniência Farma",
             "role": "Espaço planejado oferecendo conforto e conveniência para toda a família.",
             "category": "farma-b",
             "subcategory": "Institucional",
-            "photo": "/assets/Fotografias/Mais B Farma/foto-farma-b (4).webp"
+            "photo": "./assets/Fotografias/Mais B Farma/foto-farma-b (4).webp"
         },
         
         // Villa Plaza (Restaurante)
@@ -321,28 +321,28 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Espaço acolhedor, sofisticado e planejado para refeições em família.",
             "category": "villa-plaza",
             "subcategory": "Restaurante",
-            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-restaurante-ambiente.webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-restaurante-ambiente.webp"
         },
         {
             "name": "Buffet de Pratos Quentes",
             "role": "Gastronomia variada com opções quentes e saborosas preparadas diariamente.",
             "category": "villa-plaza",
             "subcategory": "Rotisseria",
-            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_pratos_quentes.webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_pratos_quentes.webp"
         },
         {
             "name": "Seleção de Saladas e Entradas",
             "role": "Opções leves, frescas e coloridas no buffet do restaurante.",
             "category": "villa-plaza",
             "subcategory": "Buffet",
-            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_saladas_selecao.webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-gastronomia_buffet_saladas_selecao.webp"
         },
         {
             "name": "Serviço de Salão e Atendimento",
             "role": "Atendimento atencioso de garçons em um ambiente agradável.",
             "category": "villa-plaza",
             "subcategory": "Atendimento",
-            "photo": "/assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-experiencia_servico_garcom.webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-experiencia_servico_garcom.webp"
         },
         
         // Villa Plaza Park
@@ -351,28 +351,28 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Estrutura principal de lazer infantil com circuito de brinquedos e segurança.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (1).webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (1).webp"
         },
         {
             "name": "Piscina de Bolinhas",
             "role": "Muitas cores e diversão em área dedicada para os pequenos.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (2).webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (2).webp"
         },
         {
             "name": "Área de Recreação Infantil",
             "role": "Área de jogos e atividades lúdicas com acompanhamento.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (3).webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (3).webp"
         },
         {
             "name": "Escorregador e Jogos Kids",
             "role": "Atrações alegres para momentos inesquecíveis em família.",
             "category": "villa-plaza-park",
             "subcategory": "Park Infantil",
-            "photo": "/assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (4).webp"
+            "photo": "./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (4).webp"
         },
         
         // The Wine Experience (Fotos exclusivas da submarca The Wine)
@@ -381,28 +381,28 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Boutique adega com curadoria refinada de rótulos nacionais e internacionais.",
             "category": "the-wine",
             "subcategory": "Adega",
-            "photo": "/assets/Fotografias/The Wine Experience/parede-vinhos-decoracao.webp"
+            "photo": "./assets/Fotografias/The Wine Experience/parede-vinhos-decoracao.webp"
         },
         {
             "name": "Salão Principal The Wine",
             "role": "Ambiente aconchegante para degustação de vinhos e ótimos momentos.",
             "category": "the-wine",
             "subcategory": "Experiência",
-            "photo": "/assets/Fotografias/The Wine Experience/salao-principal-clientes.webp"
+            "photo": "./assets/Fotografias/The Wine Experience/salao-principal-clientes.webp"
         },
         {
             "name": "Mesa Reservada na Adega",
             "role": "Espaço exclusivo para encontros e jantares harmonizados.",
             "category": "the-wine",
             "subcategory": "Adega",
-            "photo": "/assets/Fotografias/The Wine Experience/mesa-reservada-adega.webp"
+            "photo": "./assets/Fotografias/The Wine Experience/mesa-reservada-adega.webp"
         },
         {
             "name": "Jantar Harmonizado e Brinde",
             "role": "Momentos marcantes com excelente gastronomia e seleção especial de vinhos.",
             "category": "the-wine",
             "subcategory": "Experiência",
-            "photo": "/assets/Fotografias/The Wine Experience/jantar-harmonizado-brinde.webp"
+            "photo": "./assets/Fotografias/The Wine Experience/jantar-harmonizado-brinde.webp"
         }
     ];
 

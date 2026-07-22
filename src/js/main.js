@@ -1553,31 +1553,31 @@
         year: "2015",
         title: "Fundação do Grupo +B",
         desc: "Nasce o Grupo +B com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.",
-        img: "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+        img: "./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
       },
       {
         year: "2017",
         title: "Expansão Logística e Unidade Tapanã",
         desc: "Inauguração da segunda grande unidade física no Tapanã e estruturação do Centro de Distribuição (CD) com frota própria para garantir abastecimento contínuo.",
-        img: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
+        img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
       },
       {
         year: "2019",
         title: "Nascimento da Rede +B Farma",
         desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas, oferecendo conveniência e atendimento farmacêutico dedicado.",
-        img: "/assets/Fotografias/Mais B Farma/foto-farma-b (1).webp"
+        img: "./assets/Fotografias/Mais B Farma/foto-farma-b (1).webp"
       },
       {
         year: "2021",
         title: "Complexo Plaza e +B Bistrô",
         desc: "Inauguração do marco em São Brás reunindo supermercado, a rede +B Farma, o restaurante Villa Plaza e o maior parque infantil monitorado da cidade (Villa Plaza Park).",
-        img: "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
+        img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
       },
       {
         year: "2024",
         title: "Liderança Regional e Inovação Digital",
         desc: "Celebração de 10 anos de crescimento com uma equipe de milhares de colaboradores, consolidação como referência no setor e lançamento de inovações como o Clube+ Fidelidade.",
-        img: "/assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
+        img: "./assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
       }
     ];
 
