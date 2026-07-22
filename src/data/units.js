@@ -1,10 +1,10 @@
-// Banco de dados enriquecido de Unidades do Grupo +B
+// Banco de dados enriquecido de Unidades do Grupo Mais Barato
 // Contém todas as informações comerciais, de localização, submarcas, serviços e imagens locais de cada loja.
 
 window.units = [
   {
     id: "alcindo",
-    name: "Matriz Alcindo Cacela",
+    name: "+B Supermercado (Unidade Alcindo Cacela)",
     shortName: "Alcindo Cacela",
     coords: [-1.450284, -48.479532],
     address: "Av. Alcindo Cacela, 2120 - Cremação, Belém - PA, CEP 66040-020",
@@ -28,7 +28,7 @@ window.units = [
       "Caixas de Autoatendimento",
       "Adega com Sommelier"
     ],
-    aboutText: "Nossa loja matriz na Alcindo Cacela é o coração do Grupo +B. Oferecemos um ambiente sofisticado com hortifrúti selecionado diariamente, açougue especial com cortes nobres e a exclusiva adega climatizada The Wine Experience. Uma estrutura completa feita para proporcionar a melhor experiência de compras da região.",
+    aboutText: "Nossa loja matriz na Alcindo Cacela é o coração do Grupo Mais Barato. Oferecemos um ambiente sofisticado com hortifrúti selecionado diariamente, açougue especial com cortes nobres e a exclusiva adega climatizada The Wine Experience. Uma estrutura completa feita para proporcionar a melhor experiência de compras da região.",
     images: {
       cover: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp",
       album: [
@@ -51,7 +51,7 @@ window.units = [
   },
   {
     id: "tapana",
-    name: "Unidade Tapanã",
+    name: "+B Supermercado (Unidade Tapanã)",
     shortName: "Tapanã",
     coords: [-1.353381, -48.468711],
     address: "Rod. Tapanã, 150 - Tapanã, Belém - PA, CEP 66823-060",
@@ -100,7 +100,7 @@ window.units = [
   },
   {
     id: "plaza",
-    name: "Unidade Plaza (Duque)",
+    name: "+B Supermercado (Unidade Plaza)",
     shortName: "São Brás",
     coords: [-1.452655, -48.468202],
     address: "Av. Gov. José Malcher, 2200 - São Brás, Belém - PA, CEP 66060-230",

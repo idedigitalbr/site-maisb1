@@ -1550,8 +1550,8 @@
     var data = [
       {
         year: "2015",
-        title: "Fundação do Grupo +B",
-        desc: "Nasce o Grupo +B com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.",
+        title: "Fundação do Grupo Mais Barato",
+        desc: "Nasce o Grupo Mais Barato com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.",
         img: "./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
       },
       {

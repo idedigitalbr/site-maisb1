@@ -2,59 +2,82 @@
    Estilização do Novo Rodapé Estratégico e Localizador de Lojas — Grupo +B
    ========================================================================== */
 
-/* --- Estilos do Rodapé Global --- */
+/* --- Estilos do Rodapé Global Minimalista e Centralizado (Anexo 2) --- */
 .footer {
   position: relative;
   z-index: 10;
-  padding: 60px 0 40px;
+  padding: 60px 20px 40px;
   background: #080808;
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: 'DM Sans', sans-serif;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
+  text-align: center;
   overflow: hidden;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: 40px;
-}
-
-.footer-block {
+.footer-centered-container {
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.footer-block h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
-  color: var(--yellow, #FFC400);
+.footer-centered-logo {
+  max-width: 180px;
+  height: auto;
+  filter: brightness(0) invert(1); /* Logo mono negativo branco */
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
-.footer-block p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 20px;
+.footer-centered-logo:hover {
+  opacity: 1;
 }
 
-.footer-block a {
-  color: rgba(255, 255, 255, 0.7);
+.footer-social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.footer-social-links a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: 0.94rem;
-  margin-bottom: 12px;
-  transition: all 0.25s ease;
-  width: fit-content;
 }
 
-.footer-block a:hover {
-  color: var(--yellow, #FFC400);
-  transform: translateX(4px);
+.footer-social-links a:hover {
+  background: var(--yellow, #D4AF37);
+  border-color: var(--yellow, #D4AF37);
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.footer-social-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.footer-copyright {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 /* Buscador do Rodapé */
@@ -581,22 +604,27 @@
 }
 
 .store-mini-tag {
-  font-size: 0.65rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: #252528;
-  color: #ffffff;
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
 }
 
-/* Cores específicas das submarcas na lista */
-.store-mini-tag.sub-super { background: #d32f2f; color: #ffffff; }
-.store-mini-tag.sub-farma { background: #1976d2; color: #ffffff; }
-.store-mini-tag.sub-wine { background: #7a132b; color: #ffffff; }
-.store-mini-tag.sub-plaza { background: #f57c00; color: #ffffff; }
-.store-mini-tag.sub-park { background: #388e3c; color: #ffffff; }
-.store-mini-tag.sub-padaria { background: #e65100; color: #ffffff; }
-.store-mini-tag.more { background: #3f3f46; color: #ffffff; }
+/* Estilo Monocromático Sóbrio para as tags das unidades */
+.store-mini-tag.sub-super,
+.store-mini-tag.sub-farma,
+.store-mini-tag.sub-wine,
+.store-mini-tag.sub-plaza,
+.store-mini-tag.sub-park,
+.store-mini-tag.sub-padaria,
+.store-mini-tag.more {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+}
 
 /* Visual de "Nenhum Resultado" */
 .no-results {

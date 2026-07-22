@@ -1201,7 +1201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <!-- Aba 3: Álbum de Fotos -->
             <div class="tab-pane-content" id="modal-tab-pane-album">
-              <p class="album-intro-text">Fotos oficiais e bastidores da equipe do Grupo +B nesta unidade.</p>
+              <p class="album-intro-text">Fotos oficiais e bastidores da equipe do Grupo Mais Barato nesta unidade.</p>
               
               <button type="button" class="btn-view-full-album" id="btn-view-full-album">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px; display: inline-block; vertical-align: -2px; margin-right: 6px;">

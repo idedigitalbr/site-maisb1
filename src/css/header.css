@@ -187,12 +187,12 @@
 
 /* Botão CTA Contatos */
 .main-menu .btn-contacts-menu {
-  background: var(--yellow) !important;
-  color: var(--black) !important;
+  background: var(--yellow, #D4AF37) !important;
+  color: #000000 !important;
   font-weight: 800;
   padding: 0 20px;
   border-radius: 999px;
-  box-shadow: 0 4px 15px rgba(255, 196, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -201,10 +201,10 @@
 }
 
 .main-menu .btn-contacts-menu:hover {
-  background: var(--red) !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
   text-shadow: none !important;
-  box-shadow: 0 0 20px rgba(242, 13, 24, 0.6), 0 4px 20px rgba(242, 13, 24, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
 }
 

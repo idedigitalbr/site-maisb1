@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const categoryLabels = {
-        'grupo-b': 'Grupo +B',
+        'grupo-b': 'Grupo Mais Barato',
         'supermercados-b': 'Supermercados +B',
         'farma-b': '+B Farma',
         'villa-plaza': 'Villa Plaza',

@@ -1,32 +1,33 @@
 :root {
-  /* Paleta oficial do manual */
+  /* Paleta oficial ajustada para Dark Mode Premium (Regra de Ouro) */
   --black: #000000;
-  --graphite: #1A1A1A;
-  --yellow: #FFC400;
-  --red: #F20D18;
+  --graphite: #121212;
+  --yellow: #D4AF37;
+  --gold: #D4AF37;
+  --gold-dark: #A68015;
+  --red: #A82424;
 
   /* Neutros de interface */
-  --ink: #15110b;
-  --cream: #fffaf0;
+  --ink: #101010;
+  --cream: #f4efea;
   --paper: #ffffff;
-  --muted: #6f6658;
-  --line: rgba(21, 17, 11, 0.12);
-  --line-dark: rgba(255, 255, 255, 0.14);
+  --muted: #8e877c;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-dark: rgba(255, 255, 255, 0.12);
 
   /* Cores de atmosfera usadas só nas seções das marcas específicas */
-  --green: #16a34a;
-  --wine: #4b1020;
-  --orange: #ff8a00;
+  --green: #1a7f43;
+  --wine: #3d1c25;
+  --orange: #b86214;
 
   /* Estilização Premium e Glassmorphism */
-  --gold-gradient: linear-gradient(135deg, #FFC400, #D99A00);
-  --bg-gradient: radial-gradient(circle at 12% 0%, rgba(255, 196, 0, 0.14), transparent 38%), 
-                 radial-gradient(circle at 88% 14%, rgba(242, 13, 24, 0.08), transparent 28%), 
+  --gold-gradient: linear-gradient(135deg, #E5C158, #A68015);
+  --bg-gradient: radial-gradient(circle at 12% 0%, rgba(212, 175, 55, 0.08), transparent 45%), 
                  #050505;
-  --glass-surface: rgba(11, 11, 11, 0.92);
-  --glass-border: rgba(255, 255, 255, 0.09);
-  --glass-border-glow: rgba(255, 196, 0, 0.25);
+  --glass-surface: rgba(14, 14, 14, 0.94);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-glow: rgba(212, 175, 55, 0.22);
 
   --radius: 28px;
-  --shadow: 0 22px 70px rgba(21, 17, 11, 0.18);
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.5);
 }

@@ -490,20 +490,20 @@
 
 /* Cores de Fundo Sólidas dos Cards Ricos Orbitais */
 .node-super .node-hover-card {
-  background: var(--yellow);
+  background: #14110b;
   border-color: var(--yellow);
 }
-.node-super .node-hover-card strong { color: #000; }
-.node-super .node-hover-card .card-keywords { color: rgba(0, 0, 0, 0.65); }
-.node-super .node-hover-card p { color: rgba(0, 0, 0, 0.8) !important; }
+.node-super .node-hover-card strong { color: #ffffff; }
+.node-super .node-hover-card .card-keywords { color: var(--yellow); }
+.node-super .node-hover-card p { color: rgba(255, 255, 255, 0.8) !important; }
 
 .node-farma .node-hover-card {
-  background: var(--red);
+  background: #14090a;
   border-color: var(--red);
 }
-.node-farma .node-hover-card strong { color: #fff; }
-.node-farma .node-hover-card .card-keywords { color: #ffeb3b; }
-.node-farma .node-hover-card p { color: rgba(255, 255, 255, 0.9) !important; }
+.node-farma .node-hover-card strong { color: #ffffff; }
+.node-farma .node-hover-card .card-keywords { color: #e57373; }
+.node-farma .node-hover-card p { color: rgba(255, 255, 255, 0.8) !important; }
 
 .node-plaza .node-hover-card {
   background: #3c070e;
@@ -1016,21 +1016,23 @@
 }
 
 .brand-detail-card.theme-super {
-  background: #ffd000;
-  color: #030303;
-  border: 2.5px solid #ffbb00;
+  background: linear-gradient(150deg, #18150d 0%, #0e0c07 100%);
+  color: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
   box-shadow: 
-    0 0 30px rgba(255, 208, 0, var(--brands-glow-opacity, 0.5)), 
-    0 0 80px rgba(255, 208, 0, calc(var(--brands-glow-opacity, 0.5) * 0.5));
+    0 15px 40px rgba(0, 0, 0, 0.7), 
+    0 0 25px rgba(212, 175, 55, 0.15),
+    inset 0 1px 0 rgba(212, 175, 55, 0.2);
 }
 
 .brand-detail-card.theme-farma {
-  background: linear-gradient(145deg, #e30613 0%, #ab020b 100%);
+  background: linear-gradient(150deg, #1c0c0e 0%, #0d0405 100%);
   color: #ffffff;
-  border: 2.5px solid rgba(255, 50, 70, 0.7);
+  border: 1.5px solid rgba(168, 36, 36, 0.45);
   box-shadow: 
-    0 0 30px rgba(255, 50, 70, var(--brands-glow-opacity, 0.5)), 
-    0 0 80px rgba(255, 50, 70, calc(var(--brands-glow-opacity, 0.5) * 0.5));
+    0 15px 40px rgba(0, 0, 0, 0.7), 
+    0 0 25px rgba(168, 36, 36, 0.15),
+    inset 0 1px 0 rgba(168, 36, 36, 0.2);
 }
 
 .brand-detail-card.theme-park {
