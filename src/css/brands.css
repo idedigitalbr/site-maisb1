@@ -1589,34 +1589,19 @@
   }
 }
 
-/* Instagram Feed Zoom-Crop Logic for Farma and Park Cards */
+/* Galeria das marcas com imagens inteiras e enquadradas nos painéis */
 .farma-panel-1 img,
-.park-panel-1 img {
-  object-fit: cover !important;
-  object-position: 5% 5% !important;
-  transform: scale(2.4) !important;
-}
-
 .farma-panel-2 img,
-.park-panel-2 img {
-  object-fit: cover !important;
-  object-position: 50% 10% !important;
-  transform: scale(2.4) !important;
-}
-
 .farma-panel-3 img,
-.park-panel-3 img {
-  object-fit: cover !important;
-  object-position: 95% 5% !important;
-  transform: scale(2.4) !important;
+.farma-panel-4 img,
+.park-panel-1 img,
+.park-panel-2 img,
+.park-panel-3 img,
+.park-panel-4 img {
+  object-fit: cover;
+  object-position: center 20%;
 }
 
-.farma-panel-4 img,
-.park-panel-4 img {
-  object-fit: cover !important;
-  object-position: 50% 90% !important;
-  transform: scale(2.4) !important;
-}
 
 /* ==========================================================================
    Setas de Navegação Minimalistas para o Carrossel
