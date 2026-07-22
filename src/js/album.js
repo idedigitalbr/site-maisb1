@@ -15,18 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         
         // Supermercados +B
-        // -- Fachadas & Mercearia
         {
             "name": "Fachada Unidade Alcindo",
             "role": "Fachada moderna e integrada da loja Alcindo Cacela.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Fachadas",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
         },
         {
-            "name": "Exposição e Mercearia Alcindo",
+            "name": "Exposição e Mercearia",
             "role": "Exposição de produtos de mercearia e destaques no corredor central da loja Alcindo.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Mercearia",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-corredor-central-com-exposicao-de-produtos.webp"
         },
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "name": "Fachada Unidade Plaza",
             "role": "Fachada da unidade Plaza, com design moderno e integrado.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Fachadas",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
         },
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "name": "Fachada Frontal Tapanã",
             "role": "Fachada moderna servindo com excelência a região do Tapanã.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Fachadas",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
         },
@@ -48,147 +51,159 @@ document.addEventListener('DOMContentLoaded', () => {
             "name": "Fachada Lateral Tapanã",
             "role": "Acesso facilitado e amplo estacionamento para nossos clientes.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Fachadas",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-lateral-da-loja.webp"
         },
         {
-            "name": "Corredor Mercearia Tapanã",
+            "name": "Corredor de Mercearia",
             "role": "Organização e grande variedade de produtos de mercearia no Tapanã.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Mercearia",
             "photo": "/assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-corredor-central-da-mercearia.webp"
         },
-
-        // -- Hortifrúti
         {
-            "name": "Hortifrúti Selecionado Alcindo",
+            "name": "Hortifrúti Selecionado",
             "role": "Frutas, legumes e verduras selecionados diariamente com frescor.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp"
         },
         {
-            "name": "Atendimento Hortifrúti Plaza",
+            "name": "Atendimento no Hortifrúti",
             "role": "Nossa equipe sempre pronta para ajudar a selecionar as melhores opções no Hortifrúti.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-atendimento-no-hortifruti.webp"
         },
         {
-            "name": "Variedade no Hortifrúti Plaza",
+            "name": "Variedade no Hortifrúti",
             "role": "Produtos frescos e selecionados diariamente com carinho.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-hortifruti.webp"
         },
         {
-            "name": "Espaço Verde Hortifrúti Plaza",
+            "name": "Espaço Verde no Hortifrúti",
             "role": "Ambiente agradável e planejado para uma melhor experiência de compra.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-plaza-foto-de-parede-verde-do-hortifruti.webp"
         },
         {
-            "name": "Corredor Hortifrúti Tapanã",
+            "name": "Corredor de Hortifrúti",
             "role": "Qualidade e organização de vegetais e frutas na unidade Tapanã.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-corredor-de-hortifruti.webp"
         },
         {
-            "name": "Visão Geral Hortifrúti Tapanã",
+            "name": "Visão Geral do Hortifrúti",
             "role": "Estrutura moderna e gôndolas completas no setor de Hortifrúti do Tapanã.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Hortifrúti",
             "photo": "/assets/Fotografias/Supermercado +B/02_Hortifruti/unid-tapana-foto-de-visao-geral-do-hortifruti.webp"
         },
-
-        // -- Carnes & Açougue
         {
-            "name": "Cortes Nobres Alcindo",
+            "name": "Cortes Nobres e Especiais",
             "role": "Seleção de carnes nobres e cortes especiais para o seu churrasco.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Carnes",
             "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-alcindo-foto-de-setor-de-carnes-nobres.webp"
         },
         {
-            "name": "Açougue e Cortes Resfriados Alcindo",
+            "name": "Açougue e Cortes Resfriados",
             "role": "Gôndola refrigerada com variedade de carnes bovinas e aves embaladas.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Carnes",
             "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-corredor-de-frios-e-embutidos.webp"
         },
         {
-            "name": "Carnes Embaladas Plaza",
+            "name": "Praticidade em Carnes Embaladas",
             "role": "Cortes prontos e embalados para facilitar o seu dia a dia.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Carnes",
             "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-carnes-embaladas.webp"
         },
         {
-            "name": "Açougue Unidade Plaza",
+            "name": "Açougue e Atendimento",
             "role": "Variedade, procedência garantida e atendimento especializado de açougue.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Carnes",
             "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-plaza-foto-de-secao-de-carnes.webp"
         },
         {
-            "name": "Açougue Unidade Tapanã",
+            "name": "Açougue e Cortes Selecionados",
             "role": "Atendimento de primeira com carnes frescas e cortes selecionados.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Carnes",
             "photo": "/assets/Fotografias/Supermercado +B/03_Carnes/unid-tapana-foto-de-secao-de-carnes.webp"
         },
-
-        // -- Padaria & Confeitaria
         {
-            "name": "Padaria e Confeitaria Plaza",
+            "name": "Padaria e Confeitaria",
             "role": "Pães quentinhos saindo a toda hora e deliciosos doces artesanais.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Padaria",
             "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-padaria-e-reposicao-de-paes.webp"
         },
         {
-            "name": "Rotisseria e Pizzas Plaza",
+            "name": "Rotisseria e Pizzas",
             "role": "Pizzas assadas na hora e salgados ideais para o seu lanche.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Padaria",
             "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-pizzas-e-salgados.webp"
         },
         {
-            "name": "Sushi e Pratos Prontos Plaza",
+            "name": "Sushi e Pratos Prontos",
             "role": "Comida japonesa fresca e buffet completo de pratos prontos.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Padaria",
             "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-plaza-foto-de-sushi-e-pratos-prontos.webp"
         },
         {
-            "name": "Padaria Unidade Tapanã",
+            "name": "Padaria e Confeitaria",
             "role": "Produção diária de pães e salgados com ingredientes selecionados.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Padaria",
             "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-padaria-com-reposicao.webp"
         },
         {
-            "name": "Salgados e Pizzas Tapanã",
+            "name": "Salgados e Pizzas Assadas",
             "role": "Variedade de pizzas e lanches rápidos na unidade Tapanã.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Padaria",
             "photo": "/assets/Fotografias/Supermercado +B/04_Padaria/unid-tapana-foto-de-pizza-e-salgados.webp"
         },
-
-        // -- Bebidas & Adega Supermercado
         {
-            "name": "Adega e Bebidas Alcindo",
+            "name": "Adega e Seleção de Bebidas",
             "role": "Seção de vinhos e bebidas no Supermercado +B Alcindo.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Bebidas",
             "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-alcindo-foto-de-adega-e-bebidas.webp"
         },
         {
-            "name": "Adega e Bebidas Plaza",
+            "name": "Adega e Bebidas Especiais",
             "role": "Seção de vinhos e bebidas no Supermercado +B Plaza.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Bebidas",
             "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-adega-e-bebidas.webp"
         },
@@ -196,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "name": "Bebidas Importadas e Especiais",
             "role": "Cervejas artesanais, destilados e licores das melhores marcas.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Bebidas",
             "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-bebidas-especiais.webp"
         },
@@ -203,49 +219,49 @@ document.addEventListener('DOMContentLoaded', () => {
             "name": "Espaço de Bebidas Self-Service",
             "role": "Variedade de refrigerantes, sucos e águas com prático atendimento.",
             "category": "supermercados-b",
+            "unit": "Plaza",
             "subcategory": "Bebidas",
             "photo": "/assets/Fotografias/Supermercado +B/05_Bebidas/unid-plaza-foto-de-cliente-em-area-de-bebidas-self-service.webp"
         },
-
-        // -- Lácteos e Frios
         {
-            "name": "Ilha de Frios e Rotisseria Alcindo",
+            "name": "Ilha de Frios e Embutidos",
             "role": "Ilha de frios fatiados, queijos e laticínios selecionados na unidade Alcindo.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Lácteos e Frios",
             "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-alcindo-foto-de-ilha-de-frios-e-rotisserie.webp"
         },
         {
-            "name": "Laticínios e Derivados Tapanã",
+            "name": "Laticínios e Derivados",
             "role": "Grande variedade de queijos, leites, iogurtes e derivados refrigerados.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Lácteos e Frios",
             "photo": "/assets/Fotografias/Supermercado +B/06_Lacteos-e-Frios/unid-tapana-foto-de-secao-de-lacteos.webp"
         },
-
-        // -- Congelados
         {
-            "name": "Setor de Congelados Alcindo",
+            "name": "Setor de Congelados",
             "role": "Refeições prontas, sorvetes e vegetais congelados para sua conveniência.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Congelados",
             "photo": "/assets/Fotografias/Supermercado +B/07_Congelados/unid-alcindo-foto-de-setor-de-congelados.webp"
         },
         {
-            "name": "Ilha de Congelados Tapanã",
+            "name": "Ilha de Congelados",
             "role": "Ampla seção de congelados com marcas líderes de mercado.",
             "category": "supermercados-b",
+            "unit": "Tapanã",
             "subcategory": "Congelados",
             "photo": "/assets/Fotografias/Supermercado +B/07_Congelados/unid-tapana-foto-de-congelados.webp"
         },
-
-        // -- Equipe
         {
             "name": "Equipe de Preparação de Alimentos",
             "role": "Colaboradores treinados e dedicados no manuseio e preparo de alimentos.",
             "category": "supermercados-b",
+            "unit": "Alcindo",
             "subcategory": "Time",
-            "photo": "/assets/Fotografias/Supermercado +B/09_Equipe-e-Atendimento/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp"
+            "photo": "/assets/Fotografias/Supermercado +B/09_Lanchonete/unid-alcindo-foto-de-equipe-na-preparacao-de-alimentos.webp"
         },
         
         // +B Farma
@@ -388,6 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isLightboxInfoHidden = false;
 
     function getPhotoUnit(photoItem) {
+        if (photoItem.unit) return photoItem.unit;
         if (photoItem.category === 'supermercados-b') {
             const text = (photoItem.name + ' ' + photoItem.photo).toLowerCase();
             if (text.includes('plaza')) return 'Plaza';

@@ -1499,7 +1499,8 @@
       // 1. Bloco preto cresce: width calc(100% - 70px) -> 100vw, height 100vh - 60px -> 100vh, padding lateral reduz
       const widthMargin = (1 - progress) * 70; // 70px -> 0px
       const heightMargin = (1 - progress) * 60; // 60px -> 0px
-      const padding = `${70 - progress * 30}px ${48 - progress * 24}px 380px`; // Preserva bottom padding de 380px
+      const verticalPadding = 120 - progress * 40; // 120px -> 80px
+      const padding = `${verticalPadding}px ${48 - progress * 24}px ${verticalPadding}px`; // Símétrico (topo e base idênticos)
 
       blackBlock.style.setProperty('--brands-width-margin', `${widthMargin}px`);
       blackBlock.style.setProperty('--brands-height-margin', `${heightMargin}px`);

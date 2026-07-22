@@ -541,7 +541,7 @@
   overflow: visible;
   padding: 0;
   z-index: 1;
-  margin-bottom: -160px;
+  margin-bottom: 0;
 }
 
 .brands-sticky-wrapper {
@@ -560,7 +560,7 @@
   height: auto;
   background-color: #030303;
   border-radius: 120px 120px 0 0;
-  padding: var(--brands-padding, 120px 32px 380px);
+  padding: var(--brands-padding, 120px 32px 120px);
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
@@ -1434,7 +1434,7 @@
 @media (max-width: 980px) {
   .brands-scroll-container {
     height: auto !important; /* Desativa a rolagem travada no tablet/mobile */
-    margin-bottom: -60px !important;
+    margin-bottom: 0 !important;
   }
   
   .brands-sticky-wrapper {
@@ -1448,7 +1448,7 @@
     width: 100% !important;
     height: auto !important;
     border-radius: 40px 40px 0 0 !important;
-    padding: 80px 24px 240px !important;
+    padding: 80px 24px 80px !important;
   }
   
   .brands-section-head {
