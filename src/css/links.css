@@ -40,6 +40,7 @@ body.links-page-body {
 
 /* Parte Superior (Branca) */
 .card-top {
+  position: relative;
   background: #ffffff;
   padding: 36px 24px 32px;
   text-align: center;
@@ -48,6 +49,42 @@ body.links-page-body {
   align-items: center;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
+}
+
+/* Botão Fechar X no Canto Superior Direito da Área Branca */
+.card-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-close-btn:hover {
+  background: #E30613;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.4);
+}
+
+.card-close-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
 }
 
 /* Foto de Perfil / Logo */
@@ -137,7 +174,10 @@ body.links-page-body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100%;
+  width: 88%;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px 24px;
   border-radius: 999px;
   font-weight: 800;
@@ -360,25 +400,7 @@ body.links-page-body {
 }
 
 .links-fullscreen-modal .wf-modal-close {
-  color: #000000 !important;
-  background: rgba(0, 0, 0, 0.05) !important;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  top: 20px;
-  right: 20px;
-  transition: all 0.25s ease !important;
-  z-index: 10;
-}
-
-.links-fullscreen-modal .wf-modal-close:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-  transform: scale(1.1) !important;
+  display: none !important;
 }
 
 /* Responsividade Desktop */
@@ -391,6 +413,18 @@ body.links-page-body {
     padding: 44px 40px 36px;
   }
 
+  .card-close-btn {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-close-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .card-bottom {
     padding: 40px 40px 36px;
   }
@@ -399,6 +433,8 @@ body.links-page-body {
     font-size: 0.96rem;
     padding: 16px 28px;
     margin-bottom: 14px;
+    width: 88%;
+    max-width: 440px;
   }
   
   .brands-list {
@@ -414,10 +450,5 @@ body.links-page-body {
     width: 36px;
     height: 36px;
     padding: 4px;
-  }
-
-  .links-fullscreen-modal .wf-modal-close {
-    top: 30px;
-    right: 30px;
   }
 }

@@ -102,6 +102,14 @@
       <!-- PARTE SUPERIOR (BRANCA) -->
       <section class="card-top">
         
+        <!-- Botão Fechar (X) -->
+        <button class="card-close-btn" id="card-close-btn" aria-label="Fechar modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
         <!-- Logo Circular -->
         <div class="profile-logo">
           <img src="/assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Negativo).webp" alt="Grupo +B" />
@@ -234,5 +242,51 @@
     </main>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function requestCloseModal() {
+        // Enviar mensagem para a janela pai (funciona em file://, http e https)
+        try {
+          if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'close-modal', source: 'links-card' }, '*');
+          }
+        } catch (e) {}
+
+        // Tentar invocar closeModal na janela pai diretamente
+        try {
+          if (window.parent && typeof window.parent.closeModal === 'function') {
+            window.parent.closeModal();
+          }
+        } catch (e) {}
+
+        // Se a página estiver aberta de forma independente (sem iframe)
+        if (window.self === window.top) {
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = './index.html';
+          }
+        }
+      }
+
+      // 1. Clique no botão "X" de fechar
+      const closeBtn = document.getElementById('card-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          requestCloseModal();
+        });
+      }
+
+      // 2. Clique na área amarela externa ao container branco/preto (.links-card)
+      document.addEventListener('click', function(e) {
+        const card = document.querySelector('.links-card');
+        if (card && !card.contains(e.target)) {
+          requestCloseModal();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

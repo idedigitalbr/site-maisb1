@@ -350,6 +350,13 @@
     document.querySelectorAll('.wf-modal-close').forEach(function (btn) {
       btn.addEventListener('click', closeModal);
     });
+
+    // Listener de mensagens vindas de iframes (ex: links.html)
+    window.addEventListener('message', function (e) {
+      if (e.data === 'close-modal' || (e.data && e.data.type === 'close-modal')) {
+        closeModal();
+      }
+    });
     
     const triggerMap = {
       'menu-link-links': 'modal-redes-sociais'
