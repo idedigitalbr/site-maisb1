@@ -809,17 +809,17 @@ document.addEventListener('DOMContentLoaded', function() {
         ? `<span class="status-badge distance-badge">A ${store.distance.toFixed(1).replace('.', ',')} km de ${userLocationLabel}</span>`
         : '';
 
-      const subbrandPills = store.subbrands.map(sub => {
+      const mainBrandsOnly = ['wine', 'plaza', 'park', 'atacarejo'];
+      const visibleSubbrands = store.subbrands.filter(sub => mainBrandsOnly.includes(sub));
+
+      const subbrandPills = visibleSubbrands.map(sub => {
         let label = sub;
-        if (sub === 'super') label = 'Super';
-        if (sub === 'farma') label = 'Farma +B';
         if (sub === 'wine') label = 'The Wine';
         if (sub === 'plaza') label = 'Villa Plaza';
-        if (sub === 'park') label = 'Plaza Park';
+        if (sub === 'park') label = 'Villa Plaza Park';
         if (sub === 'atacarejo') label = 'Atacarejo';
-        if (sub === 'padaria') label = 'Padaria';
         return `<span class="store-mini-tag sub-${sub}">${label}</span>`;
-      }).slice(0, 3).join('');
+      }).join('');
 
       const formattedAddress = store.address
         .replace(', Belém', ',<br>Belém')
@@ -850,7 +850,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="store-address-teaser">${formattedAddress}</p>
           <div class="store-brands-teaser">
             ${subbrandPills}
-            ${store.subbrands.length > 3 ? `<span class="store-mini-tag more">+${store.subbrands.length - 3}</span>` : ''}
           </div>
         </div>
       `;

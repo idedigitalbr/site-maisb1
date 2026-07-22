@@ -366,21 +366,20 @@
       const el = document.getElementById(id);
       if (el) {
         el.addEventListener('click', function (e) {
+          if (e.ctrlKey || e.metaKey || e.button === 1) return;
           e.preventDefault();
           openModal(triggerMap[id]);
         });
       }
     });
 
-    // Capturar cliques em links de âncora específicos para abrir modais
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-      const href = link.getAttribute('href');
-      if (href === '#links') {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          openModal('modal-redes-sociais');
-        });
-      }
+    // Capturar cliques em todos os links que apontam para #links ou links.html para abrir o modal atualizado
+    document.querySelectorAll('a[href="#links"], a[href="./links.html"], a[href="links.html"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        if (e.ctrlKey || e.metaKey || e.button === 1) return;
+        e.preventDefault();
+        openModal('modal-redes-sociais');
+      });
     });
 
     // Verificar hash ao carregar para suportar links externos
