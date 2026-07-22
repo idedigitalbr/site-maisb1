@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="album-badges-container">
                         <span class="album-badge badge-${photoItem.category}">${categoryLabel}</span>
                         ${unit ? `<span class="album-badge album-unit-badge badge-${photoItem.category}-soft">${unit}</span>` : ''}
-                        ${photoItem.subcategory ? `<span class="album-badge album-sub-badge badge-${photoItem.category}-softest">${photoItem.subcategory}</span>` : ''}
+                        ${(photoItem.subcategory && photoItem.category === 'supermercados-b') ? `<span class="album-badge album-sub-badge badge-${photoItem.category}-softest">${photoItem.subcategory}</span>` : ''}
                     </div>
                     <h3 class="album-photo-title">
                         <span class="album-photo-title-first">${nameSplit.first}</span>
@@ -546,12 +546,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Renderiza os filtros secundários dinamicamente
+    // Renderiza os filtros secundários (subfiltros) exclusivamente para a categoria Supermercados +B
     function renderChildFilters() {
         const childContainer = document.getElementById('album-child-filter-controls');
         if (!childContainer) return;
 
-        if (currentFilter === 'all') {
+        if (currentFilter !== 'supermercados-b') {
             childContainer.innerHTML = '';
             childContainer.classList.add('hidden');
             return;
