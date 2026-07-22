@@ -8,10 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Grupo +B (Holding)
         {
             "name": "Sede Administrativa",
-            "role": "Equipe unida em frente à sede administrativa do Grupo.",
+            "role": "Estrutura corporativa e sede administrativa do Grupo +B.",
             "category": "grupo-b",
             "subcategory": "Institucional",
             "photo": "/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+        },
+        {
+            "name": "Equipe Institucional Grupo +B",
+            "role": "Colaboradores e lideranças reunidos celebrando o crescimento do Grupo.",
+            "category": "grupo-b",
+            "subcategory": "Time",
+            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
+        },
+        {
+            "name": "Integração e Propósito",
+            "role": "União e cultura forte impulsionando os resultados de nossas marcas.",
+            "category": "grupo-b",
+            "subcategory": "Time",
+            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (2).webp"
+        },
+        {
+            "name": "Encontro de Lideranças",
+            "role": "Fortalecimento de equipe e alinhamento estratégico corporativo.",
+            "category": "grupo-b",
+            "subcategory": "Time",
+            "photo": "/assets/Fotografias/Grupo Institucional +B/grupob-time (3).webp"
         },
         
         // Supermercados +B
