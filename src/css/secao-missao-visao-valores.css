@@ -2,7 +2,7 @@
    Estilos da Seção Missão, Visão e Valores (Com Otimizações Mobile/Tablet)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap');
 
 body.mvv-standalone-body {
   margin: 0;
@@ -168,16 +168,16 @@ body.mvv-standalone-body {
   height: 100%;
 }
 
-/* Título em Fonte Serifada Elegante */
+/* Título em Fonte Serifada Elegante (Garantido com !important) */
 .mvv-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
-  font-weight: 400;
-  color: #ffffff;
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: clamp(2.4rem, 3.4vw, 3.1rem) !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
 }
 
 /* Traço Neon Pequeno abaixo dos títulos */
@@ -210,43 +210,43 @@ body.mvv-standalone-body {
 
 /* Texto de Descrição */
 .mvv-text {
-  font-size: 1.02rem;
-  line-height: 1.55;
-  color: #ffffff;
-  margin: 0;
-  font-weight: 400;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
 }
 
 /* Lista de Valores */
 .mvv-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
 }
 
 .mvv-list li {
-  position: relative;
-  padding-left: 20px;
-  font-size: 1.02rem;
-  line-height: 1.55;
-  color: #ffffff;
-  font-weight: 400;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  position: relative !important;
+  padding-left: 20px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
 }
 
 .mvv-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: -1px;
-  color: #ffd000;
-  font-size: 1.3rem;
-  line-height: 1;
-  text-shadow: 0 0 8px #ffd000;
+  content: '•' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: -1px !important;
+  color: #ffd000 !important;
+  font-size: 1.3rem !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 8px #ffd000 !important;
 }
 
 /* ==========================================================================
@@ -265,7 +265,7 @@ body.mvv-standalone-body {
   }
 
   .mvv-title {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
   }
 }
 
@@ -312,7 +312,7 @@ body.mvv-standalone-body {
 
   .mvv-card {
     min-height: 480px;
-    padding: 36px 22px 32px 30px; /* Padding ajustado para telas menores */
+    padding: 36px 22px 32px 30px;
     border-radius: 26px;
   }
 
@@ -323,7 +323,7 @@ body.mvv-standalone-body {
   }
 
   .mvv-title {
-    font-size: clamp(2rem, 7vw, 2.3rem);
+    font-size: clamp(2rem, 7vw, 2.3rem) !important;
   }
 
   .mvv-title-accent {
@@ -335,18 +335,17 @@ body.mvv-standalone-body {
 
   .mvv-text, 
   .mvv-list li {
-    font-size: 0.98rem;
-    line-height: 1.5;
+    font-size: 0.98rem !important;
+    line-height: 1.5 !important;
   }
 
   .mvv-list {
-    gap: 10px;
+    gap: 10px !important;
   }
 
-  /* Ocultar quebras <br> no mobile para evitar linhas desnecessariamente curtas */
   .mvv-text br,
   .mvv-list br {
-    display: none;
+    display: none !important;
   }
 
   .mvv-card-overlay {
