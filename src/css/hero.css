@@ -1,106 +1,21 @@
 /* ==========================================================================
-   Hero Fullscreen Carousel Styles — Grupo +B
+   Hero Section — Grupo +B (Estilo Editorial Premium)
    ========================================================================== */
 
 .hero-carousel-section {
   position: relative !important;
   width: 100% !important;
-  max-width: 100% !important;
-  height: 100vh !important;
+  height: clamp(580px, 90vh, 950px) !important;
   margin: 0 !important;
   padding: 0 !important;
-  border-radius: 0 0 40px 40px !important;
-  box-shadow: none !important;
-  border: none !important;
   overflow: hidden !important;
-  background: #000 !important;
+  background-color: var(--color-black) !important;
   display: flex !important;
   align-items: center !important;
   z-index: 10 !important;
 }
 
-/* Ponto de luz interativo na esquerda (glow/burn laranja queimado) */
-.hero-interactive-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, rgba(255, 110, 0, 0.35) 0%, rgba(255, 50, 0, 0.12) 35%, rgba(255, 0, 0, 0.01) 65%, transparent 80%) !important;
-  filter: blur(35px);
-  pointer-events: none;
-  z-index: 2;
-  transform: translate3d(-100px, 30vh, 0) translate(-50%, -50%);
-  border-radius: 50%;
-  will-change: transform;
-}
-
-/* Wrapper do elemento tecnológico para desacoplar translação via GPU de rotação */
-.hero-tech-ring-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 2;
-  transform: translate3d(-100px, 30vh, 0);
-  will-change: transform;
-}
-
-/* Elemento tecnológico de órbita/anel neon sutil e desfocado que gira no fundo */
-.hero-tech-ring {
-  position: relative;
-  width: 450px;
-  height: 450px;
-  border: 1px dashed rgba(255, 196, 0, 0.18);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%) rotate(0deg);
-  transform-origin: center;
-  filter: blur(2px);
-  animation: rotateTechRing 40s linear infinite;
-  will-change: transform;
-}
-
-.hero-tech-ring::after {
-  content: "";
-  position: absolute;
-  inset: -15px;
-  border: 1px solid rgba(255, 90, 0, 0.08);
-  border-radius: 50%;
-  animation: pulseTechRing 6s ease-in-out infinite alternate;
-}
-
-@keyframes rotateTechRing {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes pulseTechRing {
-  0% { transform: scale(0.96); opacity: 0.5; }
-  100% { transform: scale(1.04); opacity: 1; }
-}
-
-/* Background video - 100% de largura com alinhamento deslocado à direita no desktop */
-.carousel-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right bottom;
-  z-index: 1;
-  pointer-events: none;
-  transition: object-position 0.5s ease;
-}
-
-@media (max-width: 991px) {
-  .carousel-bg-video {
-    object-position: right bottom;
-  }
-}
-
-/* Imagens de background específicas de cada slide - Alinhadas igual ao vídeo */
+.carousel-bg-video,
 .carousel-bg-image {
   position: absolute;
   top: 0;
@@ -108,16 +23,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 75% center;
+  object-position: center right;
   z-index: 1;
   pointer-events: none;
-  transition: object-position 0.5s ease;
-}
-
-@media (max-width: 991px) {
-  .carousel-bg-image {
-    object-position: center center;
-  }
+  filter: brightness(0.85) contrast(1.05);
 }
 
 .carousel-slides {
@@ -144,550 +53,103 @@
   z-index: 4;
 }
 
-/* Overlays - Estilizados de forma dinâmica pelas classes temáticas */
+/* Overlay Gradiente Preto Suave para Legibilidade */
 .slide-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-  pointer-events: none !important;
+  background: linear-gradient(90deg, rgba(18, 14, 14, 0.95) 0%, rgba(18, 14, 14, 0.82) 40%, rgba(18, 14, 14, 0.3) 75%, transparent 100%);
+  pointer-events: none;
 }
 
-.slide1-overlay,
-.slide2-overlay,
-.slide3-overlay,
-.slide4-overlay {
-  pointer-events: none !important;
-}
-
-/* Slide Layout */
 .slide-container {
   position: relative;
   z-index: 3;
-  width: 100%;
-  max-width: 1180px;
+  width: min(var(--container-width), calc(100% - 80px));
   margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-}
-
-.slide-container.two-columns {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
-}
-
-@media (max-width: 991px) {
-  .slide-container.two-columns {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .slide-visual {
-    display: none !important;
-  }
+  padding-top: 60px;
 }
 
 .slide-content {
-  max-width: 680px;
-  position: relative;
+  max-width: 620px;
 }
 
-.slide-content.left-align {
-  text-align: left;
+.slide-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gray-medium);
+  margin-bottom: 20px;
+}
+
+.slide-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-yellow);
 }
 
 .slide-headline-huge {
-  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: #fff;
-  margin: 0 0 20px;
-  max-width: 900px;
-}
-
-.carousel-slide h2 {
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-  font-weight: 900;
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.04em;
-  margin: 10px 0 20px;
-  color: #fff;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin: 0 0 24px;
 }
 
-/* Barra de Progresso do Carrossel — fixada na parte inferior */
-@keyframes progressShimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.carousel-progress-bar {
-  position: absolute;
-  bottom: 0;
-  top: auto;
-  left: 0;
-  height: 6px;
-  background: linear-gradient(90deg, #FFC400, #ffea79, #FFC400);
-  background-size: 200% auto;
-  animation: progressShimmer 2s linear infinite;
-  z-index: 25;
-  width: 0%;
-  pointer-events: none;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 16px rgba(255, 196, 0, 0.85), 0 0 35px rgba(255, 196, 0, 0.45);
-}
-
-/* Setas de Navegação do Carrossel — esmaecidas por padrão, aparecem no hover */
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: rgba(11, 11, 11, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  opacity: 0.35;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.carousel-nav svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-  transition: transform 0.3s ease;
-}
-
-/* Zona de hover nas bordas laterais do carrossel — escurece e revela seta */
-.hero-carousel-section:hover .carousel-nav {
-  opacity: 0.55;
-}
-
-.carousel-nav:hover {
-  opacity: 1 !important;
-  background: rgba(11, 11, 11, 0.85);
-  border-color: var(--yellow);
-  color: var(--yellow);
-  box-shadow: 0 0 28px rgba(255, 196, 0, 0.55), 0 0 60px rgba(255, 196, 0, 0.18);
-}
-
-.carousel-nav.prev-btn {
-  left: clamp(16px, 4vw, 40px);
-}
-
-.carousel-nav.prev-btn:hover svg {
-  transform: translateX(-3px);
-}
-
-.carousel-nav.next-btn {
-  right: clamp(16px, 4vw, 40px);
-}
-
-.carousel-nav.next-btn:hover svg {
-  transform: translateX(3px);
-}
-
-@media (max-width: 768px) {
-  .carousel-nav {
-    width: 42px;
-    height: 42px;
-    opacity: 0.6;
-  }
-  .carousel-nav svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Default texts in carousel */
-.carousel-slide p {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 30px;
+.slide-headline-huge .headline-highlight {
+  display: block;
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  color: var(--color-yellow);
 }
 
 .slide-lead {
-  max-width: 580px;
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--color-gray-light);
+  margin-bottom: 36px;
+  max-width: 540px;
 }
 
 .slide-actions {
   display: flex;
-  gap: 14px;
-}
-
-.btn {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 0 28px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 900;
-  font-size: 0.94rem;
-  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn.primary {
-  background: var(--gold-gradient);
-  color: #000;
-  box-shadow: 0 10px 25px rgba(255,196,0,0.18);
-}
-.btn.primary:hover {
-  background: var(--red) !important;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.4);
+  gap: 16px;
 }
 
-/* Indicators */
+/* Indicadores Discretos do Hero */
 .carousel-indicators {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20 !important;
+  left: max(40px, (100% - var(--container-width)) / 2 + 40px);
+  z-index: 20;
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
 }
 
 .indicator-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
+  width: 28px;
+  height: 2px;
+  background: rgba(253, 250, 246, 0.25);
   border: none;
   padding: 0;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.indicator-dot:hover {
-  background: rgba(255, 255, 255, 0.6);
-}
-
 .indicator-dot.active {
-  background: var(--yellow);
-  transform: scale(1.25);
-  box-shadow: 0 0 10px var(--yellow);
+  background: var(--color-yellow);
+  width: 42px;
 }
 
-/* Slide 2: Mini brands spiral/orbit card layout */
-.slide-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 400px;
-}
-
-.brands-mini-spiral {
-  position: relative;
-  width: 320px;
-  height: 320px;
-}
-
-.mini-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-}
-
-.mini-hub .hub-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: invert(1) hue-rotate(180deg);
-}
-
-.mini-brand-card {
-  position: absolute;
-  width: 96px;
-  background: rgba(10, 10, 10, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 10px 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mini-brand-card img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: contain;
-  background: #fff;
-  padding: 2px;
-  margin-bottom: 6px;
-}
-
-.mini-brand-card .brand-name {
-  font-size: 0.65rem;
-  font-weight: 900;
-  color: #fff;
-}
-
-/* Positions of orbiting brand cards */
-.brands-mini-spiral .brand-super {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.brands-mini-spiral .brand-farma {
-  top: 25%;
-  right: -10px;
-}
-.brands-mini-spiral .brand-plaza {
-  bottom: 5%;
-  right: 15px;
-}
-.brands-mini-spiral .brand-park {
-  bottom: 5%;
-  left: 15px;
-}
-.brands-mini-spiral .brand-wine {
-  top: 25%;
-  left: -10px;
-}
-
-/* Hover glowing effects for mini cards */
-.mini-brand-card:hover {
-  transform: scale(1.08) translateY(-4px);
-  z-index: 10;
-}
-.brand-super:hover {
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.6);
-  border-color: #F20D18;
-}
-.brand-farma:hover {
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.6);
-  border-color: #F20D18;
-}
-.brand-plaza:hover {
-  box-shadow: 0 0 15px rgba(255, 138, 0, 0.6);
-  border-color: #ff8a00;
-}
-.brand-park:hover {
-  box-shadow: 0 0 15px rgba(22, 163, 74, 0.6);
-  border-color: #16a34a;
-}
-.brand-wine:hover {
-  box-shadow: 0 0 15px rgba(75, 16, 32, 0.6);
-  border-color: #4b1020;
-}
-
-/* ==========================================================================
-   Estilo Premium para as Eyebrows (Badges / Kicker tags)
-   ========================================================================== */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 12px;
-  color: var(--muted);
-  width: fit-content;
-}
-
-.eyebrow.light {
-  background: rgba(0, 0, 0, 0.65);
-  color: var(--yellow);
-  border: 1px solid rgba(255, 196, 0, 0.45);
-  box-shadow: 0 0 12px rgba(255, 196, 0, 0.2), inset 0 0 6px rgba(255, 196, 0, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 16px;
-  border-radius: 100px;
-  margin-bottom: 18px;
-}
-
-/* ==========================================================================
-   Temas de Cores e Identidades Visuais dos Slides (Preto, Amarelo, Vermelho)
-   ========================================================================== */
-
-/* Tema 1: Preto (Institucional) */
-.carousel-slide.theme-black .slide-overlay {
-  background: linear-gradient(to right, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.97) 25%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0) 100%) !important;
-}
-@media (max-width: 991px) {
-  .carousel-slide.theme-black .slide-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.82) 100%) !important;
-  }
-}
-
-/* Tema 2: Amarelo (Parcerias) */
-.carousel-slide.theme-yellow .slide-overlay {
-  background: transparent !important;
-}
-.carousel-slide.theme-yellow .slide-content,
-.carousel-slide.theme-yellow .slide-content h2,
-.carousel-slide.theme-yellow .slide-content p,
-.carousel-slide.theme-yellow .slide-content h1,
-.carousel-slide.theme-yellow .slide-content .slide-lead,
-.carousel-slide.theme-yellow .slide-content p strong {
-  color: #ffffff !important;
-}
-.carousel-slide.theme-yellow .slide-content h2 span.slide-headline-highlight {
-  color: #F20D18 !important;
-}
-.carousel-slide.theme-yellow .btn.primary {
-  background: #000000 !important;
-  color: #F20D18 !important;
-  border: 1.5px solid #F20D18 !important;
-  box-shadow: 0 10px 25px rgba(242, 13, 24, 0.1) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-.carousel-slide.theme-yellow .btn.primary:hover {
-  background: #F20D18 !important;
-  color: #fff !important;
-  border-color: #F20D18 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.3) !important;
-}
-/* Estilo para a tag e grupo de badges */
-.partner-badge-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 25px;
-}
-.partner-badge-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #000000;
-  border: 1.5px solid #F20D18;
-  color: #F20D18;
-}
-.partner-badge-circle svg {
-  width: 22px;
-  height: 22px;
-}
-.partner-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  height: 36px;
-  padding: 0 18px;
-  border-radius: 100px;
-  background: #000000;
-  border: 1.5px solid #F20D18;
-  color: #F20D18;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-@media (max-width: 991px) {
-  .carousel-slide.theme-yellow .slide-overlay {
-    background: transparent !important;
-  }
-}
-
-/* Tema 3: Vermelho (Trabalhe Conosco) */
-.carousel-slide.theme-red .slide-overlay {
-  background: transparent !important;
-}
-.carousel-slide.theme-red .slide-content,
-.carousel-slide.theme-red .slide-content h2,
-.carousel-slide.theme-red .slide-content p,
-.carousel-slide.theme-red .slide-content h1,
-.carousel-slide.theme-red .slide-content .slide-lead,
-.carousel-slide.theme-red .slide-content h2 span,
-.carousel-slide.theme-red .slide-content p strong {
-  color: #000000 !important;
-}
-.carousel-slide.theme-red .btn.primary {
-  background: #000000 !important;
-  color: #FFC400 !important;
-  border: 1.5px solid #FFC400 !important;
-  box-shadow: 0 10px 25px rgba(255, 196, 0, 0.1) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-.carousel-slide.theme-red .btn.primary:hover {
-  background: #F20D18 !important;
-  color: #ffffff !important;
-  border-color: #F20D18 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(242, 13, 24, 0.35) !important;
-}
-/* Estilo para a tag e grupo de badges de carreiras */
-.careers-badge-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 25px;
-}
-.careers-badge-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #000000;
-  border: 1.5px solid #FFC400;
-  color: #FFC400;
-}
-.careers-badge-circle svg {
-  width: 22px;
-  height: 22px;
-}
-.careers-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  height: 36px;
-  padding: 0 18px;
-  border-radius: 100px;
-  background: #000000;
-  border: 1.5px solid #FFC400;
-  color: #FFC400;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-@media (max-width: 991px) {
-  .carousel-slide.theme-red .slide-overlay {
-    background: transparent !important;
-  }
-}

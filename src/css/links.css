@@ -4,7 +4,7 @@ html {
 
 /* Estilos de Body apenas para a página standalone ou dentro do iframe */
 body.links-page-body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-primary);
   background-color: var(--yellow);
   color: var(--black);
   min-height: 100vh;

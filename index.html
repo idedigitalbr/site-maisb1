@@ -24,9 +24,9 @@
   <meta name="twitter:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
 
   <link rel="icon" type="image/webp" href="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+
   <link rel="preload" href="./assets/Videos/video-b-home-poster.webp" as="image" />
   <link rel="preload" href="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (Color Positivo).webp" as="image" />
   <link rel="stylesheet" href="./src/css/main.css?v=8.0" />
@@ -132,28 +132,27 @@
     </button>
 
     <nav class="main-menu" id="main-menu">
-      <a href="#home">Home</a>
-      <a href="./sobre-nos.html" id="menu-link-sobre">Sobre o Grupo Mais Barato</a>
+      <a href="./sobre-nos.html" id="menu-link-sobre">Sobre</a>
       <div class="dropdown">
         <a href="#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
-        <div class="drop-panel dropdown-rich-menu" aria-label="Submenu Nossas Marcas">
-          <a href="#marca-super" class="dropdown-item-rich brand-super">
+        <div class="drop-panel" aria-label="Submenu Nossas Marcas">
+          <a href="#marcas" class="dropdown-item-rich brand-super">
             <span class="dropdown-item-logo"><img src="./assets/Logos SubMarcas/logo-supermercados-maisb.webp" alt="+B Supermercados"></span>
             <span class="dropdown-item-text">+B Supermercados</span>
           </a>
-          <a href="#marca-farma" class="dropdown-item-rich brand-farma">
+          <a href="#marcas" class="dropdown-item-rich brand-farma">
             <span class="dropdown-item-logo"><img src="./assets/Logos SubMarcas/logo-farma-mais-b.webp" alt="+B Farma"></span>
             <span class="dropdown-item-text">+B Farma</span>
           </a>
-          <a href="#marca-plaza" class="dropdown-item-rich brand-plaza">
+          <a href="#marcas" class="dropdown-item-rich brand-plaza">
             <span class="dropdown-item-logo"><img src="./assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp" alt="Villa Plaza"></span>
             <span class="dropdown-item-text">Villa Plaza</span>
           </a>
-          <a href="#marca-park" class="dropdown-item-rich brand-park">
+          <a href="#marcas" class="dropdown-item-rich brand-park">
             <span class="dropdown-item-logo"><img src="./assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp" alt="Villa Plaza Park"></span>
             <span class="dropdown-item-text">Villa Plaza Park</span>
           </a>
-          <a href="#marca-wine" class="dropdown-item-rich brand-wine">
+          <a href="#marcas" class="dropdown-item-rich brand-wine">
             <span class="dropdown-item-logo"><img src="./assets/Logos SubMarcas/logo-the-wine-experience.webp" alt="The Wine Experience"></span>
             <span class="dropdown-item-text">The Wine Experience</span>
           </a>
@@ -162,32 +161,41 @@
       <div class="dropdown contacts-dropdown">
         <a class="drop-link btn-contacts-menu" aria-haspopup="true">Contatos</a>
         <div class="drop-panel" aria-label="Submenu Contatos">
-          <a href="#" class="open-map-trigger" id="menu-link-unidades">Nossas Unidades</a>
-          <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" id="menu-link-trabalhe">Trabalhe Conosco</a>
+          <a href="#store-locator-teaser" id="menu-link-unidades">Nossas Unidades</a>
+          <a href="#oportunidades" id="menu-link-trabalhe">Trabalhe Conosco</a>
           <a href="./links.html" id="menu-link-links">Nossos Links</a>
         </div>
       </div>
     </nav>
+
+
   </header>
 
   <main id="wf-main-content" data-wf-version="5.0">
     <!-- SEÇÃO HERO BANNER ESTÁTICO FULLSCREEN -->
-    <section class="hero-carousel-section wf-section" id="home" data-wf-label="SOBRE NÓS: HERO VÍDEO ESTÁTICO - FULLSCREEN">
-      <!-- Slides wrapper (Lauda única estática) -->
+    <section class="hero-carousel-section section-dark" id="home">
       <div class="carousel-slides">
-        <div class="carousel-slide active theme-black" data-slide="1">
-          <!-- Vídeo de background estático -->
+        <div class="carousel-slide active" data-slide="1">
           <video class="carousel-bg-video" autoplay loop muted playsinline poster="./assets/Videos/video-b-home-poster.webp">
             <source src="./assets/Videos/video-b-home-compressed.mp4" type="video/mp4">
           </video>
-          <div class="slide-overlay slide1-overlay"></div>
+          <div class="slide-overlay"></div>
           <div class="container slide-container">
-            <div class="slide-content left-align">
-              <span class="eyebrow light">Bem-vindo</span>
-              <h1 class="slide-headline-huge">Somos o Grupo Mais Barato</h1>
-              <p class="slide-lead">Grandes marcas e experiências em supermercado, farmácia, gastronomia e lazer no Norte.</p>
+            <div class="slide-content">
+              <span class="slide-eyebrow">BEM-VINDO</span>
+              <h1 class="slide-headline-huge">
+                Somos o Grupo<br>
+                <span class="headline-highlight">Mais Barato</span>
+              </h1>
+              <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
               <div class="slide-actions">
-                <a href="./sobre-nos.html" class="btn primary">Saber mais</a>
+                <a href="./sobre-nos.html" class="btn button-light">
+                  CONHEÇA O GRUPO
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -195,49 +203,23 @@
       </div>
     </section>
 
-    <section class="section about-premium-section wf-section section-full-width" id="sobre" data-wf-label="SEÇÃO SOBRE O GRUPO - LAYOUT PREMIUM GLASSMORPHISM">
-      <!-- Ambient Lights / Background Glows -->
-      <div class="about-bg-glow glow-top-right"></div>
-      <div class="about-bg-glow glow-center-photo"></div>
-      <div class="about-bg-glow glow-bottom-left"></div>
-      <div class="about-dotted-pattern"></div>
-
+    <!-- SEÇÃO SOBRE O GRUPO -->
+    <section class="section section-light about-premium-section" id="sobre">
       <div class="container about-container">
-        <!-- Main Top Row (2 Columns: Content Left, Photo Right) -->
         <div class="about-main-grid">
-          
-          <!-- Left Column: Content -->
-          <div class="about-content-col reveal">
-            <!-- Top Tag / Pill -->
-            <div class="about-pill-tag">
-              <span class="pill-icon-wrapper">
-                <svg viewBox="0 0 24 24" class="pill-icon" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
-                  <line x1="7" y1="7" x2="7.01" y2="7"/>
-                </svg>
-              </span>
-              <span class="pill-text">SOBRE O GRUPO</span>
-            </div>
-
-            <!-- Headline -->
+          <div class="about-content-col">
+            <span class="eyebrow-tag">SOBRE O GRUPO</span>
             <h2 class="about-headline">
-              Sólida holding<br>
-              paraense com forte<br>
-              visão de <span class="highlight-red">expansão.</span>
+              Sólida holding paraense<br>
+              com forte visão de<br>
+              <span class="headline-highlight">expansão.</span>
             </h2>
-
-            <!-- Decorative Horizontal Accent Line -->
-            <div class="about-headline-divider"></div>
-
-            <!-- Body Paragraphs -->
             <div class="about-paragraphs">
-              <p>Desde 2015, o Grupo Mais Barato atua como uma holding estratégica no Pará, consolidando um portfólio robusto de marcas próprias e exclusivas que simplificam e transformam o cotidiano dos nossos clientes.</p>
-              <p>Com um modelo de gestão focado em inovação, experiência e solidez, crescemos de forma sustentável para gerar valor real para parceiros e comunidades locais.</p>
+              <p>Desde 2015, o Grupo Mais Barato atua como uma holding estratégica no Pará, reunindo grandes marcas e serviços que fazem parte do dia a dia dos paraenses.</p>
+              <p>Com um modelo de gestão focado em inovação, experiência e solidez, construímos formas sustentáveis para gerar valor real para pessoas e comunidades locais.</p>
             </div>
-
-            <!-- Saiba Mais CTA Button -->
-            <div class="about-cta" style="margin-top: 24px;">
-              <a href="sobre-nos.html" class="btn primary" style="min-height: 46px; padding: 0 24px; font-size: 0.88rem; display: inline-flex;">
+            <div class="about-cta" style="margin-top: 28px;">
+              <a href="sobre-nos.html" class="btn button-dark">
                 Saiba mais sobre nós
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -246,113 +228,37 @@
               </a>
             </div>
           </div>
-
-          <!-- Right Column: Photo Card with Frame and Floating Glass Card -->
-          <div class="about-photo-col reveal delay-1">
+          <div class="about-photo-col">
             <div class="about-photo-wrapper">
               <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp" alt="Fachada Grupo Mais Barato" class="about-team-photo" loading="lazy">
-              
-              <!-- Floating Glass Card (Overlay bottom-right) -->
-              <div class="about-floating-glass-card">
-                <div class="floating-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E67E00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-                  </svg>
-                </div>
-                <div class="floating-card-divider"></div>
-                <div class="floating-card-text">
-                  Crescimento que gera valor,<br>
-                  impacto e desenvolvimento<br>
-                  <span class="highlight-orange">sustentável</span> para a nossa região.
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Row: Linha de Números / Metrics (4 Glass Cards) -->
-        <div class="about-metrics-grid reveal">
-          <!-- Card 1: 2015 -->
-          <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-                <circle cx="8" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="12" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="16" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="8" cy="18" r="1" fill="#D91A2A"/>
-                <circle cx="12" cy="18" r="1" fill="#D91A2A"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <div class="metric-number-title">
-                <span class="num-red">2015</span>
-              </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Início da nossa história.</p>
-            </div>
+        <div class="about-stats-row">
+          <div class="stat-item">
+            <strong class="stat-number">2015</strong>
+            <span class="stat-desc">Início da nossa história</span>
           </div>
-
-          <!-- Card 2: +10 MIL m² -->
-          <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18"/>
-                <path d="M5 21V7l7-4 7 4v14"/>
-                <path d="M9 10h1v1H9zM14 10h1v1h-1zM9 14h1v1H9zM14 14h1v1h-1zM9 18h1v1H9zM14 18h1v1h-1z"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <div class="metric-number-title">
-                <span class="num-red">+10</span> <span class="label-red">MIL m²</span>
-              </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">De área operacional.</p>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong class="stat-number">+10 mil m²</strong>
+            <span class="stat-desc">De área operacional</span>
           </div>
-
-          <!-- Card 3: 3 LOJAS -->
-          <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <div class="metric-number-title">
-                <span class="num-red">3</span> <span class="label-red">LOJAS</span>
-              </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Bem localizadas em Belém.</p>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong class="stat-number">3</strong>
+            <span class="stat-desc">Lojas bem localizadas em Belém</span>
           </div>
-
-          <!-- Card 4: 5 MARCAS -->
-          <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#D91A2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <div class="metric-number-title">
-                <span class="num-red">5</span> <span class="label-red">MARCAS</span>
-              </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Marcas de confiança.</p>
-            </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong class="stat-number">5</strong>
+            <span class="stat-desc">Marcas que inspiram confiança</span>
           </div>
         </div>
-
       </div>
     </section>
+
 
     <!-- ==========================================
          SEÇÃO NOSSAS MARCAS (RECRIADA COM ANIMAÇÃO DE SCROLL STICKY)
@@ -367,24 +273,13 @@
           <div class="brands-card-radial-glow"></div>
           <div class="brands-grid-overlay"></div>
           
-          <!-- Setas de navegação posicionadas nas bordas da seção preta -->
-          <button class="brands-nav-arrow arrow-left" aria-label="Marca anterior">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <button class="brands-nav-arrow arrow-right" aria-label="Próxima marca">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-          
           <div class="container brands-section-container">
             
             <!-- Headline Centralizada (Some no Scroll) -->
             <div class="brands-section-head">
-              <span class="brands-eyebrow-tag">NOSSAS MARCAS</span>
-              <h2 class="brands-headline-title">Conheça as marcas do <span class="highlight-yellow">Grupo Mais Barato</span></h2>
+              <span class="eyebrow-tag">NOSSAS MARCAS</span>
+              <h2 class="brands-headline-title">Marcas que conectam, cuidam e fazem parte<br><span class="headline-highlight">do dia a dia.</span></h2>
+
               <div class="brands-subtitle-badge-wrapper">
                 <p class="brands-subtitle-text">Cada marca conecta consumo, cuidado, gastronomia, lazer e experiências para o dia a dia.</p>
               </div>
@@ -392,6 +287,18 @@
             
             <!-- Grid Duas Colunas: Espiral (Esquerda) + Card (Direita) -->
             <div class="brands-layout-split">
+              <!-- Setas de navegação posicionadas nas laterais da grade -->
+              <button class="brands-nav-arrow arrow-left" aria-label="Marca anterior">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="brands-nav-arrow arrow-right" aria-label="Próxima marca">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
               
               <!-- Coluna Esquerda: Espiral / Órbita (Largura 45% no desktop) -->
               <div class="brands-layout-left">
@@ -512,13 +419,13 @@
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-wine">
                         Ver links 
-                        <svg class="arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                           <line x1="7" y1="17" x2="17" y2="7"></line>
                           <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                       </a>
                       <a href="#" class="open-map-trigger btn-card-secondary" title="Nossa unidade">
-                        <svg class="btn-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="btn-icon-pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -526,7 +433,7 @@
                       </a>
                     </div>
                     <!-- Watermark Wine Glass SVG -->
-                    <svg class="card-watermark" viewBox="0 0 100 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="card-watermark" width="140" height="140" viewBox="0 0 100 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <ellipse cx="50" cy="15" rx="28" ry="4" stroke="currentColor" stroke-width="1.2" fill="none"/>
                       <path d="M22 15 C20 75, 30 120, 50 120 C70 120, 80 75, 78 15" stroke="currentColor" stroke-width="1.5" fill="none"/>
                       <line x1="50" y1="120" x2="50" y2="200" stroke="currentColor" stroke-width="1.5"/>
@@ -564,13 +471,13 @@
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-super">
                         Ver links 
-                        <svg class="arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                           <line x1="7" y1="17" x2="17" y2="7"></line>
                           <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                       </a>
                       <a href="#" class="open-map-trigger btn-card-secondary" title="Nossas unidades">
-                        <svg class="btn-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="btn-icon-pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -578,7 +485,7 @@
                       </a>
                     </div>
                     <!-- Watermark Shopping Cart SVG -->
-                    <svg class="card-watermark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="card-watermark" width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 20 L25 20 L40 80 L95 80 L105 35 L35 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                       <circle cx="50" cy="100" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
                       <circle cx="85" cy="100" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -616,13 +523,13 @@
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-farma">
                         Ver links 
-                        <svg class="arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                           <line x1="7" y1="17" x2="17" y2="7"></line>
                           <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                       </a>
                       <a href="#" class="open-map-trigger btn-card-secondary" title="Nossas unidades">
-                        <svg class="btn-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="btn-icon-pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -630,7 +537,7 @@
                       </a>
                     </div>
                     <!-- Watermark Pharmacy Cross + Heart SVG -->
-                    <svg class="card-watermark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="card-watermark" width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="42" y="15" width="36" height="90" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
                       <rect x="15" y="42" width="90" height="36" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
                       <path d="M60 45 C60 45 48 52 48 62 C48 70 54 74 60 78 C66 74 72 70 72 62 C72 52 60 45 60 45Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -667,13 +574,13 @@
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-park">
                         Ver links 
-                        <svg class="arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                           <line x1="7" y1="17" x2="17" y2="7"></line>
                           <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                       </a>
                       <a href="#" class="open-map-trigger btn-card-secondary" title="Nossa unidade">
-                        <svg class="btn-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="btn-icon-pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -681,7 +588,7 @@
                       </a>
                     </div>
                     <!-- Watermark Balloon/Star Park SVG -->
-                    <svg class="card-watermark" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="card-watermark" width="140" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M60 10 L67 38 L96 38 L73 55 L80 84 L60 67 L40 84 L47 55 L24 38 L53 38 Z" stroke="currentColor" stroke-width="2" fill="none"/>
                       <circle cx="40" cy="105" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
                       <circle cx="80" cy="105" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -720,13 +627,13 @@
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-plaza">
                         Ver links 
-                        <svg class="arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                           <line x1="7" y1="17" x2="17" y2="7"></line>
                           <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                       </a>
                       <a href="#" class="open-map-trigger btn-card-secondary" title="Nossa unidade">
-                        <svg class="btn-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="btn-icon-pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -734,7 +641,7 @@
                       </a>
                     </div>
                     <!-- Watermark Fork & Knife Restaurant SVG -->
-                    <svg class="card-watermark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="card-watermark" width="140" height="140" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <!-- Garfo -->
                       <path d="M30 18v25c0 4.4 3.6 8 8 8h0c4.4 0 8-3.6 8-8V18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/>
                       <path d="M35 18v25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>

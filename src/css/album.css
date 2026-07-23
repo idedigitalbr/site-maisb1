@@ -6,7 +6,7 @@
 .album-section {
     background-color: #ffffff !important;
     color: #1A1A1A !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     padding: 6rem 1.5rem !important;
     width: 100%;
     max-width: 100% !important;
@@ -34,7 +34,7 @@
     align-items: center !important;
     gap: 8px !important;
     align-self: center !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-size: 0.75rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.15em !important;
@@ -55,7 +55,7 @@
 }
 
 .album-section h2.album-main-title {
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-size: clamp(2rem, 3.4vw, 3rem) !important;
     font-weight: 900 !important;
     line-height: 1.08 !important;
@@ -92,7 +92,7 @@
     background: rgba(26, 26, 26, 0.05) !important;
     border: 1.5px solid rgba(26, 26, 26, 0.12) !important;
     color: rgba(26, 26, 26, 0.7) !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -200,7 +200,7 @@
     padding: 0.52rem 2.2rem 0.52rem 1.1rem;
     border: 1.5px solid rgba(26, 26, 26, 0.18);
     border-radius: 30px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-primary);
     font-size: 0.78rem;
     font-weight: 500;
     color: #1A1A1A;
@@ -254,7 +254,7 @@
     background: rgba(26, 26, 26, 0.03) !important;
     border: 1px solid rgba(26, 26, 26, 0.08) !important;
     color: rgba(26, 26, 26, 0.55) !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-size: 0.64rem !important; /* menor tamanho para hierarquia visual */
     font-weight: 700 !important;
     text-transform: uppercase !important;
@@ -315,7 +315,7 @@
     background: transparent !important;
     border: 1px solid rgba(26, 26, 26, 0.12) !important;
     color: rgba(26, 26, 26, 0.6) !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-size: 0.64rem !important; /* menor tamanho para hierarquia visual */
     font-weight: 700 !important;
     text-transform: uppercase;
@@ -941,7 +941,7 @@
     padding: 0 28px !important;
     border-radius: 999px !important;
     border: 1px solid transparent !important;
-    font-family: 'DM Sans', sans-serif !important;
+    font-family: var(--font-primary) !important;
     font-weight: 900 !important;
     font-size: 0.94rem !important;
     text-transform: uppercase !important;

@@ -7,10 +7,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px max(48px, (100% - 1180px) / 2);
+  height: 80px;
+  padding: 0 max(40px, (100% - var(--container-width)) / 2);
   background: transparent;
-  color: #fff;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  color: var(--color-white);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, height 0.3s ease;
   border-bottom: 1px solid transparent;
 }
 
@@ -19,41 +20,34 @@
 }
 
 .site-header.scrolled {
-  background: var(--glass-surface);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: var(--glass-border);
-  padding-top: 12px;
-  padding-bottom: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background-color: rgba(18, 14, 14, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(253, 250, 246, 0.08);
+  height: 72px;
 }
 
 .brand-group {
   display: flex;
   align-items: center;
-  gap: 12px;
-  position: relative;
+  gap: 14px;
 }
 
 .brand-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, .16);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 6px;
+  background: var(--color-white);
+  padding: 5px;
   flex-shrink: 0;
-  border: 2px solid transparent;
+  transition: transform var(--transition);
 }
 
 .brand-main:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 18px rgba(255, 196, 0, 0.8);
-  border-color: #FFC400;
+  transform: scale(1.04);
 }
 
 .brand-main img {
@@ -67,16 +61,14 @@
   align-items: center;
   gap: 8px;
   opacity: 0;
-  transform: translateX(-15px);
+  transform: translateX(-10px);
   pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(11, 11, 11, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 6px 14px;
+  transition: all 0.3s ease;
+  background: rgba(25, 22, 22, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(253, 250, 246, 0.1);
 }
 
 .brand-group:hover .brand-sub-logos {
@@ -89,43 +81,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
   padding: 4px;
-  border: 1.5px solid transparent;
+  transition: transform 0.2s ease;
 }
 
 .sub-logo-link:hover {
-  transform: scale(1.18) translateY(-2px);
-}
-
-.sub-logo-link[href*="supermercados"]:hover {
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.8), inset 0 0 0 2px #F20D18;
-  border-color: #F20D18;
-}
-
-.sub-logo-link[href*="farma"]:hover {
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.8), inset 0 0 0 2px #F20D18;
-  border-color: #F20D18;
-}
-
-.sub-logo-link[href*="villa-plaza"]:hover {
-  box-shadow: 0 0 15px rgba(255, 138, 0, 0.8), inset 0 0 0 2px #ff8a00;
-  border-color: #ff8a00;
-}
-
-.sub-logo-link[href*="villa-park"]:hover {
-  box-shadow: 0 0 15px rgba(22, 163, 74, 0.8), inset 0 0 0 2px #16a34a;
-  border-color: #16a34a;
-}
-
-.sub-logo-link[href*="wine"]:hover {
-  box-shadow: 0 0 15px rgba(75, 16, 32, 0.8), inset 0 0 0 2px #4b1020;
-  border-color: #4b1020;
+  transform: scale(1.12);
 }
 
 .sub-logo-link img {
@@ -134,102 +99,56 @@
   object-fit: contain;
 }
 
-/* Fallback para compatibilidade do editor de wireframe */
-.brand {
-  display: none;
-}
-
 .main-menu {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: .9rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, .94);
+  gap: 1.8rem;
+  font-family: var(--font-primary);
+  color: var(--color-white);
 }
 
 .main-menu > a,
 .drop-link {
   display: inline-flex;
   align-items: center;
-  min-height: 42px;
-  padding: 0 13px;
-  border-radius: 999px;
-  transition: .22s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efeito de hover jateado (spray) — brilho sutil em vez de fundo escuro radial */
-.main-menu > a::before,
-.drop-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(255, 196, 0, 0.25) 0%, rgba(255, 196, 0, 0.05) 55%, rgba(255, 196, 0, 0) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.main-menu > a:hover::before,
-.drop-link:hover::before {
-  opacity: 1;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(253, 250, 246, 0.75);
+  padding: 0.5rem 0;
+  background: transparent;
+  border-radius: 0;
+  transition: color var(--transition);
 }
 
 .main-menu > a:hover,
-.drop-link:hover {
-  color: var(--yellow);
-  text-shadow: 0 0 8px rgba(255, 196, 0, 0.6), 0 0 15px rgba(255, 196, 0, 0.3);
-}
-
-/* Botão CTA Contatos */
-.main-menu .btn-contacts-menu {
-  background: var(--yellow, #D4AF37) !important;
-  color: #000000 !important;
-  font-weight: 800;
-  padding: 0 20px;
-  border-radius: 999px;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.main-menu .btn-contacts-menu::before {
-  display: none !important;
-}
-
-.main-menu .btn-contacts-menu:hover {
-  background: #ffffff !important;
-  color: #000000 !important;
-  text-shadow: none !important;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
+.drop-link:hover,
+.main-menu > a.active,
+.drop-link.active {
+  color: var(--color-yellow-hover);
+  background: transparent;
 }
 
 .dropdown {
   position: relative;
-  padding-bottom: 14px;
-  margin-bottom: -14px;
 }
 
 .drop-panel {
   position: absolute;
-  top: calc(100% - 4px);
+  top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  min-width: 265px;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 230px;
   padding: 10px;
-  background: #fff;
-  color: var(--ink);
-  border: 1px solid rgba(0, 0, 0, .08);
-  border-radius: 20px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .25);
+  background-color: var(--color-charcoal);
+  border: 1px solid rgba(253, 250, 246, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   z-index: 1001;
 }
 
@@ -243,76 +162,34 @@
 }
 
 .drop-panel a {
-  display: block;
-  padding: 12px 13px;
-  border-radius: 14px;
-  color: #30291d;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  color: rgba(253, 250, 246, 0.85);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .drop-panel a:hover {
-  background: var(--yellow);
-  color: #111;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 2px;
-  background: #fff;
-  margin: 7px 0;
-  border-radius: 10px;
-}
-
-/* Submenu Rico com Logos à Esquerda e Glow temático */
-.dropdown-rich-menu {
-  background: rgba(11, 11, 11, 0.9) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  padding: 10px !important;
-  border-radius: 18px !important;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 260px !important;
-  z-index: 1100 !important;
-}
-
-.dropdown-item-rich {
-  display: flex !important;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 12px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-radius: 999px !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  text-decoration: none;
-  font-weight: 700 !important;
-  font-size: 0.88rem !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background-color: rgba(253, 250, 246, 0.08);
+  color: var(--color-yellow);
 }
 
 .dropdown-item-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #ffffff;
   padding: 3px;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .dropdown-item-logo img {
@@ -321,42 +198,61 @@
   object-fit: contain;
 }
 
-.dropdown-item-text {
-  flex-grow: 1;
+/* Botão Contatos no Header */
+.main-menu .btn-contacts-menu {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-white) !important;
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(253, 250, 246, 0.35);
+  background-color: transparent;
+  transition: all var(--transition);
+  cursor: pointer;
 }
 
-/* Efeito Glow Temático de Hover por marca */
-.dropdown-item-rich.brand-super:hover {
-  background: rgba(242, 13, 24, 0.12) !important;
-  border-color: #F20D18 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.45) !important;
+.main-menu .btn-contacts-menu:hover,
+.main-menu .contacts-dropdown:hover .btn-contacts-menu {
+  background-color: var(--color-white);
+  color: var(--color-black) !important;
+  border-color: var(--color-white);
 }
 
-.dropdown-item-rich.brand-farma:hover {
-  background: rgba(242, 13, 24, 0.12) !important;
-  border-color: #F20D18 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(242, 13, 24, 0.45) !important;
+.contacts-dropdown .drop-panel {
+  right: 0;
+  left: auto;
+  transform: translateY(8px);
+  min-width: 200px;
 }
 
-.dropdown-item-rich.brand-plaza:hover {
-  background: rgba(255, 138, 0, 0.12) !important;
-  border-color: #ff8a00 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(255, 138, 0, 0.45) !important;
+.contacts-dropdown:hover .drop-panel,
+.contacts-dropdown:focus-within .drop-panel,
+.contacts-dropdown.is-open .drop-panel {
+  transform: translateY(0);
 }
 
-.dropdown-item-rich.brand-park:hover {
-  background: rgba(22, 163, 74, 0.12) !important;
-  border-color: #16a34a !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(22, 163, 74, 0.45) !important;
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0;
 }
 
-.dropdown-item-rich.brand-wine:hover {
-  background: rgba(75, 16, 32, 0.2) !important;
-  border-color: #4b1020 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 15px rgba(75, 16, 32, 0.45) !important;
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--color-white);
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+

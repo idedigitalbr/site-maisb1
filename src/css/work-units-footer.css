@@ -1,84 +1,116 @@
 /* ==========================================================================
-   Estilização do Novo Rodapé Estratégico e Localizador de Lojas — Grupo +B
+   Estilização do Rodapé Institucional e Localizador de Unidades — Grupo +B
    ========================================================================== */
 
-/* --- Estilos do Rodapé Global Minimalista e Centralizado (Anexo 2) --- */
 .footer {
   position: relative;
   z-index: 10;
-  padding: 60px 20px 40px;
-  background: #080808;
-  color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: 'DM Sans', sans-serif;
+  padding: 80px 0 40px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-top: 1px solid rgba(253, 250, 246, 0.08);
+  font-family: var(--font-primary);
   text-align: center;
   overflow: hidden;
 }
 
 .footer-centered-container {
-  max-width: 800px;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 .footer-centered-logo {
-  max-width: 180px;
+  max-width: 160px;
   height: auto;
-  filter: brightness(0) invert(1); /* Logo mono negativo branco */
+  filter: brightness(0) invert(1);
   opacity: 0.9;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition);
 }
 
 .footer-centered-logo:hover {
   opacity: 1;
 }
 
+.footer-phrase {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--color-gray-medium);
+}
+
+.footer-phrase .highlight {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  color: var(--color-yellow);
+}
+
+.footer-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 12px 0;
+}
+
+.footer-nav-links a {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-gray-light);
+  transition: color var(--transition);
+}
+
+.footer-nav-links a:hover {
+  color: var(--color-yellow);
+}
+
 .footer-social-links {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   margin: 8px 0;
 }
 
 .footer-social-links a {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(253, 250, 246, 0.05);
+  border: 1px solid rgba(253, 250, 246, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.85);
+  transition: all var(--transition);
+  color: var(--color-white);
   text-decoration: none;
 }
 
 .footer-social-links a:hover {
-  background: var(--yellow, #D4AF37);
-  border-color: var(--yellow, #D4AF37);
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-black);
+  transform: translateY(-2px);
 }
 
 .footer-social-links a svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
 .footer-copyright {
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.45);
-  margin: 0;
-  letter-spacing: 0.02em;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  color: var(--color-gray-medium);
+  margin-top: 16px;
 }
+
 
 /* Buscador do Rodapé */
 .footer-search-wrapper {
@@ -248,7 +280,7 @@
   height: 600px !important;
   background: #121212 !important;
   color: #ffffff !important;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-primary);
   border-radius: 24px !important;
   overflow: hidden !important;
   margin: 24px 0 40px !important;
@@ -465,7 +497,7 @@
 /* Modificação no CSS do Leaflet para design premium */
 .leaflet-container {
   background: #e5e5ea !important;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: var(--font-primary) !important;
 }
 
 .leaflet-bar a {
@@ -565,17 +597,13 @@
   text-transform: uppercase;
 }
 
-.status-badge.open {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+.status-badge.open,
+.status-badge.closed {
+  background: rgba(253, 250, 246, 0.08);
+  color: var(--color-white);
+  border: 1px solid rgba(253, 250, 246, 0.15);
 }
 
-.status-badge.closed {
-  background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.25);
-}
 
 .store-rating-teaser {
   font-size: 0.75rem;
@@ -1483,7 +1511,7 @@
   flex-direction: column;
   background: #08080a;
   color: #ffffff;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-primary);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 45px 0 20px;
 }
@@ -1620,14 +1648,15 @@
   font-weight: 700;
 }
 
-.store-locator-section .panel-filter-pill.brand-farma-base {
-  background: rgba(242, 13, 24, 0.08) !important;
-  border: 1.5px solid #F20D18 !important;
-  color: #ffffff !important;
+.store-locator-section .panel-filter-pill.brand-farma-base,
+.store-locator-section .panel-filter-pill.brand-super-base {
+  background: rgba(253, 250, 246, 0.06) !important;
+  border: 1px solid rgba(253, 250, 246, 0.2) !important;
+  color: var(--color-white) !important;
   cursor: default !important;
   opacity: 1 !important;
-  box-shadow: 0 0 10px rgba(242, 13, 24, 0.15) !important;
-  font-weight: 700;
+  box-shadow: none !important;
+  font-weight: 600;
 }
 
 .pill-logo {
@@ -1639,7 +1668,7 @@
   border-radius: 50%;
   overflow: hidden;
   background: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(253, 250, 246, 0.2);
 }
 
 .pill-logo img {
@@ -1648,58 +1677,34 @@
   object-fit: contain;
 }
 
-/* Specific Active Brand Filter Styling with Neon Glow */
-.store-locator-section .panel-filter-pill.brand-farma.active {
-  border-color: #F20D18 !important;
-  background: rgba(242, 13, 24, 0.15) !important;
-  color: #ff8a90 !important;
-  box-shadow: 0 0 12px rgba(242, 13, 24, 0.35) !important;
-  font-weight: 700;
-}
-.store-locator-section .panel-filter-pill.brand-wine.active {
-  border-color: #7a132b !important;
-  background: rgba(122, 19, 43, 0.15) !important;
-  color: #ff8fa3 !important;
-  box-shadow: 0 0 12px rgba(122, 19, 43, 0.35) !important;
-  font-weight: 700;
-}
-.store-locator-section .panel-filter-pill.brand-plaza.active {
-  border-color: #f97316 !important;
-  background: rgba(249, 115, 22, 0.15) !important;
-  color: #fdba74 !important;
-  box-shadow: 0 0 12px rgba(249, 115, 22, 0.35) !important;
-  font-weight: 700;
-}
-.store-locator-section .panel-filter-pill.brand-park.active {
-  border-color: #10b981 !important;
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #6ee7b7 !important;
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35) !important;
-  font-weight: 700;
-}
+/* Filter Pills Active Styling */
+.store-locator-section .panel-filter-pill.brand-farma.active,
+.store-locator-section .panel-filter-pill.brand-wine.active,
+.store-locator-section .panel-filter-pill.brand-plaza.active,
+.store-locator-section .panel-filter-pill.brand-park.active,
 .store-locator-section .panel-filter-pill.status-open.active {
-  border-color: #10b981 !important;
-  background: rgba(16, 185, 129, 0.12) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25) !important;
+  border-color: var(--color-white) !important;
+  background: var(--color-white) !important;
+  color: var(--color-black) !important;
+  box-shadow: none !important;
   font-weight: 700;
 }
 
-/* Green dot in Open Now filter pill */
+/* Indicator Dot in Open Now filter pill */
 .pill-green-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-yellow);
   border-radius: 50%;
-  margin-right: 2px;
-  box-shadow: 0 0 8px #10b981;
+  margin-right: 4px;
+  box-shadow: none;
 }
 
 .panel-filter-pill.active .pill-green-dot {
-  background-color: #ffffff;
-  box-shadow: 0 0 8px #ffffff;
+  background-color: var(--color-black);
 }
+
 
 /* Container principal do Painel (arredondado) */
 .store-locator-section .panel-container {

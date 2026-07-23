@@ -1,33 +1,54 @@
 :root {
-  /* Paleta oficial ajustada para Dark Mode Premium (Regra de Ouro) */
-  --black: #000000;
-  --graphite: #121212;
-  --yellow: #D4AF37;
-  --gold: #D4AF37;
-  --gold-dark: #A68015;
-  --red: #A82424;
+  /* Paleta Oficial do Grupo +B */
+  --color-black: #120E0E;
+  --color-charcoal: #191616;
+  --color-dark-soft: #211D1D;
+  --color-white: #FDFAF6;
+  --color-off-white: #F8F5F0;
+  --color-beige: #F3EFE8;
+  --color-gray-light: #DED8D0;
+  --color-gray-medium: #8E8780;
+  --color-gray-dark: #4D4845;
+  /* Paleta Estrita: Preto (#120E0E), Branco (#FDFAF6) e Amarelo Queimado (#C89223) */
+  --color-yellow: #C89223;
+  --color-yellow-dark-bg: #C89223;
+  --color-yellow-light-bg: #C89223;
+  --color-yellow-hover: #C89223;
+  --color-yellow-alt: #C89223;
 
-  /* Neutros de interface */
-  --ink: #101010;
-  --cream: #f4efea;
-  --paper: #ffffff;
-  --muted: #8e877c;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-dark: rgba(255, 255, 255, 0.12);
+  /* Aliases de Compatibilidade */
+  --black: #120E0E;
+  --graphite: #191616;
+  --dark-soft: #211D1D;
+  --white: #FDFAF6;
+  --off-white: #F8F5F0;
+  --beige: #F3EFE8;
+  --gray-light: #DED8D0;
+  --gray-medium: #8E8780;
+  --gray-dark: #4D4845;
+  --yellow: #C89223;
+  --yellow-dark-bg: #C89223;
+  --yellow-light-bg: #C89223;
+  --yellow-hover: #C89223;
+  --gold: #C89223;
+  --paper: #FDFAF6;
+  --ink: #120E0E;
+  --muted: #8E8780;
+  --line: rgba(253, 250, 246, 0.14);
+  --line-dark: rgba(18, 14, 14, 0.12);
 
-  /* Cores de atmosfera usadas só nas seções das marcas específicas */
-  --green: #1a7f43;
-  --wine: #3d1c25;
-  --orange: #b86214;
 
-  /* Estilização Premium e Glassmorphism */
-  --gold-gradient: linear-gradient(135deg, #E5C158, #A68015);
-  --bg-gradient: radial-gradient(circle at 12% 0%, rgba(212, 175, 55, 0.08), transparent 45%), 
-                 #050505;
-  --glass-surface: rgba(14, 14, 14, 0.94);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-glow: rgba(212, 175, 55, 0.22);
 
-  --radius: 28px;
-  --shadow: 0 22px 70px rgba(0, 0, 0, 0.5);
+  /* Tipografia Institucional */
+  --font-primary: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-editorial: "DM Serif Display", Georgia, serif;
+
+
+  /* Layout & Componentes */
+  --container-width: 1280px;
+  --radius-small: 6px;
+  --radius-medium: 12px;
+  --transition: 280ms ease;
+  --shadow-subtle: 0 16px 45px rgba(18, 14, 14, 0.08);
 }
+

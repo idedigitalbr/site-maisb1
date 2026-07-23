@@ -2085,19 +2085,20 @@ textarea.form-control {
 }
 
 .highlight-red {
-  color: #D91A2A;
+  color: var(--color-yellow);
 }
 
 .highlight-orange {
-  color: #D97700;
+  color: var(--color-yellow);
   font-weight: 700;
 }
 
 /* Linha Divisória Decorativa */
 .about-headline-divider {
   width: 44px;
-  height: 3px;
-  background: linear-gradient(90deg, #E6A000, #F26522);
+  height: 2px;
+  background: var(--color-yellow);
+
   border-radius: 4px;
   margin: 14px 0 16px 0;
 }
@@ -2444,7 +2445,7 @@ textarea.form-control {
 .num-red {
   font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 900;
-  color: #D91A2A;
+  color: var(--color-black);
   letter-spacing: -0.02em;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -2452,7 +2453,7 @@ textarea.form-control {
 .label-red {
   font-size: clamp(0.85rem, 1.1vw, 1rem);
   font-weight: 800;
-  color: #D91A2A;
+  color: var(--color-gray-dark);
   letter-spacing: 0.02em;
   text-transform: uppercase;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2461,8 +2462,9 @@ textarea.form-control {
 .metric-accent-line {
   width: 18px;
   height: 2px;
-  background: #F26522;
+  background: var(--color-yellow);
   border-radius: 2px;
+
   margin-bottom: 6px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4034,60 +4036,309 @@ textarea.form-control {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-.trabalhe-badge {
-  display: inline-block;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: var(--yellow, #D4AF37);
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
+/* ==========================================================================
+   Seção Sobre o Grupo — Fundo Claro #FDFAF6
+   ========================================================================== */
+.about-premium-section {
+  position: relative;
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+  padding: 120px 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.about-bg-glow,
+.about-dotted-pattern,
+.about-floating-glass-card {
+  display: none !important;
+}
+
+.about-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.about-headline {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-black);
+  margin-bottom: 24px;
+}
+
+.about-paragraphs p {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-gray-dark);
   margin-bottom: 16px;
+  max-width: 580px;
+}
+
+.about-photo-wrapper {
+  position: relative;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(18, 14, 14, 0.08);
+}
+
+.about-team-photo {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.about-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 48px;
+  border-top: 1px solid rgba(18, 14, 14, 0.12);
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-desc {
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  color: var(--color-gray-medium);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background-color: rgba(18, 14, 14, 0.12);
+}
+
+/* ==========================================================================
+   Seção Trabalhe Conosco — Fundo Claro #F8F5F0 (Totalmente Independente)
+   ========================================================================== */
+.oportunidades-section {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: var(--color-off-white) !important;
+  color: var(--color-black) !important;
+  padding: 120px 0 !important;
+  overflow: hidden;
+}
+
+.oportunidades-bg-img {
+  display: none !important;
+}
+
+.trabalhe-conosco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 .trabalhe-title {
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 16px;
-  line-height: 1.1;
-}
-
-.trabalhe-title-accent {
-  color: var(--yellow, #D4AF37);
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-black);
+  margin-bottom: 20px;
 }
 
 .trabalhe-text {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  color: var(--color-gray-dark);
   line-height: 1.6;
-  margin-bottom: 28px;
-  max-width: 500px;
+  margin-bottom: 32px;
+  max-width: 520px;
 }
 
-.trabalhe-conosco-image-right {
-  height: 320px;
-  border-radius: 20px;
+.trabalhe-conosco-photo-col {
+  position: relative;
+  border-radius: var(--radius-medium);
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-subtle);
+  height: 460px;
 }
 
-.trabalhe-conosco-image-right img {
+.trabalhe-conosco-photo-col img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* ==========================================================================
+   Seção Eventos — Fundo Claro #FDFAF6
+   ========================================================================== */
+.events-section,
+.section-events {
+  position: relative;
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+  padding: 100px 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.events-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-black);
+  margin-bottom: 40px;
+}
+
+.events-banner-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition);
+}
+
+.events-banner-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.events-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Seção Dúvidas Frequentes (FAQ) — Fundo Claro #FDFAF6
+   ========================================================================== */
+.faq-section,
+.faq {
+  position: relative;
+  background-color: var(--color-white) !important;
+  color: var(--color-black) !important;
+  padding: 120px 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.faq-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-black);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(18, 14, 14, 0.12);
+  padding-bottom: 16px;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-black);
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--color-yellow-alt);
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-gray-medium);
+  transition: transform var(--transition);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding-top: 8px;
+}
+
+.faq-answer-inner {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+}
+
 @media (max-width: 991px) {
-  .trabalhe-conosco-horizontal-banner {
+  .about-main-grid,
+  .trabalhe-conosco-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
-    padding: 32px 24px;
-    gap: 28px;
+    gap: 40px;
   }
-  .trabalhe-conosco-image-right {
-    height: 240px;
+  .about-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-divider {
+    display: none;
   }
 }
+

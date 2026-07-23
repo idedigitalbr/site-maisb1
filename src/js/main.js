@@ -903,12 +903,13 @@
     var BRANDS = ['plaza', 'super', 'wine', 'park', 'farma'];
 
     var BRAND_COLORS = {
-      plaza: '#da171e',
-      super: '#ffd000',
-      wine:  '#eabb75',
-      park:  '#22c55e',
-      farma: '#f20d18'
+      plaza: '#C89223',
+      super: '#C89223',
+      wine:  '#C89223',
+      park:  '#C89223',
+      farma: '#C89223'
     };
+
 
     var currentIndex     = 0;
     var autoTimer        = null;
@@ -1077,12 +1078,13 @@
       // 3. Atualizar a Ponte Ativa Compartilhada (Shared Active Bridge Line)
       var activeBridgeLine = document.getElementById('line-active-bridge');
       if (activeBridgeLine) {
-        activeBridgeLine.style.stroke = BRAND_COLORS[activeBrand];
-        activeBridgeLine.style.strokeWidth = '4.5px';
-        activeBridgeLine.style.filter = 'drop-shadow(0 0 10px ' + BRAND_COLORS[activeBrand] + ')';
+        activeBridgeLine.style.stroke = '#C89223';
+        activeBridgeLine.style.strokeWidth = '2px';
+        activeBridgeLine.style.filter = 'none';
         activeBridgeLine.style.transform = "rotate(" + targetAngleToCard + "deg) scaleX(" + targetScaleToCard + ")";
         activeBridgeLine.style.opacity = '1';
       }
+
 
       // 4. Atualizar as transformações CSS de rotação/escala nas linhas dos satélites inativos
       BRANDS.forEach(function(b) {

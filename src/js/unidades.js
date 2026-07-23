@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
           const latLngs = geometry.coordinates.map(coord => [coord[1], coord[0]]);
           
           routeLine = L.polyline(latLngs, {
-            color: '#1d4ed8',
+            color: '#C89223',
             weight: 4,
-            opacity: 0.8,
+            opacity: 0.9,
             dashArray: '8, 8',
             lineCap: 'round',
             lineJoin: 'round'
@@ -154,21 +154,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const badgeConfig = {
       farma: {
         logo: './assets/Logos SubMarcas/logo-farma-mais-b.webp',
-        color: '#F20D18'
+        color: 'rgba(253, 250, 246, 0.3)'
       },
       wine: {
         logo: './assets/Logos SubMarcas/logo-the-wine-experience.webp',
-        color: '#7a132b'
+        color: 'rgba(253, 250, 246, 0.3)'
       },
       plaza: {
         logo: './assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp',
-        color: '#f97316'
+        color: 'rgba(253, 250, 246, 0.3)'
       },
       park: {
         logo: './assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp',
-        color: '#10b981'
+        color: 'rgba(253, 250, 246, 0.3)'
       }
     };
+
 
     const activeSubbrands = unit.subbrands.filter(sub => badgeConfig[sub]);
     let badgesHTML = '';

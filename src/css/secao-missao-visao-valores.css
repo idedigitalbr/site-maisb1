@@ -8,7 +8,7 @@ body.mvv-standalone-body {
   margin: 0;
   padding: 60px 20px;
   background-color: #030305;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-primary);
   color: #ffffff;
   min-height: 100vh;
   display: flex;
