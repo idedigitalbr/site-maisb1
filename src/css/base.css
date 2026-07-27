@@ -234,4 +234,32 @@ a {
   border: 0 !important;
 }
 
+/* Utilidades Visuais da Referência Gold */
+.headline-highlight-italic {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-yellow);
+}
+
+.eyebrow-gold {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: 12px;
+}
+
+.gold-accent-line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-yellow);
+  margin-top: 24px;
+  border-radius: 2px;
+}
+
+
 

@@ -176,23 +176,34 @@
   }
 
   /* ===================================================================
-     FAQ Accordion
+     FAQ Accordion & Gold Pills
      =================================================================== */
   function initFAQ() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqQuestions = document.querySelectorAll('.faq-question, .faq-card-question');
     faqQuestions.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        const item = btn.parentElement;
-        const answer = btn.nextElementSibling;
+        const item = btn.closest('.faq-item, .faq-card-item');
+        if (!item) return;
+        const answer = item.querySelector('.faq-answer, .faq-card-answer');
         const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(function (el) {
+        document.querySelectorAll('.faq-item, .faq-card-item').forEach(function (el) {
           el.classList.remove('active');
-          el.querySelector('.faq-answer').style.maxHeight = null;
+          const ans = el.querySelector('.faq-answer, .faq-card-answer');
+          if (ans) ans.style.maxHeight = null;
         });
-        if (!isActive) {
+        if (!isActive && answer) {
           item.classList.add('active');
           answer.style.maxHeight = answer.scrollHeight + 'px';
         }
+      });
+    });
+
+    // Pílulas de filtro de unidades (Gold Pills)
+    const goldPills = document.querySelectorAll('.gold-pill');
+    goldPills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        goldPills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
       });
     });
   }
