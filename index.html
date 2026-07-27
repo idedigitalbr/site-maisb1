@@ -146,42 +146,87 @@
   </header>
 
   <main id="wf-main-content" data-wf-version="5.0">
-    <!-- SEÇÃO HERO BANNER FULLSCREEN (FOTO OFICIAL & LAYOUT REFERÊNCIA) -->
+    <!-- SEÇÃO HERO BANNER FULLSCREEN (SLIDE 1 FOTO FACHADA & SLIDE 2 VÍDEO INSTITUCIONAL) -->
     <section class="hero-carousel-section section-dark" id="home">
-      <!-- Imagem de Fundo Completa Cover -->
-      <img src="./assets/Paginas (Imagens)/Home/s1-topo-hero-foto-.png" alt="Grupo Mais Barato - Fachada Principal" class="hero-bg-image" />
-      
-      <!-- Overlay Gradiente Escuro Horizontal para Legibilidade Perfeita -->
-      <div class="slide-overlay"></div>
-      
-      <div class="container slide-container">
-        <div class="slide-content">
-          <span class="slide-eyebrow">BEM-VINDO</span>
-          <h1 class="slide-headline-huge">
-            Somos o<br>
-            Grupo<br>
-            <span class="headline-highlight">Mais Barato</span>
-          </h1>
-          <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
-          <div class="slide-actions">
-            <a href="./sobre-nos.html" class="btn-hero-cta">
-              CONHEÇA O GRUPO
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
+      <div class="carousel-slides-wrapper">
+        
+        <!-- SLIDE 1: FOTO FACHADA -->
+        <div class="carousel-slide active" data-slide-index="0">
+          <img src="./assets/Paginas (Imagens)/Home/s1-topo-hero-foto-.png" alt="Grupo Mais Barato - Fachada Principal" class="hero-bg-image" />
+          <div class="slide-overlay"></div>
+          <div class="container slide-container">
+            <div class="slide-content">
+              <span class="slide-eyebrow">BEM-VINDO</span>
+              <h1 class="slide-headline-huge">
+                Somos o<br>
+                Grupo<br>
+                <span class="headline-highlight">Mais Barato</span>
+              </h1>
+              <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
+              <div class="slide-actions">
+                <a href="./sobre-nos.html" class="btn-hero-cta">
+                  CONHEÇA O GRUPO
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- SLIDE 2: VÍDEO INSTITUCIONAL SUPERMERCADO MAIS B -->
+        <div class="carousel-slide" data-slide-index="1">
+          <video class="hero-bg-video" autoplay muted loop playsinline poster="./assets/Videos/video-b-home-poster.webp">
+            <source src="./assets/Videos/Supermercado Mais B - Institucional.mp4" type="video/mp4" />
+          </video>
+          <div class="slide-overlay"></div>
+          <div class="container slide-container">
+            <div class="slide-content">
+              <span class="slide-eyebrow">INSTITUCIONAL +B</span>
+              <h1 class="slide-headline-huge">
+                Excelência &<br>
+                Inovação em<br>
+                <span class="headline-highlight">Cada Detalhe</span>
+              </h1>
+              <p class="slide-lead">Conheça a força do varejo paraense que transforma o cotidiano com qualidade e solidez.</p>
+              <div class="slide-actions">
+                <a href="#marcas" class="btn-hero-cta">
+                  NOSSAS MARCAS
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Setas de Navegação do Carrossel -->
+      <button class="carousel-nav prev-btn" aria-label="Slide anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="carousel-nav next-btn" aria-label="Próximo slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- Indicadores de Pontos (Dots) -->
+      <div class="carousel-indicators">
+        <button class="indicator-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="indicator-dot" data-slide="1" aria-label="Slide 2"></button>
       </div>
 
       <!-- Barra de Progresso no Rodapé do Hero -->
       <div class="hero-slider-progress">
         <span class="progress-num">01</span>
         <div class="progress-track">
-          <div class="progress-fill"></div>
+          <div class="progress-fill carousel-progress-bar"></div>
         </div>
-        <span class="progress-num">04</span>
+        <span class="progress-num">02</span>
       </div>
     </section>
 

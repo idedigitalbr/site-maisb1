@@ -177,6 +177,100 @@
   border-radius: 2px;
 }
 
+/* Container dos Slides */
+.carousel-slides-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Setas de navegação do carrossel */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(8, 8, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-nav:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.carousel-nav.prev-btn { left: 24px; }
+.carousel-nav.next-btn { right: 24px; }
+
+/* Indicadores de pontinhos (dots) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  gap: 10px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator-dot.active {
+  background: #d4a017;
+  width: 28px;
+  border-radius: 10px;
+}
+
 /* Responsividade do Hero */
 @media (max-width: 980px) {
   .slide-container {
@@ -185,6 +279,9 @@
   }
   .slide-lead {
     max-width: 100%;
+  }
+  .carousel-nav {
+    display: none;
   }
 }
 
@@ -210,3 +307,4 @@
     bottom: 24px;
   }
 }
+
