@@ -142,26 +142,19 @@
 }
 
 /* Barra de Progresso no Rodapé do Hero (01 ——— 04) */
-.hero-slider-progress {
+/* Barra de Progresso Minimalista no Rodapé do Hero (Linha Fina + Pontos no Final) */
+.hero-slider-progress-minimal {
   position: absolute;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 15;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 
-.hero-slider-progress .progress-num {
-  font-family: var(--font-primary, 'DM Sans', sans-serif);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.05em;
-}
-
-.hero-slider-progress .progress-track {
+.minimal-progress-line-track {
   width: 140px;
   height: 2px;
   background: rgba(255, 255, 255, 0.2);
@@ -170,11 +163,34 @@
   overflow: hidden;
 }
 
-.hero-slider-progress .progress-fill {
-  width: 35%;
+.minimal-progress-fill {
+  width: 0%;
   height: 100%;
   background: #d4a017;
   border-radius: 2px;
+}
+
+.minimal-dots-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.minimal-dots-group .indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.minimal-dots-group .indicator-dot.active {
+  background: #d4a017;
+  transform: scale(1.35);
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.7);
 }
 
 /* Container dos Slides */
