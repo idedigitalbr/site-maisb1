@@ -149,23 +149,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // --- Ícone Customizado do Mapa ---
   function createCustomIcon(unit) {
     // Sempre exibe o logo do Grupo +B nos pins para fidelidade absoluta com o design do Photoshop
-    const logoUrl = './assets/Logos SubMarcas/logo-supermercados-maisb.webp';
+    const logoUrl = './assets/Icones Submarcas/icon-b-supermercadoo.png';
 
     const badgeConfig = {
       farma: {
-        logo: './assets/Logos SubMarcas/logo-farma-mais-b.webp',
+        logo: './assets/Icones Submarcas/icon-b-farmaa.png',
         color: 'rgba(253, 250, 246, 0.3)'
       },
       wine: {
-        logo: './assets/Logos SubMarcas/logo-the-wine-experience.webp',
+        logo: './assets/Icones Submarcas/icon-the-winee.png',
         color: 'rgba(253, 250, 246, 0.3)'
       },
       plaza: {
-        logo: './assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp',
+        logo: './assets/Icones Submarcas/icon-vila-plaza.png',
         color: 'rgba(253, 250, 246, 0.3)'
       },
       park: {
-        logo: './assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp',
+        logo: './assets/Icones Submarcas/icon-vila-plaza.png',
         color: 'rgba(253, 250, 246, 0.3)'
       }
     };
@@ -988,12 +988,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const brandBadges = unit.subbrands.map(sub => {
       let label = sub;
       let imgUrl = "";
-      if (sub === 'super') { label = 'Supermercados'; imgUrl = "./assets/Logos SubMarcas/logo-supermercados-maisb.webp"; }
-      if (sub === 'farma') { label = 'Farma +B'; imgUrl = "./assets/Logos SubMarcas/logo-farma-mais-b.webp"; }
-      if (sub === 'wine') { label = 'Wine Experience'; imgUrl = "./assets/Logos SubMarcas/logo-the-wine-experience.webp"; }
-      if (sub === 'plaza') { label = 'Villa Plaza'; imgUrl = "./assets/Logos SubMarcas/logo-villa-plaza-restaurante.webp"; }
-      if (sub === 'park') { label = 'Plaza Park'; imgUrl = "./assets/Logos SubMarcas/logo-villa-plaza-park-infantil.webp"; }
-      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "./assets/Logos SubMarcas/logo-supermercados-maisb.webp"; }
+      if (sub === 'super') { label = 'Supermercados'; imgUrl = "./assets/Icones Submarcas/icon-b-supermercadoo.png"; }
+      if (sub === 'farma') { label = 'Farma +B'; imgUrl = "./assets/Icones Submarcas/icon-b-farmaa.png"; }
+      if (sub === 'wine') { label = 'Wine Experience'; imgUrl = "./assets/Icones Submarcas/icon-the-winee.png"; }
+      if (sub === 'plaza') { label = 'Villa Plaza'; imgUrl = "./assets/Icones Submarcas/icon-vila-plaza.png"; }
+      if (sub === 'park') { label = 'Plaza Park'; imgUrl = "./assets/Icones Submarcas/icon-vila-plaza.png"; }
+      if (sub === 'atacarejo') { label = 'Atacarejo'; imgUrl = "./assets/Icones Submarcas/icon-b-supermercadoo.png"; }
       
       const imgTag = imgUrl ? `<img src="${imgUrl}" alt="${label}" class="brand-badge-icon">` : '';
       return `<div class="detail-brand-badge">${imgTag}<span>${label}</span></div>`;

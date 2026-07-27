@@ -91,16 +91,15 @@ body.links-page-body {
 .logo-wrapper {
   width: 98px;
   height: 98px;
-  border-radius: 50%;
-  background: #070709;
-  border: 3px solid var(--yellow);
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  box-shadow: 0 0 25px rgba(200, 146, 35, 0.35);
+  padding: 0;
+  box-shadow: none;
   margin-bottom: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .profile-logo:hover,
@@ -312,11 +311,10 @@ body.links-page-body {
   justify-content: center;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .brand-logo-container img {

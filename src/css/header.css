@@ -37,11 +37,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
+  width: auto;
   height: 52px;
-  border-radius: 50%;
-  background: var(--color-white);
-  padding: 5px;
+  background: transparent;
+  border: none;
+  padding: 0;
   flex-shrink: 0;
   transition: transform var(--transition);
 }
@@ -83,9 +83,9 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
   transition: transform 0.2s ease;
 }
 
@@ -186,9 +186,9 @@
   justify-content: center;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 3px;
+  background: transparent;
+  border: none;
+  padding: 0;
   flex-shrink: 0;
 }
 

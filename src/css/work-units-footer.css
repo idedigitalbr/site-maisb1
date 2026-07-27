@@ -1665,10 +1665,8 @@
   justify-content: center;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid rgba(253, 250, 246, 0.2);
+  background: transparent;
+  border: none;
 }
 
 .pill-logo img {

@@ -255,13 +255,12 @@
 .node-logo-wrapper {
   width: 96px;
   height: 96px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: none;
   display: grid;
   place-items: center;
-  padding: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  padding: 0;
+  box-shadow: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   animation: orbit-floating 6s ease-in-out infinite;
 }
@@ -707,10 +706,9 @@
   position: relative;
   width: 130px;
   height: 130px;
-  border-radius: 50%;
-  background: var(--color-black);
-  border: 2px solid var(--color-yellow);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1001,8 +999,7 @@
   z-index: 150;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
-  background: #ffffff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
