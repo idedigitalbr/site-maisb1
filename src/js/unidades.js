@@ -147,31 +147,66 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // --- Ícone Customizado do Mapa ---
-  // --- Ícone Customizado do Mapa (Identidade Fiel à footer.png) ---
   function createCustomIcon(unit) {
+    // Sempre exibe o logo do Grupo +B nos pins para fidelidade absoluta com o design do Photoshop
+    const logoUrl = './assets/Icones Submarcas/icon-b-supermercadoo.png';
+
+    const badgeConfig = {
+      farma: {
+        logo: './assets/Icones Submarcas/icon-b-farmaa.png',
+        color: 'rgba(253, 250, 246, 0.3)'
+      },
+      wine: {
+        logo: './assets/Icones Submarcas/icon-the-winee.png',
+        color: 'rgba(253, 250, 246, 0.3)'
+      },
+      plaza: {
+        logo: './assets/Icones Submarcas/icon-vila-plaza.png',
+        color: 'rgba(253, 250, 246, 0.3)'
+      },
+      park: {
+        logo: './assets/Icones Submarcas/icon-vila-plaza.png',
+        color: 'rgba(253, 250, 246, 0.3)'
+      }
+    };
+
+
+    const activeSubbrands = unit.subbrands.filter(sub => badgeConfig[sub]);
+    let badgesHTML = '';
+    const positions = [
+      { top: '-6px', right: '-8px' }, // Position 1
+      { top: '-6px', left: '-8px' },  // Position 2
+      { top: '20px', right: '-12px' } // Position 3
+    ];
+    
+    activeSubbrands.forEach((sub, index) => {
+      const pos = positions[index] || { top: '0px', right: '0px' };
+      const config = badgeConfig[sub];
+      badgesHTML += `
+        <div class="pin-mini-badge" style="top: ${pos.top || 'auto'}; bottom: ${pos.bottom || 'auto'}; left: ${pos.left || 'auto'}; right: ${pos.right || 'auto'}; border: 1.5px solid ${config.color};" title="${sub}">
+          <img src="${config.logo}" alt="${sub}">
+        </div>
+      `;
+    });
+
     return L.divIcon({
       className: `custom-map-pin-container pin-${unit.id}`,
       html: `
         <div class="custom-pin-wrapper">
-          <svg class="custom-pin-svg" viewBox="0 0 40 54" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <filter id="pin-shadow" x="-20%" y="-10%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.6"/>
-              </filter>
-              <linearGradient id="gold-b-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FCE09B"/>
-                <stop offset="60%" stop-color="#D4A017"/>
-                <stop offset="100%" stop-color="#B88308"/>
-              </linearGradient>
-            </defs>
-            <path d="M20 0C8.95 0 0 8.95 0 20c0 14.5 18.2 32.2 19.1 33.1a1.4 1.4 0 0 0 1.8 0C21.8 52.2 40 34.5 40 20 40 8.95 31.05 0 20 0z" fill="#0C0C0D" stroke="#262626" stroke-width="1.2" filter="url(#pin-shadow)" />
-            <circle cx="20" cy="20" r="13" fill="#050505" />
-            <text x="20" y="25" font-family="'DM Sans', Georgia, sans-serif" font-size="14" font-weight="900" font-style="italic" fill="url(#gold-b-grad)" text-anchor="middle">+B</text>
+          <svg class="custom-pin-svg" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 0C8.06 0 0 8.06 0 18c0 12.42 16.2 26.78 16.88 27.38a1.5 1.5 0 0 0 2.24 0C19.8 44.78 36 30.42 36 18 36 8.06 27.94 0 18 0z" class="pin-path" />
+            <circle cx="18" cy="18" r="11" class="pin-circle-bg" />
           </svg>
+          <div class="pin-logo-container">
+            <img src="${logoUrl}" alt="${unit.name}">
+          </div>
+          <div class="pin-mini-badges">
+            ${badgesHTML}
+          </div>
         </div>
       `,
-      iconSize: [40, 54],
-      iconAnchor: [20, 54]
+      iconSize: [36, 46],
+      iconAnchor: [18, 46]
     });
   }
 
@@ -797,23 +832,28 @@ document.addEventListener('DOMContentLoaded', function() {
         .replace(' - São Brás', ' – São Brás');
 
       const card = document.createElement('div');
-      card.className = `gold-unit-card ${activeUnitId === store.id ? 'active' : ''}`;
+      card.className = `store-list-card ${activeUnitId === store.id ? 'selected' : ''}`;
       card.setAttribute('data-id', store.id);
       
       card.innerHTML = `
-        <div class="unit-card-thumb">
+        <div class="store-card-thumbnail">
           <img src="${store.images.cover}" alt="${store.name}" loading="lazy">
         </div>
-        <div class="unit-card-info">
-          <div class="unit-card-header">
-            <h4 class="unit-card-title">${store.name.toUpperCase()}</h4>
-            <span class="unit-card-rating">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
+        <div class="store-card-body">
+          <div class="store-card-meta">
+            ${statusPill}
+            ${distancePill}
+            <span class="store-rating-teaser">
+              <svg class="star-icon active" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="width: 13px; height: 13px; display: inline-block; vertical-align: -1px; margin-right: 2px;">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>${store.rating.toFixed(1).replace('.', ',')}
+            </span>
           </div>
-          <p class="unit-card-addr">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ${store.address}
-          </p>
-          <span class="unit-card-subaddr">Bairro: ${store.neighborhood} – PA, CEP ${store.cep || '66000-000'}</span>
-          <button class="btn-unit-ver-mais">VER MAIS</button>
+          <h3>${store.name}</h3>
+          <p class="store-address-teaser">${formattedAddress}</p>
+          <div class="store-brands-teaser">
+            ${subbrandPills}
+          </div>
         </div>
       `;
 

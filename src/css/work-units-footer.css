@@ -3172,13 +3172,14 @@
   font-weight: 800;
 }
 
-/* Cards de Unidade (Fiel à footer.png Print 2) */
+/* Cards de Unidade (Fiel à footer.png Print 2 — Compatibilidade com JS original) */
 .store-cards-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
+.store-locator-gold-section .store-list-card,
 .gold-unit-card {
   display: flex;
   background: #0D0D0E;
@@ -3193,13 +3194,16 @@
   transition: all 0.3s ease;
 }
 
+.store-locator-gold-section .store-list-card:hover,
+.store-locator-gold-section .store-list-card.selected,
 .gold-unit-card:hover,
 .gold-unit-card.active {
   border-color: #c59b27;
   background: #141416;
-  box-shadow: 0 4px 20px rgba(197, 155, 39, 0.15);
+  box-shadow: 0 4px 20px rgba(197, 155, 39, 0.2);
 }
 
+.store-locator-gold-section .store-card-thumbnail,
 .unit-card-thumb {
   width: 105px;
   height: 78px;
@@ -3208,72 +3212,63 @@
   flex-shrink: 0;
 }
 
+.store-locator-gold-section .store-card-thumbnail img,
 .unit-card-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.store-locator-gold-section .store-card-body,
 .unit-card-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
+.store-locator-gold-section .store-card-meta,
 .unit-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
+.store-locator-gold-section .store-card-body h3,
 .unit-card-title {
   font-size: 0.85rem;
   font-weight: 800;
   color: #c59b27;
   letter-spacing: 0.04em;
-  margin: 0;
+  margin: 0 0 2px;
+  text-transform: uppercase;
 }
 
+.store-locator-gold-section .store-address-teaser,
+.unit-card-addr {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+
+.store-locator-gold-section .status-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.store-locator-gold-section .store-rating-teaser,
 .unit-card-rating {
   font-size: 0.85rem;
   font-weight: 700;
   color: #FFC400;
-}
-
-.unit-card-addr {
-  font-size: 0.78rem;
-  color: #FFFFFF;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 3px 0;
-}
-
-.unit-card-subaddr {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.5);
-  display: block;
-  margin-bottom: 6px;
-}
-
-.btn-unit-ver-mais {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  padding: 5px 12px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-unit-ver-mais:hover {
-  background: #FFFFFF;
-  color: #000000;
-  border-color: #FFFFFF;
 }
 
 .gold-map-wrapper {
