@@ -141,47 +141,51 @@
   transform: translateX(4px);
 }
 
-/* Barra de Progresso Minimalista no Rodapé do Hero (Linha no Topo + Pontos Embaixo Centralizados) */
+/* Barra de Progresso e Indicadores Minimalistas (Linha Maior no Topo + Traços de Slide Embaixo) */
 .hero-slider-progress-minimal {
   position: absolute;
-  bottom: 30px;
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 15;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* 1. A Linha Maior de Progresso (No Topo) */
 .minimal-progress-line-track {
-  width: 150px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
+  width: 220px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .minimal-progress-fill {
   width: 0%;
   height: 100%;
   background: #d4a017;
-  border-radius: 2px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.8);
 }
 
+/* 2. Indicadores de Slide (Diretamente Abaixo da Linha Maior) */
 .minimal-dots-under-line {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .minimal-dots-under-line .indicator-dot {
-  width: 14px;
-  height: 2px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.25);
+  width: 18px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.4);
   border: none;
   cursor: pointer;
   padding: 0;
@@ -190,8 +194,8 @@
 
 .minimal-dots-under-line .indicator-dot.active {
   background: #d4a017;
-  width: 24px;
-  box-shadow: 0 0 6px rgba(212, 160, 23, 0.5);
+  width: 32px;
+  box-shadow: 0 0 8px rgba(212, 160, 23, 0.8);
 }
 
 /* Container dos Slides */
