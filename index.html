@@ -108,23 +108,6 @@
       <a class="brand-main" href="#home" aria-label="Grupo Mais Barato">
         <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" alt="Logo Grupo Mais Barato" />
       </a>
-      <div class="brand-sub-logos">
-        <a href="#marca-super" class="sub-logo-link" title="+B Supermercados">
-          <img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="+B Supermercados" />
-        </a>
-        <a href="#marca-farma" class="sub-logo-link" title="+B Farma">
-          <img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="+B Farma" />
-        </a>
-        <a href="#marca-plaza" class="sub-logo-link" title="Villa Plaza">
-          <img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza" />
-        </a>
-        <a href="#marca-park" class="sub-logo-link" title="Villa Plaza Park">
-          <img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park" />
-        </a>
-        <a href="#marca-wine" class="sub-logo-link" title="The Wine Experience">
-          <img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience" />
-        </a>
-      </div>
     </div>
 
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
@@ -133,73 +116,48 @@
 
     <nav class="main-menu" id="main-menu">
       <a href="./sobre-nos.html" id="menu-link-sobre">Sobre</a>
-      <div class="dropdown">
-        <a href="#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
-        <div class="drop-panel" aria-label="Submenu Nossas Marcas">
-          <a href="#marcas" class="dropdown-item-rich brand-super">
-            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="+B Supermercados"></span>
-            <span class="dropdown-item-text">+B Supermercados</span>
-          </a>
-          <a href="#marcas" class="dropdown-item-rich brand-farma">
-            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="+B Farma"></span>
-            <span class="dropdown-item-text">+B Farma</span>
-          </a>
-          <a href="#marcas" class="dropdown-item-rich brand-plaza">
-            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza"></span>
-            <span class="dropdown-item-text">Villa Plaza</span>
-          </a>
-          <a href="#marcas" class="dropdown-item-rich brand-park">
-            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park"></span>
-            <span class="dropdown-item-text">Villa Plaza Park</span>
-          </a>
-          <a href="#marcas" class="dropdown-item-rich brand-wine">
-            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience"></span>
-            <span class="dropdown-item-text">The Wine Experience</span>
-          </a>
-        </div>
-      </div>
-      <div class="dropdown contacts-dropdown">
-        <a class="drop-link btn-contacts-menu" aria-haspopup="true">Contatos</a>
-        <div class="drop-panel" aria-label="Submenu Contatos">
-          <a href="#store-locator-teaser" id="menu-link-unidades">Nossas Unidades</a>
-          <a href="#oportunidades" id="menu-link-trabalhe">Trabalhe Conosco</a>
-          <a href="./links.html" id="menu-link-links">Nossos Links</a>
-        </div>
-      </div>
+      <a href="#marcas" id="menu-link-marcas">Nossas Marcas</a>
+      <a href="#contato" id="menu-link-contato" class="btn-header-contact">Contato</a>
     </nav>
-
-
   </header>
 
   <main id="wf-main-content" data-wf-version="5.0">
-    <!-- SEÇÃO HERO BANNER ESTÁTICO FULLSCREEN -->
+    <!-- SEÇÃO HERO BANNER FULLSCREEN (FOTO OFICIAL & LAYOUT REFERÊNCIA) -->
     <section class="hero-carousel-section section-dark" id="home">
-      <div class="carousel-slides">
-        <div class="carousel-slide active" data-slide="1">
-          <video class="carousel-bg-video" autoplay loop muted playsinline poster="./assets/Videos/video-b-home-poster.webp">
-            <source src="./assets/Videos/video-b-home-compressed.mp4" type="video/mp4">
-          </video>
-          <div class="slide-overlay"></div>
-          <div class="container slide-container">
-            <div class="slide-content">
-              <span class="slide-eyebrow">BEM-VINDO</span>
-              <h1 class="slide-headline-huge">
-                Somos o Grupo<br>
-                <span class="headline-highlight">Mais Barato</span>
-              </h1>
-              <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
-              <div class="slide-actions">
-                <a href="./sobre-nos.html" class="btn button-light">
-                  CONHEÇA O GRUPO
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
+      <!-- Imagem de Fundo Completa Cover -->
+      <img src="./assets/Paginas (Imagens)/Home/s1-topo-hero-foto-.png" alt="Grupo Mais Barato - Fachada Principal" class="hero-bg-image" />
+      
+      <!-- Overlay Gradiente Escuro Horizontal para Legibilidade Perfeita -->
+      <div class="slide-overlay"></div>
+      
+      <div class="container slide-container">
+        <div class="slide-content">
+          <span class="slide-eyebrow">BEM-VINDO</span>
+          <h1 class="slide-headline-huge">
+            Somos o<br>
+            Grupo<br>
+            <span class="headline-highlight">Mais Barato</span>
+          </h1>
+          <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
+          <div class="slide-actions">
+            <a href="./sobre-nos.html" class="btn-hero-cta">
+              CONHEÇA O GRUPO
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
+      </div>
+
+      <!-- Barra de Progresso no Rodapé do Hero -->
+      <div class="hero-slider-progress">
+        <span class="progress-num">01</span>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="progress-num">04</span>
       </div>
     </section>
 

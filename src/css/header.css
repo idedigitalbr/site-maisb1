@@ -1,5 +1,9 @@
+/* ==========================================================================
+   Site Header — Grupo +B (Integrado sobre o Hero / Transparente)
+   ========================================================================== */
+
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -7,12 +11,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  padding: 0 max(40px, (100% - var(--container-width)) / 2);
+  height: 94px;
+  padding: 0 max(48px, (100% - 1280px) / 2);
   background: transparent;
   color: var(--color-white);
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, height 0.3s ease;
-  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  border-bottom: none;
 }
 
 .site-header.hidden {
@@ -20,11 +24,12 @@
 }
 
 .site-header.scrolled {
-  background-color: rgba(18, 14, 14, 0.92);
+  position: fixed;
+  height: 72px;
+  background-color: rgba(8, 8, 10, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(253, 250, 246, 0.08);
-  height: 72px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .brand-group {
@@ -36,207 +41,74 @@
 .brand-main {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: auto;
   height: 52px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  flex-shrink: 0;
+  max-width: 200px;
   transition: transform var(--transition);
 }
 
 .brand-main:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .brand-main img {
-  width: 100%;
   height: 100%;
+  width: auto;
   object-fit: contain;
 }
 
-.brand-sub-logos {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateX(-10px);
-  pointer-events: none;
-  transition: all 0.3s ease;
-  background: rgba(25, 22, 22, 0.85);
-  backdrop-filter: blur(8px);
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(253, 250, 246, 0.1);
-}
-
-.brand-group:hover .brand-sub-logos {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.sub-logo-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  transition: transform 0.2s ease;
-}
-
-.sub-logo-link:hover {
-  transform: scale(1.12);
-}
-
-.sub-logo-link img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
+/* Menu de Navegação Limpo & Minimalista */
 .main-menu {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
-  font-family: var(--font-primary);
-  color: var(--color-white);
+  gap: 2.2rem;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
 }
 
-.main-menu > a,
-.drop-link {
+.main-menu > a {
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: rgba(253, 250, 246, 0.75);
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.85);
   padding: 0.5rem 0;
-  background: transparent;
-  border-radius: 0;
+  text-decoration: none;
   transition: color var(--transition);
 }
 
 .main-menu > a:hover,
-.drop-link:hover,
-.main-menu > a.active,
-.drop-link.active {
-  color: var(--color-yellow-hover);
-  background: transparent;
+.main-menu > a.active {
+  color: #d4a017;
 }
 
-.dropdown {
-  position: relative;
-}
-
-.drop-panel {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 230px;
-  padding: 10px;
-  background-color: var(--color-charcoal);
-  border: 1px solid rgba(253, 250, 246, 0.12);
-  border-radius: 4px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 1001;
-}
-
-.dropdown:hover .drop-panel,
-.dropdown:focus-within .drop-panel,
-.dropdown.is-open .drop-panel {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.drop-panel a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 4px;
-  color: rgba(253, 250, 246, 0.85);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  transition: background-color var(--transition), color var(--transition);
-}
-
-.drop-panel a:hover {
-  background-color: rgba(253, 250, 246, 0.08);
-  color: var(--color-yellow);
-}
-
-.dropdown-item-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.dropdown-item-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Botão Contatos no Header */
-.main-menu .btn-contacts-menu {
+/* Botão Contato no Header (Moldado com Borda Dourada Elegante) */
+.main-menu .btn-header-contact {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-white) !important;
-  padding: 8px 18px;
+  letter-spacing: 0.2em;
+  color: #ffffff !important;
+  padding: 10px 22px;
   border-radius: 4px;
-  border: 1px solid rgba(253, 250, 246, 0.35);
+  border: 1.5px solid rgba(212, 160, 23, 0.7);
   background-color: transparent;
   transition: all var(--transition);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.main-menu .btn-contacts-menu:hover,
-.main-menu .contacts-dropdown:hover .btn-contacts-menu {
-  background-color: var(--color-white);
-  color: var(--color-black) !important;
-  border-color: var(--color-white);
+.main-menu .btn-header-contact:hover {
+  background-color: #d4a017;
+  color: #000000 !important;
+  border-color: #d4a017;
+  box-shadow: 0 0 16px rgba(212, 160, 23, 0.45);
 }
 
-.contacts-dropdown .drop-panel {
-  right: 0;
-  left: auto;
-  transform: translateY(8px);
-  min-width: 200px;
-}
-
-.contacts-dropdown:hover .drop-panel,
-.contacts-dropdown:focus-within .drop-panel,
-.contacts-dropdown.is-open .drop-panel {
-  transform: translateY(0);
-}
-
-
-
+/* Menu Toggle (Mobile) */
 .menu-toggle {
   display: none;
   background: none;
@@ -255,4 +127,3 @@
   border-radius: 2px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-

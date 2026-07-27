@@ -1,22 +1,24 @@
 /* ==========================================================================
-   Hero Section — Grupo +B (Estilo Editorial Premium)
+   Hero Section — Grupo +B (100% Fidelidade à Referência Visual)
    ========================================================================== */
 
 .hero-carousel-section {
   position: relative !important;
   width: 100% !important;
-  height: clamp(580px, 90vh, 950px) !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 650px !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
-  background-color: var(--color-black) !important;
+  background-color: #08080a !important;
   display: flex !important;
   align-items: center !important;
   z-index: 10 !important;
 }
 
-.carousel-bg-video,
-.carousel-bg-image {
+/* Imagem de Fundo Cover */
+.hero-bg-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,130 +28,185 @@
   object-position: center right;
   z-index: 1;
   pointer-events: none;
-  filter: brightness(0.85) contrast(1.05);
 }
 
-.carousel-slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
-.carousel-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 4;
-}
-
-/* Overlay Gradiente Preto Suave para Legibilidade */
+/* Overlay Gradiente Escuro Horizontal: Intenso à esquerda para legibilidade, suave à direita para mostrar a arquitetura */
 .slide-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(90deg, rgba(18, 14, 14, 0.95) 0%, rgba(18, 14, 14, 0.82) 40%, rgba(18, 14, 14, 0.3) 75%, transparent 100%);
+  background: linear-gradient(90deg, rgba(8, 8, 10, 0.96) 0%, rgba(8, 8, 10, 0.85) 35%, rgba(8, 8, 10, 0.42) 65%, rgba(8, 8, 10, 0.08) 100%),
+              linear-gradient(180deg, rgba(8, 8, 10, 0.55) 0%, transparent 22%, transparent 78%, rgba(8, 8, 10, 0.65) 100%);
   pointer-events: none;
 }
 
 .slide-container {
   position: relative;
-  z-index: 3;
-  width: min(var(--container-width), calc(100% - 80px));
+  z-index: 5;
+  width: min(1280px, calc(100% - 96px));
   margin: 0 auto;
   padding-top: 60px;
 }
 
 .slide-content {
-  max-width: 620px;
+  max-width: 580px;
+  text-align: left;
 }
 
+/* Badge BEM-VINDO */
 .slide-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-primary);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-gray-medium);
-  margin-bottom: 20px;
-}
-
-.slide-eyebrow::before {
-  content: '';
   display: inline-block;
-  width: 20px;
-  height: 2px;
-  background-color: var(--color-yellow);
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #d4a017;
+  margin-bottom: 22px;
 }
 
+/* Título Principal */
 .slide-headline-huge {
-  font-family: var(--font-primary);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.1;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: clamp(2.8rem, 5.2vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.06;
   letter-spacing: -0.02em;
-  color: var(--color-white);
+  color: #ffffff;
   margin: 0 0 24px;
 }
 
+/* "Mais Barato" em itálico serif com gradiente dourado nobre */
 .slide-headline-huge .headline-highlight {
-  display: block;
-  font-family: var(--font-editorial);
+  display: inline-block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic;
   font-weight: 400;
-  color: var(--color-yellow);
+  color: #d4a017;
+  background: linear-gradient(135deg, #fce09b 0%, #d4a017 60%, #b88308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Subtítulo */
 .slide-lead {
-  font-family: var(--font-primary);
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  line-height: 1.6;
-  color: var(--color-gray-light);
-  margin-bottom: 36px;
-  max-width: 540px;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: clamp(1.02rem, 1.3vw, 1.22rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 38px;
+  max-width: 480px;
+  font-weight: 400;
 }
 
 .slide-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-/* Indicadores Discretos do Hero */
-.carousel-indicators {
+/* Botão CONHEÇA O GRUPO */
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  border-radius: 6px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-hero-cta:hover {
+  background: #f0f0f0;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(255, 255, 255, 0.25);
+}
+
+.btn-hero-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-hero-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* Barra de Progresso no Rodapé do Hero (01 ——— 04) */
+.hero-slider-progress {
   position: absolute;
   bottom: 40px;
-  left: max(40px, (100% - var(--container-width)) / 2 + 40px);
-  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 }
 
-.indicator-dot {
-  width: 28px;
+.hero-slider-progress .progress-num {
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.hero-slider-progress .progress-track {
+  width: 140px;
   height: 2px;
-  background: rgba(253, 250, 246, 0.25);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
 }
 
-.indicator-dot.active {
-  background: var(--color-yellow);
-  width: 42px;
+.hero-slider-progress .progress-fill {
+  width: 35%;
+  height: 100%;
+  background: #d4a017;
+  border-radius: 2px;
 }
 
+/* Responsividade do Hero */
+@media (max-width: 980px) {
+  .slide-container {
+    width: calc(100% - 48px);
+    padding-top: 80px;
+  }
+  .slide-lead {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-carousel-section {
+    height: 100dvh !important;
+    min-height: 560px !important;
+  }
+  .slide-container {
+    width: calc(100% - 32px);
+    padding-top: 70px;
+  }
+  .slide-headline-huge {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+  }
+  .btn-hero-cta {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    min-height: 48px;
+  }
+  .hero-slider-progress {
+    bottom: 24px;
+  }
+}
