@@ -41,9 +41,13 @@
 .brand-main {
   display: flex;
   align-items: center;
-  height: 52px;
-  max-width: 200px;
+  height: 68px;
+  max-width: 250px;
   transition: transform var(--transition);
+}
+
+.site-header.scrolled .brand-main {
+  height: 54px;
 }
 
 .brand-main:hover {
