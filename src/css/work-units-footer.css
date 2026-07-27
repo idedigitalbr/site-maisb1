@@ -3172,6 +3172,110 @@
   font-weight: 800;
 }
 
+/* Cards de Unidade (Fiel à footer.png Print 2) */
+.store-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gold-unit-card {
+  display: flex;
+  background: #0D0D0E;
+  border: 1px solid rgba(197, 155, 39, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 12px 14px;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gold-unit-card:hover,
+.gold-unit-card.active {
+  border-color: #c59b27;
+  background: #141416;
+  box-shadow: 0 4px 20px rgba(197, 155, 39, 0.15);
+}
+
+.unit-card-thumb {
+  width: 105px;
+  height: 78px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.unit-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.unit-card-info {
+  flex: 1;
+}
+
+.unit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.unit-card-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #c59b27;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.unit-card-rating {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFC400;
+}
+
+.unit-card-addr {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 3px 0;
+}
+
+.unit-card-subaddr {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.btn-unit-ver-mais {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-unit-ver-mais:hover {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
 .gold-map-wrapper {
   height: 460px;
   border-radius: 20px;
@@ -3183,6 +3287,40 @@
 .gold-map-wrapper .panel-map {
   width: 100%;
   height: 100%;
+}
+
+/* Custom Zoom Controls para o Mapa (Estilo Branco da footer.png Print 2) */
+.gold-map-wrapper .leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  margin-top: 20px !important;
+  margin-left: 20px !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-in,
+.gold-map-wrapper .leaflet-control-zoom-out {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: none !important;
+  border-bottom: 1px solid #E5E5E5 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  transition: background 0.2s ease !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-out {
+  border-bottom: none !important;
+}
+
+.gold-map-wrapper .leaflet-control-zoom-in:hover,
+.gold-map-wrapper .leaflet-control-zoom-out:hover {
+  background-color: #F4F4F4 !important;
+  color: #000000 !important;
 }
 
 /* RODAPÉ 4 COLUNAS */

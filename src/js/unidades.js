@@ -205,17 +205,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
       mapModal = L.map('teaser-unidades-map', {
-        center: [-1.450, -48.472], 
-        zoom: 12,
+        center: [-1.448, -48.472], 
+        zoom: 13.5,
         zoomControl: true,
-        scrollWheelZoom: false, // Começa desativado
+        scrollWheelZoom: true,
+        attributionControl: false,
         dragging: true,
         doubleClickZoom: true,
         touchZoom: true
       });
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+        subdomains: 'abcd',
+        maxZoom: 19
       }).addTo(mapModal);
 
       window.units.forEach(unit => {
@@ -795,28 +797,23 @@ document.addEventListener('DOMContentLoaded', function() {
         .replace(' - São Brás', ' – São Brás');
 
       const card = document.createElement('div');
-      card.className = `store-list-card ${activeUnitId === store.id ? 'selected' : ''}`;
+      card.className = `gold-unit-card ${activeUnitId === store.id ? 'active' : ''}`;
       card.setAttribute('data-id', store.id);
       
       card.innerHTML = `
-        <div class="store-card-thumbnail">
+        <div class="unit-card-thumb">
           <img src="${store.images.cover}" alt="${store.name}" loading="lazy">
         </div>
-        <div class="store-card-body">
-          <div class="store-card-meta">
-            ${statusPill}
-            ${distancePill}
-            <span class="store-rating-teaser">
-              <svg class="star-icon active" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="width: 13px; height: 13px; display: inline-block; vertical-align: -1px; margin-right: 2px;">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>${store.rating.toFixed(1).replace('.', ',')}
-            </span>
+        <div class="unit-card-info">
+          <div class="unit-card-header">
+            <h4 class="unit-card-title">${store.name.toUpperCase()}</h4>
+            <span class="unit-card-rating">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
           </div>
-          <h3>${store.name}</h3>
-          <p class="store-address-teaser">${formattedAddress}</p>
-          <div class="store-brands-teaser">
-            ${subbrandPills}
-          </div>
+          <p class="unit-card-addr">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ${store.address}
+          </p>
+          <span class="unit-card-subaddr">Bairro: ${store.neighborhood} – PA, CEP ${store.cep || '66000-000'}</span>
+          <button class="btn-unit-ver-mais">VER MAIS</button>
         </div>
       `;
 
