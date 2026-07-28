@@ -1,5 +1,31 @@
 # Changelog
 
+- **Integração do Submenu "Nossas Marcas" com a Espiral e Unificação do Header**:
+  - **Ativação Direta das Marcas**: Atualizados os links do submenu dropdown *Nossas Marcas* (`#marca-super`, `#marca-farma`, `#marca-plaza`, `#marca-park`, `#marca-wine`) para que, ao clicar em qualquer submarca no topo, a página navegue suavemente e abra imediatamente o card correspondente na espiral.
+  - **Menu Superior Padronizado**: Removido o item `Home` excedente de `sobre-nos.html`, tornando o menu superior idêntico em ambas as páginas (`Sobre` | `Nossas Marcas` | `Contato`).
+  - **Captura Global de Cliques**: Atualizada a função em `src/js/main.js` para escutar e tratar cliques em `a[href*="#marca-"]`.
+
+- **Ajuste de Alinhamento da Imagem "Trabalhe Conosco" (Home)**:
+  - Alterado o posicionamento da imagem de fundo do banner em `src/css/sections.css` para `top right` (superior direito).
+  - Invalidado cache dos estilos em `index.html` e `main.css` (`v=9.8`).
+
+- **Alinhamento Justificado na Timeline ("Nossa Trajetória")**:
+  - Aplicada a propriedade `text-align: justify` na descrição dos marcos históricos da Timeline (`.trajetoria-event-desc` em `src/css/timeline.css`).
+  - Invalidado cache dos estilos em `sobre-nos.html` e `main.css` (`v=9.7`).
+
+- **Atualização da Imagem de Fundo "Trabalhe Conosco" (Home)**:
+  - Atualizada a imagem de fundo do card da Seção Trabalhe Conosco em `src/css/sections.css` (e invalidado o cache em `index.html` e `main.css`) para a imagem `banner-trabalhe-conoscoo.png`.
+
+- **Atualização da Foto Oficial da Seção "Sobre o Grupo"**:
+  - Atualizada a fotografia da Seção "Sobre o Grupo" em `index.html` e `sobre-nos.html` para a imagem em alta resolução com a equipe e fachada (`foto-grupo-b-em-fente-fachada_pessoas.png`).
+
+- **Unificação do Hero com Vídeo Background & Barra de Progresso Exclusiva Fullscreen**:
+  - **Hero Banner 100% Vídeo**: Removido o slide inicial estático de foto da fachada da Home (`index.html`) e mantido o vídeo institucional em background contínuo com a headline oficial *"Somos o Grupo Mais Barato"*.
+  - **Foto Oficial na Seção Sobre o Grupo**: Atualizada a imagem da segunda seção da Home para a fotografia oficial da fachada com a equipe (`foto-grupo-b-em-fente-fachada_IA.webp`).
+  - **Textos Justificados**: Aplicado alinhamento totalmente justificado (`text-align: justify`) nos parágrafos descritivos da seção *"Sobre o Grupo"* em `sobre-nos.html` e `index.html`.
+  - **Barra de Progresso Exclusiva em Tela Cheia**: Ocultada a barra de progresso por padrão fora do modo fullscreen (`display: none !important`). Em tela cheia, a UI é exibida por 1 segundo e oculta-se automaticamente, reaparecendo apenas ao movimentar o ponteiro do mouse na parte inferior da tela.
+  - **Invalidação de Cache (`v=9.6`)**: Atualizada a tag de versão das folhas de estilo em `index.html` e `sobre-nos.html`.
+
 - **Recriação e Redesign Premium da Seção "Nossas Marcas / Espiral"**:
   - **Correção da Falha de Sintaxe no CSS**: Identificada e corrigida a chave não fechada na regra `.gallery-panel` do `src/css/brands.css`, restaurando todo o código CSS descartado pelo navegador.
   - **Medalhões Circulares Glassmorphism**: Reestilizados os ícones satélites das submarcas na espiral (`.node-logo-wrapper`) para formato 100% circular (`border-radius: 50%`), eliminando caixas pretas quadradas e aplicando fundo translúcido com brilho sutil.

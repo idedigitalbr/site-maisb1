@@ -1394,10 +1394,10 @@
     window.addEventListener('hashchange', checkBrandHash);
 
     // Capturar cliques em links de marca em tempo real na página
-    document.querySelectorAll('a[href^="#marca-"]').forEach(function(link) {
+    document.querySelectorAll('a[href*="#marca-"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
         var href = link.getAttribute('href');
-        var brandMatch = href ? href.match(/^#marca-(super|farma|plaza|park|wine)$/) : null;
+        var brandMatch = href ? href.match(/#marca-(super|farma|plaza|park|wine)$/) : null;
         if (brandMatch && brandMatch[1]) {
           e.preventDefault();
           var brandId = brandMatch[1];

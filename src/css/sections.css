@@ -4259,7 +4259,7 @@ textarea.form-control {
   width: 100%;
   min-height: 500px;
   border-radius: 24px;
-  background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conosco.png') no-repeat center right / cover;
+  background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conoscoo.png') no-repeat top right / cover;
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -4368,7 +4368,7 @@ textarea.form-control {
   .trabalhe-card-banner {
     min-height: auto;
     border-radius: 18px;
-    background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conosco.png') no-repeat center right / cover;
+    background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conoscoo.png') no-repeat top right / cover;
     position: relative;
   }
   

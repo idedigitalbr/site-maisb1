@@ -245,6 +245,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
   color: #666;
   max-width: 420px;
   margin: 0;
+  text-align: justify;
 }
 
 /* ================================
