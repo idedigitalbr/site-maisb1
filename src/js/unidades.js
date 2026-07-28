@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </p>
           <div class="store-card-footer">
             <span class="store-card-bairro">Bairro: ${store.neighborhood || 'Belém'} – PA</span>
-            <button class="btn-unit-ver-mais">VER MAIS</button>
+            <a href="${store.googleMapsUrl || `https://maps.google.com/?q=${store.coords[0]},${store.coords[1]}`}" target="_blank" rel="noopener" class="btn-unit-ver-mais" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
           </div>
         </div>
       `;

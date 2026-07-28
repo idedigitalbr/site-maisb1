@@ -106,7 +106,7 @@ window.units = [
     address: "Av. Gov. José Malcher, 2200 - São Brás, Belém - PA, CEP 66060-230",
     phone: "(91) 3200-3000",
     email: "contato.plaza@grupomaisbarato.com.br",
-    googleMapsUrl: "https://maps.google.com/?q=-1.452655,-48.468202",
+    googleMapsUrl: "https://maps.app.goo.gl/LvBgEdyHxzpveMw17",
     rating: 4.7,
     reviewsCount: 980,
     hours: "07h às 22h. Domingos: 07h às 21h.",

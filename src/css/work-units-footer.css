@@ -3095,12 +3095,21 @@
 }
 
 .locator-gold-title {
-  font-size: clamp(2rem, 3.2vw, 3.2rem);
-  font-weight: 800;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 3.4vw, 3.4rem);
+  font-weight: 400;
   color: #FFFFFF;
   line-height: 1.1;
   margin-bottom: 8px;
   white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.locator-gold-title .headline-highlight-italic {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #d8a72b;
 }
 
 .locator-gold-desc {
@@ -3148,11 +3157,11 @@
   pointer-events: none !important;
 }
 
-/* Filtros de Pílula (1 Linha Horizontal 100% Fiel à footer.png Print 2) */
+/* Filtros de Pílula (1 Linha Horizontal 100% Fiel ao Print 2 enviado) */
 .gold-filter-pills-row {
   display: flex;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 16px;
@@ -3167,27 +3176,28 @@
 }
 
 .gold-pill {
-  background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #FFFFFF;
-  padding: 9px 18px;
-  border-radius: 8px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
 
 .gold-pill.active,
 .gold-pill:hover {
-  background: #FFFFFF;
+  background: #F5F3EF;
   color: #000000;
-  border-color: #FFFFFF;
+  border-color: #F5F3EF;
   font-weight: 800;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
 }
 
 /* Cards de Unidade (Fiel à footer.png Print 2 — 3 Unidades Horizontais) */
