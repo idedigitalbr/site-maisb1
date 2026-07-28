@@ -795,10 +795,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'farma': '+B FARMA'
       };
 
-      const tagsHTML = (store.subbrands || [])
+      const tagsText = (store.subbrands || [])
         .filter(sub => brandLabels[sub])
-        .map(sub => `<span class="unit-subbrand-tag">${brandLabels[sub]}</span>`)
-        .join('');
+        .map(sub => brandLabels[sub])
+        .join(' <span class="tag-divider">|</span> ');
 
       const card = document.createElement('div');
       card.className = `store-list-card ${activeUnitId === store.id ? 'selected' : ''}`;
@@ -814,7 +814,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="store-rating-teaser">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
           </div>
           <div class="unit-subbrands-inline-row">
-            ${tagsHTML}
+            ${tagsText}
           </div>
           <p class="store-address-teaser">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address.split('-')[0].trim()}

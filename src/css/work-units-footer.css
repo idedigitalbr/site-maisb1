@@ -3079,9 +3079,9 @@
 
 .store-locator-grid {
   display: grid;
-  grid-template-columns: 36% 64%;
-  gap: 36px;
-  align-items: start;
+  grid-template-columns: 37% 63%;
+  gap: 32px;
+  align-items: stretch;
 }
 
 .store-left-col {
@@ -3092,6 +3092,8 @@
 .store-right-col {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
 }
 
 .locator-gold-title {
@@ -3203,10 +3205,7 @@
 .store-cards-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-height: 380px;
-  overflow-y: auto;
-  scrollbar-width: thin;
+  gap: 14px;
 }
 
 .store-locator-gold-section .store-list-card,
@@ -3214,9 +3213,9 @@
   display: flex;
   background: #0D0D0E;
   border: 1px solid rgba(197, 155, 39, 0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 12px 14px;
+  border-radius: 14px;
+  overflow: visible;
+  padding: 14px 16px;
   gap: 14px;
   align-items: center;
   margin-bottom: 0;
@@ -3236,7 +3235,7 @@
 .store-locator-gold-section .store-card-thumbnail,
 .unit-card-thumb {
   width: 105px;
-  height: 78px;
+  height: 82px;
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
@@ -3272,7 +3271,28 @@
   color: #c59b27;
   letter-spacing: 0.04em;
   margin: 0;
+  padding: 0;
+  line-height: 1.2;
   text-transform: uppercase;
+}
+
+.unit-subbrands-inline-row {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 3px 0 5px 0;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+}
+
+.unit-subbrands-inline-row .tag-divider {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  font-weight: 400;
 }
 
 .store-locator-gold-section .store-address-teaser,
@@ -3281,14 +3301,13 @@
   color: #FFFFFF;
   font-weight: 500;
   line-height: 1.35;
-  margin: 2px 0 4px;
+  margin: 0 0 6px;
 }
 
 .store-locator-gold-section .store-card-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  gap: 10px;
   margin-top: 4px;
 }
 
