@@ -6,7 +6,7 @@
     const nextBtn = document.querySelector('.carousel-nav.next-btn');
     const progressBar = document.querySelector('.carousel-progress-bar');
     
-    if (!slides.length || !dots.length) return;
+    if (!slides.length) return;
 
     let currentSlide = 0;
     let timer;

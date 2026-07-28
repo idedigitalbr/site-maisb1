@@ -706,6 +706,10 @@ p {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
   background: #111;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
 }
 
 .vertical-testimonial-video {
@@ -737,6 +741,10 @@ p {
     0 0 25px rgba(255, 196, 0, 0.45),
     0 0 50px rgba(255, 196, 0, 0.15);
   overflow: hidden;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
   transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 0; /* Inactive cards are hidden to avoid partial rendering in the bleed padding */
   pointer-events: none;
@@ -766,6 +774,10 @@ p {
   border-radius: 25px !important;
   overflow: hidden;
   background: #111;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
 }
 
 /* Vídeo cobre todo o card em 9:16 */
@@ -1131,6 +1143,10 @@ p {
     0 30px 70px rgba(0,0,0,0.85),
     0 0 0 2px #2d2d2d;
   overflow: hidden;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1480,8 +1496,12 @@ textarea.form-control {
   box-shadow: none !important;
   border: none !important;
   height: 90vh !important;
-  background: #000;
-  overflow: hidden;
+  background: #000 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
 }
 
 @media (max-width: 991px) {
@@ -1505,6 +1525,7 @@ textarea.form-control {
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 1;
+  border-radius: inherit;
 }
 
 .video-overlay {
@@ -2015,9 +2036,10 @@ textarea.form-control {
 .about-container {
   position: relative;
   z-index: 2;
-  max-width: 1220px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0;
 }
 
 /* Grid Principal (Coluna Esquerda + Coluna Direita) */
@@ -4037,13 +4059,13 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   Seção Sobre o Grupo — Fundo Claro #FDFAF6
+   Seção Sobre o Grupo — Fundo Claro #FDFBF7 (Fidelidade ao s2-sobrezinho.png)
    ========================================================================== */
 .about-premium-section {
   position: relative;
-  background-color: var(--color-white) !important;
-  color: var(--color-black) !important;
-  padding: 120px 0 !important;
+  background-color: #FDFBF7 !important;
+  color: #111111 !important;
+  padding: 90px 0 80px 0 !important;
   border-radius: 0 !important;
   margin: 0 !important;
   box-shadow: none !important;
@@ -4055,81 +4077,123 @@ textarea.form-control {
   display: none !important;
 }
 
+.eyebrow-gold {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #C49A45;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
 .about-main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .about-headline {
-  font-family: var(--font-primary);
-  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-black);
+  color: #0d0d0d;
   margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.headline-highlight-italic {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #C49A45;
 }
 
 .about-paragraphs p {
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  line-height: 1.65;
-  color: var(--color-gray-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444444;
   margin-bottom: 16px;
-  max-width: 580px;
+  max-width: 520px;
+}
+
+.gold-accent-line {
+  width: 54px;
+  height: 3px;
+  background-color: #C49A45;
+  border-radius: 2px;
+  margin-top: 24px;
 }
 
 .about-photo-wrapper {
   position: relative;
-  border-radius: var(--radius-medium);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow-subtle);
-  border: 1px solid rgba(18, 14, 14, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  border: none;
 }
 
 .about-team-photo {
   width: 100%;
-  height: 440px;
+  height: 380px;
   object-fit: cover;
+  border-radius: 20px;
+  display: block;
 }
 
 .about-stats-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding-top: 48px;
-  border-top: 1px solid rgba(18, 14, 14, 0.12);
+  border-top: 1px solid rgba(196, 154, 69, 0.35);
 }
 
 .stat-item {
   flex: 1;
-  text-align: center;
-  padding: 0 16px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.stat-item:first-child {
+  padding-left: 0;
+}
+
+.stat-item:last-child {
+  padding-right: 0;
 }
 
 .stat-number {
   display: block;
-  font-family: var(--font-primary);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
   font-weight: 700;
-  color: var(--color-black);
-  line-height: 1;
+  color: #111111;
+  line-height: 1.05;
   margin-bottom: 8px;
 }
 
 .stat-desc {
-  font-family: var(--font-primary);
-  font-size: 0.88rem;
-  color: var(--color-gray-medium);
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #555555;
+  font-weight: 400;
+  line-height: 1.35;
+  display: block;
 }
 
 .stat-divider {
   width: 1px;
-  height: 48px;
-  background-color: rgba(18, 14, 14, 0.12);
+  height: 52px;
+  background-color: #C49A45;
+  opacity: 0.6;
+  flex-shrink: 0;
+  align-self: center;
 }
 
 /* ==========================================================================
@@ -4217,7 +4281,7 @@ textarea.form-control {
 .events-banner-wrapper {
   display: block;
   width: 100%;
-  max-width: 1040px;
+  max-width: 100%;
   margin: 0 auto;
   border-radius: var(--radius-medium);
   overflow: hidden;
@@ -4343,75 +4407,143 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   ESTILOS GOLD — TRABALHE CONOSCO (s4-trabalheconsoco.png)
+   ESTILOS GOLD — TRABALHE CONOSCO CARD BANNER
    ========================================================================== */
 .trabalhe-conosco-gold-section {
   background-color: #FAF8F5 !important;
-  padding: 80px 0 !important;
+  padding: 60px 0 80px 0 !important;
 }
 
-.trabalhe-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 50px;
+.trabalhe-card-banner {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  border-radius: 24px;
+  background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conosco.png') no-repeat center right / cover;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
   align-items: center;
 }
 
-.trabalhe-headline {
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  font-weight: 800;
-  line-height: 1.15;
+.trabalhe-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 70px;
+  max-width: 540px;
+}
+
+.trabalhe-card-content .eyebrow-gold {
+  display: inline-block;
+  font-family: var(--font-primary, 'Outfit', sans-serif);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #B58729;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.trabalhe-card-headline {
+  font-family: var(--font-primary, 'Outfit', sans-serif);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.16;
   color: #111111;
   letter-spacing: -0.02em;
+  margin: 0 0 22px 0;
 }
 
-.trabalhe-description {
-  font-size: 1rem;
+.trabalhe-card-headline .headline-highlight-italic {
+  font-family: var(--font-editorial, 'Playfair Display', serif);
+  font-style: italic;
+  font-weight: 400;
+  color: #B58729;
+}
+
+.trabalhe-gold-accent-line {
+  width: 44px;
+  height: 2px;
+  background-color: #B58729;
+  margin: 0 0 24px 0;
+  border-radius: 2px;
+}
+
+.trabalhe-card-description {
+  font-family: var(--font-primary, 'Outfit', sans-serif);
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #555555;
-  margin: 20px 0 32px 0;
-  max-width: 480px;
+  color: #4A4A4A;
+  margin: 0 0 36px 0;
+  max-width: 420px;
+  font-weight: 400;
 }
 
-.btn-trabalhe-gold {
+.btn-trabalhe-card {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background-color: #141414;
+  gap: 14px;
+  background-color: #111111;
   color: #ffffff;
   padding: 16px 32px;
   border-radius: 8px;
+  font-family: var(--font-primary, 'Outfit', sans-serif);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
-.btn-trabalhe-gold:hover {
-  background-color: #c59b27;
+.btn-trabalhe-card svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-trabalhe-card:hover {
+  background-color: #B58729;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(197, 155, 39, 0.3);
+  box-shadow: 0 8px 24px rgba(181, 135, 41, 0.35);
 }
 
-.trabalhe-photo-col {
-  position: relative;
+.btn-trabalhe-card:hover svg {
+  transform: translateX(4px);
 }
 
-.trabalhe-photo-mask {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+@media (max-width: 991px) {
+  .trabalhe-card-banner {
+    min-height: 460px;
+    background-position: 75% center;
+  }
+  .trabalhe-card-content {
+    padding: 48px 40px;
+    max-width: 480px;
+  }
 }
 
-.trabalhe-team-img {
-  width: 100%;
-  height: 440px;
-  object-fit: cover;
-  display: block;
+@media (max-width: 768px) {
+  .trabalhe-card-banner {
+    min-height: auto;
+    border-radius: 18px;
+    background: #FAF7F2 url('../../assets/Paginas (Imagens)/Home/banner-trabalhe-conosco.png') no-repeat center right / cover;
+    position: relative;
+  }
+  
+  .trabalhe-card-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.88) 60%, rgba(250, 247, 242, 0.4) 100%);
+    z-index: 1;
+  }
+  
+  .trabalhe-card-content {
+    padding: 40px 24px;
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================================

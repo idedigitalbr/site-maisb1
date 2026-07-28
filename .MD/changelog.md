@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-27
+
+- Ajuste e otimização do ponto de luz fixo no rodapé minimalista (`src/css/work-units-footer.css`): remoção do foco de luz acumulado atrás da logo, posicionamento da fonte de luz dourada radial na parte inferior (alinhada às redes sociais e à linha divisória) e inclusão de highlight de brilho central na borda com visual 100% fiel ao print de referência.
+- Remoção dos indicadores de pontinhos/traços no carrossel do topo Hero (`index.html`, `src/css/hero.css` e `src/js/hero-carousel.js`), mantendo exclusivamente a barra de progresso horizontal refinada.
+- Refatoração da **Seção 2 (Sobre o Grupo / "sobrenoszinho")** da Home (`index.html` e `src/css/sections.css`) com alinhamento 100% idêntico à referência do protótipo (`s2-sobrezinho.png`).
+- Atualização da foto principal da Seção 2 para a fachada oficial (`s1-topo-hero-foto-.png`).
+- Aplicação do estilo de tipografia serifada itálica em dourado (`.headline-highlight-italic`) na palavra de destaque *"expansão."*.
+- Reestruturação das métricas (`.about-stats-row`): alinhamento à esquerda, números em destaque (`font-weight: 700`), divisores verticais em tom dourado (`#C49A45`) e espaçamentos simétricos.
+- Atualização da versão do CSS em `index.html` para `?v=8.5`.
+
 ## 2026-07-22
 
 - Atualização dos nomes e cargos dos depoimentos no carrossel da Home (`index.html`): **Miki Nogani (Cliente +B)**, **Karina Santos (Cliente +B)**, **Maria Antonieta (Cliente +B)** e **Olhala & Equipe (Parceiro Institucional)**.
