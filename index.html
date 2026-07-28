@@ -29,7 +29,7 @@
 
   <link rel="preload" href="./assets/Videos/video-b-home-poster.webp" as="image" />
   <link rel="preload" href="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" as="image" />
-  <link rel="stylesheet" href="./src/css/main.css?v=8.7" />
+  <link rel="stylesheet" href="./src/css/main.css?v=9.2" />
   <!-- Script de Fallback Automático de Imagens e Vídeos -->
   <script>
     document.addEventListener('error', function(event) {
@@ -303,9 +303,9 @@
               </div>
             </div>
             
-            <!-- Grid Duas Colunas: Espiral (Esquerda) + Card (Direita) -->
-            <div class="brands-layout-split">
-              <!-- Setas de navegação posicionadas nas laterais da grade -->
+            <!-- Stage Wrapper para ancoragem das setas flutuantes -->
+            <div class="brands-carousel-stage">
+              <!-- Setas de navegação minimalistas flutuando nas laterais -->
               <button class="brands-nav-arrow arrow-left" aria-label="Marca anterior">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="15 18 9 12 15 6"></polyline>
@@ -316,6 +316,9 @@
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
+
+              <!-- Grid Duas Colunas: Espiral (Esquerda) + Card (Direita) -->
+              <div class="brands-layout-split">
 
               
               <!-- Coluna Esquerda: Espiral / Órbita (Largura 45% no desktop) -->
@@ -674,7 +677,7 @@
                 </div>
                 
               </div>
-            </div>
+            </div> <!-- /brands-carousel-stage -->
             
           </div>
         </div>

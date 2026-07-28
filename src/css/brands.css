@@ -253,14 +253,17 @@
 }
 
 .node-logo-wrapper {
-  width: 96px;
-  height: 96px;
-  background: transparent;
-  border: none;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(20, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(253, 250, 246, 0.25);
   display: grid;
   place-items: center;
-  padding: 0;
-  box-shadow: none;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   animation: orbit-floating 6s ease-in-out infinite;
 }
@@ -743,18 +746,38 @@
 }
 
 
-/* Nós Satélites Posicionamentos */
-/* O JS posiciona cada nó dinamicamente em círculo — apenas definimos o estilo base aqui */
+/* Nós Satélites Posicionamentos & Estilização Circular Premium */
 .brands-orbit-box .node-logo-wrapper {
-  width: 80px;
-  height: 80px;
-  padding: 10px;
-  border-width: 2.5px;
-  transform: scale(0.85);
+  width: 76px !important;
+  height: 76px !important;
+  min-width: 76px !important;
+  max-width: 76px !important;
+  min-height: 76px !important;
+  max-height: 76px !important;
+  padding: 12px !important;
+  border-radius: 50% !important;
+  background: rgba(20, 18, 18, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1.5px solid rgba(253, 250, 246, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 15px rgba(200, 146, 35, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  transform: scale(0.9);
   opacity: 1;
-  transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.brands-orbit-box .node-logo-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Os nós do carrossel são posicionados pelo JS com left/top */
@@ -780,46 +803,41 @@
 }
 
 .carousel-node.active .node-logo-wrapper {
-  transform: scale(1.3);
+  transform: scale(1.15) !important;
+  border-color: var(--color-yellow, #C89223) !important;
+  box-shadow: 0 0 25px rgba(200, 146, 35, 0.5), 0 8px 24px rgba(0, 0, 0, 0.8) !important;
   opacity: 1;
 }
 
-/* Rótulos dos nós satélites */
+/* Rótulos dos nós satélites com máxima legibilidade */
 .brands-orbit-box .node-label {
   position: absolute;
-  bottom: -22px;
+  bottom: -24px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.68rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
   white-space: nowrap;
   pointer-events: none;
-  transition: color 0.4s ease, font-weight 0.4s ease, opacity 0.4s ease;
+  transition: all 0.3s ease;
   text-align: center;
   opacity: 1;
 }
 
-/* Orbit Node Logo Wrappers */
-.brands-orbit-box .node-plaza .node-logo-wrapper,
-.brands-orbit-box .node-super .node-logo-wrapper,
-.brands-orbit-box .node-farma .node-logo-wrapper,
-.brands-orbit-box .node-park .node-logo-wrapper,
-.brands-orbit-box .node-wine .node-logo-wrapper {
-  border-color: rgba(253, 250, 246, 0.2) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
-}
-
-/* Remoção suave do destaque ao passar o mouse sobre qualquer ícone */
+/* Hover nos nós satélites */
 .brands-orbit-box .split-node:hover .node-logo-wrapper {
-  box-shadow: none !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  animation-play-state: paused;
+  border-color: var(--color-yellow, #C89223) !important;
+  box-shadow: 0 0 25px rgba(200, 146, 35, 0.5), 0 8px 24px rgba(0, 0, 0, 0.8) !important;
+  transform: scale(1.08) !important;
   z-index: 50;
 }
 
 .brands-orbit-box .split-node:hover .node-label {
   color: #ffffff;
+  font-weight: 700;
 }
 
 /* Rótulo em destaque ativo no slide correspondente */
@@ -873,30 +891,51 @@
   z-index: 10;
 }
 
-/* Hover & Active Card Themes */
+/* Hover & Active Card Themes - Gradientes Premium por Submarca */
 .brand-detail-card.active:hover {
   transform: translateY(-4px) scale(1.005);
 }
 
-.brand-detail-card.theme-plaza,
-.brand-detail-card.theme-wine,
-.brand-detail-card.theme-super,
-.brand-detail-card.theme-farma,
-.brand-detail-card.theme-park {
-  background: var(--color-charcoal) !important;
+.brand-detail-card.theme-plaza {
+  background: linear-gradient(145deg, #1D0608 0%, #110304 100%) !important;
   color: var(--color-white) !important;
-  border: 1px solid rgba(253, 250, 246, 0.14) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(218, 23, 30, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(218, 23, 30, 0.12) !important;
 }
 
-.brand-detail-card.theme-plaza.active:hover,
-.brand-detail-card.theme-wine.active:hover,
-.brand-detail-card.theme-super.active:hover,
-.brand-detail-card.theme-farma.active:hover,
-.brand-detail-card.theme-park.active:hover {
-  border-color: var(--color-yellow) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8) !important;
+.brand-detail-card.theme-wine {
+  background: linear-gradient(145deg, #1C080E 0%, #0F0307 100%) !important;
+  color: var(--color-white) !important;
+  border: 1px solid rgba(234, 187, 117, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(234, 187, 117, 0.12) !important;
 }
+
+.brand-detail-card.theme-super {
+  background: linear-gradient(145deg, #1E1705 0%, #0F0B02 100%) !important;
+  color: var(--color-white) !important;
+  border: 1px solid rgba(255, 196, 0, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 196, 0, 0.12) !important;
+}
+
+.brand-detail-card.theme-farma {
+  background: linear-gradient(145deg, #1D0608 0%, #0F0304 100%) !important;
+  color: var(--color-white) !important;
+  border: 1px solid rgba(242, 13, 24, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(242, 13, 24, 0.12) !important;
+}
+
+.brand-detail-card.theme-park {
+  background: linear-gradient(145deg, #051A0F 0%, #020C07 100%) !important;
+  color: var(--color-white) !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(34, 197, 94, 0.12) !important;
+}
+
+.brand-detail-card.theme-plaza.active:hover { border-color: rgba(218, 23, 30, 0.4) !important; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 16px rgba(218, 23, 30, 0.12) !important; }
+.brand-detail-card.theme-wine.active:hover { border-color: rgba(234, 187, 117, 0.4) !important; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 16px rgba(234, 187, 117, 0.12) !important; }
+.brand-detail-card.theme-super.active:hover { border-color: rgba(255, 196, 0, 0.4) !important; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 16px rgba(255, 196, 0, 0.12) !important; }
+.brand-detail-card.theme-farma.active:hover { border-color: rgba(242, 13, 24, 0.4) !important; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 16px rgba(242, 13, 24, 0.12) !important; }
+.brand-detail-card.theme-park.active:hover { border-color: rgba(34, 197, 94, 0.4) !important; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 16px rgba(34, 197, 94, 0.12) !important; }
 
 /* Galeria Superior (4 colunas preenchidas 100%) */
 .card-top-gallery {
@@ -917,6 +956,8 @@
   width: 100%;
   height: 100%; /* Preenche 100% da altura da galeria */
   box-sizing: border-box;
+}
+
 .theme-super .gallery-panel { border-right: 2px solid rgba(255, 208, 0, 0.25); }
 .theme-farma .gallery-panel { border-right: 2px solid rgba(255, 50, 70, 0.25); }
 .theme-park .gallery-panel { border-right: 2px solid rgba(34, 197, 94, 0.25); }
@@ -990,80 +1031,57 @@
 .bg-park-slogan { background: #011f0d; }
 .bg-park-slogan .slogan-icon-wrapper { color: rgba(34, 197, 94, 0.9); }
 
-/* Logo sobreposta */
-/* Logo sobreposta */
+/* Logo sobreposta circular premium */
 .card-logo-overlap {
   position: absolute;
-  left: -30px;
-  top: -10px; /* Posiciona o logo no canto superior-esquerdo do corpo, sobrepondo a galeria */
+  left: -24px;
+  top: -12px;
   z-index: 150;
-  width: 100px;
-  height: 100px;
-  background: transparent;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  border-radius: 50% !important;
+  background: rgba(20, 18, 18, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(253, 250, 246, 0.15) !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
   box-sizing: border-box;
+  overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s ease,
-              border-color 0.4s ease,
-              filter 0.4s ease,
-              opacity 0.4s ease;
+              border-color 0.4s ease;
   opacity: 1;
-}
-
-/* Card Logo Overlap Hover / Focus */
-.card-logo-overlap {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.5s ease,
-              border-color 0.5s ease,
-              filter 0.5s ease,
-              opacity 0.4s ease;
 }
 
 .brand-detail-card.active:hover .card-logo-overlap,
 .card-logo-overlap:hover {
-  transform: scale(1.1);
+  transform: scale(1.06) !important;
 }
 
-.theme-plaza .card-logo-overlap { border: 4.5px solid #da171e; box-shadow: 0 0 35px rgba(218, 23, 30, 0.95); }
-.theme-wine .card-logo-overlap {
-  border: 3px solid #eabb75;
-  box-shadow:
-    0 0 18px rgba(255, 180, 60, 0.5),
-    0 0 40px rgba(255, 155, 40, 0.2),
-    0 8px 24px rgba(0, 0, 0, 0.5);
-}
+.theme-plaza .card-logo-overlap { border: 1px solid rgba(218, 23, 30, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(218, 23, 30, 0.15) !important; }
+.theme-wine .card-logo-overlap { border: 1px solid rgba(234, 187, 117, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(234, 187, 117, 0.15) !important; }
+.theme-super .card-logo-overlap { border: 1px solid rgba(255, 196, 0, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 196, 0, 0.15) !important; }
+.theme-farma .card-logo-overlap { border: 1px solid rgba(242, 13, 24, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(242, 13, 24, 0.15) !important; }
+.theme-park .card-logo-overlap { border: 1px solid rgba(34, 197, 94, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(34, 197, 94, 0.15) !important; }
 
-.theme-wine .card-logo-overlap img {
-  width: 65% !important;
-  height: 65% !important;
-  object-fit: contain;
-}
-.theme-super .card-logo-overlap { border: 4.5px solid var(--yellow); box-shadow: 0 0 35px rgba(255, 196, 0, 0.95); }
-.theme-farma .card-logo-overlap { border: 4.5px solid var(--red); box-shadow: 0 0 35px rgba(242, 13, 24, 0.95); }
-.theme-park .card-logo-overlap { border: 4.5px solid #22c55e; box-shadow: 0 0 35px rgba(34, 197, 94, 0.95); }
-
-/* Intensifica o brilho e destaque da logo no hover */
 .theme-plaza.brand-detail-card.active:hover .card-logo-overlap,
-.theme-plaza .card-logo-overlap:hover { border-color: #da171e !important; box-shadow: 0 0 50px rgba(218, 23, 30, 0.98) !important; }
+.theme-plaza .card-logo-overlap:hover { border-color: rgba(218, 23, 30, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(218, 23, 30, 0.25) !important; }
 .theme-wine.brand-detail-card.active:hover .card-logo-overlap,
-.theme-wine .card-logo-overlap:hover {
-  border-color: #ffd184 !important;
-  box-shadow:
-    0 0 25px rgba(255, 180, 60, 0.7),
-    0 0 50px rgba(255, 155, 40, 0.3),
-    0 10px 28px rgba(0, 0, 0, 0.6) !important;
-  transform: scale(1.1) !important;
-}
+.theme-wine .card-logo-overlap:hover { border-color: rgba(234, 187, 117, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(234, 187, 117, 0.25) !important; }
 .theme-super.brand-detail-card.active:hover .card-logo-overlap,
-.theme-super .card-logo-overlap:hover { border-color: var(--yellow) !important; box-shadow: 0 0 50px rgba(255, 196, 0, 0.98) !important; }
+.theme-super .card-logo-overlap:hover { border-color: rgba(255, 196, 0, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 196, 0, 0.25) !important; }
 .theme-farma.brand-detail-card.active:hover .card-logo-overlap,
-.theme-farma .card-logo-overlap:hover { border-color: var(--red) !important; box-shadow: 0 0 50px rgba(242, 13, 24, 0.98) !important; }
+.theme-farma .card-logo-overlap:hover { border-color: rgba(242, 13, 24, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(242, 13, 24, 0.25) !important; }
 .theme-park.brand-detail-card.active:hover .card-logo-overlap,
-.theme-park .card-logo-overlap:hover { border-color: #22c55e !important; box-shadow: 0 0 50px rgba(34, 197, 94, 0.98) !important; }
+.theme-park .card-logo-overlap:hover { border-color: rgba(34, 197, 94, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(34, 197, 94, 0.25) !important; }
 
 /* Estilização da ponte ativa estática compartilhada */
 .active-bridge {
@@ -1280,32 +1298,31 @@
   flex-shrink: 0 !important;
 }
 
-/* Marca d'água no fundo */
+/* Marca d'água elegante no canto inferior direito do card */
 .card-watermark {
   position: absolute !important;
-  bottom: -10px !important;
-  right: -10px !important;
-  width: 140px !important;
-  height: 140px !important;
-  max-width: 140px !important;
-  max-height: 140px !important;
+  bottom: 16px !important;
+  right: 20px !important;
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
   pointer-events: none !important;
   z-index: 1 !important;
-  color: rgba(253, 250, 246, 0.06) !important;
-  opacity: 0.6 !important;
+  opacity: 0.15 !important;
   display: block !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease !important;
 }
 
-
-.theme-plaza .card-watermark { color: rgba(255, 75, 95, 0.16); }
-.theme-wine .card-watermark { color: rgba(234, 187, 117, 0.18); }
-.theme-super .card-watermark { color: rgba(90, 65, 0, 0.48); }
-.theme-farma .card-watermark { color: rgba(255, 255, 255, 0.26); }
-.theme-park .card-watermark { color: rgba(34, 197, 94, 0.16); }
+.theme-plaza .card-watermark { color: rgba(218, 23, 30, 0.8) !important; }
+.theme-wine .card-watermark { color: rgba(234, 187, 117, 0.85) !important; }
+.theme-super .card-watermark { color: rgba(255, 196, 0, 0.8) !important; }
+.theme-farma .card-watermark { color: rgba(242, 13, 24, 0.8) !important; }
+.theme-park .card-watermark { color: rgba(34, 197, 94, 0.8) !important; }
 
 .brand-detail-card:hover .card-watermark {
-  transform: rotate(5deg) scale(1.08);
-  opacity: 1;
+  transform: rotate(-6deg) scale(1.1) !important;
+  opacity: 0.25 !important;
 }
 
 /* ==========================================================================
@@ -1485,49 +1502,60 @@
 
 
 /* ==========================================================================
-   Setas de Navegação Minimalistas para o Carrossel
+   Container Stage & Setas Flutuantes Premium
    ========================================================================== */
+.brands-carousel-stage {
+  position: relative;
+  width: 100%;
+}
+
 .brands-nav-arrow {
   position: absolute !important;
   top: 50% !important;
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 44px !important;
-  max-width: 44px !important;
-  min-height: 44px !important;
-  max-height: 44px !important;
-  background: rgba(253, 250, 246, 0.06) !important;
-  border: 1px solid rgba(253, 250, 246, 0.16) !important;
+  transform: translateY(-50%) !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  background: rgba(25, 22, 22, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(253, 250, 246, 0.2) !important;
   border-radius: 50% !important;
-  box-shadow: none !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   color: var(--color-white) !important;
   cursor: pointer !important;
   z-index: 120 !important;
-  transform: translateY(-50%) !important;
   flex-shrink: 0 !important;
   padding: 0 !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  outline: none !important;
 }
 
 .brands-nav-arrow svg {
-  width: 20px !important;
-  height: 20px !important;
-  min-width: 20px !important;
-  max-width: 20px !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
   stroke: currentColor !important;
-  stroke-width: 2px !important;
+  stroke-width: 2.2px !important;
   display: block !important;
   flex-shrink: 0 !important;
 }
 
 .brands-nav-arrow:hover {
-  background: var(--color-white) !important;
-  color: var(--color-black) !important;
-  border-color: var(--color-white) !important;
-  transform: translateY(-50%) scale(1.08) !important;
+  background: var(--color-yellow, #C89223) !important;
+  color: #000000 !important;
+  border-color: var(--color-yellow, #C89223) !important;
+  transform: translateY(-50%) scale(1.12) !important;
+  box-shadow: 0 0 24px rgba(200, 146, 35, 0.6) !important;
 }
 
 .brands-nav-arrow.arrow-left {
@@ -1536,6 +1564,15 @@
 
 .brands-nav-arrow.arrow-right {
   right: -24px !important;
+}
+
+@media (max-width: 1280px) {
+  .brands-nav-arrow.arrow-left {
+    left: -12px !important;
+  }
+  .brands-nav-arrow.arrow-right {
+    right: -12px !important;
+  }
 }
 
 /* Ocultar as setas no tablet/mobile para preservar responsividade */
