@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/css/main.css?v=9.0" />
+  <link rel="stylesheet" href="./src/css/main.css?v=9.6" />
   <link rel="stylesheet" href="./src/css/secao-missao-visao-valores.css" />
   <!-- Script de Fallback Automático de Imagens e Vídeos -->
   <script>
@@ -637,18 +637,60 @@
           }
         });
 
+        let fsHideTimeout;
+        const controlsRight = document.querySelector('.video-controls-right');
+
+        const hideFsUI = function() {
+          if (progressContainer) progressContainer.classList.remove('fs-visible');
+          if (controlsRight) controlsRight.classList.remove('fs-visible');
+        };
+
+        const showFsUI = function() {
+          if (progressContainer) progressContainer.classList.add('fs-visible');
+          if (controlsRight) controlsRight.classList.add('fs-visible');
+          clearTimeout(fsHideTimeout);
+          // Oculta completamente a UI após 1 segundo sem movimento
+          fsHideTimeout = setTimeout(hideFsUI, 1000);
+        };
+
+        const handleFsMouseMove = function(e) {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+          if (!isFs) return;
+
+          // Reativa a UI somente quando o mouse está nos últimos 200px da tela (parte inferior)
+          const threshold = window.innerHeight - 200;
+          const clientY = e.touches && e.touches.length ? e.touches[0].clientY : e.clientY;
+
+          if (clientY >= threshold) {
+            showFsUI();
+          } else {
+            clearTimeout(fsHideTimeout);
+            hideFsUI();
+          }
+        };
+
         const handleFsChange = function() {
           const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
           if (isFs) {
             if (fsEnterIcon) fsEnterIcon.style.display = 'none';
             if (fsExitIcon) fsExitIcon.style.display = 'block';
             fsToggleBtn.setAttribute('aria-label', 'Sair da tela cheia');
+            // Mostra por 1 segundo ao entrar em fullscreen e oculta
+            showFsUI();
           } else {
+            clearTimeout(fsHideTimeout);
+            hideFsUI();
+            if (progressContainer) progressContainer.style.display = 'none';
             if (fsEnterIcon) fsEnterIcon.style.display = 'block';
             if (fsExitIcon) fsExitIcon.style.display = 'none';
             fsToggleBtn.setAttribute('aria-label', 'Alternar tela cheia');
           }
         };
+
+        if (heroSection) {
+          heroSection.addEventListener('mousemove', handleFsMouseMove);
+          heroSection.addEventListener('touchstart', handleFsMouseMove, { passive: true });
+        }
 
         document.addEventListener('fullscreenchange', handleFsChange);
         document.addEventListener('webkitfullscreenchange', handleFsChange);

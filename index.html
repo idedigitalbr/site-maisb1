@@ -29,7 +29,7 @@
 
   <link rel="preload" href="./assets/Videos/video-b-home-poster.webp" as="image" />
   <link rel="preload" href="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" as="image" />
-  <link rel="stylesheet" href="./src/css/main.css?v=9.2" />
+  <link rel="stylesheet" href="./src/css/main.css?v=9.6" />
   <!-- Script de Fallback Automático de Imagens e Vídeos -->
   <script>
     document.addEventListener('error', function(event) {
@@ -153,13 +153,15 @@
   </header>
 
   <main id="wf-main-content" data-wf-version="5.0">
-    <!-- SEÇÃO HERO BANNER FULLSCREEN (SLIDE 1 FOTO FACHADA & SLIDE 2 VÍDEO INSTITUCIONAL) -->
+    <!-- SEÇÃO HERO BANNER FULLSCREEN COM VÍDEO INSTITUCIONAL EM BACKGROUND -->
     <section class="hero-carousel-section section-dark" id="home">
       <div class="carousel-slides-wrapper">
         
-        <!-- SLIDE 1: FOTO FACHADA -->
+        <!-- SLIDE ÚNICO: VÍDEO INSTITUCIONAL + HEADLINE PRINCIPAL -->
         <div class="carousel-slide active" data-slide-index="0">
-          <img src="./assets/Paginas (Imagens)/Home/s1-topo-hero-foto-.png" alt="Grupo Mais Barato - Fachada Principal" class="hero-bg-image" />
+          <video class="hero-bg-video" autoplay muted loop playsinline poster="./assets/Videos/video-b-home-poster.webp">
+            <source src="./assets/Videos/Supermercado Mais B - Institucional.mp4" type="video/mp4" />
+          </video>
           <div class="slide-overlay"></div>
           <div class="container slide-container">
             <div class="slide-content">
@@ -183,49 +185,6 @@
           </div>
         </div>
 
-        <!-- SLIDE 2: VÍDEO INSTITUCIONAL SUPERMERCADO MAIS B -->
-        <div class="carousel-slide" data-slide-index="1">
-          <video class="hero-bg-video" autoplay muted loop playsinline poster="./assets/Videos/video-b-home-poster.webp">
-            <source src="./assets/Videos/Supermercado Mais B - Institucional.mp4" type="video/mp4" />
-          </video>
-          <div class="slide-overlay"></div>
-          <div class="container slide-container">
-            <div class="slide-content">
-              <span class="slide-eyebrow">INSTITUCIONAL +B</span>
-              <h1 class="slide-headline-huge">
-                Excelência &<br>
-                Inovação em<br>
-                <span class="headline-highlight">Cada Detalhe</span>
-              </h1>
-              <p class="slide-lead">Conheça a força do varejo paraense que transforma o cotidiano com qualidade e solidez.</p>
-              <div class="slide-actions">
-                <a href="#marcas" class="btn-hero-cta">
-                  NOSSAS MARCAS
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Setas de Navegação do Carrossel -->
-      <button class="carousel-nav prev-btn" aria-label="Slide anterior">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="carousel-nav next-btn" aria-label="Próximo slide">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-
-      <!-- Barra de Progresso Minimalista -->
-      <div class="hero-slider-progress-minimal">
-        <div class="minimal-progress-line-track">
-          <div class="minimal-progress-fill carousel-progress-bar"></div>
-        </div>
       </div>
     </section>
 
@@ -248,7 +207,7 @@
           </div>
           <div class="about-photo-col">
             <div class="about-photo-wrapper">
-              <img src="./assets/Paginas (Imagens)/Home/s1-topo-hero-foto-.png" alt="Fachada Grupo Mais Barato" class="about-team-photo" loading="lazy">
+              <img src="./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp" alt="Equipe e Fachada Grupo Mais Barato" class="about-team-photo" loading="lazy">
             </div>
           </div>
         </div>

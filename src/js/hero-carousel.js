@@ -8,6 +8,14 @@
     
     if (!slides.length) return;
 
+    if (slides.length === 1) {
+      const activeVideo = slides[0].querySelector('video');
+      if (activeVideo) {
+        activeVideo.play().catch(() => {});
+      }
+      return;
+    }
+
     let currentSlide = 0;
     let timer;
     const slideDuration = 7000; // 7 segundos de duração

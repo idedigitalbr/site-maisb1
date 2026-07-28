@@ -1,6 +1,12 @@
 # Changelog
 
-## 2026-07-28
+- **Recriação e Redesign Premium da Seção "Nossas Marcas / Espiral"**:
+  - **Correção da Falha de Sintaxe no CSS**: Identificada e corrigida a chave não fechada na regra `.gallery-panel` do `src/css/brands.css`, restaurando todo o código CSS descartado pelo navegador.
+  - **Medalhões Circulares Glassmorphism**: Reestilizados os ícones satélites das submarcas na espiral (`.node-logo-wrapper`) para formato 100% circular (`border-radius: 50%`), eliminando caixas pretas quadradas e aplicando fundo translúcido com brilho sutil.
+  - **Emblema da Marca Sobreposto 100% Circular**: Ajustado `.card-logo-overlap` no card de detalhes com borda ultrafina de 1px discreta e efeito de vidro escuro.
+  - **Suavização dos Efeitos de Hover**: Atenuadas as sombras e bordas estouradas dos cards e medalhões, aplicando iluminação elegante e sombras de profundidade realistas.
+  - **Setas Flutuantes Restauradas**: Setas laterais circulares de 48px com acabamento em vidro e iluminação suave ao passar o mouse.
+  - **Invalidação de Cache (`v=9.2`)**: Incrementada a versão das folhas de estilo em `index.html` e `main.css` para atualização imediata nos navegadores.
 
 - **Remoção da Linha de Valores e Redesign de Métricas ("Sobre Nós")**:
   - Removida a linha de blocos de valores (`PROPÓSITO`, `PESSOAS`, `EXCELÊNCIA`, `FUTURO`) de [sobre-nos.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/sobre-nos.html) conforme solicitado.

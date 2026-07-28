@@ -1621,6 +1621,7 @@ textarea.form-control {
 
 /* Linha do tempo / Barra de progresso minimalista no centro */
 .video-progress-container {
+  display: none !important;
   position: absolute;
   bottom: 38px;
   left: 50%;
@@ -1631,6 +1632,7 @@ textarea.form-control {
   z-index: 10;
   user-select: none;
   -webkit-user-select: none;
+  transition: opacity 0.4s ease;
 }
 
 .video-progress-track {
@@ -1668,6 +1670,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: opacity 0.4s ease;
 }
 
 .video-mute-btn,
@@ -1739,6 +1742,29 @@ textarea.form-control {
   width: 100vw !important;
   height: 100vh !important;
   border-radius: 0 !important;
+}
+
+.video-hero-section:fullscreen .video-progress-container,
+.video-hero-section:-webkit-full-screen .video-progress-container {
+  display: block !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-hero-section:fullscreen .video-controls-right,
+.video-hero-section:-webkit-full-screen .video-controls-right {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-hero-section:fullscreen .video-progress-container.fs-visible,
+.video-hero-section:-webkit-full-screen .video-progress-container.fs-visible,
+.video-hero-section:fullscreen .video-controls-right.fs-visible,
+.video-hero-section:-webkit-full-screen .video-controls-right.fs-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 @media (max-width: 768px) {
@@ -2232,6 +2258,8 @@ textarea.form-control {
   line-height: 1.48;
   color: #444444;
   margin-bottom: 10px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-paragraphs p:last-child {
@@ -3084,6 +3112,8 @@ textarea.form-control {
   line-height: 1.48;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 10px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Photo Frame & Glows */
