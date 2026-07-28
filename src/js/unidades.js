@@ -771,24 +771,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const displayStores = stores.slice(0, 3);
 
     displayStores.forEach(store => {
+      // Nome simplificado da unidade (ex: UNIDADE ALCINDO CACELA)
+      let simpleTitle = `UNIDADE ${store.shortName ? store.shortName.toUpperCase() : store.name.replace(/\+B Supermercado|\(|\)/gi, '').trim().toUpperCase()}`;
+      if (store.id === 'alcindo') simpleTitle = 'UNIDADE ALCINDO CACELA';
+      if (store.id === 'tapana') simpleTitle = 'UNIDADE TAPANÃ';
+      if (store.id === 'plaza') simpleTitle = 'UNIDADE VILLA PLAZA';
+
+      // Pílulas das submarcas presentes na unidade
+      const brandLabels = {
+        'super': 'SUPERMERCADOS +B',
+        'wine': 'THE WINE EXPERIENCE',
+        'plaza': 'VILLA PLAZA',
+        'park': 'VILLA PLAZA PARK',
+        'farma': '+B FARMA'
+      };
+
+      const pillsHTML = (store.subbrands || [])
+        .filter(sub => brandLabels[sub])
+        .map(sub => `<span class="unit-subbrand-pill sub-${sub}">${brandLabels[sub]}</span>`)
+        .join('');
+
       const card = document.createElement('div');
       card.className = `store-list-card ${activeUnitId === store.id ? 'selected' : ''}`;
       card.setAttribute('data-id', store.id);
       
       card.innerHTML = `
         <div class="store-card-thumbnail">
-          <img src="${store.images.cover}" alt="${store.name}" loading="lazy">
+          <img src="${store.images.cover}" alt="${simpleTitle}" loading="lazy">
         </div>
         <div class="store-card-body">
           <div class="store-card-header">
-            <h3 class="unit-card-title">${store.name.toUpperCase()}</h3>
+            <h3 class="unit-card-title">${simpleTitle}</h3>
             <span class="store-rating-teaser">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
           </div>
           <p class="store-address-teaser">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address.split('-')[0].trim()}
           </p>
           <div class="store-card-footer">
-            <span class="store-card-bairro">Bairro: ${store.neighborhood || 'Belém'} – PA</span>
+            <div class="unit-subbrands-pills-row">
+              ${pillsHTML}
+            </div>
             <a href="${store.googleMapsUrl || `https://maps.google.com/?q=${store.coords[0]},${store.coords[1]}`}" target="_blank" rel="noopener" class="btn-unit-ver-mais" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
           </div>
         </div>
