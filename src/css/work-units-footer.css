@@ -3339,9 +3339,119 @@
   color: #000000 !important;
 }
 
-/* RODAPÉ 4 COLUNAS */
-.footer-main-gold {
-  padding: 60px 0 30px 0;
+/* ==========================================================================
+   RODAPÉ MINIMALISTA CENTRALIZADO (100% Fiel à imagem de referência do usuário)
+   ========================================================================== */
+.footer-minimal-glow-section {
+  background: #060607;
+  padding: 60px 0 24px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-minimal-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 45px;
+}
+
+/* Efeito de brilho radial dourado no fundo da logo central */
+.footer-logo-glow-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.4) 0%, rgba(197, 155, 39, 0.12) 45%, transparent 75%);
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer-minimal-logo {
+  max-width: 150px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-minimal-slogan {
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 26px;
+  letter-spacing: 0.02em;
+}
+
+.footer-minimal-social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-circle-minimal {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+}
+
+.social-circle-minimal:hover {
+  border-color: #c59b27;
+  color: #c59b27;
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(197, 155, 39, 0.35);
+}
+
+/* Barra Inferior de Direitos / Links */
+.footer-minimal-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+}
+
+.footer-minimal-bottom-bar .legal-center {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-minimal-bottom-bar .legal-center:hover {
+  color: #FFFFFF;
+}
+
+.footer-minimal-bottom-bar .dev-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .footer-four-columns {
