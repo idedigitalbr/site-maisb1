@@ -4,7 +4,7 @@
 window.units = [
   {
     id: "alcindo",
-    name: "+B Supermercado (Unidade Alcindo Cacela)",
+    name: "+B Supermercados (Alcindo Cacela)",
     shortName: "Alcindo Cacela",
     coords: [-1.4516, -48.4779],
     address: "Av. Alcindo Cacela, 1848 - Nazaré, Belém - PA, CEP 66040-020",
@@ -51,7 +51,7 @@ window.units = [
   },
   {
     id: "tapana",
-    name: "+B Supermercado (Unidade Tapanã)",
+    name: "+B Supermercados (Tapanã)",
     shortName: "Tapanã",
     coords: [-1.353381, -48.468711],
     address: "Rod. Tapanã, 597 - Tapanã, Belém - PA, CEP 66825-010",
@@ -100,8 +100,8 @@ window.units = [
   },
   {
     id: "plaza",
-    name: "+B Supermercado (Unidade Plaza)",
-    shortName: "São Brás",
+    name: "+B Supermercados (Plaza)",
+    shortName: "Plaza",
     coords: [-1.452655, -48.468202],
     address: "Av. Gov. José Malcher, 2388 - São Brás, Belém - PA, CEP 66060-230",
     phone: "(91) 3200-3000",

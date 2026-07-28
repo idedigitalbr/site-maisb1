@@ -396,9 +396,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const searchSuggestions = [
     // Unidades
-    { text: "Matriz Alcindo Cacela", value: "Alcindo Cacela", type: "unidade" },
-    { text: "Unidade Tapanã", value: "Tapanã", type: "unidade" },
-    { text: "Unidade Plaza (São Brás)", value: "São Brás", type: "unidade" },
+    { text: "+B Supermercados (Alcindo Cacela)", value: "Alcindo Cacela", type: "unidade" },
+    { text: "+B Supermercados (Tapanã)", value: "Tapanã", type: "unidade" },
+    { text: "+B Supermercados (Plaza)", value: "Plaza", type: "unidade" },
     
     // Bairros
     { text: "Lojas no bairro Cremação", value: "Cremação", type: "bairro" },
@@ -777,11 +777,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const displayStores = stores.slice(0, 3);
 
     displayStores.forEach(store => {
-      // Nome simplificado da unidade (ex: UNIDADE ALCINDO CACELA)
-      let simpleTitle = `UNIDADE ${store.shortName ? store.shortName.toUpperCase() : store.name.replace(/\+B Supermercado|\(|\)/gi, '').trim().toUpperCase()}`;
-      if (store.id === 'alcindo') simpleTitle = 'UNIDADE ALCINDO CACELA';
-      if (store.id === 'tapana') simpleTitle = 'UNIDADE TAPANÃ';
-      if (store.id === 'plaza') simpleTitle = 'UNIDADE VILLA PLAZA';
+      // Nome formatado da unidade (ex: +B Supermercados (Alcindo Cacela))
+      let simpleTitle = `+B Supermercados (${store.shortName || store.name})`;
+      if (store.id === 'alcindo') simpleTitle = '+B Supermercados (Alcindo Cacela)';
+      if (store.id === 'tapana') simpleTitle = '+B Supermercados (Tapanã)';
+      if (store.id === 'plaza') simpleTitle = '+B Supermercados (Plaza)';
 
       // Pílulas das submarcas presentes na unidade
       const brandLabels = {
