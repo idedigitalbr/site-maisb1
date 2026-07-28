@@ -1,5 +1,9 @@
 # Changelog
 
+- **Ajuste na Sombra e Transição da Seção "Sobre o Grupo" (Sobre Nós)**:
+  - Suavizada a sombra inferior (`box-shadow`) e adicionada margem inferior de `48px` na classe `.about-premium-dark-section` em `src/css/sections.css`, eliminando o efeito de linha preta recortada na transição para a seção Timeline.
+  - Invalidado cache em `sobre-nos.html` e `main.css` (`v=9.9`).
+
 - **Integração do Submenu "Nossas Marcas" com a Espiral e Unificação do Header**:
   - **Ativação Direta das Marcas**: Atualizados os links do submenu dropdown *Nossas Marcas* (`#marca-super`, `#marca-farma`, `#marca-plaza`, `#marca-park`, `#marca-wine`) para que, ao clicar em qualquer submarca no topo, a página navegue suavemente e abra imediatamente o card correspondente na espiral.
   - **Menu Superior Padronizado**: Removido o item `Home` excedente de `sobre-nos.html`, tornando o menu superior idêntico em ambas as páginas (`Sobre` | `Nossas Marcas` | `Contato`).
