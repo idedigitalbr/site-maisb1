@@ -3214,13 +3214,15 @@
   background: #0D0D0E;
   border: 1px solid rgba(197, 155, 39, 0.25);
   border-radius: 14px;
-  overflow: visible;
+  overflow: hidden;
   padding: 14px 16px;
   gap: 14px;
   align-items: center;
   margin-bottom: 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .store-locator-gold-section .store-list-card:hover,
@@ -3234,7 +3236,7 @@
 
 .store-locator-gold-section .store-card-thumbnail,
 .unit-card-thumb {
-  width: 105px;
+  width: 95px;
   height: 82px;
   border-radius: 8px;
   overflow: hidden;
@@ -3254,6 +3256,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 0; /* CRUCIAL: Impede que o conteúdo estoure a largura do card no flexbox */
 }
 
 .store-locator-gold-section .store-card-header,
@@ -3262,6 +3265,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2px;
+  gap: 8px;
+  width: 100%;
 }
 
 .store-locator-gold-section .store-card-body h3,
@@ -3274,24 +3279,36 @@
   padding: 0;
   line-height: 1.2;
   text-transform: uppercase;
-}
-
-.unit-subbrands-inline-row {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 3px 0 5px 0;
+}
+
+.unit-card-rating,
+.store-rating-teaser {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #c59b27;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.unit-subbrands-inline-row {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+  margin: 2px 0 4px 0;
   font-family: var(--font-primary, 'DM Sans', sans-serif);
 }
 
 .unit-subbrands-inline-row .tag-divider {
   color: rgba(255, 255, 255, 0.3);
-  margin: 0 5px;
+  margin: 0 4px;
   font-weight: 400;
 }
 
@@ -3302,13 +3319,17 @@
   font-weight: 500;
   line-height: 1.35;
   margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .store-locator-gold-section .store-card-footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 2px;
+  width: 100%;
 }
 
 .unit-subbrands-pills-row {
