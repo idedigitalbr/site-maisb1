@@ -155,23 +155,20 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="custom-pin-wrapper">
           <svg class="custom-pin-svg" viewBox="0 0 40 54" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <filter id="pin-shadow-${unit.id}" x="-20%" y="-10%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-              </filter>
               <linearGradient id="gold-b-grad-${unit.id}" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FCE09B"/>
-                <stop offset="60%" stop-color="#D4A017"/>
-                <stop offset="100%" stop-color="#B88308"/>
+                <stop offset="0%" stop-color="#FFF099"/>
+                <stop offset="50%" stop-color="#F5C400"/>
+                <stop offset="100%" stop-color="#C59B27"/>
               </linearGradient>
             </defs>
-            <path d="M20 0C8.95 0 0 8.95 0 20c0 14.5 18.2 32.2 19.1 33.1a1.4 1.4 0 0 0 1.8 0C21.8 52.2 40 34.5 40 20 40 8.95 31.05 0 20 0z" fill="#0C0C0D" stroke="#262626" stroke-width="1.2" filter="url(#pin-shadow-${unit.id})" />
+            <path class="pin-base-path" d="M20 0C8.95 0 0 8.95 0 20c0 14.5 18.2 32.2 19.1 33.1a1.4 1.4 0 0 0 1.8 0C21.8 52.2 40 34.5 40 20 40 8.95 31.05 0 20 0z" fill="#0C0C0D" stroke="#333333" stroke-width="1.2" />
             <circle cx="20" cy="20" r="13" fill="#050505" />
             <text x="20" y="25" font-family="'DM Sans', Georgia, sans-serif" font-size="14" font-weight="900" font-style="italic" fill="url(#gold-b-grad-${unit.id})" text-anchor="middle">+B</text>
           </svg>
         </div>
       `,
-      iconSize: [40, 54],
-      iconAnchor: [20, 54]
+      iconSize: [60, 74],
+      iconAnchor: [30, 74]
     });
   }
 

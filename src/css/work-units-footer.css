@@ -1315,28 +1315,35 @@
   border: none !important;
 }
 
+.custom-map-pin-container {
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .custom-pin-wrapper {
   position: relative;
   width: 40px;
   height: 54px;
   transform-origin: bottom center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .custom-pin-wrapper:hover {
-  transform: scale(1.12);
-  filter: drop-shadow(0 6px 14px rgba(197, 155, 39, 0.4));
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(255, 229, 143, 0.5));
 }
 
 .custom-pin-wrapper.active {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 12px rgba(197, 155, 39, 0.65)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.75)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
   z-index: 1000 !important;
 }
 
 .custom-pin-wrapper.inactive {
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .custom-pin-svg {
@@ -1346,12 +1353,13 @@
 }
 
 .custom-pin-svg path {
-  transition: stroke 0.3s ease, fill 0.3s ease;
+  transition: stroke 0.25s ease, stroke-width 0.25s ease;
 }
 
-.custom-pin-wrapper.active .custom-pin-svg path {
-  stroke: #d8a72b !important;
-  stroke-width: 2.2px !important;
+/* Borda fina e brilhante em tom de ouro reluzente */
+.custom-pin-wrapper.active .custom-pin-svg .pin-base-path {
+  stroke: #FFE58F !important;
+  stroke-width: 1.4px !important;
 }
 
 .pin-logo-container {
