@@ -2,7 +2,7 @@
 
 ## 2026-07-27
 
-- Ajuste e otimização do ponto de luz fixo no rodapé minimalista (`src/css/work-units-footer.css`): remoção do foco de luz acumulado atrás da logo, posicionamento da fonte de luz dourada radial na parte inferior (alinhada às redes sociais e à linha divisória) e inclusão de highlight de brilho central na borda com visual 100% fiel ao print de referência.
+- Ajuste fino do ponto de luz no rodapé (`src/css/work-units-footer.css`): correção da linha divisória para ficar **contínua em 100% da largura** (`border-top: 1px solid rgba(255, 255, 255, 0.12)`), com um sutil ponto de brilho central de `60px` sobre a linha, e suavização da luz radial de fundo (gradiente ambiental difuso e elegante), alcançando 100% de fidelidade ao **Print 2**.
 - Remoção dos indicadores de pontinhos/traços no carrossel do topo Hero (`index.html`, `src/css/hero.css` e `src/js/hero-carousel.js`), mantendo exclusivamente a barra de progresso horizontal refinada.
 - Refatoração da **Seção 2 (Sobre o Grupo / "sobrenoszinho")** da Home (`index.html` e `src/css/sections.css`) com alinhamento 100% idêntico à referência do protótipo (`s2-sobrezinho.png`).
 - Atualização da foto principal da Seção 2 para a fachada oficial (`s1-topo-hero-foto-.png`).
