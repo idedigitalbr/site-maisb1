@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         center: [-1.448, -48.472], 
         zoom: 13.5,
         zoomControl: true,
-        scrollWheelZoom: true,
+        scrollWheelZoom: false, // Segurança: evita que a rolagem da página seja travada pelo mapa
         attributionControl: false,
         dragging: true,
         doubleClickZoom: true,
@@ -219,6 +219,15 @@ document.addEventListener('DOMContentLoaded', function() {
         subdomains: 'abcd',
         maxZoom: 19
       }).addTo(mapModal);
+
+      // Ativa zoom de scroll apenas quando o usuário clica ou interage com o mapa
+      container.addEventListener('click', () => {
+        if (mapModal) mapModal.scrollWheelZoom.enable();
+      });
+
+      container.addEventListener('mouseleave', () => {
+        if (mapModal) mapModal.scrollWheelZoom.disable();
+      });
 
       window.units.forEach(unit => {
         const marker = L.marker(unit.coords, {
@@ -786,9 +795,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'farma': '+B FARMA'
       };
 
-      const pillsHTML = (store.subbrands || [])
+      const tagsHTML = (store.subbrands || [])
         .filter(sub => brandLabels[sub])
-        .map(sub => `<span class="unit-subbrand-pill sub-${sub}">${brandLabels[sub]}</span>`)
+        .map(sub => `<span class="unit-subbrand-tag">${brandLabels[sub]}</span>`)
         .join('');
 
       const card = document.createElement('div');
@@ -804,13 +813,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3 class="unit-card-title">${simpleTitle}</h3>
             <span class="store-rating-teaser">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
           </div>
+          <div class="unit-subbrands-inline-row">
+            ${tagsHTML}
+          </div>
           <p class="store-address-teaser">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address.split('-')[0].trim()}
           </p>
           <div class="store-card-footer">
-            <div class="unit-subbrands-pills-row">
-              ${pillsHTML}
-            </div>
             <a href="${store.googleMapsUrl || `https://maps.google.com/?q=${store.coords[0]},${store.coords[1]}`}" target="_blank" rel="noopener" class="btn-unit-ver-mais" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
           </div>
         </div>

@@ -3096,12 +3096,11 @@
 
 .locator-gold-title {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.2rem, 3.4vw, 3.4rem);
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
   font-weight: 400;
   color: #FFFFFF;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 8px;
-  white-space: nowrap;
   letter-spacing: -0.01em;
 }
 
@@ -3457,10 +3456,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(197, 155, 39, 0.4) 0%, rgba(197, 155, 39, 0.12) 45%, transparent 75%);
-  filter: blur(24px);
+  width: 340px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(212, 160, 23, 0.65) 0%, rgba(197, 155, 39, 0.25) 50%, transparent 80%);
+  filter: blur(28px);
   pointer-events: none;
   z-index: 1;
 }
