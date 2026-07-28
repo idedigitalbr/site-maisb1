@@ -1,5 +1,11 @@
 # Changelog
 
+- **Padronização da Nomenclatura das Unidades no Localizador de Lojas**:
+  - Atualizados os títulos dos cards e atributos `alt` de imagens em `index.html` e `sobre-nos.html`, no banco de dados (`src/data/units.js`) e no gerador de cards (`src/js/unidades.js`) para a nomenclatura oficial: **+B Supermercados (Plaza)**, **+B Supermercados (Alcindo Cacela)** e **+B Supermercados (Tapanã)**.
+
+- **Centralização de Termos & Privacidade no Footer**:
+  - Reestruturada a barra inferior do footer (`.footer-minimal-bottom-bar` em `src/css/work-units-footer.css`) para utilizar layout CSS Grid de 3 colunas (`1fr auto 1fr`), alinhando o link *Termos & Privacidade* perfeitamente ao centro (50% de largura) com responsividade para dispositivos móveis.
+
 - **Ajuste na Sombra e Transição da Seção "Sobre o Grupo" (Sobre Nós)**:
   - Suavizada a sombra inferior (`box-shadow`) e adicionada margem inferior de `48px` na classe `.about-premium-dark-section` em `src/css/sections.css`, eliminando o efeito de linha preta recortada na transição para a seção Timeline.
   - Invalidado cache em `sobre-nos.html` e `main.css` (`v=9.9`).
