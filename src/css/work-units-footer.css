@@ -3384,7 +3384,7 @@
 }
 
 .footer-minimal-logo {
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
   position: relative;
   z-index: 2;
@@ -3451,7 +3451,21 @@
 .footer-minimal-bottom-bar .dev-right {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+.idedigital-logo-img {
+  height: 16px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  vertical-align: middle;
+  display: block;
+}
+
+.dev-right a:hover .idedigital-logo-img {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .footer-four-columns {
