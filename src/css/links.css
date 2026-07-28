@@ -73,11 +73,11 @@ body.links-page-body {
 }
 
 .card-close-btn:hover {
-  background: #E30613;
-  border-color: #E30613;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
   transform: scale(1.1);
-  box-shadow: 0 0 18px rgba(227, 6, 19, 0.5);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
 }
 
 .card-close-btn svg {
@@ -196,19 +196,20 @@ body.links-page-body {
   cursor: pointer;
 }
 
-/* Botão Vermelho Desaturado */
-.btn-link.red-btn {
-  background: linear-gradient(135deg, rgba(227, 6, 19, 0.85) 0%, rgba(160, 10, 20, 0.95) 100%);
-  border: 1px solid rgba(227, 6, 19, 0.4);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(160, 10, 20, 0.25);
+/* Botão Branco Premium */
+.btn-link.white-btn {
+  background: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.25);
+  font-weight: 800;
 }
 
-.btn-link.red-btn:hover {
-  background: linear-gradient(135deg, rgba(227, 6, 19, 0.95) 0%, rgba(180, 10, 20, 1) 100%) !important;
-  color: #ffffff !important;
-  border-color: rgba(227, 6, 19, 0.7) !important;
-  box-shadow: 0 6px 18px rgba(227, 6, 19, 0.3) !important;
+.btn-link.white-btn:hover {
+  background: #EAEAEA !important;
+  color: #000000 !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 6px 22px rgba(255, 255, 255, 0.4) !important;
   transform: translateY(-2px);
 }
 
@@ -328,18 +329,12 @@ body.links-page-body {
 }
 
 /* Efeitos de Hover Menos Saturados das Marcas */
-.brand-item.brand-super:hover {
-  background: rgba(227, 6, 19, 0.12);
-  border-color: rgba(227, 6, 19, 0.45);
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(227, 6, 19, 0.2);
-}
-
+.brand-item.brand-super:hover,
 .brand-item.brand-farma:hover {
-  background: rgba(227, 6, 19, 0.12);
-  border-color: rgba(227, 6, 19, 0.45);
+  background: rgba(255, 196, 0, 0.12);
+  border-color: rgba(255, 196, 0, 0.45);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(227, 6, 19, 0.2);
+  box-shadow: 0 4px 16px rgba(255, 196, 0, 0.2);
 }
 
 .brand-item.brand-plaza:hover {

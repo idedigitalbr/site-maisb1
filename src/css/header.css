@@ -182,11 +182,31 @@
   text-decoration: none;
 }
 
-.main-menu .btn-header-contact:hover {
+.main-menu .btn-header-contact:hover,
+.main-menu .contacts-dropdown:hover .btn-header-contact,
+.main-menu .contacts-dropdown.is-open .btn-header-contact {
   background-color: #d4a017;
   color: #000000 !important;
   border-color: #d4a017;
   box-shadow: 0 0 16px rgba(212, 160, 23, 0.45);
+}
+
+/* Container & Posicionamento do Dropdown Contato */
+.contacts-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.contacts-dropdown .drop-panel {
+  right: 0;
+  left: auto;
+  transform: translateY(8px);
+}
+
+.contacts-dropdown:hover .drop-panel,
+.contacts-dropdown:focus-within .drop-panel,
+.contacts-dropdown.is-open .drop-panel {
+  transform: translateY(0);
 }
 
 /* Menu Toggle (Mobile) */

@@ -4,13 +4,12 @@
 
 /* --- Seção Principal --- */
 body.theme-holding #linha-tempo.trajetoria-section {
-  background: #faf8f4 !important;
+  background: #FAF7F2 !important;
   color: var(--ink) !important;
-  padding: 150px 0 40px; /* Aumentado de 50px para 150px para compensar o margin-top negativo de 100px */
+  padding: 80px 0 60px;
   position: relative;
   overflow: hidden;
-  margin-top: -100px !important; /* Puxa a seção para cima, preenchendo o fundo atrás dos cantos arredondados de diretrizes */
-  z-index: 1; /* Fica posicionado abaixo da diretrizes-neon-section */
+  z-index: 1;
 }
 
 /* Formas orgânicas de fundo (blobs decorativos) */
@@ -259,8 +258,8 @@ body.theme-holding #linha-tempo.trajetoria-section {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1.5px solid var(--red);
-  background-color: var(--red);
+  border: 1px solid #111111;
+  background-color: #111111;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -268,7 +267,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
   cursor: pointer;
   outline: none;
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 4px 12px rgba(242, 13, 24, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .trajetoria-prev-btn {

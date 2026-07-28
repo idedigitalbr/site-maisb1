@@ -109,23 +109,6 @@
       <a class="brand-main" href="./index.html" aria-label="Grupo Mais Barato">
         <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" alt="Logo Grupo Mais Barato" />
       </a>
-      <div class="brand-sub-logos">
-        <a href="./index.html#marca-super" class="sub-logo-link" title="+B Supermercados">
-          <img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="+B Supermercados" />
-        </a>
-        <a href="./index.html#marca-farma" class="sub-logo-link" title="+B Farma">
-          <img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="+B Farma" />
-        </a>
-        <a href="./index.html#marca-plaza" class="sub-logo-link" title="Villa Plaza">
-          <img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza" />
-        </a>
-        <a href="./index.html#marca-park" class="sub-logo-link" title="Villa Plaza Park">
-          <img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park" />
-        </a>
-        <a href="./index.html#marca-wine" class="sub-logo-link" title="The Wine Experience">
-          <img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience" />
-        </a>
-      </div>
     </div>
 
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
@@ -134,36 +117,36 @@
 
     <nav class="main-menu" id="main-menu">
       <a href="./index.html">Home</a>
-      <a href="./sobre-nos.html" class="active">Sobre o Grupo Mais Barato</a>
+      <a href="./sobre-nos.html" class="active">Sobre</a>
       <div class="dropdown">
         <a href="./index.html#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
-        <div class="drop-panel dropdown-rich-menu" aria-label="Submenu Nossas Marcas">
-          <a href="./index.html#marca-super" class="dropdown-item-rich brand-super">
+        <div class="drop-panel" aria-label="Submenu Nossas Marcas">
+          <a href="./index.html#marcas" class="dropdown-item-rich brand-super">
             <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="+B Supermercados"></span>
             <span class="dropdown-item-text">+B Supermercados</span>
           </a>
-          <a href="./index.html#marca-farma" class="dropdown-item-rich brand-farma">
+          <a href="./index.html#marcas" class="dropdown-item-rich brand-farma">
             <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="+B Farma"></span>
             <span class="dropdown-item-text">+B Farma</span>
           </a>
-          <a href="./index.html#marca-plaza" class="dropdown-item-rich brand-plaza">
+          <a href="./index.html#marcas" class="dropdown-item-rich brand-plaza">
             <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza"></span>
             <span class="dropdown-item-text">Villa Plaza</span>
           </a>
-          <a href="./index.html#marca-park" class="dropdown-item-rich brand-park">
+          <a href="./index.html#marcas" class="dropdown-item-rich brand-park">
             <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park"></span>
             <span class="dropdown-item-text">Villa Plaza Park</span>
           </a>
-          <a href="./index.html#marca-wine" class="dropdown-item-rich brand-wine">
+          <a href="./index.html#marcas" class="dropdown-item-rich brand-wine">
             <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience"></span>
             <span class="dropdown-item-text">The Wine Experience</span>
           </a>
         </div>
       </div>
       <div class="dropdown contacts-dropdown">
-        <a class="drop-link btn-contacts-menu" aria-haspopup="true">Contatos</a>
+        <a href="#store-locator-teaser" id="menu-link-contato" class="drop-link btn-header-contact" aria-haspopup="true">Contato</a>
         <div class="drop-panel" aria-label="Submenu Contatos">
-          <a href="#" class="open-map-trigger" id="menu-link-unidades">Nossas Unidades</a>
+          <a href="#store-locator-teaser" class="open-map-trigger" id="menu-link-unidades">Nossas Unidades</a>
           <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" id="menu-link-trabalhe">Trabalhe Conosco</a>
           <a href="./links.html" id="menu-link-links">Nossos Links</a>
         </div>
@@ -189,15 +172,35 @@
           </p>
         </div>
       </div>
-      <button id="video-mute-toggle" class="video-mute-btn" aria-label="Desmutar vídeo">
-        <svg id="mute-icon" viewBox="0 0 24 24">
-          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-          <line x1="1" y1="1" x2="23" y2="23" />
-        </svg>
-        <svg id="unmute-icon" viewBox="0 0 24 24">
-          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-        </svg>
-      </button>
+      <!-- Controles de Vídeo (Barra de Progresso + Mute & Fullscreen) -->
+      <div class="video-hero-controls">
+        <div class="video-progress-container" id="video-progress-container" role="progressbar" aria-label="Progresso do vídeo" tabindex="0">
+          <div class="video-progress-track">
+            <div class="video-progress-bar" id="video-progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="video-controls-right">
+          <button id="video-mute-toggle" class="video-mute-btn" aria-label="Desmutar vídeo">
+            <svg id="mute-icon" viewBox="0 0 24 24">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              <line x1="1" y1="1" x2="23" y2="23" />
+            </svg>
+            <svg id="unmute-icon" viewBox="0 0 24 24">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+
+          <button id="video-fullscreen-toggle" class="video-fullscreen-btn" aria-label="Alternar tela cheia">
+            <svg id="fullscreen-enter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+            <svg id="fullscreen-exit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </section>
 
       <section class="section about-premium-dark-section wf-section" id="sobre" data-wf-label="SEÇÃO SOBRE O GRUPO - LAYOUT PREMIUM GLASSMORPHISM DARK">
@@ -214,13 +217,13 @@
           
           <!-- Left Column: Content -->
           <div class="about-content-col reveal">
-            <span class="eyebrow-tag">SOBRE O GRUPO</span>
+            <span class="eyebrow-gold">SOBRE O GRUPO</span>
 
             <!-- Headline -->
             <h2 class="about-headline">
               O maior ecossistema<br>
               de varejo, saúde e<br>
-              gastronomia do <span class="headline-highlight">Norte.</span>
+              gastronomia do <span class="headline-highlight-italic">Norte.</span>
             </h2>
 
 
@@ -238,12 +241,12 @@
           <!-- Right Column: Photo Card with Frame and Floating Glass Card -->
           <div class="about-photo-col reveal delay-1">
             <div class="about-photo-wrapper">
-              <img src="./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp" alt="Fachada Grupo Mais Barato" class="about-team-photo" loading="lazy">
+              <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp" alt="Fachada Grupo Mais Barato" class="about-team-photo" loading="lazy">
               
               <!-- Floating Glass Card (Overlay bottom-right) -->
               <div class="about-floating-glass-card">
                 <div class="floating-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#E67E00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FFC400" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
                     <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
                   </svg>
@@ -252,7 +255,7 @@
                 <div class="floating-card-text">
                   Crescimento que gera valor,<br>
                   impacto e desenvolvimento<br>
-                  <span class="highlight-orange">sustentável</span> para a nossa região.
+                  <span class="headline-highlight-italic">sustentável</span> para a nossa região.
                 </div>
               </div>
             </div>
@@ -260,175 +263,48 @@
 
         </div>
 
-        <!-- Mobile-Only: Section Header for Values -->
-        <div class="values-mobile-intro reveal">
-          <span class="mobile-eyebrow-tag">CRESCIMENTO COM PROPÓSITO</span>
-          <h2 class="mobile-intro-headline">Geramos valor e impulsionamos desenvolvimento sustentável.</h2>
-        </div>
 
-        <!-- Middle Row: Linha de Valores (Horizontal Glass Banner with 4 Blocks) -->
-        <div class="about-values-banner reveal">
-          <!-- Mobile-Only: Card Header -->
-          <div class="values-mobile-card-header">
-            <div class="values-mobile-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
-            </div>
-            <div class="values-mobile-card-text">
-              <h3>O que move o Grupo Mais Barato</h3>
-              <p>Princípios que guiam nossas decisões todos os dias.</p>
-            </div>
-          </div>
-
-          <!-- Block 1: PROPÓSITO -->
-          <div class="value-block">
-            <div class="value-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
-            </div>
-            <div class="value-info">
-              <h3 class="value-title">PROPÓSITO</h3>
-              <div class="value-accent-line"></div>
-              <p class="value-desc">Gerar valor para clientes, parceiros e comunidades.</p>
-            </div>
-          </div>
-
-          <!-- Block 2: PESSOAS -->
-          <div class="value-block">
-            <div class="value-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <div class="value-info">
-              <h3 class="value-title">PESSOAS</h3>
-              <div class="value-accent-line"></div>
-              <p class="value-desc">Valorizamos nossas pessoas e acreditamos no talento local.</p>
-            </div>
-          </div>
-
-          <!-- Block 3: EXCELÊNCIA -->
-          <div class="value-block">
-            <div class="value-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="7"/>
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-              </svg>
-            </div>
-            <div class="value-info">
-              <h3 class="value-title">EXCELÊNCIA</h3>
-              <div class="value-accent-line"></div>
-              <p class="value-desc">Buscamos a excelência em cada detalhe do que fazemos.</p>
-            </div>
-          </div>
-
-          <!-- Block 4: FUTURO -->
-          <div class="value-block">
-            <div class="value-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                <polyline points="17 6 23 6 23 12"/>
-              </svg>
-            </div>
-            <div class="value-info">
-              <h3 class="value-title">FUTURO</h3>
-              <div class="value-accent-line"></div>
-              <p class="value-desc">Investimos hoje para construir um amanhã ainda melhor.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile-Only: Section Header for Metrics -->
-        <div class="metrics-mobile-intro reveal">
-          <span class="mobile-eyebrow-tag">NOSSA TRAJETÓRIA EM NÚMEROS</span>
-          <h2 class="mobile-intro-headline">Resultados que constroem o futuro.</h2>
-        </div>
 
         <!-- Bottom Row: Linha de Números / Metrics (4 Glass Cards) -->
+        <!-- Bottom Row: Linha de Números / Metrics (Open Row Fiel ao Print 3) -->
         <div class="about-metrics-grid reveal">
           <!-- Card 1: 2015 -->
           <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-                <circle cx="8" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="12" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="16" cy="14" r="1" fill="#D91A2A"/>
-                <circle cx="8" cy="18" r="1" fill="#D91A2A"/>
-                <circle cx="12" cy="18" r="1" fill="#D91A2A"/>
-              </svg>
-            </div>
             <div class="metric-content">
               <div class="metric-number-title">
-                <span class="num-red">2015</span>
+                <span class="num-gold">2015</span>
               </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Início de uma jornada de crescimento sólido e consistente.</p>
+              <p class="metric-desc">Início da nossa história</p>
             </div>
           </div>
 
-          <!-- Card 2: +10 MIL m² -->
+          <!-- Card 2: +10 mil m² -->
           <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18"/>
-                <path d="M5 21V7l7-4 7 4v14"/>
-                <path d="M9 10h1v1H9zM14 10h1v1h-1zM9 14h1v1H9zM14 14h1v1h-1zM9 18h1v1H9zM14 18h1v1h-1z"/>
-              </svg>
-            </div>
             <div class="metric-content">
               <div class="metric-number-title">
-                <span class="num-red">+10</span> <span class="label-red">MIL m²</span>
+                <span class="num-gold">+10 mil m²</span>
               </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Mais de 10 mil m² de área de operação para oferecer o melhor para você.</p>
+              <p class="metric-desc">De área operacional</p>
             </div>
           </div>
 
-          <!-- Card 3: 3 LOJAS -->
+          <!-- Card 3: 3 -->
           <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
             <div class="metric-content">
               <div class="metric-number-title">
-                <span class="num-red">3</span> <span class="label-red">LOJAS</span>
+                <span class="num-gold">3</span>
               </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Três lojas estrategicamente localizadas para atender melhor nossa região.</p>
+              <p class="metric-desc">Lojas bem localizadas em Belém</p>
             </div>
           </div>
 
-          <!-- Card 4: 5 MARCAS -->
+          <!-- Card 4: 5 -->
           <div class="metric-card">
-            <div class="metric-icon-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
-              </svg>
-            </div>
             <div class="metric-content">
               <div class="metric-number-title">
-                <span class="num-red">5</span> <span class="label-red">MARCAS</span>
+                <span class="num-gold">5</span>
               </div>
-              <div class="metric-accent-line"></div>
-              <p class="metric-desc">Cinco marcas próprias que combinam qualidade, preço justo e confiança.</p>
+              <p class="metric-desc">Marcas que inspiram confiança</p>
             </div>
           </div>
         </div>
@@ -447,23 +323,14 @@
           <!-- Coluna Esquerda: Imagem com moldura dourada -->
           <div class="trajetoria-image-column">
             <div class="trajetoria-image-frame">
-              <img id="trajetoria-active-img" src="./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp" alt="Fundação do Grupo Mais Barato" />
+              <img id="trajetoria-active-img" src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp" alt="Fundação do Grupo Mais Barato" />
             </div>
           </div>
 
           <!-- Coluna Direita: Tag + Título + Ano + Texto -->
           <div class="trajetoria-text-column">
             <!-- Tag -->
-            <div class="timeline-pill-tag">
-              <span class="timeline-pill-icon-wrapper">
-                <svg viewBox="0 0 24 24" class="timeline-pill-icon" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                  <line x1="16" y1="8" x2="2" y2="22"></line>
-                  <line x1="17" y1="15" x2="9" y2="9"></line>
-                </svg>
-              </span>
-              <span class="timeline-pill-text">TIMELINE</span>
-            </div>
+            <span class="eyebrow-gold">TIMELINE</span>
 
             <!-- Título misto: sans + serif italic -->
             <h2 class="trajetoria-title">Nossa <em class="serif-accent">Trajetória</em></h2>
@@ -511,7 +378,7 @@
                 <span class="trajetoria-node-dot"></span>
                 <span class="trajetoria-node-year">2015</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp" alt="2015" />
+                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp" alt="2015" />
                 </div>
               </div>
 
@@ -529,7 +396,7 @@
                 <span class="trajetoria-node-dot"></span>
                 <span class="trajetoria-node-year">2019</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Paginas (Imagens)/Sobre Nós/S4 NOSSA HISTORIA/foto-banner-maisb-farmacia.webp" alt="2019" />
+                  <img src="./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp" alt="2019" />
                 </div>
               </div>
 
@@ -561,103 +428,130 @@
 
   </main>
 
-  <footer class="footer">
-    <!-- ===== SEÇÃO LOCALIZADOR DE LOJAS (INTEGRADA AO RODAPÉ) ===== -->
-    <div class="store-locator-section teaser-mode" id="store-locator-teaser">
+  <footer class="footer footer-gold">
+    <!-- ===== SEÇÃO LOCALIZADOR DE LOJAS (footer.png) ===== -->
+    <div class="store-locator-gold-section" id="store-locator-teaser">
+      <div class="container store-locator-container">
+        <div class="store-locator-grid">
+          <!-- Coluna Esquerda: Busca + Lista de Unidades -->
+          <div class="store-left-col">
+            <span class="eyebrow-gold">NOSSAS UNIDADES</span>
+            <h2 class="locator-gold-title">Encontre <span class="headline-highlight-italic">nossas unidades</span></h2>
+            <p class="locator-gold-desc">Lojas, serviços e experiências mais perto de você.</p>
 
-      <div class="teaser-two-columns-container">
-        <!-- Coluna Esquerda: Busca + Lista de Unidades (40%) -->
-        <div class="teaser-left-column">
-          <aside class="panel-sidebar" id="teaser-panel-sidebar">
-            <div class="panel-search-bar sidebar-search-bar">
-              <div class="search-input-container">
-                <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="teaser-search-input" placeholder="Busque por bairro, unidade ou serviço..." autocomplete="off">
-                <div class="location-marquee-wrapper" id="location-marquee-container">
-                  <div class="location-marquee-text">Ative sua localização para encontrar a unidade mais perto de você</div>
+            <div class="locator-search-box">
+              <input type="text" id="teaser-search-input" placeholder="Buscar unidade ou endereço" autocomplete="off">
+              <svg class="search-icon-svg" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+
+            <div class="store-cards-list" id="teaser-stores-list-container">
+              <!-- Card 1 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/1-foto-supermercado.webp" alt="UNIDADE ALCINDO CACELA">
                 </div>
-                <button type="button" class="clear-search-btn" id="teaser-clear-search-btn" aria-label="Limpar busca" style="display: none;">&times;</button>
-                <button type="button" class="gps-compact-btn" id="teaser-gps-btn" title="Ativar geolocalização">
-                  <svg viewBox="0 0 24 24"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1c0-.55-.45-1-1-1s-1 .45-1 1v2.06C6.83 3.52 3.52 6.83 3.06 11H1c-.55 0-1 .45-1 1s.45 1 1 1h2.06c.46 4.17 3.77 7.48 7.94 7.94V23c0 .55.45 1 1 1s1-.45 1-1v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23c.55 0 1-.45 1-1s-.45-1-1-1h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-                </button>
-                <div class="search-autocomplete-panel" id="teaser-search-autocomplete" style="display: none;"></div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">UNIDADE ALCINDO CACELA</h4>
+                    <span class="unit-card-rating">★ 4,8</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> THE WINE EXPERIENCE <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Av. Alcindo Cacela, 1848</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/BUbRXApXKgTSYXKG8" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/2-foto-supermercado.webp" alt="UNIDADE TAPANÃ">
+                </div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">UNIDADE TAPANÃ</h4>
+                    <span class="unit-card-rating">★ 4,5</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Rod. Tapanã, 597</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/aKm2MGrDTNMum9nk7" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp" alt="UNIDADE VILLA PLAZA">
+                </div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">UNIDADE VILLA PLAZA</h4>
+                    <span class="unit-card-rating">★ 4,7</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> VILLA PLAZA <span class="tag-divider">|</span> VILLA PLAZA PARK <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Av. Gov. José Malcher, 2388</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/wHYfn9JPun4pZ28Z8" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="panel-list-view" id="teaser-panel-list-view">
-              <div class="results-info" id="teaser-results-info">Carregando unidades...</div>
-              <div class="stores-list" id="teaser-stores-list-container"></div>
-            </div>
-            <div class="panel-detail-view" id="teaser-panel-detail-view" style="display: none;">
-              <button class="back-to-list-btn" id="teaser-back-to-list-btn">
-                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> Voltar para a lista
-              </button>
-              <div id="teaser-detail-card-content"></div>
-            </div>
-          </aside>
-        </div>
-
-        <!-- Coluna Direita: Header + Filtros + Mapa (60%) -->
-        <div class="teaser-right-column">
-          <div class="locator-header-block">
-            <span class="locator-pre-title">REDE +B</span>
-            <h2 class="locator-main-title">Encontre nossas unidades</h2>
-            <p class="locator-desc-subtitle">Localize lojas, serviços e experiências +B perto de você.</p>
           </div>
 
-          <div class="panel-filters-bar">
-            <div class="filters-row row-base">
-              <button class="panel-filter-pill brand-super-base" data-filter="super" disabled>
-                <span class="pill-logo"><img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="Supermercados +B"></span>
-                Supermercados +B
-              </button>
-              <button class="panel-filter-pill brand-farma-base" data-filter="farma" disabled>
-                <span class="pill-logo"><img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="Farma +B"></span>
-                Farma +B
-              </button>
-            </div>
-            <div class="filters-row row-brands">
-              <span class="filters-plus-badge">+</span>
-              <button class="panel-filter-pill brand-wine" data-filter="wine">
-                <span class="pill-logo"><img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience"></span>
-                The Wine Experience
-              </button>
-              <button class="panel-filter-pill brand-plaza" data-filter="plaza">
-                <span class="pill-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza"></span>
-                Villa Plaza
-              </button>
-              <button class="panel-filter-pill brand-park" data-filter="park">
-                <span class="pill-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park"></span>
-                Villa Plaza Park
-              </button>
-            </div>
-          </div>
-
-          <div class="panel-map-wrapper">
-            <div id="teaser-unidades-map" class="panel-map"></div>
-            <div class="map-scroll-overlay" id="map-scroll-overlay">
-              <span>Clique para ativar a rolagem do mouse no mapa</span>
+          <!-- Coluna Direita: Mapa -->
+          <div class="store-right-col">
+            <div class="gold-map-wrapper">
+              <div id="teaser-unidades-map" class="panel-map"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Links e Redes Sociais no Rodapé Centralizado -->
-    <div class="footer-links-section">
-      <div class="footer-centered-container">
-        <img class="footer-centered-logo" src="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" alt="Logo Grupo Mais Barato" loading="lazy">
-        <div class="footer-social-links">
-          <a href="https://www.instagram.com/maisbsupermercados" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.096 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
+    <!-- RODAPÉ MINIMALISTA CENTRALIZADO (Fiel ao Print de Referência) -->
+    <div class="footer-minimal-glow-section">
+      <div class="container footer-minimal-container">
+        
+        <!-- Bloco Central: Logo + Glow Dourado + Slogan + Redes Sociais -->
+        <div class="footer-minimal-centered-content">
+          <div class="footer-logo-glow-wrapper">
+            <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" alt="Grupo Mais Barato" class="footer-minimal-logo">
+          </div>
+          <p class="footer-minimal-slogan">Excelência que conecta negócios e pessoas.</p>
+          <div class="footer-minimal-social-row">
+            <a href="https://www.instagram.com/maisbsupermercados" target="_blank" rel="noopener" aria-label="Instagram" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
         </div>
-        <p class="footer-copyright">&copy; 2026 Grupo Mais Barato — Todos os direitos reservados.</p>
+
+        <!-- Barra Inferior de Direitos / Links -->
+        <div class="footer-minimal-bottom-bar">
+          <span class="copyright-left">Copyright © 2026 Grupo Mais Barato – All rights reserved</span>
+          <a href="#" class="legal-center">Termos & Privacidade</a>
+          <div class="dev-right">
+            <span>Desenvolvido por:</span>
+            <a href="https://idedigital.com.br" target="_blank" rel="noopener" aria-label="ide digital">
+              <img src="./assets/01-logoh-pb-white-mono-ide-digital-negativo-png.png" alt="ide digital" class="idedigital-logo-img">
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </footer>
@@ -694,7 +588,14 @@
       const toggleBtn = document.getElementById('video-mute-toggle');
       const muteIcon = document.getElementById('mute-icon');
       const unmuteIcon = document.getElementById('unmute-icon');
+      const fsToggleBtn = document.getElementById('video-fullscreen-toggle');
+      const fsEnterIcon = document.getElementById('fullscreen-enter-icon');
+      const fsExitIcon = document.getElementById('fullscreen-exit-icon');
+      const progressContainer = document.getElementById('video-progress-container');
+      const progressBar = document.getElementById('video-progress-bar');
+      const heroSection = document.querySelector('.video-hero-section');
 
+      // 1. Mute / Unmute
       if (video && toggleBtn) {
         toggleBtn.addEventListener('click', function() {
           if (video.muted) {
@@ -708,6 +609,107 @@
             unmuteIcon.style.display = 'none';
             toggleBtn.setAttribute('aria-label', 'Desmutar vídeo');
           }
+        });
+      }
+
+      // 2. Fullscreen Toggle
+      if (heroSection && fsToggleBtn) {
+        fsToggleBtn.addEventListener('click', function() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+          if (!isFs) {
+            if (heroSection.requestFullscreen) {
+              heroSection.requestFullscreen();
+            } else if (heroSection.webkitRequestFullscreen) {
+              heroSection.webkitRequestFullscreen();
+            } else if (heroSection.msRequestFullscreen) {
+              heroSection.msRequestFullscreen();
+            } else if (video && video.webkitEnterFullscreen) {
+              video.webkitEnterFullscreen();
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            }
+          }
+        });
+
+        const handleFsChange = function() {
+          const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+          if (isFs) {
+            if (fsEnterIcon) fsEnterIcon.style.display = 'none';
+            if (fsExitIcon) fsExitIcon.style.display = 'block';
+            fsToggleBtn.setAttribute('aria-label', 'Sair da tela cheia');
+          } else {
+            if (fsEnterIcon) fsEnterIcon.style.display = 'block';
+            if (fsExitIcon) fsExitIcon.style.display = 'none';
+            fsToggleBtn.setAttribute('aria-label', 'Alternar tela cheia');
+          }
+        };
+
+        document.addEventListener('fullscreenchange', handleFsChange);
+        document.addEventListener('webkitfullscreenchange', handleFsChange);
+        document.addEventListener('mozfullscreenchange', handleFsChange);
+        document.addEventListener('MSFullscreenChange', handleFsChange);
+      }
+
+      // 3. Barra de Progresso Interativa (Scrubber / Linha do Tempo)
+      if (video && progressContainer && progressBar) {
+        let isScrubbing = false;
+
+        const updateProgressBar = function() {
+          if (video.duration && !isScrubbing) {
+            const pct = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+          }
+        };
+
+        video.addEventListener('timeupdate', updateProgressBar);
+        video.addEventListener('loadedmetadata', updateProgressBar);
+
+        const seekVideo = function(e) {
+          const rect = progressContainer.getBoundingClientRect();
+          const clientX = e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+          if (clientX === undefined) return;
+          let ratio = (clientX - rect.left) / rect.width;
+          ratio = Math.max(0, Math.min(1, ratio));
+          if (video.duration) {
+            video.currentTime = ratio * video.duration;
+            progressBar.style.width = (ratio * 100) + '%';
+          }
+        };
+
+        progressContainer.addEventListener('mousedown', function(e) {
+          isScrubbing = true;
+          seekVideo(e);
+        });
+
+        progressContainer.addEventListener('touchstart', function(e) {
+          isScrubbing = true;
+          seekVideo(e);
+        }, { passive: true });
+
+        window.addEventListener('mousemove', function(e) {
+          if (isScrubbing) {
+            seekVideo(e);
+          }
+        });
+
+        window.addEventListener('touchmove', function(e) {
+          if (isScrubbing) {
+            seekVideo(e);
+          }
+        }, { passive: true });
+
+        window.addEventListener('mouseup', function() {
+          isScrubbing = false;
+        });
+
+        window.addEventListener('touchend', function() {
+          isScrubbing = false;
         });
       }
 

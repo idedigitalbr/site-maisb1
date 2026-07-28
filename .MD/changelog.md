@@ -1,8 +1,33 @@
 # Changelog
 
+## 2026-07-28
+
+- **Remoção da Linha de Valores e Redesign de Métricas ("Sobre Nós")**:
+  - Removida a linha de blocos de valores (`PROPÓSITO`, `PESSOAS`, `EXCELÊNCIA`, `FUTURO`) de [sobre-nos.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/sobre-nos.html) conforme solicitado.
+  - Mantida apenas a linha de números/métricas da trajetória no layout *open row* minimalista com divisores finos e tipografia limpa.
+
+- **Controles do Vídeo Hero Institucional ("Sobre Nós")**:
+  - **Barra de Progresso Minimalista Interativa**: Adicionada a linha de tempo no centro inferior da seção do vídeo topo (`.video-progress-container`), com visual minimalista dourado (`var(--yellow)`), atualização em tempo real do tempo decorrido do vídeo e suporte a clique/arraste para avançar ou retroceder a reprodução (*scrubber*).
+  - **Botão Fullscreen no Canto Inferior Direito**: Posicionado ao lado direito do botão de Mute/Unmute, com estilo idêntico em vidro escuro e brilho dourado (`.video-fullscreen-btn`), alternando a exibição em tela cheia do vídeo/seção com alteração dinâmica de ícones.
+
+- **Correção dos Links e Endereços do Google Maps ("Nossas Unidades")**:
+  - Atualização dos URLs do Google Maps para a API de Busca oficial (`https://www.google.com/maps/search/?api=1&query=...`), garantindo direcionamento exato para a página oficial do estabelecimento em cada unidade (+B Supermercado Alcindo Cacela, +B Supermercado Tapanã e +B Supermercado Villa Plaza).
+  - Correção dos endereços e coordenadas no banco de dados (`src/data/units.js`) e na Home (`index.html`):
+    - **Alcindo Cacela**: Atualizado para `Av. Alcindo Cacela, 1848 - Nazaré` (coordenadas reais: `[-1.4516, -48.4779]`).
+    - **Tapanã**: Atualizado para `Rod. Tapanã, 597 - Tapanã`.
+    - **Villa Plaza**: Atualizado para `Av. Gov. José Malcher, 2388 - São Brás`.
+  - Atualização no gerador de cards de unidades (`src/js/unidades.js`) para utilizar o fallback de busca de localização oficial do Google Maps.
+
 ## 2026-07-27
 
-- Ajuste fino do ponto de luz no rodapé (`src/css/work-units-footer.css`): correção da linha divisória para ficar **contínua em 100% da largura** (`border-top: 1px solid rgba(255, 255, 255, 0.12)`), com um sutil ponto de brilho central de `60px` sobre a linha, e suavização da luz radial de fundo (gradiente ambiental difuso e elegante), alcançando 100% de fidelidade ao **Print 2**.
+- **Eliminação de Botões e Cores Vermelhas**:
+  - Substituído o botão vermelho `.red-btn` no modal/árvore de links (`links.html` e `src/css/links.css`) pelo novo **botão branco premium (`.white-btn`)** com fundo `#FFFFFF` sólido, texto preto (`#000000`) e hover limpo.
+  - Removido o hover vermelho do botão de fechar (`.card-close-btn`) e dos itens de marca (`.brand-super`, `.brand-farma`), padronizando com brilho dourado e transparências minimalistas.
+- Correção e refinamento de design da página **Sobre Nós** (`sobre-nos.html`):
+  - **Substituição da Imagem Principal**: Atualizada a foto da Seção 1 para a foto oficial da fachada do supermercado (`unid-plaza-foto-de-fachada-vila-plaza.webp`).
+  - **Correção da Foto do Marco 2019**: Corrigido o caminho do arquivo da foto da +B Farma (`./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp`), resolvendo o problema da imagem quebrada na Linha do Tempo.
+  - **Nova Tag Minimalista da Timeline**: Substituída a antiga pílula amarela de timeline pela tag oficial sem fundo (`.eyebrow-gold`), alinhada ao padrão visual minimalista do projeto.
+  - **Refinamento dos Blocos de Valores e Métricas**: Reformulação em layout *open-row* com divisores verticais minimalistas em Dark Mode (fundo limpo `#08080c`, números em grande escala e sem containers de bordas pesadas), fiéis ao estilo do Print 2.
 - Remoção dos indicadores de pontinhos/traços no carrossel do topo Hero (`index.html`, `src/css/hero.css` e `src/js/hero-carousel.js`), mantendo exclusivamente a barra de progresso horizontal refinada.
 - Refatoração da **Seção 2 (Sobre o Grupo / "sobrenoszinho")** da Home (`index.html` e `src/css/sections.css`) com alinhamento 100% idêntico à referência do protótipo (`s2-sobrezinho.png`).
 - Atualização da foto principal da Seção 2 para a fachada oficial (`s1-topo-hero-foto-.png`).

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "role": "Estrutura corporativa e sede administrativa do Grupo +B.",
             "category": "grupo-b",
             "subcategory": "Institucional",
-            "photo": "./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+            "photo": "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
         },
         {
             "name": "Equipe Institucional Grupo +B",

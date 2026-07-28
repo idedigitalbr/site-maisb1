@@ -1565,7 +1565,7 @@
         year: "2015",
         title: "Fundação do Grupo Mais Barato",
         desc: "Nasce o Grupo Mais Barato com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.",
-        img: "./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_IA.webp"
+        img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
       },
       {
         year: "2017",
@@ -1577,7 +1577,7 @@
         year: "2019",
         title: "Nascimento da Rede +B Farma",
         desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas, oferecendo conveniência e atendimento farmacêutico dedicado.",
-        img: "./assets/Paginas (Imagens)/Sobre Nós/S4 NOSSA HISTORIA/foto-banner-maisb-farmacia.webp"
+        img: "./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp"
       },
       {
         year: "2021",
