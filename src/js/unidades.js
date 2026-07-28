@@ -767,35 +767,10 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    stores.forEach(store => {
-      const isOpen = isStoreOpenNow(store);
-      const statusPill = isOpen 
-        ? `<span class="status-badge open">Aberto agora</span>`
-        : `<span class="status-badge closed">Fechado</span>`;
+    // Limita a exibição às 3 principais unidades para manter a altura compacta idêntica ao Print 2
+    const displayStores = stores.slice(0, 3);
 
-      const distancePill = store.distance !== undefined
-        ? `<span class="status-badge distance-badge">A ${store.distance.toFixed(1).replace('.', ',')} km de ${userLocationLabel}</span>`
-        : '';
-
-      const mainBrandsOnly = ['wine', 'plaza', 'park', 'atacarejo'];
-      const visibleSubbrands = store.subbrands.filter(sub => mainBrandsOnly.includes(sub));
-
-      const subbrandPills = visibleSubbrands.map(sub => {
-        let label = sub;
-        if (sub === 'wine') label = 'The Wine';
-        if (sub === 'plaza') label = 'Villa Plaza';
-        if (sub === 'park') label = 'Villa Plaza Park';
-        if (sub === 'atacarejo') label = 'Atacarejo';
-        return `<span class="store-mini-tag sub-${sub}">${label}</span>`;
-      }).join('');
-
-      const formattedAddress = store.address
-        .replace(', Belém', ',<br>Belém')
-        .replace(' - PA', ' – PA')
-        .replace(' - Cremação', ' – Cremação')
-        .replace(' - Tapanã', ' – Tapanã')
-        .replace(' - São Brás', ' – São Brás');
-
+    displayStores.forEach(store => {
       const card = document.createElement('div');
       card.className = `store-list-card ${activeUnitId === store.id ? 'selected' : ''}`;
       card.setAttribute('data-id', store.id);
@@ -805,19 +780,16 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="${store.images.cover}" alt="${store.name}" loading="lazy">
         </div>
         <div class="store-card-body">
-          <div class="store-card-meta">
-            ${statusPill}
-            ${distancePill}
-            <span class="store-rating-teaser">
-              <svg class="star-icon active" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="width: 13px; height: 13px; display: inline-block; vertical-align: -1px; margin-right: 2px;">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>${store.rating.toFixed(1).replace('.', ',')}
-            </span>
+          <div class="store-card-header">
+            <h3 class="unit-card-title">${store.name.toUpperCase()}</h3>
+            <span class="store-rating-teaser">★ ${store.rating.toFixed(1).replace('.', ',')}</span>
           </div>
-          <h3>${store.name}</h3>
-          <p class="store-address-teaser">${formattedAddress}</p>
-          <div class="store-brands-teaser">
-            ${subbrandPills}
+          <p class="store-address-teaser">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address}
+          </p>
+          <div class="store-card-footer">
+            <span class="store-card-bairro">Bairro: ${store.neighborhood || 'Belém'} – PA</span>
+            <button class="btn-unit-ver-mais">VER MAIS</button>
           </div>
         </div>
       `;

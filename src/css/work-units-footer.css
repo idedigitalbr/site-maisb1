@@ -3073,35 +3073,40 @@
 }
 
 .store-locator-gold-section {
-  padding: 80px 0;
+  padding: 60px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .store-locator-grid {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 36% 64%;
   gap: 36px;
-  align-items: stretch;
+  align-items: start;
+}
+
+.store-left-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .store-right-col {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .locator-gold-title {
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
   font-weight: 800;
   color: #FFFFFF;
-  line-height: 1.15;
+  line-height: 1.1;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .locator-gold-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .locator-search-box {
@@ -3112,7 +3117,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 12px !important;
   padding: 12px 18px !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
 }
 
 .locator-search-box input {
@@ -3142,14 +3148,14 @@
   pointer-events: none !important;
 }
 
-/* Filtros de Pílula (1 Linha Horizontal 100% Fiel à footer.png) */
+/* Filtros de Pílula (1 Linha Horizontal 100% Fiel à footer.png Print 2) */
 .gold-filter-pills-row {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -3184,11 +3190,14 @@
   font-weight: 800;
 }
 
-/* Cards de Unidade (Fiel à footer.png Print 2 — Compatibilidade com JS original) */
+/* Cards de Unidade (Fiel à footer.png Print 2 — 3 Unidades Horizontais) */
 .store-cards-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .store-locator-gold-section .store-list-card,
@@ -3239,7 +3248,7 @@
   gap: 2px;
 }
 
-.store-locator-gold-section .store-card-meta,
+.store-locator-gold-section .store-card-header,
 .unit-card-header {
   display: flex;
   justify-content: space-between;
@@ -3253,7 +3262,7 @@
   font-weight: 800;
   color: #c59b27;
   letter-spacing: 0.04em;
-  margin: 0 0 2px;
+  margin: 0;
   text-transform: uppercase;
 }
 
@@ -3263,36 +3272,68 @@
   color: #FFFFFF;
   font-weight: 500;
   line-height: 1.35;
-  margin: 0 0 4px;
+  margin: 2px 0 4px;
 }
 
-.store-locator-gold-section .status-badge {
-  font-size: 0.65rem;
+.store-locator-gold-section .store-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-locator-gold-section .store-card-bairro {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.store-locator-gold-section .btn-unit-ver-mais {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.store-locator-gold-section .store-rating-teaser,
-.unit-card-rating {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #FFC400;
+.store-locator-gold-section .btn-unit-ver-mais:hover {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
 }
 
 .gold-map-wrapper {
-  flex: 1;
   width: 100%;
-  min-height: 480px;
-  height: 100%;
-  border-radius: 20px;
+  height: 480px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   position: relative;
+}
+
+/* Responsividade Mobile (Item 10 Responsividade) */
+@media (max-width: 980px) {
+  .store-locator-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .locator-gold-title {
+    white-space: normal;
+  }
+
+  .gold-filter-pills-row {
+    justify-content: flex-start;
+  }
+
+  .gold-map-wrapper {
+    height: 380px;
+  }
 }
 
 .gold-map-wrapper .panel-map {
