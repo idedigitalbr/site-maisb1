@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/css/main.css?v=10.0" />
+  <link rel="stylesheet" href="./src/css/main.css?v=11.0" />
   <link rel="stylesheet" href="./src/css/secao-missao-visao-valores.css" />
   <!-- Script de Fallback Automático de Imagens e Vídeos -->
   <script>
@@ -322,7 +322,7 @@
           <!-- Coluna Esquerda: Imagem com moldura dourada -->
           <div class="trajetoria-image-column">
             <div class="trajetoria-image-frame">
-              <img id="trajetoria-active-img" src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp" alt="Fundação do Grupo Mais Barato" />
+              <img id="trajetoria-active-img" src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp" alt="Início da história com o Mais Barato Tapanã" />
             </div>
           </div>
 
@@ -342,9 +342,9 @@
             
             <!-- Detalhes do evento -->
             <div class="trajetoria-event-details">
-              <h3 class="trajetoria-event-title" id="trajetoria-active-title">Fundação do Grupo Mais Barato</h3>
+              <h3 class="trajetoria-event-title" id="trajetoria-active-title">Início da história com o Mais Barato Tapanã</h3>
               <p class="trajetoria-event-desc" id="trajetoria-active-desc">
-                Nasce o Grupo Mais Barato com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.
+                Início da trajetória do Grupo com a inauguração da primeira loja no Tapanã, levando variedade, preços justos e atendimento próximo para as famílias paraenses.
               </p>
             </div>
           </div>
@@ -353,7 +353,7 @@
         <!-- Barra de Navegação Inferior com Dots e Thumbnails -->
         <div class="trajetoria-nav-timeline">
           <!-- Setas de Navegação (Posicionadas nas extremidades da timeline horizontal) -->
-          <button class="trajetoria-arrow-btn trajetoria-prev-btn" id="trajetoria-prev-arrow-btn" aria-label="Voltar trajetória">
+          <button class="trajetoria-arrow-btn trajetoria-prev-btn is-disabled" id="trajetoria-prev-arrow-btn" aria-label="Voltar trajetória">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
@@ -372,48 +372,102 @@
             </div>
 
             <div class="trajetoria-nodes-row">
-              <!-- 2015 -->
+              <!-- 0: 2015 -->
               <div class="trajetoria-node active" data-index="0">
                 <span class="trajetoria-node-dot"></span>
                 <span class="trajetoria-node-year">2015</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp" alt="2015" />
+                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp" alt="2015 - Mais Barato Tapanã" />
                 </div>
               </div>
 
-              <!-- 2017 -->
+              <!-- 1: 2016 -->
               <div class="trajetoria-node" data-index="1">
                 <span class="trajetoria-node-dot"></span>
-                <span class="trajetoria-node-year">2017</span>
+                <span class="trajetoria-node-year">2016</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp" alt="2017" />
+                  <img src="./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp" alt="2016 - +B Farma" />
                 </div>
               </div>
 
-              <!-- 2019 -->
+              <!-- 2: 2021 -->
               <div class="trajetoria-node" data-index="2">
-                <span class="trajetoria-node-dot"></span>
-                <span class="trajetoria-node-year">2019</span>
-                <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp" alt="2019" />
-                </div>
-              </div>
-
-              <!-- 2021 -->
-              <div class="trajetoria-node" data-index="3">
                 <span class="trajetoria-node-dot"></span>
                 <span class="trajetoria-node-year">2021</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp" alt="2021" />
+                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp" alt="2021 - Mais Barato Plaza" />
                 </div>
               </div>
 
-              <!-- 2024 -->
+              <!-- 3: 2022 -->
+              <div class="trajetoria-node" data-index="3">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2022</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp" alt="2022 - Alcindo Cacela" />
+                </div>
+              </div>
+
+              <!-- 4: 2022 -->
               <div class="trajetoria-node" data-index="4">
                 <span class="trajetoria-node-dot"></span>
-                <span class="trajetoria-node-year">2024</span>
+                <span class="trajetoria-node-year">2022</span>
                 <div class="trajetoria-node-thumb">
-                  <img src="./assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp" alt="2024" />
+                  <img src="./assets/Fotografias/CENTRO-DISTRIBUICAO.webp" alt="2022 - Centro de Distribuição" />
+                </div>
+              </div>
+
+              <!-- 5: 2022 -->
+              <div class="trajetoria-node" data-index="5">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2022</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/The Wine Experience/salao-principal-clientes.webp" alt="2022 - The Wine" />
+                </div>
+              </div>
+
+              <!-- 6: 2023 -->
+              <div class="trajetoria-node" data-index="6">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2023</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-restaurante-ambiente.webp" alt="2023 - Villa Plaza" />
+                </div>
+              </div>
+
+              <!-- 7: 2023 -->
+              <div class="trajetoria-node" data-index="7">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2023</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (1).webp" alt="2023 - Villa Plaza Park Plaza" />
+                </div>
+              </div>
+
+              <!-- 8: 2025 -->
+              <div class="trajetoria-node" data-index="8">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2025</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/maisb-supermercados-marca-na-parede.webp" alt="2025 - +B Supermercados" />
+                </div>
+              </div>
+
+              <!-- 9: 2026 -->
+              <div class="trajetoria-node" data-index="9">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2026</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-tapana.webp" alt="2026 - Villa Plaza Park Tapanã" />
+                </div>
+              </div>
+
+              <!-- 10: 2026 -->
+              <div class="trajetoria-node" data-index="10">
+                <span class="trajetoria-node-dot"></span>
+                <span class="trajetoria-node-year">2026</span>
+                <div class="trajetoria-node-thumb">
+                  <img src="./assets/Fotografias/maisb-grao-para.webp" alt="2026 - Bosque Grão Pará" />
                 </div>
               </div>
             </div>
@@ -571,7 +625,7 @@
   <script src="./src/data/brands.js" defer></script>
   <script src="./src/data/units.js?v=10.0" defer></script>
   <script src="./src/js/unidades.js?v=10.0" defer></script>
-  <script src="./src/js/main.js?v=8.8" defer></script>
+  <script src="./src/js/main.js?v=9.4" defer></script>
   <script src="./src/js/album.js?v=8.7" defer></script>
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@0.321.0" defer></script>

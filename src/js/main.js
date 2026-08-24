@@ -1563,33 +1563,69 @@
     var data = [
       {
         year: "2015",
-        title: "Fundação do Grupo Mais Barato",
-        desc: "Nasce o Grupo Mais Barato com a inauguração da loja matriz na Alcindo Cacela, unindo qualidade, ambiente moderno e compromisso com as famílias paraenses.",
-        img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
-      },
-      {
-        year: "2017",
-        title: "Expansão Logística e Unidade Tapanã",
-        desc: "Inauguração da segunda grande unidade física no Tapanã e estruturação do Centro de Distribuição (CD) com frota própria para garantir abastecimento contínuo.",
+        title: "Início da história com o Mais Barato Tapanã",
+        desc: "Início da trajetória do Grupo com a inauguração da primeira loja no Tapanã, levando variedade, preços justos e atendimento próximo para as famílias paraenses.",
         img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-tapana-foto-de-fachada-frontal-da-loja.webp"
       },
       {
-        year: "2019",
-        title: "Nascimento da Rede +B Farma",
-        desc: "Entrada do grupo no segmento de saúde, higiene e beleza com farmácias integradas às lojas, oferecendo conveniência e atendimento farmacêutico dedicado.",
+        year: "2016",
+        title: "Lançamento da +B Farma",
+        desc: "Expansão estratégica para a área de saúde, beleza e bem-estar com a criação da +B Farma, integrando drogarias completas e atendimento farmacêutico de excelência.",
         img: "./assets/Fotografias/Mais B Farma/foto-banner-maisb-farmacia.webp"
       },
       {
         year: "2021",
-        title: "Complexo Plaza e +B Bistrô",
-        desc: "Inauguração do marco em São Brás reunindo supermercado, a rede +B Farma, o restaurante Villa Plaza e o maior parque infantil monitorado da cidade (Villa Plaza Park).",
+        title: "Inauguração do Mais Barato – Plaza",
+        desc: "Abertura do moderno complexo no bairro de São Brás, marcando uma nova era de inovação arquitetônica, conforto e ampla variedade de setores em um único local.",
         img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-plaza-foto-de-fachada-vila-plaza.webp"
       },
       {
-        year: "2024",
-        title: "Liderança Regional e Inovação Digital",
-        desc: "Celebração de 10 anos de crescimento com uma equipe de milhares de colaboradores, consolidação como referência no setor e lançamento de inovações como o Clube+ Fidelidade.",
-        img: "./assets/Fotografias/Grupo Institucional +B/grupob-time (1).webp"
+        year: "2022",
+        title: "Lançamento do Mais Barato – Alcindo Cacela",
+        desc: "Inauguração da grande unidade na Alcindo Cacela, consolidando a presença do Grupo no centro de Belém com infraestrutura premium e serviços de alta qualidade.",
+        img: "./assets/Fotografias/Supermercado +B/01_Fachadas/unid-alcindo-foto-de-fachada-da-loja.webp"
+      },
+      {
+        year: "2022",
+        title: "Ampliação do Centro de Distribuição",
+        desc: "Forte expansão da infraestrutura logística e tecnologia de ponta no CD, ampliando a frota e garantindo eficiência máxima no abastecimento contínuo de todas as lojas.",
+        img: "./assets/Fotografias/CENTRO-DISTRIBUICAO.webp"
+      },
+      {
+        year: "2022",
+        title: "Inauguração do The Wine",
+        desc: "Lançamento do The Wine Experience, trazendo uma adega sofisticada com rótulos internacionais selecionados, consultoria de sommeliers e experiências enogastronômicas exclusivas.",
+        img: "./assets/Fotografias/The Wine Experience/salao-principal-clientes.webp"
+      },
+      {
+        year: "2023",
+        title: "Inauguração do Villa Plaza",
+        desc: "Inauguração do restaurante Villa Plaza, proporcionando alta gastronomia com buffet premium, churrasco especial e pratos executivos em um espaço elegante para a família.",
+        img: "./assets/Fotografias/Villa Plaza (Restaurante)/vila-plaza-restaurante-ambiente.webp"
+      },
+      {
+        year: "2023",
+        title: "Inauguração do Villa Plaza Park - Unidade Plaza",
+        desc: "Estreia do maior parque infantil indoor monitorado na Unidade Plaza, unindo brinquedos modernos, segurança e diversão completa para as crianças.",
+        img: "./assets/Fotografias/Villa Plaza (Park Infantil)/foto-park-infantil (1).webp"
+      },
+      {
+        year: "2025",
+        title: "Mudança da marca para +B Supermercados",
+        desc: "Evolução histórica do posicionamento institucional do Grupo, apresentando a nova identidade visual '+B Supermercados' com design contemporâneo e foco na experiência.",
+        img: "./assets/Fotografias/maisb-supermercados-marca-na-parede.webp"
+      },
+      {
+        year: "2026",
+        title: "Inauguração do Villa Plaza Park – Unidade Tapanã",
+        desc: "Expansão da rede de entretenimento infantil com a nova unidade do Villa Plaza Park no Tapanã, oferecendo lazer monitorado e atrações de primeira linha para a comunidade.",
+        img: "./assets/Fotografias/Villa Plaza (Park Infantil)/villa-plaza-park-tapana.webp"
+      },
+      {
+        year: "2026",
+        title: "Inauguração do +B Supermercados – Shopping Bosque Grão Pará",
+        desc: "Grande inauguração da loja conceito no Shopping Bosque Grão Pará, integrando conveniência de ponta, adega, padaria artesanal e o melhor do ecossistema +B.",
+        img: "./assets/Fotografias/maisb-grao-para.webp"
       }
     ];
 

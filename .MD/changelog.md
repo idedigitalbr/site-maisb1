@@ -1,5 +1,37 @@
 # Changelog
 
+- **Atualização da Imagem do marco "Shopping Bosque Grão Pará" na Linha do Tempo**:
+  - Atualizada a foto do marco **2026: Inauguração do +B Supermercados – Shopping Bosque Grão Pará** em `sobre-nos.html` (miniatura do nó 10) e em `src/js/main.js` (`data[10].img`) para `./assets/Fotografias/maisb-grao-para.webp`.
+  - Atualizada a versão do script em `sobre-nos.html` para `main.js?v=9.4` para invalidação de cache.
+
+- **Atualização da Imagem do marco "Mudança da marca para +B Supermercados" na Linha do Tempo**:
+  - Atualizada a foto do marco **2025: Mudança da marca para +B Supermercados** em `sobre-nos.html` (miniatura do nó 8) e em `src/js/main.js` (`data[8].img`) para `./assets/Fotografias/maisb-supermercados-marca-na-parede.webp`.
+  - Atualizada a versão do script em `sobre-nos.html` para `main.js?v=9.3` para invalidação de cache.
+
+- **Atualização da Imagem do Villa Plaza Park Tapanã na Linha do Tempo ("Nossa Trajetória")**:
+  - Convertida e otimizada a fotografia de alta resolução `Sessão Villa Plaza Park - 037.jpg` para WebP (`villa-plaza-park-tapana.webp` em `assets/Fotografias/Villa Plaza (Park Infantil)/`).
+  - Atualizada a foto do marco **2026: Inauguração do Villa Plaza Park – Unidade Tapanã** em `sobre-nos.html` (miniatura do nó 9) e em `src/js/main.js` (`data[9].img`).
+  - Atualizada a versão do script em `sobre-nos.html` para `main.js?v=9.2` para invalidação de cache.
+
+- **Atualização da Imagem do Centro de Distribuição na Linha do Tempo ("Nossa Trajetória")**:
+  - Atualizada a foto do marco **2022: Ampliação do Centro de Distribuição** em `sobre-nos.html` (miniatura do nó 4) e em `src/js/main.js` (`data[4].img`) para `./assets/Fotografias/CENTRO-DISTRIBUICAO.webp`.
+  - Atualizada a versão do script em `sobre-nos.html` para `main.js?v=9.1` para invalidação de cache.
+
+- **Atualização Completa da Linha do Tempo ("Nossa Trajetória") em Sobre Nós**:
+  - Reestruturada a Timeline interativa com os 11 marcos cronológicos oficiais:
+    1. **2015**: Início da história com o Mais Barato Tapanã
+    2. **2016**: Lançamento da +B Farma
+    3. **2021**: Inauguração do Mais Barato – Plaza
+    4. **2022**: Lançamento do Mais Barato – Alcindo Cacela
+    5. **2022**: Ampliação do Centro de Distribuição
+    6. **2022**: Inauguração do The Wine
+    7. **2023**: Inauguração do Villa Plaza
+    8. **2023**: Inauguração do Villa Plaza Park - Unidade Plaza
+    9. **2025**: Mudança da marca do Mais Barato para +B Supermercados
+    10. **2026**: Inauguração do Villa Plaza Park – Unidade Tapanã
+    11. **2026**: Inauguração do +B Supermercados – Shopping Bosque Grão Pará
+  - Atualizados os dados em `src/js/main.js` (`initTrajetoriaTimeline`), os 11 nós com imagens correspondentes em `sobre-nos.html`, dimensionamento refinado em `src/css/timeline.css` e invalidação de cache (`main.css?v=11.0`, `timeline.css?v=8.2`, `main.js?v=9.0`).
+
 - **Padronização da Nomenclatura das Unidades no Localizador de Lojas**:
   - Atualizados os títulos dos cards e atributos `alt` de imagens em `index.html` e `sobre-nos.html`, no banco de dados (`src/data/units.js`) e no gerador de cards (`src/js/unidades.js`) para a nomenclatura oficial: **+B Supermercados (Plaza)**, **+B Supermercados (Alcindo Cacela)** e **+B Supermercados (Tapanã)**.
 
