@@ -908,7 +908,7 @@
 
     if (!orbitBox || !nodes.length || !cards.length) return;
 
-    var SLIDE_DURATION = 5000;
+    var SLIDE_DURATION = 9000;
     var ARC_TOTAL      = 465;
 
     var BRANDS = ['plaza', 'super', 'wine', 'park', 'farma'];
@@ -1462,6 +1462,21 @@
         el.addEventListener('touchend', handleBrandsTouchEnd, { passive: true });
       }
     });
+
+    // Pausa automática ao passar o mouse sobre o carrossel / cards para facilitar a leitura
+    var carouselStage = document.querySelector('.brands-carousel-stage');
+    if (carouselStage) {
+      carouselStage.addEventListener('mouseenter', function() {
+        if (!hubCenterEl || !hubCenterEl.classList.contains('active')) {
+          stopAutoPlay();
+        }
+      });
+      carouselStage.addEventListener('mouseleave', function() {
+        if (!hubCenterEl || !hubCenterEl.classList.contains('active')) {
+          startAutoPlay();
+        }
+      });
+    }
 
     window.addEventListener('resize', debounce(function() { placeNodes(false); }, 150));
   }

@@ -29,7 +29,7 @@
 
   <link rel="preload" href="./assets/Videos/video-b-home-poster.webp" as="image" />
   <link rel="preload" href="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" as="image" />
-  <link rel="stylesheet" href="./src/css/main.css?v=10.0" />
+  <link rel="stylesheet" href="./src/css/main.css?v=10.6" />
   <!-- Script de Fallback Automático de Imagens e Vídeos -->
   <script>
     document.addEventListener('error', function(event) {
@@ -168,8 +168,7 @@
               <span class="slide-eyebrow">BEM-VINDO</span>
               <h1 class="slide-headline-huge">
                 Somos o<br>
-                Grupo<br>
-                <span class="headline-highlight">Mais Barato</span>
+                <span class="slide-headline-nowrap">Grupo <span class="headline-highlight">Mais Barato</span></span>
               </h1>
               <p class="slide-lead">Grandes marcas e experiências que fazem parte do dia a dia dos paraenses.</p>
               <div class="slide-actions">
@@ -195,13 +194,14 @@
           <div class="about-content-col">
             <span class="eyebrow-gold">SOBRE O GRUPO</span>
             <h2 class="about-headline">
-              Sólida holding<br>
-              paraense com forte<br>
-              visão de <span class="headline-highlight-italic">expansão.</span>
+              O <span class="headline-highlight-italic">Grupo Mais Barato</span><br>
+              reúne negócios que<br>
+              fazem parte do dia a dia<br>
+              das pessoas de <span style="white-space: nowrap;">Belém–PA</span>
             </h2>
             <div class="about-paragraphs">
-              <p>Desde 2015, o Grupo Mais Barato atua como uma holding que reúne grandes marcas e serviços que fazem parte do dia a dia dos paraenses.</p>
-              <p>Com um modelo de gestão focado em inovação, experiência e solidez, construímos formas sustentáveis para gerar valor real para pessoas e comunidades locais.</p>
+              <p class="about-mid-text">Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade.</p>
+              <p>Nossa atuação integra marcas que compartilham o mesmo compromisso: oferecer experiências que superem expectativas, sempre com foco nas pessoas, na excelência e no desenvolvimento das comunidades onde estamos presentes. Mais do que crescer, acreditamos em transformar relações, gerar oportunidades e construir um futuro cada vez melhor para clientes, colaboradores, parceiros e para a sociedade.</p>
             </div>
             <div class="gold-accent-line"></div>
           </div>
@@ -264,21 +264,8 @@
             
             <!-- Stage Wrapper para ancoragem das setas flutuantes -->
             <div class="brands-carousel-stage">
-              <!-- Setas de navegação minimalistas flutuando nas laterais -->
-              <button class="brands-nav-arrow arrow-left" aria-label="Marca anterior">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <button class="brands-nav-arrow arrow-right" aria-label="Próxima marca">
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-
               <!-- Grid Duas Colunas: Espiral (Esquerda) + Card (Direita) -->
               <div class="brands-layout-split">
-
               
               <!-- Coluna Esquerda: Espiral / Órbita (Largura 45% no desktop) -->
               <div class="brands-layout-left">
@@ -360,6 +347,18 @@
               
               <!-- Coluna Direita: Card de Detalhes (55% de largura no desktop) -->
               <div class="brands-layout-right">
+                
+                <!-- Setas de navegação minimalistas flutuando nas laterais (desktop e mobile) -->
+                <button class="brands-nav-arrow arrow-left" aria-label="Marca anterior">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="brands-nav-arrow arrow-right" aria-label="Próxima marca">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
                 
                 <!-- CARD 1: THE WINE -->
                 <div class="brand-detail-card theme-wine" data-brand="wine">
@@ -447,7 +446,7 @@
                       <h3 class="card-brand-title">+B Supermercados</h3>
                       <span class="card-brand-keywords keyword-super">VARIEDADE • ECONOMIA • CONVENIÊNCIA</span>
                     </div>
-                    <p class="card-brand-description">Rede de supermercados com mix completo de alimentos, utilidades e ofertas para a rotina das famílias.</p>
+                    <p class="card-brand-description">Rede de supermercados com mix completo de alimentos e ofertas para a rotina das famílias.</p>
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-super">
                         Ver links 
@@ -550,7 +549,7 @@
                       <h3 class="card-brand-title">Villa Plaza Park</h3>
                       <span class="card-brand-keywords keyword-park">DIVERSÃO • FAMÍLIA • LAZER</span>
                     </div>
-                    <p class="card-brand-description">Espaço pensado para crianças e famílias, com atrações, segurança e muita diversão para os pequenos.</p>
+                    <p class="card-brand-description">Maior Parque infantil de Belém, pensado para crianças e famílias, com atrações, segurança e muita diversão para os pequenos.</p>
                     <div class="card-actions">
                       <a href="#links" class="btn-card-primary btn-park">
                         Ver links 
@@ -635,17 +634,13 @@
                   </div>
                 </div>
                 
-              </div>
-            </div> <!-- /brands-carousel-stage -->
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-        </div>
-      </div>
-    </section>
+              </div> <!-- /brands-layout-right -->
+            </div> <!-- /brands-layout-split -->
+          </div> <!-- /brands-carousel-stage -->
+        </div> <!-- /brands-section-container -->
+      </div> <!-- /brands-black-block -->
+    </div> <!-- /brands-sticky-wrapper -->
+  </section> <!-- /brands-scroll-container -->
 
 
     <!-- SEÇÃO TRABALHE CONOSCO -->
@@ -677,26 +672,6 @@
       </div>
     </section>
 
-    <!-- SEÇÃO EVENTOS (BANNER RUN) -->
-    <section class="section section-events light-section wf-section section-full-width reveal" id="eventos-secao" data-wf-label="SEÇÃO EVENTOS - BANNER RUN">
-      <div class="container">
-        
-        <div class="section-head center">
-          <span class="events-badge">
-            <svg class="events-badge-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            APROVEITE E CONHEÇA
-          </span>
-          <h2 class="events-title">Eventos +B feitos para cuidar de você e reunir quem você ama</h2>
-        </div>
-
-        <a href="https://www.maisbrun.com.br/" target="_blank" rel="noopener noreferrer" class="events-banner-wrapper">
-          <div class="events-banner-inner">
-            <img src="./assets/Paginas (Imagens)/Home/banner-mais-b-runx.webp" alt="Banner Grupo Mais B Run" class="events-banner-img" loading="lazy">
-          </div>
-        </a>
-
-      </div>
-    </section>
 
     <!-- SEÇÃO FAQ (DÚVIDAS FREQUENTES) -->
     <section class="section section-light faq-gold-section section-full-width" id="faq-secao">
@@ -1253,11 +1228,11 @@
   </script>
 
   <script src="./src/data/drive-assets.js" defer></script>
-  <script src="./src/data/brands.js" defer></script>
+  <script src="./src/data/brands.js?v=1.1" defer></script>
   <script src="./src/data/units.js?v=10.0" defer></script>
   <script src="./src/js/unidades.js?v=10.0" defer></script>
   <script src="./src/js/hero-carousel.js" defer></script>
-  <script src="./src/js/main.js?v=5.7" defer></script>
+  <script src="./src/js/main.js?v=5.8" defer></script>
 </body>
 </html>
 

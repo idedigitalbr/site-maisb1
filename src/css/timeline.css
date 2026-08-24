@@ -625,7 +625,9 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 @media (max-width: 480px) {
   .trajetoria-container {
-    width: calc(100% - 32px);
+    width: calc(100% - 5rem) !important;
+    max-width: calc(100% - 5rem) !important;
+    margin: 0 auto !important;
   }
 
   .trajetoria-title {

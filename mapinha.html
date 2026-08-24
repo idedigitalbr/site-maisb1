@@ -383,15 +383,113 @@
 
     /* RESPONSIVIDADE */
     @media (max-width: 980px) {
+      .store-locator-gold-section {
+        padding: 24px 16px;
+        border-radius: 18px;
+      }
       .store-locator-grid {
         grid-template-columns: 1fr;
         gap: 24px;
       }
-
       .gold-map-wrapper,
       .panel-map {
-        min-height: 380px;
-        height: 380px;
+        min-height: 340px;
+        height: 340px;
+        border-radius: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .store-locator-gold-section {
+        padding: 20px 12px;
+      }
+      .locator-gold-title {
+        font-size: 1.55rem;
+      }
+      .gold-unit-card {
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 12px;
+        align-items: stretch;
+      }
+      .unit-card-thumb {
+        width: 78px;
+        height: 78px;
+        min-width: 78px;
+        max-width: 78px;
+        align-self: center;
+      }
+      .unit-card-info {
+        justify-content: space-between;
+        gap: 2px;
+      }
+      .unit-card-header {
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .unit-card-title {
+        font-size: 0.78rem;
+        line-height: 1.25;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .unit-card-rating {
+        font-size: 0.74rem;
+        flex-shrink: 0;
+      }
+      .unit-subbrands-inline-row {
+        font-size: 0.56rem;
+        line-height: 1.3;
+        margin: 1px 0 2px 0;
+      }
+      .unit-card-addr {
+        font-size: 0.72rem;
+        margin: 0 0 2px;
+      }
+      .btn-unit-ver-mais {
+        padding: 3px 8px;
+        font-size: 0.60rem;
+        border-radius: 5px;
+      }
+      .gold-map-wrapper,
+      .panel-map {
+        min-height: 290px;
+        height: 290px;
+        border-radius: 14px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .gold-unit-card {
+        padding: 8px 10px;
+        gap: 8px;
+      }
+      .unit-card-thumb {
+        width: 66px;
+        height: 66px;
+        min-width: 66px;
+        max-width: 66px;
+      }
+      .unit-card-title {
+        font-size: 0.74rem;
+      }
+      .unit-subbrands-inline-row {
+        font-size: 0.52rem;
+      }
+      .unit-card-addr {
+        font-size: 0.68rem;
+      }
+      .btn-unit-ver-mais {
+        padding: 3px 6px;
+        font-size: 0.56rem;
+      }
+      .gold-map-wrapper,
+      .panel-map {
+        min-height: 250px;
+        height: 250px;
       }
     }
   </style>

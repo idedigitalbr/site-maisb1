@@ -709,6 +709,7 @@
   position: relative;
   width: 130px;
   height: 130px;
+  border-radius: 50% !important;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -717,7 +718,7 @@
   align-items: center;
   z-index: 10;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .brands-hub-center img {
@@ -1044,44 +1045,52 @@
   min-height: 80px;
   max-height: 80px;
   border-radius: 50% !important;
-  background: rgba(20, 18, 18, 0.92) !important;
+  background: rgba(20, 18, 18, 0.94) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(253, 250, 246, 0.15) !important;
+  border: 1.5px solid rgba(253, 250, 246, 0.2) !important;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55) !important;
   box-sizing: border-box;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s ease,
-              border-color 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease,
+              border-width 0.35s ease;
   opacity: 1;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .brand-detail-card.active:hover .card-logo-overlap,
-.card-logo-overlap:hover {
-  transform: scale(1.06) !important;
+.card-logo-overlap:hover,
+.card-logo-overlap:active {
+  transform: scale(1.04);
 }
 
-.theme-plaza .card-logo-overlap { border: 1px solid rgba(218, 23, 30, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(218, 23, 30, 0.15) !important; }
-.theme-wine .card-logo-overlap { border: 1px solid rgba(234, 187, 117, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(234, 187, 117, 0.15) !important; }
-.theme-super .card-logo-overlap { border: 1px solid rgba(255, 196, 0, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 196, 0, 0.15) !important; }
-.theme-farma .card-logo-overlap { border: 1px solid rgba(242, 13, 24, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(242, 13, 24, 0.15) !important; }
-.theme-park .card-logo-overlap { border: 1px solid rgba(34, 197, 94, 0.3) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(34, 197, 94, 0.15) !important; }
+.theme-plaza .card-logo-overlap { border: 1.5px solid rgba(218, 23, 30, 0.45) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 14px rgba(218, 23, 30, 0.25) !important; }
+.theme-wine .card-logo-overlap { border: 1.5px solid rgba(234, 187, 117, 0.45) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 14px rgba(234, 187, 117, 0.25) !important; }
+.theme-super .card-logo-overlap { border: 1.5px solid rgba(255, 196, 0, 0.45) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 14px rgba(255, 196, 0, 0.25) !important; }
+.theme-farma .card-logo-overlap { border: 1.5px solid rgba(242, 13, 24, 0.45) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 14px rgba(242, 13, 24, 0.25) !important; }
+.theme-park .card-logo-overlap { border: 1.5px solid rgba(34, 197, 94, 0.45) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 14px rgba(34, 197, 94, 0.25) !important; }
 
 .theme-plaza.brand-detail-card.active:hover .card-logo-overlap,
-.theme-plaza .card-logo-overlap:hover { border-color: rgba(218, 23, 30, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(218, 23, 30, 0.25) !important; }
+.theme-plaza .card-logo-overlap:hover,
+.theme-plaza .card-logo-overlap:active { border: 2px solid rgba(218, 23, 30, 0.85) !important; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(218, 23, 30, 0.45) !important; }
 .theme-wine.brand-detail-card.active:hover .card-logo-overlap,
-.theme-wine .card-logo-overlap:hover { border-color: rgba(234, 187, 117, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(234, 187, 117, 0.25) !important; }
+.theme-wine .card-logo-overlap:hover,
+.theme-wine .card-logo-overlap:active { border: 2px solid rgba(234, 187, 117, 0.85) !important; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(234, 187, 117, 0.45) !important; }
 .theme-super.brand-detail-card.active:hover .card-logo-overlap,
-.theme-super .card-logo-overlap:hover { border-color: rgba(255, 196, 0, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 196, 0, 0.25) !important; }
+.theme-super .card-logo-overlap:hover,
+.theme-super .card-logo-overlap:active { border: 2px solid rgba(255, 196, 0, 0.85) !important; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 196, 0, 0.45) !important; }
 .theme-farma.brand-detail-card.active:hover .card-logo-overlap,
-.theme-farma .card-logo-overlap:hover { border-color: rgba(242, 13, 24, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(242, 13, 24, 0.25) !important; }
+.theme-farma .card-logo-overlap:hover,
+.theme-farma .card-logo-overlap:active { border: 2px solid rgba(242, 13, 24, 0.85) !important; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(242, 13, 24, 0.45) !important; }
 .theme-park.brand-detail-card.active:hover .card-logo-overlap,
-.theme-park .card-logo-overlap:hover { border-color: rgba(34, 197, 94, 0.5) !important; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(34, 197, 94, 0.25) !important; }
+.theme-park .card-logo-overlap:hover,
+.theme-park .card-logo-overlap:active { border: 2px solid rgba(34, 197, 94, 0.85) !important; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(34, 197, 94, 0.45) !important; }
 
 /* Estilização da ponte ativa estática compartilhada */
 .active-bridge {
@@ -1372,6 +1381,7 @@
   .brands-orbit-box .brands-hub-center {
     width: 106px !important;
     height: 106px !important;
+    border-radius: 50% !important;
     box-shadow: 0 0 25px rgba(255, 196, 0, 0.3) !important;
   }
   
@@ -1397,6 +1407,33 @@
     min-height: 480px;
   }
 
+  .brand-detail-card.active:hover {
+    transform: scale(1) !important;
+  }
+
+  .card-logo-overlap {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 76px !important;
+    height: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+
+  /* Previne deslocamento/queda do ícone ao clicar ou tocar no mobile */
+  .brand-detail-card.active:hover .card-logo-overlap,
+  .brand-detail-card.active .card-logo-overlap,
+  .card-logo-overlap:hover,
+  .card-logo-overlap:active,
+  .card-logo-overlap:focus {
+    transform: translate(-50%, -50%) !important;
+  }
+
   .card-top-gallery {
     height: auto !important; /* Desativa altura fixa no responsivo */
   }
@@ -1404,6 +1441,10 @@
   .gallery-panel {
     height: auto !important;
     aspect-ratio: 3/4 !important; /* Restaura aspect-ratio no responsivo */
+  }
+
+  .card-details-body {
+    padding: 48px 2.5rem 24px !important;
   }
 
   .brands-section-container {
@@ -1433,10 +1474,22 @@
     transform: translate(-50%, -50%) !important;
     width: 72px !important;
     height: 72px !important;
+    min-width: 72px !important;
+    max-width: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
+  }
+
+  .brand-detail-card.active:hover .card-logo-overlap,
+  .brand-detail-card.active .card-logo-overlap,
+  .card-logo-overlap:hover,
+  .card-logo-overlap:active,
+  .card-logo-overlap:focus {
+    transform: translate(-50%, -50%) !important;
   }
   
   .card-details-body {
-    padding: 48px 20px 24px !important;
+    padding: 48px 2.5rem 24px !important;
   }
   
   .card-brand-title {
@@ -1455,6 +1508,7 @@
   .brands-orbit-box .brands-hub-center {
     width: 88px !important;
     height: 88px !important;
+    border-radius: 50% !important;
     box-shadow: 0 0 20px rgba(255, 196, 0, 0.3) !important;
   }
   
@@ -1502,7 +1556,7 @@
 
 
 /* ==========================================================================
-   Container Stage & Setas Flutuantes Premium
+   Container Stage & Setas Flutuantes Premium (Desktop & Mobile)
    ========================================================================== */
 .brands-carousel-stage {
   position: relative;
@@ -1513,18 +1567,18 @@
   position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  max-width: 48px !important;
-  min-height: 48px !important;
-  max-height: 48px !important;
-  background: rgba(25, 22, 22, 0.85) !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  background: rgba(20, 18, 18, 0.88) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(253, 250, 246, 0.2) !important;
+  border: 1.5px solid rgba(253, 250, 246, 0.22) !important;
   border-radius: 50% !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1533,52 +1587,109 @@
   z-index: 120 !important;
   flex-shrink: 0 !important;
   padding: 0 !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   appearance: none !important;
   -webkit-appearance: none !important;
   outline: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .brands-nav-arrow svg {
-  width: 22px !important;
-  height: 22px !important;
-  min-width: 22px !important;
-  max-width: 22px !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
   stroke: currentColor !important;
-  stroke-width: 2.2px !important;
+  stroke-width: 2.5px !important;
   display: block !important;
   flex-shrink: 0 !important;
 }
 
-.brands-nav-arrow:hover {
+.brands-nav-arrow:hover,
+.brands-nav-arrow:active {
   background: var(--color-yellow, #C89223) !important;
   color: #000000 !important;
   border-color: var(--color-yellow, #C89223) !important;
-  transform: translateY(-50%) scale(1.12) !important;
-  box-shadow: 0 0 24px rgba(200, 146, 35, 0.6) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+  box-shadow: 0 0 22px rgba(200, 146, 35, 0.65) !important;
 }
 
 .brands-nav-arrow.arrow-left {
-  left: -24px !important;
+  left: -22px !important;
 }
 
 .brands-nav-arrow.arrow-right {
-  right: -24px !important;
+  right: -22px !important;
 }
 
 @media (max-width: 1280px) {
   .brands-nav-arrow.arrow-left {
-    left: -12px !important;
+    left: -14px !important;
   }
   .brands-nav-arrow.arrow-right {
-    right: -12px !important;
+    right: -14px !important;
   }
 }
 
-/* Ocultar as setas no tablet/mobile para preservar responsividade */
+/* Setas Ativas e Otimizadas no Tablet & Mobile */
 @media (max-width: 980px) {
   .brands-nav-arrow {
-    display: none !important;
+    display: flex !important;
+    top: 65px !important; /* Alinhado centralizado na galeria de fotos do topo do card */
+    transform: translateY(-50%) !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    background: rgba(14, 12, 12, 0.86) !important;
+    border-color: rgba(253, 250, 246, 0.3) !important;
+    z-index: 160 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 12px rgba(200, 146, 35, 0.25) !important;
+  }
+
+  .brands-nav-arrow svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .brands-nav-arrow.arrow-left {
+    left: 8px !important;
+  }
+
+  .brands-nav-arrow.arrow-right {
+    right: 8px !important;
+  }
+
+  .brands-nav-arrow:hover,
+  .brands-nav-arrow:active {
+    transform: translateY(-50%) scale(1.06) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .brands-nav-arrow {
+    top: 58px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+  }
+
+  .brands-nav-arrow svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .brands-nav-arrow.arrow-left {
+    left: 6px !important;
+  }
+
+  .brands-nav-arrow.arrow-right {
+    right: 6px !important;
   }
 }
 

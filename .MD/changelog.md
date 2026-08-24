@@ -1,5 +1,42 @@
 # Changelog
 
+- **Responsividade Total na Seção de Unidades (Store Locator no Mobile)**:
+  - **Ajuste de Largura e Eliminação de Overflow**: Adicionadas regras de `box-sizing: border-box`, `overflow: hidden` e limitação de larguras para impedir qualquer corte ou estouro horizontal na seção de unidades e na barra de pesquisa no mobile.
+  - **Redimensionamento Fluido dos Cards e Miniaturas**: Em telas menores que 640px e 380px, as miniaturas das fotos foram ajustadas dinamicamente (78px e 66px), com paddings e gaps compactos e fluidos para manter todo o conteúdo perfeitamente contido na tela.
+  - **Quebra Elegante de Títulos e Textos**: Os títulos das unidades (`.unit-card-title`) agora utilizam `-webkit-line-clamp: 2` com quebra fluida de linha, exibindo o nome completo da loja sem cortes forçados (`...`) ou quebras estragadas.
+  - **Botão "Ver no Google Maps" Adaptativo**: Ajustados padding, font-size e posicionamento do botão para garantir encaixe ideal sem ultrapassar as bordas dos cards em qualquer largura de tela (desde Galaxy Fold 320px até iPhone 14/15/16 Pro Max).
+  - **Sincronização nos Arquivos**: Estilos aplicados e sincronizados em [`work-units-footer.css`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/work-units-footer.css) e [`mapinha.html`](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/mapinha.html).
+
+- **Correção da Sombra Quadrada no Ícone Central (Hub da Espiral)**:
+  - **Formato 100% Circular no Hub Central**: Adicionada a regra `border-radius: 50% !important;` na classe base e nas media queries de `.brands-hub-center`, eliminando os cantos quadrados da sombra e transformando o glow e o container central em um círculo suave e perfeito.
+  - **Invalidação de Cache**: Atualizada a versão dos estilos para `main.css?v=10.4` e `brands.css?v=9.4`.
+
+- **Ajustes no Carrossel da Seção Nossas Marcas no Mobile**:
+  - **Correção da Queda/Deslocamento do Emblema do Card**: Corrigido o bug onde o ícone/emblema central sobreposto (`.card-logo-overlap`) sofria alteração de `transform` e descia/caía ao ser clicado ou tocado em dispositivos móveis. A posição foi fixada firmemente em `top: 0; left: 50%; transform: translate(-50%, -50%) !important;` em todos os estados de interação.
+  - **Feedback Ativo com Borda e Brilho Reforçados**: No clique, toque ou foco, o emblema da marca ativa recebe borda de 2px e iluminação sutil temática intensificada (box-shadow com glow correspondente à cor da submarca), proporcionando feedback visual claro de que está ativo sem nenhum salto postural.
+  - **Setas de Navegação Ativas no Mobile**: Adicionadas e estilizadas as setas flutuantes de navegação (`<` e `>`) centralizadas na galeria de fotos superior do card em telas mobile e tablet (`@media (max-width: 980px)` e `@media (max-width: 620px)`), com acabamento translúcido glassmorphism e iluminação dourada ao toque, indicando imediatamente que a seção é um carrossel navegável.
+
+
+
+- **Atualização dos Textos e Cores da Seção "Sobre o Grupo" (Home e Sobre Nós)**:
+  - **Headline**: Atualizada para *"O Grupo Mais Barato reúne negócios que fazem parte do dia a dia das pessoas de Belém–PA"* com destaque em serif dourado itálico para "Grupo Mais Barato" e prevenção de quebra (`white-space: nowrap`) em "Belém–PA".
+  - **Unificação da Cor Amarelo Ouro Premium (`#C49A45`)**: Substituído o amarelo vivo (`#FFC400`) pelo tom dourado oficial/premium (`#C49A45`) em todas as instâncias (eyebrow, destaque itálico da headline, midTexto e traço decorativo inferior), garantindo total consistência com o padrão da Home e Sobre Nós.
+  - **MidTexto**: Adicionado o texto intermediário em destaque dourado: *"Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade."*
+  - **Texto Principal**: Atualizado o parágrafo institucional com o compromisso de inovação, experiência, excelência e desenvolvimento comunitário sustentável.
+  - **Harmonização Visual**: Padronizado com traço dourado decorativo (`.gold-accent-line`) e estilos sincronizados em `index.html`, `sobre-nos.html` e `src/css/sections.css`.
+
+- **Ajuste de Responsividade na Seção de FAQ (Dúvidas Frequentes)**:
+  - **Layout de 1 Coluna no Mobile e Tablet**: Ajustado o grid `.faq-grid` para empilhar em 1 coluna única (`grid-template-columns: 1fr`) em telas menores que 991px, 768px e 480px, eliminando o esmagamento das 2 colunas laterais no celular.
+  - **Ajustes de Espaçamento e Tipografia**: Redefinidos os paddings, gaps, tamanhos de fontes e espaçamento interno dos cards de perguntas e respostas para visualização confortável e fluida em smartphones.
+
+- **Ajustes na Seção de Marcas da Home**:
+  - **Aumento do Tempo de Exibição e Pausa ao Passar o Mouse**: Aumentado o `SLIDE_DURATION` de 5.000ms para 9.000ms (9 segundos) no carrossel de marcas em `src/js/main.js`, proporcionando tempo suficiente para a leitura de textos e visualização das fotos. Adicionada também a pausa automática ao passar o mouse (`mouseenter`/`mouseleave`) sobre o palco do carrossel.
+  - **Descritivo do Supermercados +B**: Removida a palavra "utilidades", ficando: *"Rede de supermercados com mix completo de alimentos e ofertas para a rotina das famílias."*
+  - **Descritivo do Villa Plaza Park**: Inserido o destaque: *"Maior Parque infantil de Belém, pensado para crianças e famílias, com atrações, segurança e muita diversão para os pequenos."* (atualizado em `index.html` e `src/data/brands.js`).
+
+- **Remoção da Seção de Eventos na Home**:
+  - Removida a seção de eventos ("APROVEITE E CONHEÇA" / "+B RUN") de `index.html`.
+
 - **Atualização da Imagem do marco "Shopping Bosque Grão Pará" na Linha do Tempo**:
   - Atualizada a foto do marco **2026: Inauguração do +B Supermercados – Shopping Bosque Grão Pará** em `sobre-nos.html` (miniatura do nó 10) e em `src/js/main.js` (`data[10].img`) para `./assets/Fotografias/maisb-grao-para.webp`.
   - Atualizada a versão do script em `sobre-nos.html` para `main.js?v=9.4` para invalidação de cache.

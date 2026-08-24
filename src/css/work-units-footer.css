@@ -1943,7 +1943,8 @@
   }
 
   .store-locator-section .panel-container {
-    width: calc(100% - 32px);
+    width: calc(100% - 5rem) !important;
+    max-width: calc(100% - 5rem) !important;
     margin: 0 auto 20px;
     height: 500px;
     flex-direction: column-reverse;
@@ -2303,7 +2304,9 @@
 @media (max-width: 768px) {
   .teaser-two-columns-container {
     flex-direction: column-reverse;
-    width: calc(100% - 32px);
+    width: calc(100% - 5rem) !important;
+    max-width: calc(100% - 5rem) !important;
+    margin: 0 auto;
     height: 780px; /* Aumentado de 500px para evitar encavalamento */
   }
 
@@ -3075,6 +3078,13 @@
 .store-locator-gold-section {
   padding: 60px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.store-locator-gold-section * {
+  box-sizing: border-box;
 }
 
 .store-locator-grid {
@@ -3082,11 +3092,15 @@
   grid-template-columns: 37% 63%;
   gap: 32px;
   align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .store-left-col {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
 }
 
 .store-right-col {
@@ -3094,6 +3108,8 @@
   flex-direction: column;
   height: 100%;
   justify-content: flex-end;
+  min-width: 0;
+  width: 100%;
 }
 
 .locator-gold-title {
@@ -3104,6 +3120,7 @@
   line-height: 1.15;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
 .locator-gold-title .headline-highlight-italic {
@@ -3129,6 +3146,7 @@
   padding: 12px 18px !important;
   margin-bottom: 20px !important;
   width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .locator-search-box input {
@@ -3141,6 +3159,8 @@
   padding-right: 36px !important;
   outline: none !important;
   font-family: var(--font-primary, 'DM Sans', sans-serif) !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
 }
 
 .locator-search-box input::placeholder {
@@ -3206,6 +3226,8 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .store-locator-gold-section .store-list-card,
@@ -3222,6 +3244,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -3257,6 +3280,7 @@
   flex-direction: column;
   gap: 2px;
   min-width: 0; /* CRUCIAL: Impede que o conteúdo estoure a largura do card no flexbox */
+  width: 100%;
 }
 
 .store-locator-gold-section .store-card-header,
@@ -3396,15 +3420,20 @@
   position: relative;
 }
 
-/* Responsividade Mobile (Item 10 Responsividade) */
+/* Responsividade Mobile - Store Locator */
 @media (max-width: 980px) {
+  .store-locator-gold-section {
+    padding: 48px 0;
+  }
+
   .store-locator-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 
   .locator-gold-title {
     white-space: normal;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
   }
 
   .gold-filter-pills-row {
@@ -3412,7 +3441,161 @@
   }
 
   .gold-map-wrapper {
-    height: 380px;
+    height: 360px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .store-locator-gold-section {
+    padding: 36px 0;
+  }
+
+  .locator-gold-title {
+    font-size: 1.55rem;
+    margin-bottom: 6px;
+  }
+
+  .locator-gold-desc {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .locator-search-box {
+    padding: 10px 14px !important;
+    margin-bottom: 14px !important;
+    border-radius: 10px !important;
+  }
+
+  .locator-search-box input {
+    font-size: 0.85rem !important;
+    padding-right: 28px !important;
+  }
+
+  .store-cards-list {
+    gap: 10px;
+  }
+
+  .store-locator-gold-section .store-list-card,
+  .gold-unit-card {
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 12px;
+    align-items: stretch;
+  }
+
+  .store-locator-gold-section .store-card-thumbnail,
+  .unit-card-thumb {
+    width: 78px;
+    height: 78px;
+    min-width: 78px;
+    max-width: 78px;
+    border-radius: 8px;
+    align-self: center;
+  }
+
+  .store-locator-gold-section .store-card-body,
+  .unit-card-info {
+    justify-content: space-between;
+    gap: 2px;
+  }
+
+  .store-locator-gold-section .store-card-header,
+  .unit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .store-locator-gold-section .store-card-body h3,
+  .unit-card-title {
+    font-size: 0.78rem;
+    line-height: 1.25;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  .unit-card-rating,
+  .store-rating-teaser {
+    font-size: 0.74rem;
+    flex-shrink: 0;
+  }
+
+  .unit-subbrands-inline-row {
+    font-size: 0.56rem;
+    line-height: 1.3;
+    margin: 1px 0 2px 0;
+    word-break: break-word;
+  }
+
+  .store-locator-gold-section .store-address-teaser,
+  .unit-card-addr {
+    font-size: 0.72rem;
+    line-height: 1.25;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .store-locator-gold-section .store-card-footer {
+    margin-top: 2px;
+  }
+
+  .store-locator-gold-section .btn-unit-ver-mais {
+    padding: 3px 8px;
+    font-size: 0.60rem;
+    letter-spacing: 0.02em;
+    border-radius: 5px;
+  }
+
+  .gold-map-wrapper {
+    height: 290px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .store-locator-gold-section .store-list-card,
+  .gold-unit-card {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .store-locator-gold-section .store-card-thumbnail,
+  .unit-card-thumb {
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+    max-width: 66px;
+  }
+
+  .store-locator-gold-section .store-card-body h3,
+  .unit-card-title {
+    font-size: 0.74rem;
+  }
+
+  .unit-subbrands-inline-row {
+    font-size: 0.52rem;
+  }
+
+  .store-locator-gold-section .store-address-teaser,
+  .unit-card-addr {
+    font-size: 0.68rem;
+  }
+
+  .store-locator-gold-section .btn-unit-ver-mais {
+    padding: 3px 6px;
+    font-size: 0.56rem;
+  }
+
+  .gold-map-wrapper {
+    height: 250px;
   }
 }
 

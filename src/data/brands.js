@@ -27,7 +27,7 @@ window.brands = [
     name: 'Villa Plaza Park Infantil',
     sectionId: 'villa-park',
     color: '#16A34A',
-    role: 'Parque infantil, lazer, segurança e entretenimento para famílias.'
+    role: 'Maior parque infantil de Belém, lazer, segurança e entretenimento para famílias.'
   },
   {
     id: 'wine',
