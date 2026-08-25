@@ -1,6 +1,7 @@
 # Sistema
 .DS_Store
 Thumbs.db
+*.lnk
 
 # Configurações locais e segredos
 .env

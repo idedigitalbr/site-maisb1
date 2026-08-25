@@ -1,5 +1,15 @@
 # Changelog
 
+- **Cantos Arredondados no Rodapé e Seção Nossas Marcas**:
+  - **Rodapé / Localizador de Unidades (`.footer-gold`)**: Adicionado `border-radius: 120px 120px 0 0 !important;` no desktop e `40px 40px 0 0 !important;` no mobile/tablet em [src/css/work-units-footer.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/work-units-footer.css), com `overflow: hidden` e padding superior calibrado para transição elegante.
+  - **Seção Nossas Marcas (`.brands-black-block`)**: Atualizado `border-radius` para `120px` no desktop (arredondando a parte inferior e superior simetricamente) e `40px !important` no mobile/tablet em [src/css/brands.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/brands.css).
+  - **Invalidação de Cache**: Atualizadas versões em [src/css/main.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/main.css) (`brands.css?v=12.2`, `work-units-footer.css?v=12.3`) e links em todos os HTMLs (`main.css?v=13.2`).
+  - **Inversão de Posição**: A seção **Trabalhe Conosco** (`#oportunidades`) foi posicionada logo acima da seção **Notícias & Novidades** (`#noticias`), vindo na sequência das submarcas.
+
+- **Atualização da Imagem de Fundo da Seção Trabalhe Conosco**:
+  - **Nova Imagem**: Substituída a imagem anterior por `assets/Paginas (Imagens)/Home/banner-trabalhe-conosco-v2.webp` em [src/css/sections.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/sections.css) tanto no layout desktop quanto na media query responsiva para mobile/tablet.
+  - **Invalidação de Cache**: Atualizada a versão dos estilos em [src/css/main.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/main.css) (`sections.css?v=12.6`) e em [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/index.html) (`main.css?v=13.1`).
+
 - **Responsividade Total na Seção de Unidades (Store Locator no Mobile)**:
   - **Ajuste de Largura e Eliminação de Overflow**: Adicionadas regras de `box-sizing: border-box`, `overflow: hidden` e limitação de larguras para impedir qualquer corte ou estouro horizontal na seção de unidades e na barra de pesquisa no mobile.
   - **Redimensionamento Fluido dos Cards e Miniaturas**: Em telas menores que 640px e 380px, as miniaturas das fotos foram ajustadas dinamicamente (78px e 66px), com paddings e gaps compactos e fluidos para manter todo o conteúdo perfeitamente contido na tela.

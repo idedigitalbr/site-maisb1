@@ -526,7 +526,7 @@
   max-width: 100%;
   height: auto;
   background-color: var(--color-black);
-  border-radius: 120px 120px 0 0;
+  border-radius: 120px;
   padding: var(--brands-padding, 120px 32px 120px);
   margin: 0 auto;
   box-sizing: border-box;
@@ -1354,7 +1354,7 @@
     position: relative !important;
     width: 100% !important;
     height: auto !important;
-    border-radius: 40px 40px 0 0 !important;
+    border-radius: 40px !important;
     padding: 80px 24px 80px !important;
   }
   
