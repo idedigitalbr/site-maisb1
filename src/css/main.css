@@ -1,15 +1,17 @@
-@import url('./tokens.css');
-@import url('./base.css?v=8.1');
-@import url('./header.css');
-@import url('./hero.css?v=8.9');
-@import url('./sections.css?v=8.7');
-@import url('./brands.css?v=9.5');
-@import url('./work-units-footer.css?v=10.2');
-@import url('./components.css');
-@import url('./brand-pages.css?v=8.0');
-@import url('./links.css');
-@import url('./timeline.css?v=8.3');
-@import url('./album.css?v=8.4');
-@import url('./noticias.css?v=1.0');
-@import url('./responsive.css?v=8.1');
+@import url('./tokens.css?v=12.0');
+@import url('./base.css?v=12.0');
+@import url('./header.css?v=12.0');
+@import url('./hero.css?v=12.0');
+@import url('./sections.css?v=12.0');
+@import url('./secao-missao-visao-valores.css?v=12.0');
+@import url('./brands.css?v=12.0');
+@import url('./work-units-footer.css?v=12.0');
+@import url('./components.css?v=12.0');
+@import url('./brand-pages.css?v=12.0');
+@import url('./links.css?v=12.0');
+@import url('./timeline.css?v=12.0');
+@import url('./album.css?v=12.0');
+@import url('./noticias.css?v=12.0');
+@import url('./responsive.css?v=12.0');
+
 
