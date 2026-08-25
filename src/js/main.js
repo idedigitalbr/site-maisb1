@@ -31,6 +31,7 @@
       menuToggle.addEventListener('click', function () {
         const isOpen = menu.classList.toggle('open');
         menuToggle.setAttribute('aria-expanded', String(isOpen));
+        if (window.setLucideIcon) window.setLucideIcon(menuToggle, isOpen ? 'x' : 'menu');
       });
       menu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function (e) {

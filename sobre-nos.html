@@ -676,15 +676,11 @@
   <script src="./src/js/main.js?v=9.4" defer></script>
   <script src="./src/js/album.js?v=8.7" defer></script>
   <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@0.321.0" defer></script>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js" defer></script>
+  <script src="./src/js/lucide-icons.js?v=1.2" defer></script>
   <script>
     // Controle específico de mute/unmute no vídeo institucional de sobre-nos
     document.addEventListener('DOMContentLoaded', function() {
-      // Inicializa os ícones do Lucide
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
-      
       const video = document.getElementById('inst-video');
       const toggleBtn = document.getElementById('video-mute-toggle');
       const muteIcon = document.getElementById('mute-icon');

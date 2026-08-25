@@ -115,6 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  // Atualiza o embed do Google Maps ao selecionar uma unidade.
+  function updateGoogleMap(unit) {
+    const mapFrame = document.getElementById('teaser-google-map-embed');
+    if (!mapFrame || !unit) return;
+
+    const query = encodeURIComponent(`${unit.name} ${unit.address}, Belém - PA`);
+    mapFrame.src = `https://www.google.com/maps?q=${query}&output=embed`;
+  }
+
   // --- Função: Verificar se a loja está aberta agora ---
   function isStoreOpenNow(unit) {
     const now = new Date();
@@ -814,7 +823,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ${tagsText}
           </div>
           <p class="store-address-teaser">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:-1px; margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${store.address.split('-')[0].trim()}
+            <i data-lucide="map-pin" width="12" height="12" aria-hidden="true"></i>${store.address.split('-')[0].trim()}
           </p>
           <div class="store-card-footer">
             <a href="${store.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.name + ' Belém PA')}`}" target="_blank" rel="noopener" class="btn-unit-ver-mais" onclick="event.stopPropagation();">VER NO GOOGLE MAPS</a>
@@ -828,12 +837,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
       modalStoresListContainer.appendChild(card);
     });
+
+    if (window.refreshLucideIcons) window.refreshLucideIcons();
   }
 
   function selectUnit(unitId, zoomTo = false) {
     activeUnitId = unitId;
     const unit = window.units.find(u => u.id === unitId);
     if (!unit) return;
+
+    updateGoogleMap(unit);
 
     // Destacar item selecionado na lista
     document.querySelectorAll('#store-locator-teaser .store-list-card').forEach(card => {
@@ -1443,37 +1456,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- Auto-init para inicializar o mapa e a lista na página principal ---
-  if (teaserSection && document.getElementById('teaser-unidades-map')) {
-    const mapObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadLeafletAssets()
-            .then(() => {
-              initModalMapOnce();
-              applyFiltersAndSearch();
-              if (mapModal) mapModal.invalidateSize();
-            })
-            .catch(err => console.error(err));
-          mapObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.1 });
-
-    mapObserver.observe(teaserSection);
-
-    // Fallback se já estiver visível
-    const rect = teaserSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      setTimeout(() => {
-        loadLeafletAssets()
-          .then(() => {
-            initModalMapOnce();
-            applyFiltersAndSearch();
-            if (mapModal) mapModal.invalidateSize();
-          })
-          .catch(err => console.error(err));
-      }, 300);
-    }
+  // Inicializa a lista e mantém o iframe do Google Maps sincronizado com os cards.
+  if (teaserSection && window.units) {
+    applyFiltersAndSearch();
+    if (window.refreshLucideIcons) window.refreshLucideIcons();
   }
 });

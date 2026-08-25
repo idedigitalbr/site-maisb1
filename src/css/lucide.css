@@ -1,0 +1,51 @@
+/* ============================================================================
+   Lucide Icons — interface consistente do Grupo +B
+   ============================================================================ */
+
+.lucide {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+.faq-plus-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-plus-icon .lucide {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.search-icon-svg.lucide,
+.news-search-icon.lucide {
+  fill: none;
+}
+
+.icon-play.lucide,
+.icon-pause.lucide,
+.icon-volume-on.lucide,
+.icon-volume-off.lucide {
+  color: #ffc400;
+  stroke: currentColor;
+}
+
+.culture-icon.lucide,
+.floating-card-icon .lucide {
+  color: #ffc400;
+}
+
+.autocomplete-item-icon .lucide,
+.info-row-icon .lucide,
+.btn-icon .lucide,
+.thumb-zoom-icon .lucide,
+.album-zoom-icon .lucide {
+  display: block;
+}

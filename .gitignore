@@ -2,6 +2,14 @@
 .DS_Store
 Thumbs.db
 
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
+
+# Índice local do CodeGraph
+.codegraph/
+
 # Logs
 *.log
 
