@@ -116,6 +116,7 @@
 
     <nav class="main-menu" id="main-menu">
       <a href="./sobre-nos.html" id="menu-link-sobre">Sobre</a>
+      <a href="./noticias.html" id="menu-link-noticias">Notícias</a>
       <div class="dropdown">
         <a href="#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
         <div class="drop-panel" aria-label="Submenu Nossas Marcas">
@@ -641,6 +642,38 @@
       </div> <!-- /brands-black-block -->
     </div> <!-- /brands-sticky-wrapper -->
   </section> <!-- /brands-scroll-container -->
+
+
+    <!-- ==========================================
+         SEÇÃO NOTÍCIAS & NOVIDADES (SANITY.IO)
+         ========================================== -->
+    <section class="section section-dark news-home-section reveal" id="noticias" data-wf-label="SEÇÃO NOTÍCIAS">
+      <div class="container">
+        <div class="news-home-header">
+          <div class="news-header-left">
+            <span class="eyebrow-tag">NOTÍCIAS & NOVIDADES</span>
+            <h2 class="news-home-title">
+              Fique por dentro das<br>
+              <span class="headline-highlight-italic">nossas novidades.</span>
+            </h2>
+          </div>
+          <div class="news-header-right">
+            <a href="./noticias.html" class="btn-news-all">
+              VER TODAS AS NOTÍCIAS
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Grid Dinâmico de Cards preenchido via JS (Sanity.io) -->
+        <div class="news-cards-grid" id="news-home-cards-container">
+          <!-- Skeletons renderizados automaticamente enquanto carrega -->
+        </div>
+      </div>
+    </section>
 
 
     <!-- SEÇÃO TRABALHE CONOSCO -->
@@ -1230,6 +1263,8 @@
   <script src="./src/data/drive-assets.js" defer></script>
   <script src="./src/data/brands.js?v=1.1" defer></script>
   <script src="./src/data/units.js?v=10.0" defer></script>
+  <script src="./src/js/sanity-client.js?v=1.0" defer></script>
+  <script src="./src/js/noticias-home.js?v=1.0" defer></script>
   <script src="./src/js/unidades.js?v=10.0" defer></script>
   <script src="./src/js/hero-carousel.js" defer></script>
   <script src="./src/js/main.js?v=5.8" defer></script>

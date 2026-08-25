@@ -60,7 +60,8 @@ docker compose up -d --build --remove-orphans
 
 ---
 
-## 3. Isolamento Contra Outros Projetos
+## 3. Isolamento Contra Outros Projetos & Prevenção de Cross-Deploy (Regra de Ouro)
+- **Proibição Absoluta de Cross-Deploy**: NUNCA execute `git fetch` ou `git pull` sem antes checar `git remote -v`. O repositório clonado no diretório da VPS deve corresponder rigorosamente ao projeto alvo. Se estiver incorreto, corrija com `git remote set-url origin <URL_CORRETA>`.
 - **Containers Existentes**: Nunca execute `docker stop` ou `docker kill` em IDs de containers que você não listou previamente no `docker compose ps` do projeto alvo.
 - **Limpeza de Recursos (Prune)**: **NUNCA** execute comandos globais de limpeza automática como `docker system prune`, `docker image prune -a` ou `docker volume prune` sem aprovação direta e expressa do usuário por escrito, pois isso pode apagar dados e imagens de outros projetos rodando no mesmo host.
 - **Volumes**: Volumes de banco de dados e persistência marcados no `docker-compose.yml` são considerados intocáveis. Nunca execute `docker compose down -v` por padrão. Prefira apenas `docker compose down` simples (se realmente necessário parar os serviços).

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notícia | Grupo Mais Barato</title>
+  <meta name="description" content="Leia a matéria completa no portal de notícias oficial do Grupo Mais Barato." />
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Notícia | Grupo Mais Barato" />
+  <meta property="og:description" content="Leia a matéria completa no portal oficial do Grupo Mais Barato." />
+  <meta property="og:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notícia | Grupo Mais Barato" />
+  <meta name="twitter:description" content="Leia a matéria completa no portal oficial do Grupo Mais Barato." />
+  <meta name="twitter:image" content="https://grupomaisbarato.com.br/assets/Logo%20Marca%20Grupo%20MaisB/Logo%20Grupo%20Mais%20Barato%20(Color%20Positivo).webp" />
+
+  <link rel="icon" type="image/webp" href="./assets/Logo Marca Grupo MaisB/FavIcon-Grupo Mais Barato (Color Negativo).webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/main.css?v=11.5" />
+
+  <!-- Script de Fallback Automático de Imagens -->
+  <script>
+    document.addEventListener('error', function(event) {
+      const target = event.target;
+      const tagName = target.tagName.toLowerCase();
+      
+      if (tagName === 'img' || tagName === 'video' || tagName === 'source') {
+        const element = target;
+        let fallbackCount = parseInt(element.getAttribute('data-fallback-count') || '0', 10);
+        const srcUrl = element.getAttribute('src');
+        if (!srcUrl || !srcUrl.includes('./assets/')) return;
+        
+        const assetPath = 'assets/' + srcUrl.split('./assets/')[1];
+        const fallbacks = [
+          './' + assetPath,
+          'https://grupomaisb.suporteide.digital/' + assetPath
+        ];
+        
+        if (fallbackCount < fallbacks.length) {
+          const nextFallback = fallbacks[fallbackCount];
+          element.setAttribute('data-fallback-count', fallbackCount + 1);
+          element.src = nextFallback;
+        }
+      }
+    }, true);
+  </script>
+</head>
+<body class="theme-holding">
+
+  <!-- CABEÇALHO INSTITUCIONAL -->
+  <header class="site-header" id="topo">
+    <div class="brand-group">
+      <a class="brand-main" href="./index.html" aria-label="Grupo Mais Barato">
+        <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" alt="Logo Grupo Mais Barato" />
+      </a>
+    </div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-menu" id="main-menu">
+      <a href="./sobre-nos.html" id="menu-link-sobre">Sobre</a>
+      <a href="./noticias.html" class="active" id="menu-link-noticias">Notícias</a>
+      <div class="dropdown">
+        <a href="./index.html#marcas" class="drop-link" aria-haspopup="true">Nossas Marcas</a>
+        <div class="drop-panel" aria-label="Submenu Nossas Marcas">
+          <a href="./index.html#marca-super" class="dropdown-item-rich brand-super">
+            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-supermercadoo.png" alt="+B Supermercados"></span>
+            <span class="dropdown-item-text">+B Supermercados</span>
+          </a>
+          <a href="./index.html#marca-farma" class="dropdown-item-rich brand-farma">
+            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-b-farmaa.png" alt="+B Farma"></span>
+            <span class="dropdown-item-text">+B Farma</span>
+          </a>
+          <a href="./index.html#marca-plaza" class="dropdown-item-rich brand-plaza">
+            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza"></span>
+            <span class="dropdown-item-text">Villa Plaza</span>
+          </a>
+          <a href="./index.html#marca-park" class="dropdown-item-rich brand-park">
+            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-vila-plaza.png" alt="Villa Plaza Park"></span>
+            <span class="dropdown-item-text">Villa Plaza Park</span>
+          </a>
+          <a href="./index.html#marca-wine" class="dropdown-item-rich brand-wine">
+            <span class="dropdown-item-logo"><img src="./assets/Icones Submarcas/icon-the-winee.png" alt="The Wine Experience"></span>
+            <span class="dropdown-item-text">The Wine Experience</span>
+          </a>
+        </div>
+      </div>
+      <div class="dropdown contacts-dropdown">
+        <a href="#store-locator-teaser" id="menu-link-contato" class="drop-link btn-header-contact" aria-haspopup="true">Contato</a>
+        <div class="drop-panel" aria-label="Submenu Contatos">
+          <a href="#store-locator-teaser" class="open-map-trigger" id="menu-link-unidades">Nossas Unidades</a>
+          <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener" id="menu-link-trabalhe">Trabalhe Conosco</a>
+          <a href="./links.html" id="menu-link-links">Nossos Links</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- LEITOR DO ARTIGO -->
+  <main class="article-page-wrapper" id="wf-main-content">
+    
+    <section class="article-hero-section">
+      <div class="article-container" id="article-content-container">
+        <!-- Renderizado dinamicamente via JS (Sanity.io) -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO MATÉRIAS RECOMENDADAS / RELACIONADAS -->
+    <section class="article-related-section" id="article-related-section" style="display: none;">
+      <div class="container">
+        <h2 class="article-related-title">Matérias Recomendadas</h2>
+        <div class="news-cards-grid" id="article-related-cards-container">
+          <!-- Cards relacionados preenchidos via JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast de Link Copiado -->
+  <div id="toast-copied" class="toast-copied" role="status" aria-live="polite">
+    Link copiado para a área de transferência!
+  </div>
+
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="footer footer-gold">
+    <!-- ===== SEÇÃO LOCALIZADOR DE LOJAS ===== -->
+    <div class="store-locator-gold-section" id="store-locator-teaser">
+      <div class="container store-locator-container">
+        <div class="store-locator-grid">
+          <!-- Coluna Esquerda: Busca + Lista de Unidades -->
+          <div class="store-left-col">
+            <span class="eyebrow-gold">NOSSAS UNIDADES</span>
+            <h2 class="locator-gold-title">Encontre <span class="headline-highlight-italic">nossas unidades</span></h2>
+            <p class="locator-gold-desc">Lojas, serviços e experiências mais perto de você.</p>
+
+            <div class="locator-search-box">
+              <input type="text" id="teaser-search-input" placeholder="Buscar unidade ou endereço" autocomplete="off">
+              <svg class="search-icon-svg" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+
+            <div class="store-cards-list" id="teaser-stores-list-container">
+              <!-- Card 1 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/1-foto-supermercado.webp" alt="+B Supermercados (Alcindo Cacela)">
+                </div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">+B Supermercados (Alcindo Cacela)</h4>
+                    <span class="unit-card-rating">★ 4,8</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> THE WINE EXPERIENCE <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Av. Alcindo Cacela, 1848</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/BUbRXApXKgTSYXKG8" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/2-foto-supermercado.webp" alt="+B Supermercados (Tapanã)">
+                </div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">+B Supermercados (Tapanã)</h4>
+                    <span class="unit-card-rating">★ 4,7</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Rod. Tapanã, 1200</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/hG4gY9fC8sMms95k8" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="gold-unit-card">
+                <div class="unit-card-thumb">
+                  <img src="./assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp" alt="+B Supermercados (José Malcher)">
+                </div>
+                <div class="unit-card-info">
+                  <div class="unit-card-header">
+                    <h4 class="unit-card-title">+B Supermercados (José Malcher)</h4>
+                    <span class="unit-card-rating">★ 4,9</span>
+                  </div>
+                  <div class="unit-subbrands-inline-row">
+                    SUPERMERCADOS +B <span class="tag-divider">|</span> VILLA PLAZA <span class="tag-divider">|</span> VILLA PLAZA PARK <span class="tag-divider">|</span> +B FARMA
+                  </div>
+                  <p class="unit-card-addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Av. Gov. José Malcher, 2388</p>
+                  <div class="store-card-footer">
+                    <a href="https://maps.app.goo.gl/wHYfn9JPun4pZ28Z8" target="_blank" rel="noopener" class="btn-unit-ver-mais">VER NO GOOGLE MAPS</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Mapa -->
+          <div class="store-right-col">
+            <div class="gold-map-wrapper">
+              <div id="teaser-unidades-map" class="panel-map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ MINIMALISTA CENTRALIZADO -->
+    <div class="footer-minimal-glow-section">
+      <div class="container footer-minimal-container">
+        
+        <div class="footer-minimal-centered-content">
+          <div class="footer-logo-glow-wrapper">
+            <img src="./assets/Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp" alt="Grupo Mais Barato" class="footer-minimal-logo">
+          </div>
+          <p class="footer-minimal-slogan">Excelência que conecta negócios e pessoas.</p>
+          <div class="footer-minimal-social-row">
+            <a href="https://www.instagram.com/maisbsupermercados" target="_blank" rel="noopener" aria-label="Instagram" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-circle-minimal">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-minimal-bottom-bar">
+          <span class="copyright-left">Copyright © 2026 Grupo Mais Barato – All rights reserved</span>
+          <a href="#" class="legal-center">Termos & Privacidade</a>
+          <div class="dev-right">
+            <span>Desenvolvido por:</span>
+            <a href="https://idedigital.com.br" target="_blank" rel="noopener" aria-label="ide digital">
+              <img src="./assets/01-logoh-pb-white-mono-ide-digital-negativo-png.png" alt="ide digital" class="idedigital-logo-img">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./src/data/drive-assets.js" defer></script>
+  <script src="./src/data/brands.js" defer></script>
+  <script src="./src/data/units.js?v=10.0" defer></script>
+  <script src="./src/js/sanity-client.js?v=1.0" defer></script>
+  <script src="./src/js/noticia-detail.js?v=1.0" defer></script>
+  <script src="./src/js/unidades.js?v=10.0" defer></script>
+  <script src="./src/js/main.js?v=9.4" defer></script>
+</body>
+</html>

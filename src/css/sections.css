@@ -3400,6 +3400,230 @@ textarea.form-control {
   }
 }
 
+/* ==========================================================================
+   Bloco Missão e Visão (Cultura) - Sobre Nós (Dark Glassmorphism)
+   ========================================================================== */
+.about-premium-dark-section .about-culture-block {
+  margin-top: 64px;
+  width: 100%;
+}
+
+.about-premium-dark-section .about-culture-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.about-premium-dark-section .about-culture-header .eyebrow-gold {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFC400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.about-premium-dark-section .about-culture-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-premium-dark-section .about-culture-title .headline-highlight-italic {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic;
+  color: #FFC400;
+  display: inline-block;
+}
+
+.about-premium-dark-section .culture-title-accent {
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFC400 30%, #FFC400 70%, transparent);
+  border-radius: 999px;
+  margin-top: 18px;
+  box-shadow: 0 0 10px rgba(255, 196, 0, 0.4);
+}
+
+.about-premium-dark-section .about-culture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+.about-premium-dark-section .culture-card {
+  position: relative;
+  background: rgba(14, 14, 20, 0.55);
+  border: 1px solid rgba(255, 196, 0, 0.28);
+  border-radius: 22px;
+  padding: 34px 36px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 196, 0, 0.14), inset 0 -1px 1px rgba(255, 196, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-premium-dark-section .culture-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 196, 0, 0.55);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55), 0 0 22px rgba(255, 196, 0, 0.14), inset 0 1px 2px rgba(255, 196, 0, 0.28);
+}
+
+.about-premium-dark-section .culture-card-icon-badge {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 196, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(255, 196, 0, 0.12) 0%, rgba(255, 196, 0, 0.02) 65%, transparent 100%);
+  box-shadow: 0 0 18px rgba(255, 196, 0, 0.18), inset 0 0 10px rgba(255, 196, 0, 0.06);
+  flex-shrink: 0;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-premium-dark-section .culture-card:hover .culture-card-icon-badge {
+  transform: scale(1.06);
+  border-color: #FFC400;
+  box-shadow: 0 0 24px rgba(255, 196, 0, 0.35), inset 0 0 14px rgba(255, 196, 0, 0.14);
+}
+
+.about-premium-dark-section .culture-icon {
+  width: 34px;
+  height: 34px;
+  stroke: #FFC400;
+  display: block;
+}
+
+.about-premium-dark-section .culture-card-divider {
+  width: 1px;
+  min-width: 1px;
+  height: 72px;
+  background: linear-gradient(180deg, transparent, rgba(255, 196, 0, 0.35) 30%, rgba(255, 196, 0, 0.35) 70%, transparent);
+  flex-shrink: 0;
+}
+
+.about-premium-dark-section .culture-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-premium-dark-section .culture-card-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  color: #FFC400;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.about-premium-dark-section .culture-card-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsividade Mobile e Tablet */
+@media (max-width: 992px) {
+  .about-premium-dark-section .about-culture-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-premium-dark-section .about-culture-block {
+    margin-top: 44px;
+  }
+
+  .about-premium-dark-section .about-culture-header {
+    margin-bottom: 28px;
+  }
+
+  .about-premium-dark-section .culture-card {
+    padding: 24px 22px;
+    gap: 18px;
+    border-radius: 18px;
+  }
+
+  .about-premium-dark-section .culture-card-icon-badge {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .about-premium-dark-section .culture-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .about-premium-dark-section .culture-card-divider {
+    height: 60px;
+  }
+
+  .about-premium-dark-section .culture-card-title {
+    font-size: 1.45rem;
+    margin-bottom: 6px;
+  }
+
+  .about-premium-dark-section .culture-card-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-premium-dark-section .culture-card {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .about-premium-dark-section .culture-card-icon-badge {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
+  .about-premium-dark-section .culture-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-premium-dark-section .culture-card-divider {
+    height: 50px;
+  }
+
+  .about-premium-dark-section .culture-card-title {
+    font-size: 1.35rem;
+  }
+
+  .about-premium-dark-section .culture-card-text {
+    font-size: 0.84rem;
+  }
+}
 
 /* ==========================================================================
    SEÇÃO OPORTUNIDADES — FAÇA PARTE DO GRUPO +B

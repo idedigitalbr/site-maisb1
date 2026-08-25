@@ -7,6 +7,18 @@ Sempre que interagir com servidores VPS remotos via SSH, Docker, Git ou transfer
 
 ---
 
+## 🚫 REGRA DE OURO INVIOLÁVEL: PROIBIÇÃO ABSOLUTA DE CROSS-DEPLOY (DEPLOY CRUZADO)
+**NUNCA subir, sincronizar, resetar ou compilar o código de um projeto dentro da pasta ou container de outro projeto.**
+1. **Validação Obrigatória do Repositório Git (`git remote -v` / `git remote get-url origin`)**:
+   - Antes de QUALQUER comando de `git fetch`, `git pull`, `git reset --hard`, `docker build` ou `docker compose up --build` na VPS, valide se o repositório remoto configurado na pasta do servidor corresponde **EXATA E ESTRITAMENTE** ao repositório GitHub do projeto atual (ex: `site-maisb1` deve apontar exclusivamente para `idedigitalbr/site-maisb1.git`; `site-maisb-supermercados` deve apontar para `idedigitalbr/site-maisb-supermercado.git`).
+   - Se o remote estiver apontando para outro projeto, **NÃO execute fetch/reset**. Corrija imediatamente o remote com `git remote set-url origin <URL_CORRETA>` antes de prosseguir.
+2. **Isolamento Total de Subdomínios, Containers e Pastas**:
+   - Cada site/projeto possui sua pasta isolada na VPS (`/opt/<projeto>-site/app`), seu próprio arquivo `docker-compose.yml`, seu container nomeado especificamente e suas próprias regras de rota no Traefik.
+   - NUNCA reaproveitar pastas de outros projetos.
+   - Sempre valide o hash do último commit (`git log -n 1 --oneline`) e o domínio vinculado após qualquer deploy.
+
+---
+
 ## Checklist Obrigatório Antes de Executar Alterações
 Antes de qualquer comando que modifique o estado da VPS, você deve validar os seguintes pontos:
 1. O projeto alvo foi claramente identificado?
