@@ -3178,6 +3178,13 @@
   pointer-events: none !important;
 }
 
+/* O ícone antigo usava preenchimento; o equivalente Lucide precisa permanecer vazado. */
+.locator-search-box .search-icon-svg.lucide {
+  display: block !important;
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
 /* Filtros de Pílula (1 Linha Horizontal 100% Fiel ao Print 2 enviado) */
 .gold-filter-pills-row {
   display: flex;
