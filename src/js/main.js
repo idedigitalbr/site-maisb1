@@ -1323,26 +1323,73 @@
 
     var arrowLeft = document.querySelector('.brands-nav-arrow.arrow-left');
     var arrowRight = document.querySelector('.brands-nav-arrow.arrow-right');
+    var arrowScrollSnapshot = null;
+
+    function navigateBrandFromArrow(brandId, direction) {
+      var preservedScrollX = arrowScrollSnapshot ? arrowScrollSnapshot.x : window.pageXOffset;
+      var preservedScrollY = arrowScrollSnapshot ? arrowScrollSnapshot.y : window.pageYOffset;
+      arrowScrollSnapshot = null;
+
+      stopAutoPlay();
+      goToBrand(brandId, true, direction);
+      startAutoPlay();
+
+      // A troca de card pode reposicionar o botão focado no Chromium. A navegação
+      // do slide não deve deslocar a posição que o usuário está lendo.
+      window.scrollTo({
+        left: preservedScrollX,
+        top: preservedScrollY,
+        behavior: 'auto'
+      });
+      requestAnimationFrame(function() {
+        if (Math.abs(window.pageYOffset - preservedScrollY) > 1) {
+          window.scrollTo({
+            left: preservedScrollX,
+            top: preservedScrollY,
+            behavior: 'auto'
+          });
+        }
+      });
+    }
+
+    function preventArrowFocusScroll(e) {
+      // O foco automático no mousedown reposiciona a página quando o card troca
+      // de altura. O teclado continua podendo focar e acionar as setas normalmente.
+      arrowScrollSnapshot = {
+        x: window.pageXOffset,
+        y: window.pageYOffset
+      };
+      e.preventDefault();
+    }
+
+    function captureArrowScroll() {
+      arrowScrollSnapshot = {
+        x: window.pageXOffset,
+        y: window.pageYOffset
+      };
+    }
 
     if (arrowLeft) {
+      arrowLeft.addEventListener('pointerdown', captureArrowScroll, { passive: true });
+      arrowLeft.addEventListener('mousedown', preventArrowFocusScroll);
       arrowLeft.addEventListener('click', function(e) {
+        e.preventDefault();
         e.stopPropagation();
         clearHubPause();
         var prevIndex = (currentIndex - 1 + BRANDS.length) % BRANDS.length;
-        stopAutoPlay();
-        goToBrand(BRANDS[prevIndex], true, 'prev');
-        startAutoPlay();
+        navigateBrandFromArrow(BRANDS[prevIndex], 'prev');
       });
     }
 
     if (arrowRight) {
+      arrowRight.addEventListener('pointerdown', captureArrowScroll, { passive: true });
+      arrowRight.addEventListener('mousedown', preventArrowFocusScroll);
       arrowRight.addEventListener('click', function(e) {
+        e.preventDefault();
         e.stopPropagation();
         clearHubPause();
         var nextIndex = (currentIndex + 1) % BRANDS.length;
-        stopAutoPlay();
-        goToBrand(BRANDS[nextIndex], true, 'next');
-        startAutoPlay();
+        navigateBrandFromArrow(BRANDS[nextIndex], 'next');
       });
     }
 

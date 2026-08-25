@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="skeleton-content">
           <div class="skeleton-line w-40"></div>
           <div class="skeleton-line w-90"></div>
-          <div class="skeleton-line w-70"></div>
         </div>
       </div>
       <div class="skeleton-card">
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="skeleton-content">
           <div class="skeleton-line w-40"></div>
           <div class="skeleton-line w-90"></div>
-          <div class="skeleton-line w-70"></div>
         </div>
       </div>
       <div class="skeleton-card">
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="skeleton-content">
           <div class="skeleton-line w-40"></div>
           <div class="skeleton-line w-90"></div>
-          <div class="skeleton-line w-70"></div>
         </div>
       </div>
     `;
@@ -68,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 loading="lazy" 
                 onerror="this.src='./assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png'"
               />
-              <span class="news-card-badge">${escapeHtml(item.category)}</span>
             </a>
             <div class="news-card-body">
               <div class="news-card-meta">
@@ -81,20 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   </svg>
                   ${item.formattedDate}
                 </span>
-                <span>•</span>
-                <span>${item.readingTime}</span>
               </div>
               <h3 class="news-card-title">
                 <a href="${item.url}">${escapeHtml(item.title)}</a>
               </h3>
-              <p class="news-card-excerpt">${escapeHtml(item.excerpt)}</p>
-              <a href="${item.url}" class="news-card-link-action">
-                Ler matéria completa
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
             </div>
           </article>
         `;

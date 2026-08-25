@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Header da Matéria -->
         <header class="article-header">
-          <span class="article-category-tag">${escapeHtml(noticia.category)}</span>
           <h1 class="article-main-title">${escapeHtml(noticia.title)}</h1>
           ${noticia.excerpt ? `<p class="article-lead-excerpt">${escapeHtml(noticia.excerpt)}</p>` : ''}
           
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
               class="btn-share btn-share-whatsapp"
               aria-label="Compartilhar no WhatsApp"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.802 0-3.486-.481-4.945-1.32l-5.055 1.322 1.348-4.927c-.945-1.521-1.503-3.32-1.503-5.075 0-5.514 4.486-10 10-10s10 4.486 10 10z"/></svg>
+              <i data-lucide="message-circle" aria-hidden="true"></i>
               WhatsApp
             </a>
             <a 
@@ -175,6 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
+
+      if (window.refreshLucideIcons) {
+        window.refreshLucideIcons(articleContentContainer);
+      }
 
       // Event listener do botão copiar link
       const copyBtn = document.getElementById('btn-copy-link');
@@ -247,20 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="news-card-body">
               <div class="news-card-meta">
                 <span>${item.formattedDate}</span>
-                <span>•</span>
-                <span>${item.readingTime}</span>
               </div>
               <h3 class="news-card-title">
                 <a href="${item.url}">${escapeHtml(item.title)}</a>
               </h3>
-              <p class="news-card-excerpt">${escapeHtml(item.excerpt)}</p>
-              <a href="${item.url}" class="news-card-link-action">
-                Ler matéria completa
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
             </div>
           </article>
         `;

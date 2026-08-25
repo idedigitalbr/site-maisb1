@@ -72,7 +72,6 @@ body.theme-holding #linha-tempo.trajetoria-section {
   padding: 8px;
   box-shadow:
     0 0 0 1px rgba(230, 168, 0, 0.2),
-    0 0 25px rgba(230, 168, 0, 0.45),
     0 15px 45px rgba(0, 0, 0, 0.15);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -405,7 +404,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 .trajetoria-node:hover .trajetoria-node-dot {
   background-color: #c9b898;
-  box-shadow: 0 0 0 2px rgba(217, 154, 0, 0.4);
+  box-shadow: 0 0 0 2px #d9c49a;
   transform: scale(1.15);
 }
 
@@ -418,7 +417,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 .trajetoria-node.active .trajetoria-node-dot {
   background-color: var(--red);
   border-color: #faf8f4;
-  box-shadow: 0 0 0 2px #d99a00, 0 0 10px rgba(217, 154, 0, 0.4);
+  box-shadow: 0 0 0 2px #d99a00;
   transform: scale(1.3);
 }
 
@@ -449,7 +448,6 @@ body.theme-holding #linha-tempo.trajetoria-section {
   border-color: #d99a00;
   background: linear-gradient(145deg, #e0d3be, #c8b89a);
   box-shadow:
-    0 0 15px rgba(217, 154, 0, 0.5),
     0 6px 20px rgba(21, 17, 11, 0.12);
   transform: translateY(-4px) scale(1.05);
 }

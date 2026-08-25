@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/css/main.css?v=12.2" />
+  <link rel="stylesheet" href="./src/css/main.css?v=12.7" />
 
   <!-- Script de Fallback Automático de Imagens -->
   <script>
@@ -56,7 +56,7 @@
     }, true);
   </script>
 </head>
-<body class="theme-holding">
+<body class="theme-holding news-list-page-theme">
 
   <!-- CABEÇALHO INSTITUCIONAL -->
   <header class="site-header" id="topo">
@@ -133,10 +133,7 @@
         <!-- Campo de Pesquisa + Contador -->
         <div class="news-search-and-stats">
           <div class="news-search-box">
-            <svg class="news-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
+            <i data-lucide="search" class="news-search-icon" width="18" height="18" aria-hidden="true"></i>
             <input 
               type="text" 
               id="news-search-input" 
@@ -267,7 +264,14 @@
           <!-- Coluna Direita: Mapa -->
           <div class="store-right-col">
             <div class="gold-map-wrapper">
-              <div id="teaser-unidades-map" class="panel-map"></div>
+              <iframe
+                id="teaser-google-map-embed"
+                title="Mapa das unidades Supermercados +B"
+                src="https://www.google.com/maps?q=Supermercados+Mais+B+Bel%C3%A9m+PA&output=embed"
+                style="display:block;width:100%;height:100%;border:0;"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -318,7 +322,7 @@
   <script src="./src/data/brands.js" defer></script>
   <script src="./src/data/units.js?v=10.0" defer></script>
   <script src="./src/js/sanity-client.js?v=1.0" defer></script>
-  <script src="./src/js/noticias-page.js?v=1.0" defer></script>
+  <script src="./src/js/noticias-page.js?v=1.1" defer></script>
   <script src="./src/js/unidades.js?v=10.0" defer></script>
   <script src="./src/js/main.js?v=9.4" defer></script>
 </body>

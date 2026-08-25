@@ -1565,7 +1565,8 @@
 
 .brands-nav-arrow {
   position: absolute !important;
-  top: 50% !important;
+  /* A navegação acompanha a galeria, não o corpo do card onde o logo fica sobreposto. */
+  top: 110px !important;
   transform: translateY(-50%) !important;
   width: 44px !important;
   height: 44px !important;
@@ -1615,19 +1616,19 @@
 }
 
 .brands-nav-arrow.arrow-left {
-  left: -22px !important;
+  left: 10px !important;
 }
 
 .brands-nav-arrow.arrow-right {
-  right: -22px !important;
+  right: 10px !important;
 }
 
 @media (max-width: 1280px) {
   .brands-nav-arrow.arrow-left {
-    left: -14px !important;
+    left: 10px !important;
   }
   .brands-nav-arrow.arrow-right {
-    right: -14px !important;
+    right: 10px !important;
   }
 }
 
