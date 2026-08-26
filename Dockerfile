@@ -16,6 +16,10 @@ FROM node:22-alpine AS runner
 
 WORKDIR /app
 ENV NODE_ENV=production
+# Next standalone uses HOSTNAME as its bind address when it is present. Docker
+# injects the container hostname automatically, so force an address reachable
+# by the reverse proxy and the container network.
+ENV HOSTNAME=0.0.0.0
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
