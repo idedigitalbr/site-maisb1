@@ -40,7 +40,8 @@
 .admin-shell .admin-table-row:hover { background: #fbfaf7; }
 .admin-shell .admin-table-row td { vertical-align: middle; }
 .admin-shell .admin-table-row img { flex: 0 0 auto; }
-.admin-shell .admin-sidebar nav a { min-height: 38px; }
+.admin-shell .admin-sidebar nav a { min-height: 48px; }
+.admin-shell .admin-sidebar-icon { display: block; width: 21px !important; height: 21px !important; flex: 0 0 21px; }
 .admin-shell .admin-table-row td:first-child > div > :first-child { width: 56px; height: 56px; flex: 0 0 56px; }
 .admin-shell .admin-table-row td:first-child > div > img { object-fit: cover; }
 .admin-shell .admin-table-row td:nth-child(3) > div { gap: 0.375rem; }

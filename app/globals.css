@@ -148,13 +148,8 @@ body:has(#next-page-content > .admin-shell) > .wf-modal { display: none; }
 .links-fullscreen-modal iframe { width: 100%; height: 100%; border: 0; background: #070709; }
 .btn-card-primary, .btn-card-secondary, .btn-trabalhe-card, .btn-news-all, .btn-unit-ver-mais, .btn-share, .btn-link, .social-icon-btn { display: inline-flex; align-items: center; gap: 8px; }
 .btn-card-primary .lucide, .btn-card-secondary .lucide, .btn-trabalhe-card .lucide, .btn-news-all .lucide, .btn-unit-ver-mais .lucide, .btn-share .lucide, .btn-link .lucide, .social-icon-btn .lucide { flex: 0 0 auto; }
-.unit-card-select { display: flex; width: 100%; align-items: stretch; gap: 12px; border: 0; padding: 0 132px 0 0; background: transparent; color: inherit; text-align: left; font: inherit; cursor: pointer; }
-.unit-card-select:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; border-radius: 10px; }
-.unit-card-select .unit-card-info { flex: 1 1 auto; min-width: 0; }
-.unit-card-select .unit-card-thumb { flex: 0 0 auto; }
-.unit-card-select img { display: block; }
 .gold-unit-card { position: relative; }
-.gold-unit-card > .store-card-footer { position: absolute; right: 16px; bottom: 14px; z-index: 1; width: auto; }
+.gold-unit-card:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
 .brands-orbit-box .network-node { border: 0; padding: 0; background: transparent; font: inherit; color: inherit; }
 .article-rich-html { color: #8e8780; font-family: "DM Sans", Arial, sans-serif; font-size: 16.32px; line-height: 1.65; }
 .article-rich-html p { margin: 0 0 24px; }
