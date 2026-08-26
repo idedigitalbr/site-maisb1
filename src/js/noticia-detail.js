@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSkeletonArticle();
 
     try {
-      if (!window.SanityNewsClient) {
+      if (!window.SiteContentClient) {
         renderNotFound('Sistema de notícias não inicializado.');
         return;
       }
 
-      const noticia = await window.SanityNewsClient.fetchNoticiaBySlug(slug);
+      const noticia = await window.SiteContentClient.fetchNoticiaBySlug(slug);
 
       if (!noticia) {
         renderNotFound('A matéria solicitada não foi encontrada ou pode ter sido removida.');
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!relatedContainer || !relatedSection) return;
 
     try {
-      const related = await window.SanityNewsClient.fetchRelatedNoticias(currentSlug, category, 3);
+      const related = await window.SiteContentClient.fetchRelatedNoticias(currentSlug, category, 3);
       if (!related || related.length === 0) {
         relatedSection.style.display = 'none';
         return;

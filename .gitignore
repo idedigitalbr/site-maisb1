@@ -17,9 +17,18 @@ Thumbs.db
 # Dependências futuras
 node_modules/
 
+# Next.js
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+
 # Builds futuros
 dist/
 build/
 
 # Pastas locais pesadas ignoradas
 assets-nao-usados/
+
+# Uploads gerados pelo CMS em ambiente local
+public/uploads/

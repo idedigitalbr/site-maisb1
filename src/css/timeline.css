@@ -362,8 +362,19 @@ body.theme-holding #linha-tempo.trajetoria-section {
   flex: 1;
   cursor: pointer;
   text-align: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
   padding: 0 4px;
   min-width: 55px;
+  appearance: none;
+}
+
+.trajetoria-node:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+  border-radius: 12px;
 }
 
 /* Ano no nó */

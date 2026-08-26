@@ -42,7 +42,7 @@ The audit baseline is: Next.js 16.3.2, React 19.2.8, TypeScript 5.8.3, Tailwind 
 
 Success means:
 
-- `/`, `/sobre-nos`, `/noticias`, `/noticias/[slug]`, `/links`, `/mapinha`, `/admin/login`, `/admin/posts`, `/admin/posts/new`, `/admin/posts/[id]`, and `/admin/settings` retain their current behavior and load without console-breaking errors;
+- `/`, `/sobre-nos`, `/noticias`, `/noticias/[slug]`, `/links`, `/admin/login`, `/admin/posts`, `/admin/posts/new`, `/admin/posts/[id]`, and `/admin/settings` retain their current behavior and load without console-breaking errors;
 - public Next.js screenshots at desktop and mobile widths visibly match the legacy reference for section order, typography, colors, spacing, controls, cards, map, video, brand orbit, and footer;
 - the static legacy pages remain unchanged in behavior after each migration slice;
 - shared units have one typed source consumed by the map and footer;

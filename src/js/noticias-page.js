@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSkeletons(6);
 
     try {
-      if (!window.SanityNewsClient) {
-        gridContainer.innerHTML = `<div class="news-empty-state"><p class="news-empty-desc">Erro: Cliente Sanity não carregado.</p></div>`;
+      if (!window.SiteContentClient) {
+        gridContainer.innerHTML = `<div class="news-empty-state"><p class="news-empty-desc">Erro: cliente de conteúdo não carregado.</p></div>`;
         return;
       }
 
-      const response = await window.SanityNewsClient.fetchNoticiasList({
+      const response = await window.SiteContentClient.fetchNoticiasList({
         category: state.category,
         search: state.search,
         page: state.page,

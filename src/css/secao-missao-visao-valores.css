@@ -2,7 +2,6 @@
    Estilos da Seção Missão, Visão e Valores (Cultura)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap');
 
 /* Bloco Missão e Visão (Cultura) - Dark Glassmorphism */
 .about-culture-block {
@@ -271,15 +270,15 @@
 }
 
 .mvv-card.card-missao .mvv-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-MISSAO.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-MISSAO.webp');
 }
 
 .mvv-card.card-visao .mvv-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VISAO.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VISAO.webp');
 }
 
 .mvv-card.card-valores .mvv-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VALORES.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VALORES.webp');
 }
 
 /* Gradiente Radial Concentrado Exclusivamente Atrás do Texto */

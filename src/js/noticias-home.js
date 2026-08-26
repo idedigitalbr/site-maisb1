@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     try {
-      if (!window.SanityNewsClient) {
-        console.warn('[Notícias Home] SanityNewsClient não encontrado.');
+      if (!window.SiteContentClient) {
+        console.warn('[Notícias Home] SiteContentClient não encontrado.');
         return;
       }
 
-      const noticias = await window.SanityNewsClient.fetchLatestNoticias(3);
+      const noticias = await window.SiteContentClient.fetchLatestNoticias(3);
 
       if (!noticias || noticias.length === 0) {
         container.innerHTML = `

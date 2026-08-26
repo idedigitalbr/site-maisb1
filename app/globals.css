@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+@import '../src/css/tokens.css';
+@import '../src/css/base.css';
+@import '../src/css/header.css';
+@import '../src/css/hero.css';
+@import '../src/css/sections.css';
+@import '../src/css/secao-missao-visao-valores.css';
+@import '../src/css/brands.css';
+@import '../src/css/work-units-footer.css';
+@import '../src/css/components.css';
+@import '../src/css/brand-pages.css';
+@import '../src/css/links.css';
+@import '../src/css/timeline.css';
+@import '../src/css/album.css';
+@import '../src/css/noticias.css';
+@import '../src/css/responsive.css';
+@import '../src/css/lucide.css';
+
+/* O layout raiz mantém o rodapé montado durante o loading de uma rota. Evita
+   que o localizador de unidades pareça ser o conteúdo temporário do post. */
+body:has(.site-route-loading) .footer { display: none; }
+
+/* O reveal é CSS-only no Next para não alterar atributos durante a hidratação. */
+.reveal { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: next-reveal-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+}
+@keyframes next-reveal-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  --next-gold: var(--color-yellow);
+  --color-page: var(--color-white);
+  --color-surface: #FFFFFF;
+  --color-surface-soft: var(--color-off-white);
+  --color-surface-inverse: var(--color-black);
+  --color-surface-inverse-soft: var(--color-charcoal);
+  --color-text: var(--color-black);
+  --color-text-inverse: var(--color-white);
+  --color-text-muted: var(--color-gray-medium);
+  --color-border: var(--color-gray-light);
+  --color-border-inverse: var(--line);
+  --color-primary: var(--color-yellow);
+  --color-primary-hover: #B48838;
+  --color-focus: #C49A45;
+  --color-success: #237A4A;
+  --color-warning: #A87516;
+  --color-danger: #9F342D;
+  --radius-control: 12px;
+  --radius-panel: 16px;
+  --radius-section: 28px;
+  --shadow-panel: 0 8px 30px rgba(18, 14, 14, 0.05);
+}
+
+/* Ponto de luz global usado pelo site legado nas áreas escuras. */
+#cursor-glow {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  background: radial-gradient(circle,
+    rgba(255, 196, 0, 0.13) 0%,
+    rgba(255, 196, 0, 0.055) 40%,
+    rgba(255, 196, 0, 0) 70%);
+  transform: translate3d(-999px, -999px, 0) translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+/* Efeitos de luz declarativos: evitam alterar a árvore React durante a hidratação. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: var(--cursor-glow-opacity, 0);
+  background: radial-gradient(circle,
+    rgba(255, 196, 0, 0.13) 0%,
+    rgba(255, 196, 0, 0.055) 40%,
+    rgba(255, 196, 0, 0) 70%);
+  transform: translate3d(var(--cursor-x, -999px), var(--cursor-y, -999px), 0) translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.brands-black-block,
+.footer,
+.dark-slice,
+.diretrizes-neon-section {
+  --mouse-x: -999px;
+  --mouse-y: -999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-black-block::after,
+.footer::after,
+.dark-slice::after,
+.diretrizes-neon-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  background: radial-gradient(450px circle at var(--mouse-x) var(--mouse-y), rgba(255, 196, 0, 0.16) 0%, rgba(242, 13, 24, 0.05) 50%, transparent 80%);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  mix-blend-mode: screen;
+}
+
+.brands-black-block:hover::after,
+.footer:hover::after,
+.dark-slice:hover::after,
+.diretrizes-neon-section:hover::after { opacity: 1; }
+
+.main-menu.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+.news-card-thumb-wrap { display: block; }
+.news-card-thumb { width: 100%; aspect-ratio: 1.65; object-fit: cover; }
+.news-card-title a { color: inherit; }
+.news-card-meta { min-height: 20px; }
+.card-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.card-actions a { text-decoration: none; }
+.locator-empty-state { color: var(--color-gray-medium); padding: 20px 0; }
+.locator-empty-action { margin-top: 10px; border: 1px solid var(--color-focus); border-radius: 8px; padding: 8px 12px; color: var(--color-primary); background: transparent; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.locator-empty-action:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.gold-map-wrapper iframe { display: block; width: 100%; height: 100%; min-height: 480px; border: 0; }
+body.links-page-body .site-header, body.links-page-body > main, body.links-page-body .footer { display: none; }
+body.admin-page-body { background: #f7f5f1; }
+body.admin-page-body > .site-header, body.admin-page-body > .footer { display: none; }
+/* Oculta o chrome público no primeiro paint do admin, antes da hidratação aplicar a classe do body. */
+body:has(#next-page-content > .admin-shell) { background: #f7f5f1; }
+body:has(#next-page-content > .admin-shell) > .site-header,
+body:has(#next-page-content > .admin-shell) > .footer,
+body:has(#next-page-content > .admin-shell) > .wf-modal-overlay,
+body:has(#next-page-content > .admin-shell) > .wf-modal { display: none; }
+.links-fullscreen-modal iframe { width: 100%; height: 100%; border: 0; background: #070709; }
+.btn-card-primary, .btn-card-secondary, .btn-trabalhe-card, .btn-news-all, .btn-unit-ver-mais, .btn-share, .btn-link, .social-icon-btn { display: inline-flex; align-items: center; gap: 8px; }
+.btn-card-primary .lucide, .btn-card-secondary .lucide, .btn-trabalhe-card .lucide, .btn-news-all .lucide, .btn-unit-ver-mais .lucide, .btn-share .lucide, .btn-link .lucide, .social-icon-btn .lucide { flex: 0 0 auto; }
+.unit-card-select { display: flex; width: 100%; align-items: stretch; gap: 12px; border: 0; padding: 0 132px 0 0; background: transparent; color: inherit; text-align: left; font: inherit; cursor: pointer; }
+.unit-card-select:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; border-radius: 10px; }
+.unit-card-select .unit-card-info { flex: 1 1 auto; min-width: 0; }
+.unit-card-select .unit-card-thumb { flex: 0 0 auto; }
+.unit-card-select img { display: block; }
+.gold-unit-card { position: relative; }
+.gold-unit-card > .store-card-footer { position: absolute; right: 16px; bottom: 14px; z-index: 1; width: auto; }
+.brands-orbit-box .network-node { border: 0; padding: 0; background: transparent; font: inherit; color: inherit; }
+.article-rich-html { color: #8e8780; font-family: "DM Sans", Arial, sans-serif; font-size: 16.32px; line-height: 1.65; }
+.article-rich-html p { margin: 0 0 24px; }
+.article-rich-html h2, .article-rich-html h3 { color: #120e0e; font-family: "DM Serif Display", Georgia, serif; margin: 44px 0 20px; line-height: 1.25; }
+.article-rich-html h2 { border-bottom: 1px solid rgba(200,146,35,.3); padding-bottom: 12px; font-size: 32px; }
+.article-rich-html h3 { font-size: 25px; }
+.article-rich-html blockquote { margin: 36px 0; padding: 24px 32px; border-left: 4px solid #c89223; border-radius: 0 14px 14px 0; background: #fff4d6; color: #6f4f0f; font-family: "DM Serif Display", Georgia, serif; font-size: 21.6px; }
+.article-rich-html img { max-width: 100%; border-radius: 14px; }
+.article-gallery { margin: 48px 0; }
+.article-gallery-title { margin: 0 0 20px; color: #120e0e; font-family: "DM Serif Display", Georgia, serif; font-size: 32px; line-height: 1.2; }
+.article-gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.article-gallery-item { overflow: hidden; margin: 0; border: 1px solid #e7d8b4; border-radius: 14px; background: #fff4d6; }
+.article-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.article-gallery-item figcaption { padding: 10px 14px 12px; color: #6f4f0f; font-size: 14px; line-height: 1.4; }
+@media (max-width: 640px) { .article-gallery-grid { grid-template-columns: 1fr; } }

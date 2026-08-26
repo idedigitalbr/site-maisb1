@@ -999,16 +999,16 @@ body.theme-holding .diretrizes-neon-section::before {
 
 /* Card-specific background images */
 .neon-card.card-missao .neon-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-MISSAO.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-MISSAO.webp');
 }
 
 .neon-card.card-visao .neon-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VISAO.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VISAO.webp');
   background-position: center;
 }
 
 .neon-card.card-valores .neon-card-bg {
-  background-image: url('../../assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VALORES.webp');
+  background-image: url('/assets/Paginas (Imagens)/Sobre Nós/S3 MISSAO VISAO VALORES/BG-FOTO-VALORES.webp');
   background-position: center right;
 }
 
