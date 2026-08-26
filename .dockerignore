@@ -1,0 +1,16 @@
+.git
+.github
+.next
+node_modules
+.env*
+!.env.example
+public/uploads
+src
+sanity
+docs
+.superdesign
+*.log
+*.zip
+*.sql
+*.sqlite
+*.sqlite3

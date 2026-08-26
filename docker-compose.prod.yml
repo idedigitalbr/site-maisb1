@@ -1,0 +1,66 @@
+name: grupomaisb-site
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: grupomaisb-site-db
+    restart: unless-stopped
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - grupomaisb-db-data:/var/lib/mysql
+    networks:
+      - app
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: grupomaisb-site
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app
+      - proxy
+    volumes:
+      - grupomaisb-uploads:/app/public/uploads
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: proxy
+      traefik.http.routers.grupomaisb.rule: Host(`grupomaisb.suporteide.digital`)
+      traefik.http.routers.grupomaisb.entrypoints: websecure
+      traefik.http.routers.grupomaisb.tls: "true"
+      traefik.http.routers.grupomaisb.tls.certresolver: letsencrypt
+      traefik.http.services.grupomaisb.loadbalancer.server.port: "3000"
+
+networks:
+  app:
+    name: grupomaisb-site-internal
+  proxy:
+    external: true
+
+volumes:
+  grupomaisb-db-data:
+    name: grupomaisb-site-db-data
+  grupomaisb-uploads:
+    name: grupomaisb-site-uploads
