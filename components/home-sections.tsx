@@ -100,7 +100,7 @@ export function AboutInstitutional() {
 
       <div className="container about-container">
         <div className="about-main-grid">
-          <div className="about-content-col reveal">
+          <div className="about-content-col">
             <span className="eyebrow-gold">SOBRE O GRUPO</span>
             <h2 className="about-headline">
               O <span className="headline-highlight-italic">Grupo Mais Barato</span><br />
@@ -115,7 +115,7 @@ export function AboutInstitutional() {
             <div className="gold-accent-line" />
           </div>
 
-          <div className="about-photo-col reveal delay-1">
+          <div className="about-photo-col">
             <div className="about-photo-wrapper">
               <img
                 src={asset('Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png')}
@@ -127,7 +127,7 @@ export function AboutInstitutional() {
           </div>
         </div>
 
-        <div className="about-metrics-grid reveal">
+        <div className="about-metrics-grid">
           {metrics.map(([number, description]) => (
             <div className="metric-card" key={number}>
               <div className="metric-content">
@@ -140,7 +140,7 @@ export function AboutInstitutional() {
           ))}
         </div>
 
-        <div className="about-culture-block reveal delay-1">
+        <div className="about-culture-block">
           <div className="about-culture-header">
             <span className="eyebrow-gold">CULTURA</span>
             <h3 className="about-culture-title">

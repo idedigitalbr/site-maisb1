@@ -20,6 +20,17 @@
    que o localizador de unidades pareça ser o conteúdo temporário do post. */
 body:has(.site-route-loading) .footer { display: none; }
 
+/* Subtítulo da seção Nossas Marcas sem caixa/fundo */
+.brands-subtitle-badge-wrapper {
+  display: block;
+  max-width: 680px;
+  margin: 0 auto;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
 /* O reveal é CSS-only no Next para não alterar atributos durante a hidratação. */
 .reveal { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: no-preference) {
