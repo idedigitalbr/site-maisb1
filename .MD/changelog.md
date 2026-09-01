@@ -1,5 +1,9 @@
 # Changelog
 
+- **Padronização do Botão "Ver Todas as Notícias" com o Design System**:
+  - **Alinhamento Visual com os Demais CTAs**: Substituído o formato pill oval/amarelo (`border-radius: 999px`) do botão `.btn-news-all` pelo padrão oficial institucional do Design System (`border-radius: 8px`, fundo escuro `#111111`, tipografia refinada em caixa alta e hover dourado `#B58729` com transição suave da seta).
+  - **Invalidação de Cache**: Atualizada a versão em [src/css/main.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/main.css) (`noticias.css?v=12.8`) e em todos os arquivos HTML (`main.css?v=13.5`).
+
 - **Correção da Quebra de Linha na Seção Trabalhe Conosco**:
   - **Eliminação de Letra Órfã/Viúva**: Corrigida a quebra de linha da headline (`.trabalhe-card-headline`) para `Construa sua história<br>com o Grupo Mais Barato.`, garantindo simetria perfeita em duas linhas equilibradas e eliminando a letra "o" isolada em linha única.
   - **Proteção Tipográfica Responsiva**: Aplicado `text-wrap: balance` e `white-space: nowrap` (no destaque de marca em desktop/tablet) com liberação fluida no mobile em [src/css/sections.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/sections.css).

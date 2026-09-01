@@ -2995,14 +2995,15 @@ textarea.form-control {
    ========================================================================== */
 .about-premium-dark-section {
   position: relative;
-  background-color: #0d0d12 !important;
-  border: 1px solid rgba(255, 196, 0, 0.15) !important;
+  background-color: #0b0c10 !important;
+  border: 1px solid rgba(255, 196, 0, 0.18) !important;
+  border-radius: 28px !important;
   box-shadow: 
     0 0 0 1px rgba(255, 196, 0, 0.05),
-    0 12px 36px rgba(0, 0, 0, 0.22), 
+    0 16px 44px rgba(0, 0, 0, 0.4), 
     inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
   margin-bottom: 48px !important;
-  padding: 60px 0;
+  padding: 64px 0 60px;
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
   color: #E0E0E6;
@@ -3021,7 +3022,7 @@ textarea.form-control {
   right: -60px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(230, 160, 0, 0.25) 0%, rgba(242, 101, 34, 0.08) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(230, 160, 0, 0.22) 0%, rgba(242, 101, 34, 0.06) 50%, transparent 80%);
 }
 
 .about-premium-dark-section .glow-dark-center-photo {
@@ -3035,7 +3036,7 @@ textarea.form-control {
   right: 12%;
   width: 550px;
   height: 450px;
-  background: radial-gradient(circle, rgba(255, 170, 0, 0.2) 0%, rgba(242, 101, 34, 0.08) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(255, 170, 0, 0.18) 0%, rgba(242, 101, 34, 0.06) 50%, transparent 75%);
   animation-delay: -3s;
 }
 
@@ -3050,7 +3051,7 @@ textarea.form-control {
   left: -80px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(217, 26, 42, 0.08) 0%, rgba(230, 160, 0, 0.12) 50%, transparent 80%);
+  background: radial-gradient(circle, rgba(217, 26, 42, 0.06) 0%, rgba(230, 160, 0, 0.1) 50%, transparent 80%);
   animation-delay: -5s;
 }
 
@@ -3078,7 +3079,7 @@ textarea.form-control {
   z-index: 2;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  mix-blend-mode: screen; /* Brilho screen por padrão em fundos pretos */
+  mix-blend-mode: screen;
 }
 
 .about-premium-dark-section:hover .about-mouse-spotlight,
@@ -3094,58 +3095,31 @@ textarea.form-control {
   z-index: 3;
 }
 
-/* Tag Pill */
-.about-premium-dark-section .about-pill-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #FFC400 0%, #E69A00 100%);
-  border: none;
-  border-radius: 999px;
-  padding: 5px 16px 5px 6px;
-  box-shadow: 0 4px 15px rgba(230, 154, 0, 0.25);
-  margin-bottom: 14px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-premium-dark-section .about-pill-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(230, 154, 0, 0.35);
-}
-
-.about-premium-dark-section .pill-icon-wrapper {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #0A0A0C;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Eyebrow Gold */
+.about-premium-dark-section .eyebrow-gold {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   color: #FFC400;
-  box-shadow: none;
-}
-
-.about-premium-dark-section .pill-text {
-  color: #0A0A0C;
-  font-weight: 900;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 14px;
 }
 
-/* Textos */
+/* Textos e Headline */
 .about-premium-dark-section .about-headline {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
   font-weight: 700;
   line-height: 1.2;
   color: #ffffff;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .about-premium-dark-section .headline-highlight-italic {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'DM Serif Display', Georgia, serif;
   font-style: italic;
   font-weight: 400;
   color: #C49A45;
@@ -3154,25 +3128,25 @@ textarea.form-control {
 .about-premium-dark-section .about-paragraphs p {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
   margin-bottom: 16px;
-  max-width: 520px;
+  max-width: 540px;
 }
 
 .about-premium-dark-section .about-paragraphs p.about-mid-text,
 .about-premium-dark-section .about-mid-text {
   font-family: 'DM Sans', sans-serif;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #C49A45;
-  margin-bottom: 14px;
-  max-width: 520px;
+  margin-bottom: 16px;
+  max-width: 540px;
 }
 
 .about-premium-dark-section .gold-accent-line {
-  width: 54px;
+  width: 52px;
   height: 3px;
   background-color: #C49A45;
   border-radius: 2px;
@@ -3182,18 +3156,27 @@ textarea.form-control {
 /* Photo Frame & Glows */
 .about-premium-dark-section .about-photo-wrapper {
   position: relative;
-  border-radius: 26px;
+  border-radius: 24px;
   padding: 8px;
   background: rgba(20, 20, 25, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid rgba(255, 215, 130, 0.35);
-  box-shadow: 0 0 40px rgba(230, 160, 0, 0.18), 0 20px 40px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.4s ease;
+  box-shadow: 0 0 35px rgba(230, 160, 0, 0.15), 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .about-premium-dark-section .about-photo-wrapper:hover {
-  box-shadow: 0 0 50px rgba(230, 160, 0, 0.28), 0 25px 45px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 215, 130, 0.55);
+  box-shadow: 0 0 45px rgba(230, 160, 0, 0.25), 0 25px 45px rgba(0, 0, 0, 0.55);
+}
+
+.about-premium-dark-section .about-team-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  object-fit: cover;
 }
 
 /* Efeito Premium de Sweep/Brilho Dourado Superior na Foto */
@@ -3275,15 +3258,8 @@ textarea.form-control {
   text-shadow: none !important;
 }
 /* ==========================================================================
-   Valores e Métricas - Minimalismo Premium (Fiel ao Print 3)
+   Valores e Métricas - Minimalismo Premium
    ========================================================================== */
-
-/* Esconde headers pesados e redundantes */
-.values-mobile-intro,
-.metrics-mobile-intro,
-.values-mobile-card-header {
-  display: none !important;
-}
 
 /* Linha de Valores e Métricas (Open Row com divisores finos e linha de topo) */
 .about-premium-dark-section .about-values-banner,
@@ -3293,9 +3269,9 @@ textarea.form-control {
   gap: 0 !important;
   background: transparent !important;
   border: none !important;
-  border-top: 1px solid rgba(255, 196, 0, 0.25) !important;
-  padding-top: 36px !important;
-  margin-top: 48px !important;
+  border-top: 1px solid rgba(255, 196, 0, 0.22) !important;
+  padding-top: 42px !important;
+  margin-top: 54px !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -3306,7 +3282,7 @@ textarea.form-control {
   background: transparent !important;
   border: none !important;
   border-left: 1px solid rgba(255, 196, 0, 0.2) !important;
-  padding: 0 24px !important;
+  padding: 0 28px !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -3332,34 +3308,6 @@ textarea.form-control {
   transform: translateY(-3px);
 }
 
-/* Oculta ícones e barras de sotaque para manter 100% o estilo minimalista do Print 3 */
-.about-premium-dark-section .value-icon-box,
-.about-premium-dark-section .metric-icon-box,
-.about-premium-dark-section .value-accent-line,
-.about-premium-dark-section .metric-accent-line {
-  display: none !important;
-}
-
-/* Títulos de Valores */
-.about-premium-dark-section .value-title {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.12em !important;
-  color: #FFC400 !important;
-  margin: 0 0 6px 0 !important;
-  text-transform: uppercase;
-}
-
-/* Descrição de Valores */
-.about-premium-dark-section .value-desc {
-  font-size: 0.85rem !important;
-  line-height: 1.5 !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  margin: 0 !important;
-  font-weight: 400 !important;
-}
-
 /* Estrutura dos Números / Métricas */
 .about-premium-dark-section .metric-content {
   display: flex !important;
@@ -3372,31 +3320,22 @@ textarea.form-control {
   display: flex !important;
   align-items: baseline !important;
   gap: 6px !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 8px !important;
 }
 
 .about-premium-dark-section .num-gold {
   font-family: 'DM Sans', sans-serif !important;
-  font-size: clamp(2.2rem, 3.2vw, 3rem) !important;
+  font-size: clamp(2.4rem, 3.4vw, 3.2rem) !important;
   font-weight: 700 !important;
   color: #ffffff !important;
   line-height: 1 !important;
   letter-spacing: -0.02em !important;
 }
 
-.about-premium-dark-section .label-gold {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 700 !important;
-  color: #FFC400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-}
-
 .about-premium-dark-section .metric-desc {
-  font-size: 0.85rem !important;
-  line-height: 1.5 !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
   margin: 0 !important;
   font-weight: 400 !important;
 }
@@ -3406,9 +3345,9 @@ textarea.form-control {
   .about-premium-dark-section .about-values-banner,
   .about-premium-dark-section .about-metrics-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 24px 0 !important;
-    padding-top: 28px !important;
-    margin-top: 36px !important;
+    gap: 28px 0 !important;
+    padding-top: 32px !important;
+    margin-top: 40px !important;
   }
 
   .about-premium-dark-section .value-block,

@@ -63,34 +63,38 @@
 .btn-news-all {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 14px 28px;
-  background: transparent;
-  color: var(--color-yellow, #c89223);
-  border: 1px solid var(--color-yellow, #c89223);
-  border-radius: 999px;
-  font-family: var(--font-primary, 'DM Sans', sans-serif);
-  font-size: 0.9rem;
+  background-color: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 8px;
+  font-family: var(--font-primary, 'Outfit', 'DM Sans', sans-serif);
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(200, 146, 35, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .btn-news-all:hover {
-  background: var(--color-yellow, #c89223);
-  color: #120e0e;
+  background-color: #B58729;
+  border-color: #B58729;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(200, 146, 35, 0.25);
+  box-shadow: 0 8px 24px rgba(181, 135, 41, 0.35);
 }
 
-.btn-news-all svg {
+.btn-news-all svg,
+.btn-news-all .lucide {
   transition: transform 0.3s ease;
 }
 
-.btn-news-all:hover svg {
+.btn-news-all:hover svg,
+.btn-news-all:hover .lucide {
   transform: translateX(4px);
 }
 

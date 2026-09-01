@@ -77,56 +77,107 @@ export function AboutSection() {
 }
 
 export function AboutInstitutional() {
-  const metrics = [['2015', 'Início da nossa história'], ['+10 mil m²', 'De área operacional'], ['3', 'Lojas bem localizadas em Belém'], ['5', 'Marcas que inspiram confiança']];
+  const metrics = [
+    ['2015', 'Início da nossa história'],
+    ['+10 mil m²', 'De área operacional'],
+    ['3', 'Lojas bem localizadas em Belém'],
+    ['5', 'Marcas que inspiram confiança'],
+  ];
+
   const onAboutMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     event.currentTarget.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
     event.currentTarget.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
   };
-  return <section className="section about-premium-dark-section section-full-width" id="sobre" onMouseMove={onAboutMouseMove}>
-    <div className="about-bg-glow glow-dark-top-right" aria-hidden="true" />
-    <div className="about-bg-glow glow-dark-center-photo" aria-hidden="true" />
-    <div className="about-bg-glow glow-dark-bottom-left" aria-hidden="true" />
-    <div className="about-dotted-pattern" aria-hidden="true" />
-    <div className="about-mouse-spotlight" aria-hidden="true" />
 
-    <div className="container about-container">
-      <div className="about-main-grid">
-        <div className="about-content-col reveal">
-          <span className="eyebrow-gold">SOBRE O GRUPO</span>
-          <h2 className="about-headline">O <span className="headline-highlight-italic">Grupo Mais Barato</span><br />reúne negócios que<br />fazem parte do dia a dia<br />das pessoas de <span style={{ whiteSpace: 'nowrap' }}>Belém–PA</span></h2>
-          <div className="about-paragraphs">
-            <p className="about-mid-text">Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade.</p>
-            <p>Nossa atuação integra marcas que compartilham o mesmo compromisso: oferecer experiências que superem expectativas, sempre com foco nas pessoas, na excelência e no desenvolvimento das comunidades onde estamos presentes. Mais do que crescer, acreditamos em transformar relações, gerar oportunidades e construir um futuro cada vez melhor para clientes, colaboradores, parceiros e para a sociedade.</p>
+  return (
+    <section className="section about-premium-dark-section" id="sobre" onMouseMove={onAboutMouseMove}>
+      <div className="about-bg-glow glow-dark-top-right" aria-hidden="true" />
+      <div className="about-bg-glow glow-dark-center-photo" aria-hidden="true" />
+      <div className="about-bg-glow glow-dark-bottom-left" aria-hidden="true" />
+      <div className="about-dotted-pattern" aria-hidden="true" />
+      <div className="about-mouse-spotlight" aria-hidden="true" />
+
+      <div className="container about-container">
+        <div className="about-main-grid">
+          <div className="about-content-col reveal">
+            <span className="eyebrow-gold">SOBRE O GRUPO</span>
+            <h2 className="about-headline">
+              O <span className="headline-highlight-italic">Grupo Mais Barato</span><br />
+              reúne negócios que<br />
+              fazem parte do dia a dia<br />
+              das pessoas de <span style={{ whiteSpace: 'nowrap' }}>Belém–PA</span>
+            </h2>
+            <div className="about-paragraphs">
+              <p className="about-mid-text">Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade.</p>
+              <p>Nossa atuação integra marcas que compartilham o mesmo compromisso: oferecer experiências que superem expectativas, sempre com foco nas pessoas, na excelência e no desenvolvimento das comunidades onde estamos presentes. Mais do que crescer, acreditamos em transformar relações, gerar oportunidades e construir um futuro cada vez melhor para clientes, colaboradores, parceiros e para a sociedade.</p>
+            </div>
+            <div className="gold-accent-line" />
           </div>
-          <div className="gold-accent-line" />
+
+          <div className="about-photo-col reveal delay-1">
+            <div className="about-photo-wrapper">
+              <img
+                src={asset('Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png')}
+                alt="Equipe e Fachada Grupo Mais Barato"
+                className="about-team-photo"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="about-photo-col reveal delay-1">
-          <div className="about-photo-wrapper">
-            <img src={asset('Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png')} alt="Equipe e Fachada Grupo Mais Barato" className="about-team-photo" loading="lazy" />
-            <div className="about-floating-glass-card">
-              <div className="floating-card-icon"><Leaf size={22} aria-hidden="true" /></div>
-              <div className="floating-card-divider" />
-              <div className="floating-card-text">Crescimento que gera valor,<br />impacto e desenvolvimento<br /><span className="headline-highlight-italic">sustentável</span> para a nossa região.</div>
+        <div className="about-metrics-grid reveal">
+          {metrics.map(([number, description]) => (
+            <div className="metric-card" key={number}>
+              <div className="metric-content">
+                <div className="metric-number-title">
+                  <span className="num-gold">{number}</span>
+                </div>
+                <p className="metric-desc">{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="about-culture-block reveal delay-1">
+          <div className="about-culture-header">
+            <span className="eyebrow-gold">CULTURA</span>
+            <h3 className="about-culture-title">
+              Missão e <span className="headline-highlight-italic">Visão</span>
+            </h3>
+            <div className="culture-title-accent" />
+          </div>
+          <div className="about-culture-grid">
+            <div className="culture-card culture-card-missao">
+              <div className="culture-card-icon-badge">
+                <Target size={24} aria-hidden="true" />
+              </div>
+              <div className="culture-card-divider" />
+              <div className="culture-card-body">
+                <h4 className="culture-card-title">Missão</h4>
+                <p className="culture-card-text">
+                  Participar do dia a dia de nossos clientes, oferecendo produtos e serviços de qualidade comprovada a preços competitivos.
+                </p>
+              </div>
+            </div>
+            <div className="culture-card culture-card-visao">
+              <div className="culture-card-icon-badge">
+                <Eye size={24} aria-hidden="true" />
+              </div>
+              <div className="culture-card-divider" />
+              <div className="culture-card-body">
+                <h4 className="culture-card-title">Visão</h4>
+                <p className="culture-card-text">
+                  Ser reconhecido pelo mercado como uma empresa referência em qualidade, preços competitivos e serviços de excelência na região norte do país.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="about-metrics-grid reveal">
-        {metrics.map(([number, description]) => <div className="metric-card" key={number}><div className="metric-content"><div className="metric-number-title"><span className="num-gold">{number}</span></div><p className="metric-desc">{description}</p></div></div>)}
-      </div>
-
-      <div className="about-culture-block reveal delay-1">
-        <div className="about-culture-header"><span className="eyebrow-gold">CULTURA</span><h3 className="about-culture-title">Missão e <span className="headline-highlight-italic">Visão</span></h3><div className="culture-title-accent" /></div>
-        <div className="about-culture-grid">
-          <div className="culture-card culture-card-missao"><div className="culture-card-icon-badge"><Target size={24} aria-hidden="true" /></div><div className="culture-card-divider" /><div className="culture-card-body"><h4 className="culture-card-title">Missão</h4><p className="culture-card-text">Participar do dia a dia de nossos clientes, oferecendo produtos e serviços de qualidade comprovada a preços competitivos.</p></div></div>
-          <div className="culture-card culture-card-visao"><div className="culture-card-icon-badge"><Eye size={24} aria-hidden="true" /></div><div className="culture-card-divider" /><div className="culture-card-body"><h4 className="culture-card-title">Visão</h4><p className="culture-card-text">Ser reconhecido pelo mercado como uma empresa referência em qualidade, preços competitivos e serviços de excelência na região norte do país.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </section>;
+    </section>
+  );
 }
 
 const brandData = [
