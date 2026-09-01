@@ -4629,7 +4629,7 @@ textarea.form-control {
   position: relative;
   z-index: 2;
   padding: 60px 70px;
-  max-width: 540px;
+  max-width: 580px;
 }
 
 .trabalhe-card-content .eyebrow-gold {
@@ -4645,12 +4645,13 @@ textarea.form-control {
 
 .trabalhe-card-headline {
   font-family: var(--font-primary, 'Outfit', sans-serif);
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
   font-weight: 500;
-  line-height: 1.16;
+  line-height: 1.18;
   color: #111111;
   letter-spacing: -0.02em;
   margin: 0 0 22px 0;
+  text-wrap: balance;
 }
 
 .trabalhe-card-headline .headline-highlight-italic {
@@ -4658,6 +4659,7 @@ textarea.form-control {
   font-style: italic;
   font-weight: 400;
   color: #B58729;
+  white-space: nowrap;
 }
 
 .trabalhe-gold-accent-line {
@@ -4718,7 +4720,7 @@ textarea.form-control {
   }
   .trabalhe-card-content {
     padding: 48px 40px;
-    max-width: 480px;
+    max-width: 500px;
   }
 }
 
@@ -4741,6 +4743,16 @@ textarea.form-control {
   .trabalhe-card-content {
     padding: 40px 24px;
     max-width: 100%;
+  }
+
+  .trabalhe-card-headline {
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .trabalhe-card-headline .headline-highlight-italic {
+    white-space: normal;
   }
 }
 

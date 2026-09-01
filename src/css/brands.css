@@ -606,11 +606,9 @@
 }
 
 .brands-subtitle-badge-wrapper {
-  display: inline-block;
-  background: rgba(25, 22, 22, 0.85);
-  border: 1px solid rgba(253, 250, 246, 0.1);
-  padding: 8px 24px;
-  border-radius: 4px;
+  display: block;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .brands-subtitle-text {
@@ -1321,6 +1319,17 @@
   opacity: 0.15 !important;
   display: block !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease !important;
+}
+
+.card-watermark path,
+.card-watermark circle,
+.card-watermark rect,
+.card-watermark line,
+.card-watermark ellipse,
+.card-watermark polyline,
+.card-watermark polygon {
+  stroke-width: 0.8px !important;
+  vector-effect: non-scaling-stroke !important;
 }
 
 .theme-plaza .card-watermark { color: rgba(218, 23, 30, 0.8) !important; }

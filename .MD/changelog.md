@@ -1,5 +1,10 @@
 # Changelog
 
+- **Correção da Quebra de Linha na Seção Trabalhe Conosco**:
+  - **Eliminação de Letra Órfã/Viúva**: Corrigida a quebra de linha da headline (`.trabalhe-card-headline`) para `Construa sua história<br>com o Grupo Mais Barato.`, garantindo simetria perfeita em duas linhas equilibradas e eliminando a letra "o" isolada em linha única.
+  - **Proteção Tipográfica Responsiva**: Aplicado `text-wrap: balance` e `white-space: nowrap` (no destaque de marca em desktop/tablet) com liberação fluida no mobile em [src/css/sections.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/sections.css).
+  - **Invalidação de Cache**: Atualizadas versões em [src/css/main.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/main.css) (`sections.css?v=12.7`) e em [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/index.html) (`main.css?v=13.4`).
+
 - **Cantos Arredondados no Rodapé e Seção Nossas Marcas**:
   - **Rodapé / Localizador de Unidades (`.footer-gold`)**: Adicionado `border-radius: 120px 120px 0 0 !important;` no desktop e `40px 40px 0 0 !important;` no mobile/tablet em [src/css/work-units-footer.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/work-units-footer.css), com `overflow: hidden` e padding superior calibrado para transição elegante.
   - **Seção Nossas Marcas (`.brands-black-block`)**: Atualizado `border-radius` para `120px` no desktop (arredondando a parte inferior e superior simetricamente) e `40px !important` no mobile/tablet em [src/css/brands.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/brands.css).
