@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import '../src/css/tokens.css';
 @import '../src/css/base.css';
 @import '../src/css/header.css';
@@ -58,11 +58,144 @@ body:has(.site-route-loading) .footer { display: none; }
   --color-focus: #C49A45;
   --color-success: #237A4A;
   --color-warning: #A87516;
+  --font-primary: var(--font-dm-sans), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-editorial: var(--font-primary);
   --color-danger: #9F342D;
   --radius-control: 12px;
   --radius-panel: 16px;
   --radius-section: 28px;
   --shadow-panel: 0 8px 30px rgba(18, 14, 14, 0.05);
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+/* ==========================================================================
+   PADRÃO OURO DE TIPOGRAFIA & HEADLINES (DESIGN SYSTEM OFICIAL - /design)
+   ========================================================================== */
+
+/* 1. EYEBROW TAGS (Chapeuzinho Superior) */
+.eyebrow-gold,
+.slide-eyebrow,
+.brands-eyebrow-tag,
+.faq-eyebrow,
+.locator-eyebrow,
+.about-culture-header .eyebrow-gold,
+.trabalhe-card-content .eyebrow-gold,
+.news-header-left .eyebrow-gold {
+  font-family: var(--font-primary) !important;
+  font-size: 0.75rem !important; /* 12px padrão oficial */
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--color-yellow, #C89223) !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* 2. HEADLINES H2 UNIFICADAS (38px Desktop -> 20-22px Mobile) */
+.about-headline,
+.news-home-title,
+.news-header-title,
+.brands-headline-title,
+.trabalhe-card-headline,
+.faq-headline,
+.faq-title,
+.locator-gold-title,
+.trajetoria-title,
+.about-culture-title {
+  font-family: var(--font-primary) !important;
+  font-size: clamp(1.65rem, 2.4vw, 2.375rem) !important; /* 38px Desktop padrão */
+  font-weight: 700 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Cores de fundo escuro para headlines */
+.section-dark .about-headline,
+.section-dark .news-home-title,
+.brands-headline-title,
+.locator-gold-title,
+.about-premium-dark-section .about-headline {
+  color: var(--color-white, #FDFAF6) !important;
+}
+
+/* Cores de fundo claro para headlines */
+.section-light .about-headline,
+.news-home-section .news-home-title,
+.trabalhe-card-headline,
+.faq-headline,
+.trajetoria-title {
+  color: var(--color-black, #120E0E) !important;
+}
+
+/* 3. DESTAQUE DOURADO PADRONIZADO (DM Sans Gold) */
+.headline-highlight,
+.headline-highlight-italic,
+.serif-accent,
+.serif-font,
+.serif-title,
+.highlight-yellow,
+.about-headline .headline-highlight-italic,
+.news-home-title .headline-highlight-italic,
+.brands-headline-title .headline-highlight,
+.brands-headline-title .highlight-yellow,
+.trabalhe-card-headline .headline-highlight-italic,
+.faq-headline .headline-highlight-italic,
+.locator-gold-title .headline-highlight-italic,
+.trajetoria-title .serif-accent,
+.about-culture-title .headline-highlight-italic {
+  font-family: var(--font-primary) !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+  color: var(--color-yellow, #C89223) !important;
+  margin: 0 4px !important;
+  display: inline !important;
+}
+
+/* 4. SUBTÍTULO / LEAD EDITORIAL (17px Medium 500) */
+.about-mid-text,
+.about-paragraphs p.about-mid-text,
+.trabalhe-card-description,
+.locator-gold-desc,
+.brands-subtitle-text,
+.section-copy p.lead {
+  font-family: var(--font-primary) !important;
+  font-size: 1.05rem !important; /* 17px padrão */
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.section-light .about-mid-text,
+.section-light .about-paragraphs p.about-mid-text,
+.trabalhe-card-description {
+  color: var(--color-gray-dark, #4D4845) !important;
+}
+
+.brands-subtitle-text,
+.locator-gold-desc {
+  color: var(--color-gray-light, #DED8D0) !important;
+}
+
+/* 5. FILETE DOURADO DECORATIVO PADRONIZADO */
+.gold-accent-line,
+.trabalhe-gold-accent-line,
+.culture-title-accent,
+.about-headline-divider {
+  width: 48px !important;
+  height: 2px !important;
+  background-color: var(--color-yellow, #C89223) !important;
+  border-radius: 2px !important;
+  margin: 16px 0 24px !important;
+  display: block !important;
 }
 
 /* Ponto de luz global usado pelo site legado nas áreas escuras. */
@@ -150,12 +283,16 @@ body::before {
 body.links-page-body .site-header, body.links-page-body > main, body.links-page-body .footer { display: none; }
 body.admin-page-body { background: #f7f5f1; }
 body.admin-page-body > .site-header, body.admin-page-body > .footer { display: none; }
-/* Oculta o chrome público no primeiro paint do admin, antes da hidratação aplicar a classe do body. */
+/* Oculta o chrome público no primeiro paint do admin e design system, antes da hidratação aplicar a classe do body. */
 body:has(#next-page-content > .admin-shell) { background: #f7f5f1; }
 body:has(#next-page-content > .admin-shell) > .site-header,
 body:has(#next-page-content > .admin-shell) > .footer,
 body:has(#next-page-content > .admin-shell) > .wf-modal-overlay,
-body:has(#next-page-content > .admin-shell) > .wf-modal { display: none; }
+body:has(#next-page-content > .admin-shell) > .wf-modal,
+body:has(#next-page-content > .design-system-shell) > .site-header,
+body:has(#next-page-content > .design-system-shell) > .footer,
+body:has(#next-page-content > .design-system-shell) > .wf-modal-overlay,
+body:has(#next-page-content > .design-system-shell) > .wf-modal { display: none; }
 .links-fullscreen-modal iframe { width: 100%; height: 100%; border: 0; background: #070709; }
 .btn-card-primary, .btn-card-secondary, .btn-trabalhe-card, .btn-news-all, .btn-unit-ver-mais, .btn-share, .btn-link, .social-icon-btn { display: inline-flex; align-items: center; gap: 8px; }
 .btn-card-primary .lucide, .btn-card-secondary .lucide, .btn-trabalhe-card .lucide, .btn-news-all .lucide, .btn-unit-ver-mais .lucide, .btn-share .lucide, .btn-link .lucide, .social-icon-btn .lucide { flex: 0 0 auto; }
@@ -164,13 +301,13 @@ body:has(#next-page-content > .admin-shell) > .wf-modal { display: none; }
 .brands-orbit-box .network-node { border: 0; padding: 0; background: transparent; font: inherit; color: inherit; }
 .article-rich-html { color: #8e8780; font-family: "DM Sans", Arial, sans-serif; font-size: 16.32px; line-height: 1.65; }
 .article-rich-html p { margin: 0 0 24px; }
-.article-rich-html h2, .article-rich-html h3 { color: #120e0e; font-family: "DM Serif Display", Georgia, serif; margin: 44px 0 20px; line-height: 1.25; }
+.article-rich-html h2, .article-rich-html h3 { color: #120e0e; font-family: "DM Sans", Arial, sans-serif; font-weight: 700; margin: 44px 0 20px; line-height: 1.25; }
 .article-rich-html h2 { border-bottom: 1px solid rgba(200,146,35,.3); padding-bottom: 12px; font-size: 32px; }
 .article-rich-html h3 { font-size: 25px; }
-.article-rich-html blockquote { margin: 36px 0; padding: 24px 32px; border-left: 4px solid #c89223; border-radius: 0 14px 14px 0; background: #fff4d6; color: #6f4f0f; font-family: "DM Serif Display", Georgia, serif; font-size: 21.6px; }
+.article-rich-html blockquote { margin: 36px 0; padding: 24px 32px; border-left: 4px solid #c89223; border-radius: 0 14px 14px 0; background: #fff4d6; color: #6f4f0f; font-family: "DM Sans", Arial, sans-serif; font-size: 1.15rem; font-weight: 500; }
 .article-rich-html img { max-width: 100%; border-radius: 14px; }
 .article-gallery { margin: 48px 0; }
-.article-gallery-title { margin: 0 0 20px; color: #120e0e; font-family: "DM Serif Display", Georgia, serif; font-size: 32px; line-height: 1.2; }
+.article-gallery-title { margin: 0 0 20px; color: #120e0e; font-family: "DM Sans", Arial, sans-serif; font-weight: 700; font-size: 32px; line-height: 1.2; }
 .article-gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .article-gallery-item { overflow: hidden; margin: 0; border: 1px solid #e7d8b4; border-radius: 14px; background: #fff4d6; }
 .article-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }

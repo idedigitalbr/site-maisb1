@@ -9,7 +9,7 @@
   --wf-border-dashed: #cbd5e1;
   --wf-text-main: #1e293b;
   --wf-text-muted: #94a3b8;
-  --wf-accent: var(--yellow, #FFC400);
+  --wf-accent: var(--color-yellow);
   --wf-accent-light: #f8fafc;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .wf-modal-close:hover {
-  color: var(--yellow, #FFC400);
+  color: var(--color-yellow);
   transform: scale(1.1);
 }
 
@@ -92,7 +92,7 @@
   border-radius: 10px;
 }
 .wf-modal::-webkit-scrollbar-thumb:hover {
-  background: var(--yellow, #FFC400);
+  background: var(--color-yellow);
 }
 
 .wf-modal .form-control {
@@ -107,7 +107,7 @@
 
 .wf-modal .form-control:focus {
   background: rgba(255, 255, 255, 0.06) !important;
-  border-color: var(--yellow, #FFC400) !important;
+  border-color: var(--color-yellow) !important;
   box-shadow: 0 0 0 4px rgba(255, 196, 0, 0.2) !important;
 }
 
@@ -239,7 +239,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--yellow, #FFC400);
+  background-color: var(--color-yellow);
   border: 4px solid #070b13;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
@@ -247,7 +247,7 @@
 .wf-timeline-year {
   font-size: 1.3rem;
   font-weight: 900;
-  color: var(--yellow, #FFC400);
+  color: var(--color-yellow);
   margin-bottom: 4px;
 }
 

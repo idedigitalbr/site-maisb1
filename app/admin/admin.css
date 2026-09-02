@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "DM Sans", Arial, sans-serif;
-  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-serif: "DM Sans", Arial, sans-serif;
   --color-page: #FDFAF6;
   --color-surface: #FFFFFF;
   --color-surface-soft: #F8F5F0;
@@ -32,7 +32,7 @@
 .admin-shell .ql-container.ql-snow { border: 0; min-height: 430px; font-family: "DM Sans", Arial, sans-serif; font-size: 16px; }
 .admin-shell .ql-editor { min-height: 430px; padding: 24px; color: #120e0e; line-height: 1.75; }
 .admin-shell .ql-editor.ql-blank::before { color: #aaa198; font-style: normal; left: 24px; }
-.admin-shell .ql-editor h2, .admin-shell .ql-editor h3 { color: #120e0e; font-family: "DM Serif Display", Georgia, serif; }
+.admin-shell .ql-editor h2, .admin-shell .ql-editor h3 { color: #120e0e; font-family: "DM Sans", Arial, sans-serif; font-weight: 700; }
 .admin-shell .ql-editor blockquote { border-left-color: #c89223; color: #6f4f0f; background: #fff8e6; padding: 12px 18px; }
 .admin-shell .admin-sidebar { background: #120e0e; }
 .admin-shell .admin-sidebar a[data-active="true"] { background: #2a2522; color: #f3c765; }

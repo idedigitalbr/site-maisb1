@@ -120,9 +120,9 @@
 }
 
 .brand-photo.wine-card span {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-primary, 'DM Sans', Arial, sans-serif);
   text-transform: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 /* ==========================================================================
@@ -373,16 +373,9 @@
   border-radius: 0;
 }
 
-.network-hub .hub-logo-color {
-  opacity: 0;
-}
-
 .network-hub:hover .hub-logo-white {
-  opacity: 0;
-}
-
-.network-hub:hover .hub-logo-color {
   opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(200, 146, 35, 0.4));
 }
 
 
@@ -601,8 +594,8 @@
 
 .brands-headline-title .highlight-yellow {
   color: var(--color-yellow);
-  font-family: var(--font-editorial);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: inherit;
 }
 
 .brands-subtitle-badge-wrapper {
@@ -728,20 +721,13 @@
   transition: opacity 0.4s ease;
 }
 
-.brands-hub-center .hub-logo-color {
-  opacity: 0;
-}
-
 .brands-hub-center:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .brands-hub-center:hover .hub-logo-white {
-  opacity: 0;
-}
-
-.brands-hub-center:hover .hub-logo-color {
   opacity: 1;
+  filter: drop-shadow(0 0 12px rgba(200, 146, 35, 0.5));
 }
 
 
@@ -1166,14 +1152,14 @@
 }
 
 .card-brand-title.serif-font {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-primary, 'DM Sans', Arial, sans-serif);
   font-weight: 700;
 }
 
 .card-brand-subtitle {
-  font-family: 'Cormorant Garamond', 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 500;
   font-size: 0.65em;
   letter-spacing: 0.05em;
   opacity: 0.85;

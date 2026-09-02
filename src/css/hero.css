@@ -76,12 +76,12 @@
   margin: 0 0 18px;
 }
 
-/* "Mais Barato" em itálico serif com gradiente dourado nobre */
+/* "Mais Barato" com gradiente dourado nobre em DM Sans */
 .slide-headline-huge .headline-highlight {
   display: inline-block;
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-style: normal;
+  font-weight: 800;
   color: #d4a017;
   background: linear-gradient(135deg, #fce09b 0%, #d4a017 60%, #b88308 100%);
   -webkit-background-clip: text;

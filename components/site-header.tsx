@@ -74,7 +74,6 @@ export function SiteHeader() {
           <div className="drop-panel" aria-label="Submenu Contatos">
             <a id="menu-link-unidades" href="/#store-locator-teaser" onClick={() => setMenuOpen(false)}>Nossas Unidades</a>
             <a id="menu-link-trabalhe" href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener">Trabalhe Conosco</a>
-            <a id="menu-link-links" href="#links" onClick={() => setMenuOpen(false)}>Nossos Links</a>
           </div>
         </div>
       </nav>

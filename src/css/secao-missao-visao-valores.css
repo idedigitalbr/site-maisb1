@@ -21,7 +21,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #FFC400;
+  color: var(--color-yellow);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -29,10 +29,10 @@
 }
 
 .about-culture-title {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 700;
+  font-style: normal;
   color: #ffffff;
   margin: 0;
   line-height: 1.15;
@@ -41,16 +41,17 @@
 }
 
 .about-culture-title .headline-highlight-italic {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-style: italic;
-  color: #FFC400;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-style: normal;
+  font-weight: inherit;
+  color: var(--color-yellow);
   display: inline-block;
 }
 
 .culture-title-accent {
   width: 90px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #FFC400 30%, #FFC400 70%, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-yellow) 30%, var(--color-yellow) 70%, transparent);
   border-radius: 999px;
   margin-top: 18px;
   box-shadow: 0 0 10px rgba(255, 196, 0, 0.4);
@@ -101,14 +102,14 @@
 
 .culture-card:hover .culture-card-icon-badge {
   transform: scale(1.06);
-  border-color: #FFC400;
+  border-color: var(--color-yellow);
   box-shadow: 0 0 24px rgba(255, 196, 0, 0.35), inset 0 0 14px rgba(255, 196, 0, 0.14);
 }
 
 .culture-icon {
   width: 34px;
   height: 34px;
-  stroke: #FFC400;
+  stroke: var(--color-yellow);
   display: block;
 }
 
@@ -128,11 +129,11 @@
 }
 
 .culture-card-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-style: italic;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-style: normal;
   font-size: clamp(1.6rem, 2.2vw, 1.9rem);
-  font-weight: 400;
-  color: #FFC400;
+  font-weight: 700;
+  color: var(--color-yellow);
   margin: 0 0 8px 0;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -347,11 +348,11 @@
   height: 100%;
 }
 
-/* Título em Fonte Serifada Elegante (Garantido com !important) */
+/* Título em Fonte DM Sans */
 .mvv-title {
-  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-family: var(--font-primary, 'DM Sans', sans-serif) !important;
   font-size: clamp(2.4rem, 3.4vw, 3.1rem) !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   color: #ffffff !important;
   margin: 0 !important;
   line-height: 1.1 !important;

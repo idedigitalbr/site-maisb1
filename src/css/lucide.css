@@ -33,13 +33,13 @@
 .icon-pause.lucide,
 .icon-volume-on.lucide,
 .icon-volume-off.lucide {
-  color: #ffc400;
+  color: var(--color-yellow);
   stroke: currentColor;
 }
 
 .culture-icon.lucide,
 .floating-card-icon .lucide {
-  color: #ffc400;
+  color: var(--color-yellow);
 }
 
 .autocomplete-item-icon .lucide,

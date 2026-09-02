@@ -115,7 +115,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
   align-items: center;
   gap: 8px;
   align-self: flex-start;
-  background: linear-gradient(135deg, #FFC400 0%, #E69A00 100%) !important;
+  background: linear-gradient(135deg, var(--color-yellow) 0%, #E69A00 100%) !important;
   border: none !important;
   border-radius: 999px;
   padding: 5px 16px 5px 6px;
@@ -137,7 +137,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFC400 !important;
+  color: var(--color-yellow) !important;
   box-shadow: none;
 }
 
@@ -170,14 +170,14 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 .trajetoria-title em,
 .trajetoria-title .serif-accent {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-style: normal;
   font-weight: 700;
 }
 
 /* --- Ano Gigante --- */
 .trajetoria-year-display {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-primary, 'DM Sans', sans-serif);
   font-style: normal;
   font-weight: 800;
   font-size: clamp(2.5rem, 5vw, 3.4rem);

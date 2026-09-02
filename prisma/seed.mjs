@@ -80,7 +80,7 @@ await prisma.$transaction(async (transaction) => {
       siteName: 'Grupo Mais Barato',
       defaultTitle: 'Grupo Mais Barato | Varejo, cuidado e experiências',
       defaultDescription: 'O Grupo Mais Barato reúne negócios que fazem parte do dia a dia das pessoas de Belém-PA.',
-      defaultKeywords: ['Grupo Mais Barato', 'Grupo +B', 'Belém', 'varejo paraense'],
+      defaultKeywords: JSON.stringify(['Grupo Mais Barato', 'Grupo +B', 'Belém', 'varejo paraense']),
       robotsIndex: true,
     },
   });

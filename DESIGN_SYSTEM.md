@@ -8,16 +8,17 @@
 4. Manter contraste, foco visível, teclado e reduced motion como requisitos funcionais.
 5. Compartilhar componentes e dados sem alterar URLs, conteúdo, slugs ou regras do CMS.
 
-## Tipografia
+## Tipografia (100% DM Sans Unificada)
 
 | Papel | Fonte | Uso |
 | --- | --- | --- |
-| Display editorial | DM Serif Display | Títulos de destaque, frases em itálico e chamadas institucionais |
-| Interface/corpo | DM Sans | Navegação, corpo, cards, formulários e painel |
-| Eyebrow | DM Sans, 700, uppercase | Rótulos de seção e categoria |
-| Metadata | DM Sans, 400/500 | Datas, status, endereço e informações auxiliares |
+| Headlines & Títulos | DM Sans (700 Bold) | Títulos de destaque, chamadas institucionais e nomes de marcas |
+| Destaques Dourados | DM Sans (700 Bold / Dourado #C89223) | Nomes de marcas ou termos em destaque nos títulos |
+| Interface/corpo | DM Sans (400/500) | Navegação, corpo, cards, formulários e painel |
+| Eyebrow | DM Sans (700, uppercase) | Rótulos de seção e categoria |
+| Metadata | DM Sans (400/500) | Datas, status, endereço e informações auxiliares |
 
-Títulos devem usar `letter-spacing` negativo com parcimônia e line-height compacto. Corpo e metadata devem manter line-height confortável. Não introduzir uma terceira família tipográfica.
+Títulos devem usar `letter-spacing` negativo com parcimônia e line-height compacto. Corpo e metadata devem manter line-height confortável. O projeto opera 100% com a família DM Sans.
 
 ## Tokens semânticos
 

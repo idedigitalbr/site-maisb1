@@ -32,3 +32,10 @@ assets-nao-usados/
 
 # Uploads gerados pelo CMS em ambiente local
 public/uploads/
+
+# Banco SQLite local
+*.db
+*.db-journal
+dev.db
+prisma/*.db
+

@@ -74,8 +74,8 @@ a {
 
 /* Tipografia de Destaque */
 .headline-highlight {
-  font-family: var(--font-editorial);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: inherit;
   color: var(--color-yellow-dark-bg);
 }
 
@@ -235,9 +235,9 @@ a {
 
 /* Utilidades Visuais da Referência Gold */
 .headline-highlight-italic {
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  font-style: italic;
+  font-family: var(--font-primary);
+  font-weight: inherit;
+  font-style: normal;
   color: var(--color-yellow);
 }
 

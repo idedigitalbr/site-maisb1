@@ -51,7 +51,15 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   try {
     const settings = await db.siteSettings.findUnique({ where: { id: 1 } });
     if (!settings) return fallbackSettings;
-    const keywords = Array.isArray(settings.defaultKeywords) ? settings.defaultKeywords.filter((item): item is string => typeof item === 'string') : fallbackSettings.defaultKeywords;
+    let keywords = fallbackSettings.defaultKeywords;
+    if (Array.isArray(settings.defaultKeywords)) {
+      keywords = settings.defaultKeywords.filter((item): item is string => typeof item === 'string');
+    } else if (typeof settings.defaultKeywords === 'string') {
+      try {
+        const parsed = JSON.parse(settings.defaultKeywords);
+        if (Array.isArray(parsed)) keywords = parsed.filter((item): item is string => typeof item === 'string');
+      } catch {}
+    }
     return { siteName: settings.siteName, defaultTitle: settings.defaultTitle, defaultDescription: settings.defaultDescription, defaultKeywords: keywords, googleAnalyticsId: settings.googleAnalyticsId || undefined, canonicalUrl: settings.canonicalUrl || undefined, ogImage: settings.ogImage || undefined, robotsIndex: settings.robotsIndex };
   } catch {
     return fallbackSettings;
