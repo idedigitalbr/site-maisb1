@@ -3,29 +3,29 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model Post {
-  id             String   @id @default(cuid())
-  slug           String   @unique
-  title          String
-  category       String
-  publishedAt    DateTime
-  excerpt        String
-  author         String
-  bodyHtml       String
-  status         String   @default("draft")
-  seoTitle       String?
-  seoDescription String?
-  imagePath      String?
-  imageAlt       String?
-  imageCaption   String?
-  galleryJson    String?
-  noIndex        Boolean  @default(false)
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id            String   @id @default(cuid())
+  slug          String   @unique @db.VarChar(160)
+  title         String   @db.VarChar(120)
+  category      String   @db.VarChar(80)
+  publishedAt   DateTime
+  excerpt       String   @db.VarChar(250)
+  author        String   @db.VarChar(160)
+  bodyHtml      String   @db.LongText
+  status        String   @default("draft") @db.VarChar(20)
+  seoTitle      String?  @db.VarChar(60)
+  seoDescription String? @db.VarChar(160)
+  imagePath     String?  @db.VarChar(500)
+  imageAlt      String?  @db.VarChar(180)
+  imageCaption  String?  @db.VarChar(255)
+  galleryJson   String?  @db.LongText
+  noIndex       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   @@index([status, publishedAt])
   @@index([category])
@@ -33,17 +33,17 @@ model Post {
 }
 
 model SiteSettings {
-  id                 Int      @id @default(1)
-  siteName           String   @default("Grupo Mais Barato")
-  defaultTitle       String
-  defaultDescription String
-  defaultKeywords    String   @default("[\"Grupo Mais Barato\", \"Grupo +B\", \"Belém\", \"varejo paraense\"]")
-  googleAnalyticsId  String?
-  canonicalUrl       String?
-  ogImage            String?
-  robotsIndex        Boolean  @default(true)
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
+  id                Int      @id @default(1)
+  siteName          String   @default("Grupo Mais Barato") @db.VarChar(120)
+  defaultTitle      String   @db.VarChar(70)
+  defaultDescription String  @db.VarChar(180)
+  defaultKeywords   Json
+  googleAnalyticsId String?  @db.VarChar(30)
+  canonicalUrl      String?  @db.VarChar(255)
+  ogImage           String?  @db.VarChar(500)
+  robotsIndex       Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   @@map("site_settings")
 }
