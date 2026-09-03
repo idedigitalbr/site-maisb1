@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const settings = await getSiteSettings();
 
   return (
-    <html lang="pt-BR" className={`${dmSans.variable} ${dmSerifDisplay.variable}`}>
+    <html lang="pt-BR" className={`${dmSans.variable} ${dmSerifDisplay.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -58,7 +58,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <RouteTheme />
         <SiteHeader />
         <div id="next-page-content">{children}</div>
