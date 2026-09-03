@@ -116,6 +116,7 @@ body {
   font-weight: 700 !important;
   line-height: 1.22 !important;
   letter-spacing: -0.02em !important;
+  text-wrap: balance !important;
   margin-top: 0 !important;
   margin-bottom: 16px !important;
 }
@@ -211,6 +212,15 @@ body {
   border-radius: 2px !important;
   margin: 16px 0 24px !important;
   display: block !important;
+}
+
+/* 6. LARGURA E FLUXO NATURAL DO CARD TRABALHE CONOSCO */
+.trabalhe-card-content {
+  max-width: 680px !important;
+}
+
+.trabalhe-card-headline {
+  max-width: 100% !important;
 }
 
 /* Ponto de luz global usado pelo site legado nas áreas escuras. */
