@@ -29,11 +29,18 @@ jobs:
           eval "$(ssh-agent -s)"
           trap 'ssh-agent -k >/dev/null' EXIT
           ssh-add - <<< "$VPS_SSH_KEY"
-          ssh -p 22 -o BatchMode=yes -o StrictHostKeyChecking=yes root@161.97.108.92 <<'REMOTE'
+          ssh -p 22 \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ServerAliveInterval=15 \
+            -o ServerAliveCountMax=120 \
+            -o TCPKeepAlive=yes \
+            root@161.97.108.92 <<'REMOTE'
           set -e
           cd /opt/grupomaisb-site/app
           git fetch origin main
           git reset --hard origin/main
           git clean -fd
-          docker compose -f docker-compose.prod.yml up -d --build --remove-orphans
+          docker compose -f docker-compose.prod.yml build --progress=plain
+          docker compose -f docker-compose.prod.yml up -d --remove-orphans
           REMOTE
