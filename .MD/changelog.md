@@ -1,5 +1,14 @@
 # Changelog
 
+- **Ajustes Personalizados nos Cards da Seção Nossas Marcas**:
+  - **Headline em 38px e Sempre Branca**: Definido `font-size: 38px !important;` e `color: #ffffff !important;` em `.card-brand-title` e `.card-brand-title.serif-font` em [src/css/brands.css](file:///c:/.PROJETOS%20-%20Sites%202026/site-maisb1-next/src/css/brands.css), garantindo títulos destacados e sempre na cor branca.
+  - **Cores de Categoria dos Itens (`.card-brand-keywords`)**:
+    - **Villa Plaza Restaurante**: Atualizado para tom vermelho sofisticado de alto contraste (`#e63946 !important;`).
+    - **Villa Plaza Park**: Mantido no verde original (`#c2f16a !important;`).
+    - **Restante das marcas (The Wine, Supermercados +B, +B Farma)**: Definido no ouro gold oficial do Grupo (`var(--color-yellow, #C89223) !important;`).
+  - **Arredondamento dos Botões Padronizado**: Removido formato de pílula (`999px`) e 4px, aplicando `border-radius: var(--radius-small, 6px) !important;` em `.btn-card-primary`, `.btn-card-secondary` e `.open-map-trigger` em [src/css/brands.css](file:///c:/.PROJETOS%20-%20Sites%202026/site-maisb1-next/src/css/brands.css), alinhando ao padrão visual dos botões do site.
+  - **Invalidação de Cache**: Atualizada versão do CSS em [src/css/main.css](file:///c:/.PROJETOS%20-%20Sites%202026/site-maisb1-next/src/css/main.css) (`brands.css?v=12.4`) e no [index.html](file:///c:/.PROJETOS%20-%20Sites%202026/site-maisb1-next/index.html) (`main.css?v=13.6`).
+
 - **Refinamento do Subtítulo de Marcas e Animações da Seção Institucional**:
   - **Subtítulo Limpo de Nossas Marcas**: Adicionada a classe `.brands-subtitle-badge-wrapper` sem bordas/fundos pesados em [app/globals.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/app/globals.css).
   - **Seção Sobre o Grupo**: Limpeza do card de vidro flutuante redundante em [sobre-nos.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/sobre-nos.html) e estabilização de transições `.reveal` em [components/home-sections.tsx](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/components/home-sections.tsx) e [src/css/sections.css](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-maisb1/src/css/sections.css).
