@@ -214,13 +214,32 @@ body {
   display: block !important;
 }
 
-/* 6. LARGURA E FLUXO NATURAL DO CARD TRABALHE CONOSCO */
+/* 6. LARGURA E TRANSIÇÃO ESFUMADA DO CARD TRABALHE CONOSCO (35% A 53%) */
 .trabalhe-card-content {
   max-width: 680px !important;
 }
 
 .trabalhe-card-headline {
   max-width: 100% !important;
+}
+
+.trabalhe-card-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, 
+                #FAF7F2 0%, 
+                #FAF7F2 35%, 
+                rgba(250, 247, 242, 0) 53%, 
+                transparent 100%) !important;
+}
+
+@media (max-width: 768px) {
+  .trabalhe-card-banner::before {
+    background: linear-gradient(to right, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.88) 60%, rgba(250, 247, 242, 0.4) 100%) !important;
+  }
 }
 
 /* Ponto de luz global usado pelo site legado nas áreas escuras. */
