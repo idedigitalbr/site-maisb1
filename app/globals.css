@@ -23,12 +23,18 @@ body:has(.site-route-loading) .footer { display: none; }
 /* Subtítulo da seção Nossas Marcas sem caixa/fundo */
 .brands-subtitle-badge-wrapper {
   display: block;
-  max-width: 680px;
+  max-width: 960px;
   margin: 0 auto;
   background: none !important;
   border: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .brands-subtitle-text {
+    white-space: nowrap !important;
+  }
 }
 
 /* O reveal é CSS-only no Next para não alterar atributos durante a hidratação. */
@@ -109,8 +115,7 @@ body {
 .faq-headline,
 .faq-title,
 .locator-gold-title,
-.trajetoria-title,
-.about-culture-title {
+.trajetoria-title {
   font-family: var(--font-primary) !important;
   font-size: clamp(1.65rem, 2.4vw, 2.375rem) !important; /* 38px Desktop padrão */
   font-weight: 700 !important;
@@ -119,6 +124,30 @@ body {
   text-wrap: balance !important;
   margin-top: 0 !important;
   margin-bottom: 16px !important;
+}
+
+/* Título de Cultura (Missão e Visão) - Tipografia Editorial Serifada com espaçamento arejado */
+.about-culture-title {
+  font-family: var(--font-editorial, 'DM Serif Display', Georgia, serif) !important;
+  font-size: clamp(2.3rem, 3.8vw, 3.2rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.05em !important;
+  text-wrap: balance !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.about-culture-title .headline-highlight-italic {
+  font-family: var(--font-editorial, 'DM Serif Display', Georgia, serif) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: var(--color-yellow, #C89223) !important;
+  letter-spacing: 0.05em !important;
+  margin-left: 10px !important;
+  display: inline-block !important;
 }
 
 /* Cores de fundo escuro para headlines */
@@ -313,7 +342,45 @@ body::before {
 .dark-slice:hover::after,
 .diretrizes-neon-section:hover::after { opacity: 1; }
 
-.main-menu.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+.main-menu.is-open,
+.main-menu.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Mobile global UX/UI: viewport guardrails, scroll lock, touch ergonomics */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  touch-action: none !important;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 .news-card-thumb-wrap { display: block; }
 .news-card-thumb { width: 100%; aspect-ratio: 1.65; object-fit: cover; }
 .news-card-title a { color: inherit; }
@@ -357,3 +424,13 @@ body:has(#next-page-content > .design-system-shell) > .wf-modal { display: none;
 .article-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .article-gallery-item figcaption { padding: 10px 14px 12px; color: #6f4f0f; font-size: 14px; line-height: 1.4; }
 @media (max-width: 640px) { .article-gallery-grid { grid-template-columns: 1fr; } }
+
+/* Ano na Seção Trajetória / Timeline em DM Serif Display */
+.trajetoria-year-display,
+#trajetoria-active-year {
+  font-family: var(--font-editorial, 'DM Serif Display', Georgia, serif) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+

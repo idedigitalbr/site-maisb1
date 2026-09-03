@@ -1,5 +1,132 @@
-@media(max-width:980px){.site-header{position:fixed;background:rgba(8,8,10,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);height:72px;padding:0 2.5rem !important}.main-menu{position:absolute;top:72px;left:2.5rem;right:2.5rem;display:none;flex-direction:column;align-items:stretch;gap:12px;padding:24px;background:#0d0d12;border:1px solid rgba(255,255,255,0.12);border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,0.8)}.main-menu.open{display:flex}.menu-toggle{display:block}.main-menu > a{justify-content:center;padding:12px 16px;font-size:0.8rem;border-radius:8px}.main-menu .btn-header-contact{margin-top:8px;width:100%}}
-@media(max-width:620px){.container{width:min(100% - 5rem,1180px) !important;max-width:calc(100% - 5rem) !important}.section{padding:74px 0}.site-header{padding:14px 2.5rem !important}.brand{height:48px;max-width:145px}.stats-grid,.logos-grid,.testimonials-grid{grid-template-columns:1fr}.work-card{padding:26px}.footer-grid{gap:18px}.editorial-card{height:340px}.editorial-badge{top:16px;left:16px;font-size:0.75rem;padding:6px 12px}.editorial-stat-card{bottom:16px;right:16px;padding:12px 16px;max-width:170px}.editorial-stat-card .stat-num{font-size:1.5rem}.editorial-stat-card .stat-lbl{font-size:0.7rem}.brands-network-wrapper{transform:scale(0.56);margin:-130px auto;height:340px;width:340px}.node-tooltip{bottom:-40px;padding:6px 10px}.node-tooltip strong{font-size:0.7rem}.node-tooltip span{font-size:0.58rem}}
+@media(max-width:980px){
+  .site-header{
+    position:fixed;
+    background:rgba(8,8,10,0.95);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    height:72px;
+    padding:0 1.25rem !important;
+    z-index: 1000;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .main-menu{
+    position:fixed;
+    top:76px;
+    left:1rem;
+    right:1rem;
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    padding:20px;
+    background:#0e0e13;
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:18px;
+    box-shadow:0 24px 60px rgba(0,0,0,0.85);
+    z-index: 9999;
+  }
+  .main-menu.is-open, .main-menu.open{
+    display:flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  .menu-toggle{
+    display:flex !important;
+  }
+  .main-menu > a{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding:12px 16px;
+    font-size:0.85rem;
+    font-weight: 700;
+    min-height: 44px;
+    border-radius:8px;
+    color: #ffffff;
+    touch-action: manipulation;
+  }
+  .main-menu .btn-header-contact{
+    margin-top:8px;
+    width:100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+}
+@media(max-width:620px){
+  .container{
+    width:min(100% - 2.5rem,1180px) !important;
+    max-width:calc(100% - 2.5rem) !important;
+  }
+  .section{
+    padding:56px 0 !important;
+  }
+  .site-header{
+    padding:0 1.25rem !important;
+  }
+  .brand-main{
+    height:44px !important;
+    max-width:180px !important;
+  }
+  .brand-main img{
+    height:36px !important;
+    width:auto !important;
+  }
+  .stats-grid,.logos-grid,.testimonials-grid{
+    grid-template-columns:1fr;
+  }
+  .work-card{
+    padding:20px;
+  }
+  .footer-grid{
+    gap:18px;
+  }
+  .editorial-card{
+    height:340px;
+  }
+  .editorial-badge{
+    top:16px;
+    left:16px;
+    font-size:0.75rem;
+    padding:6px 12px;
+  }
+  .editorial-stat-card{
+    bottom:16px;
+    right:16px;
+    padding:12px 16px;
+    max-width:170px;
+  }
+  .editorial-stat-card .stat-num{
+    font-size:1.5rem;
+  }
+  .editorial-stat-card .stat-lbl{
+    font-size:0.7rem;
+  }
+  .brands-network-wrapper{
+    transform:scale(0.56);
+    margin:-130px auto;
+    height:340px;
+    width:340px;
+  }
+  .node-tooltip{
+    bottom:-40px;
+    padding:6px 10px;
+  }
+  .node-tooltip strong{
+    font-size:0.7rem;
+  }
+  .node-tooltip span{
+    font-size:0.58rem;
+  }
+}
 
 /* ===================================================================
    Mobile Menu Improvements (Custom Mobile Layout for Brands & Contacts)

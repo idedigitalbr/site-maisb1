@@ -26,6 +26,7 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    document.body.classList.toggle('menu-open', menuOpen);
     if (!menuOpen) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return;
@@ -33,7 +34,10 @@ export function SiteHeader() {
       menuToggleRef.current?.focus();
     };
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.classList.remove('menu-open');
+    };
   }, [menuOpen]);
 
   return (
@@ -46,10 +50,18 @@ export function SiteHeader() {
       </div>
 
       <button ref={menuToggleRef} type="button" className="menu-toggle" aria-expanded={menuOpen} aria-controls="main-menu" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} onClick={() => setMenuOpen((value) => !value)}>
-        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        {menuOpen ? <X size={26} /> : <Menu size={26} />}
       </button>
 
-      <nav className={`main-menu ${menuOpen ? 'is-open' : ''}`} id="main-menu" aria-label="Navegação principal">
+      {menuOpen && (
+        <div
+          className="mobile-menu-backdrop"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <nav className={`main-menu ${menuOpen ? 'is-open open' : ''}`} id="main-menu" aria-label="Navegação principal">
         <Link id="menu-link-sobre" href="/sobre-nos" onClick={() => setMenuOpen(false)}>Sobre</Link>
         <Link id="menu-link-noticias" href="/noticias" onClick={() => setMenuOpen(false)}>Notícias</Link>
         <div className="dropdown">

@@ -1,5 +1,10 @@
 # Changelog
 
+- **Integração do Localizador Interativo de Lojas (`/ver-mapinha`) e Otimização Mobile da Home**:
+  - **Página Interativa `/ver-mapinha`**: Implementado mapa interativo com Leaflet, filtros por bandeira (+B Supermercados, The Wine Experience, +B Farma), geolocalização do usuário, cálculo de proximidade e rotas no Google Maps.
+  - **Banner Mobile Trabalhe Conosco**: Integração de assets mobile dedicados (`trabalhe-mobile-real.webp` e `trabalhe-mobile.webp`) com renderização proporcional e responsiva.
+  - **Aprimoramento de Seções e Componentes da Home**: Ajustes refinados de layout, header, footer e seções institucionais em Next.js e nos estilos CSS (`brands.css`, `hero.css`, `sections.css`, `work-units-footer.css`).
+
 - **Ajustes Personalizados nos Cards da Seção Nossas Marcas**:
   - **Headline em 38px e Sempre Branca**: Definido `font-size: 38px !important;` e `color: #ffffff !important;` em `.card-brand-title` e `.card-brand-title.serif-font` em [src/css/brands.css](file:///c:/.PROJETOS%20-%20Sites%202026/site-maisb1-next/src/css/brands.css), garantindo títulos destacados e sempre na cor branca.
   - **Cores de Categoria dos Itens (`.card-brand-keywords`)**:

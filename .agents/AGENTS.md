@@ -2,6 +2,28 @@
 
 Sempre que interagir com servidores VPS remotos via SSH, Docker, Git ou transferência de arquivos, você deve seguir estritamente as seguintes regras de segurança.
 
+---
+
+## ⚡ REGRA DE OURO: AGILIDADE E VELOCIDADE EM AJUSTES DE FRONTEND (NEXT.JS / CSS / UI)
+
+**Ajustes de layout, estilo, CSS, tipografia, espaçamento (px, rem, margin, padding, cores, tamanhos) devem ser resolvidos em SEGUNDOS, sem rebuliço.**
+
+1. **Ajuste Direto e Imediato:**
+   - Fazer a edição pontual direta no arquivo CSS ou componente JSX/TSX usando `replace_file_content`.
+   - Responder imediatamente ao usuário após a alteração.
+
+2. **🚫 PROIBIDO EM AJUSTES DE FRONTEND / CSS:**
+   - **NÃO rodar `npm run typecheck` ou `tsc`** para checar mudanças cosméticas ou de pixels.
+   - **NÃO rodar `npm run build`** para validar alterações simples de CSS/JSX.
+   - **NÃO fazer requisições de rede (`read_url_content`)** para testar se a página carregou em ajustes de estilo.
+   - **NÃO reiniciar servidores dev (`npm run dev`)** desnecessariamente. O Next.js possui **Fast Refresh nativo**, que reflete as alterações no navegador em milissegundos.
+
+3. **Quando usar Typecheck / Build:**
+   - **Apenas** quando houver alteração estrutural profunda de lógica/TypeScript, criação de novas rotas de API, refatoração de contratos de dados, instalação de novas dependências, ou quando o usuário **pedir expressamente** para validar a build ou fazer commit.
+
+---
+
+
 ## Regra Máxima de Segurança
 **NUNCA** apagar, mover, sobrescrever, reiniciar, parar, rebuildar ou alterar arquivos, containers, volumes, redes, serviços, diretórios ou configurações que não pertençam explicitamente ao projeto solicitado.
 

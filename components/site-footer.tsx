@@ -140,7 +140,21 @@ export function SiteFooter() {
               {!visibleUnits.length ? <div className="locator-empty-state" role="status"><p>Nenhuma unidade encontrada.</p><button type="button" className="locator-empty-action" onClick={() => setQuery('')}>Limpar busca</button></div> : null}
             </div>
           </div>
-          <div className="store-right-col"><div className="gold-map-wrapper"><iframe id="teaser-google-map-embed" title="Mapa das unidades Supermercados +B" src={mapSrc} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" /></div></div>
+          <div className="store-right-col">
+            <div className="gold-map-wrapper">
+              <iframe id="teaser-google-map-embed" title="Mapa das unidades Supermercados +B" src={mapSrc} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" />
+              <a
+                href={selectedUnit ? selectedUnit.mapsUrl : 'https://www.google.com/maps/search/?api=1&query=Supermercados+Mais+B+Bel%C3%A9m+PA'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-map-directions-btn"
+                aria-label="Abrir localização no Google Maps ou Waze"
+              >
+                <MapPin size={16} aria-hidden="true" />
+                <span>Abrir rota no Google Maps / Waze</span>
+              </a>
+            </div>
+          </div>
         </div></div>
       </div>
       <div className={`album-lightbox${lightboxIndex !== null ? ' open' : ''}`} id="album-lightbox" role="dialog" aria-modal="true" aria-label="Galeria das unidades" onClick={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}><button ref={lightboxCloseRef} type="button" className="lightbox-close" id="lightbox-close" aria-label="Fechar galeria" onClick={closeLightbox}><X size={24} /></button><button type="button" className="lightbox-nav prev" id="lightbox-prev" aria-label="Foto anterior" onClick={() => setLightboxIndex((current) => current === null ? null : (current + units.length - 1) % units.length)}><ChevronLeft size={28} aria-hidden="true" /></button><div className="lightbox-content">{lightboxIndex !== null ? <><img id="lightbox-img" src={asset(units[lightboxIndex].image)} alt={units[lightboxIndex].name} /><div id="lightbox-caption" className="lightbox-caption">{units[lightboxIndex].name} — {lightboxIndex + 1} de {units.length}</div></> : null}</div><button type="button" className="lightbox-nav next" id="lightbox-next" aria-label="Próxima foto" onClick={() => setLightboxIndex((current) => current === null ? null : (current + 1) % units.length)}><ChevronRight size={28} aria-hidden="true" /></button></div>

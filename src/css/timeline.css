@@ -6,7 +6,7 @@
 body.theme-holding #linha-tempo.trajetoria-section {
   background: #FAF7F2 !important;
   color: var(--ink) !important;
-  padding: 80px 0 60px;
+  padding: 80px 0 130px !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -177,14 +177,14 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 /* --- Ano Gigante --- */
 .trajetoria-year-display {
-  font-family: var(--font-primary, 'DM Sans', sans-serif);
+  font-family: var(--font-editorial, 'DM Serif Display', Georgia, serif) !important;
   font-style: normal;
-  font-weight: 800;
-  font-size: clamp(2.5rem, 5vw, 3.4rem);
-  line-height: 0.9;
-  color: var(--ink);
-  margin-bottom: 6px;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  font-size: clamp(3rem, 5.5vw, 4.2rem);
+  line-height: 1;
+  color: var(--ink, #120E0E);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -554,7 +554,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 @media (max-width: 768px) {
   body.theme-holding #linha-tempo.trajetoria-section {
-    padding: 120px 0 35px; /* Compensação para o margin-top de -100px no mobile */
+    padding: 120px 0 80px !important; /* Compensação para o margin-top de -100px no mobile */
   }
 
   .trajetoria-year-display {

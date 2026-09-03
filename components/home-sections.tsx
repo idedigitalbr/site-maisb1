@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Eye, HeartPulse, Leaf, MapPin, Maximize2, Minimize2, PartyPopper, ShoppingCart, Target, Utensils, Volume2, VolumeX, Wine } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, HeartPulse, Leaf, MapPin, Maximize2, Minimize2, PartyPopper, ShoppingCart, Utensils, Volume2, VolumeX, Wine } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { FaqSection } from './home/faq-section';
 import { OpportunitiesSection } from './home/opportunities-section';
@@ -72,7 +72,7 @@ export function InstitutionalVideoHero() {
 }
 
 export function AboutSection() {
-  return <section className="section section-light about-premium-section section-full-width" id="sobre"><div className="container about-container"><div className="about-main-grid"><div className="about-content-col"><span className="eyebrow-gold">SOBRE O GRUPO</span><h2 className="about-headline">O <span className="headline-highlight-italic">Grupo Mais Barato</span> reúne negócios que fazem parte do dia a dia das pessoas de <span style={{ whiteSpace: 'nowrap' }}>Belém — PA</span></h2><div className="about-paragraphs"><p className="about-mid-text">Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade.</p><p>Nossa atuação integra marcas que compartilham o mesmo compromisso: oferecer experiências que superem expectativas, sempre com foco nas pessoas, na excelência e no desenvolvimento das comunidades onde estamos presentes. Mais do que crescer, acreditamos em transformar relações, gerar oportunidades e construir um futuro cada vez melhor para clientes, colaboradores, parceiros e para a sociedade.</p></div><div className="gold-accent-line" /></div><div className="about-photo-col"><div className="about-photo-wrapper">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={asset('Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png')} alt="Equipe e Fachada Grupo Mais Barato" className="about-team-photo" loading="lazy" /></div></div></div></div></section>;
+  return <section className="section section-light about-premium-section section-full-width" id="sobre"><div className="container about-container"><div className="about-main-grid"><div className="about-content-col"><span className="eyebrow-gold">SOBRE O GRUPO</span><h2 className="about-headline">O <span className="headline-highlight-italic">Grupo Mais Barato</span> reúne negócios que fazem parte do dia a dia das pessoas de <span style={{ whiteSpace: 'nowrap' }}>Belém — PA</span></h2><div className="about-paragraphs"><p className="about-mid-text">Conectando varejo, gastronomia, saúde, bem-estar e serviços com qualidade, inovação e proximidade.</p><p className="about-lead-extended">Nossa atuação integra marcas que compartilham o mesmo compromisso: oferecer experiências que superem expectativas, sempre com foco nas pessoas, na excelência e no desenvolvimento das comunidades onde estamos presentes. Mais do que crescer, acreditamos em transformar relações, gerar oportunidades e construir um futuro cada vez melhor para clientes, colaboradores, parceiros e para a sociedade.</p></div><div className="gold-accent-line" /></div><div className="about-photo-col"><div className="about-photo-wrapper">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={asset('Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png')} alt="Equipe e Fachada Grupo Mais Barato" className="about-team-photo" loading="lazy" /></div></div></div></div></section>;
 }
 
 export function AboutInstitutional() {
@@ -81,7 +81,7 @@ export function AboutInstitutional() {
     event.currentTarget.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
     event.currentTarget.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
   };
-  return <section className="section about-premium-dark-section section-full-width" id="sobre" onMouseMove={onAboutMouseMove}>
+  return <section className="section about-premium-dark-section" id="sobre" onMouseMove={onAboutMouseMove}>
     <div className="about-bg-glow glow-dark-top-right" aria-hidden="true" />
     <div className="about-bg-glow glow-dark-center-photo" aria-hidden="true" />
     <div className="about-bg-glow glow-dark-bottom-left" aria-hidden="true" />
@@ -113,10 +113,44 @@ export function AboutInstitutional() {
       </div>
 
       <div className="about-culture-block reveal delay-1">
-        <div className="about-culture-header"><span className="eyebrow-gold">CULTURA</span><h3 className="about-culture-title">Missão e <span className="headline-highlight-italic">Visão</span></h3><div className="culture-title-accent" /></div>
+        <div className="about-culture-header"><span className="eyebrow-gold">IDENTIDADE CORPORATIVA</span><h3 className="about-culture-title">Nossa <span className="headline-highlight-italic">Cultura</span></h3><div className="culture-title-accent" /></div>
         <div className="about-culture-grid">
-          <div className="culture-card culture-card-missao"><div className="culture-card-icon-badge"><Target size={24} aria-hidden="true" /></div><div className="culture-card-divider" /><div className="culture-card-body"><h4 className="culture-card-title">Missão</h4><p className="culture-card-text">Participar do dia a dia de nossos clientes, oferecendo produtos e serviços de qualidade comprovada a preços competitivos.</p></div></div>
-          <div className="culture-card culture-card-visao"><div className="culture-card-icon-badge"><Eye size={24} aria-hidden="true" /></div><div className="culture-card-divider" /><div className="culture-card-body"><h4 className="culture-card-title">Visão</h4><p className="culture-card-text">Ser reconhecido pelo mercado como uma empresa referência em qualidade, preços competitivos e serviços de excelência na região norte do país.</p></div></div>
+          <div className="culture-card culture-card-missao">
+            <div className="culture-card-icon-badge">
+              <svg className="culture-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                <line x1="12" y1="1.5" x2="12" y2="4" />
+                <line x1="12" y1="20" x2="12" y2="22.5" />
+                <line x1="1.5" y1="12" x2="4" y2="12" />
+                <line x1="20" y1="12" x2="22.5" y2="12" />
+                <line x1="4.5" y1="4.5" x2="6.2" y2="6.2" />
+                <line x1="17.8" y1="17.8" x2="19.5" y2="19.5" />
+                <line x1="4.5" y1="19.5" x2="6.2" y2="17.8" />
+                <line x1="17.8" y1="6.2" x2="19.5" y2="4.5" />
+              </svg>
+            </div>
+            <div className="culture-card-divider" />
+            <div className="culture-card-body">
+              <h4 className="culture-card-title">Missão</h4>
+              <p className="culture-card-text">Participar da vida de nossos clientes, oferecendo produtos e serviços de qualidade comprometida a preços competitivos.</p>
+            </div>
+          </div>
+          <div className="culture-card culture-card-visao">
+            <div className="culture-card-icon-badge">
+              <svg className="culture-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3.2" />
+                <circle cx="12" cy="12" r="1.2" fill="currentColor" />
+              </svg>
+            </div>
+            <div className="culture-card-divider" />
+            <div className="culture-card-body">
+              <h4 className="culture-card-title">Visão</h4>
+              <p className="culture-card-text">Ser reconhecida pelo mercado como uma empresa referência em qualidade, preços competitivos e serviços de excelência na região norte do país.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -133,120 +167,318 @@ const brandData = [
 
 const orbitOrder = ['plaza', 'super', 'wine', 'park', 'farma'];
 
-function BrandOrbit({ active, onSelect }: { active: string; onSelect: (id: string) => void }) {
-  return <div className="brands-orbit-box" id="brands-orbit-box">
-    <svg className="brands-orbit-svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" id="brands-orbit-svg" aria-hidden="true">
-      <circle cx="250" cy="250" r="200" className="network-orbit-line" />
-      <circle cx="250" cy="250" r="120" className="network-orbit-line orbit-inner" />
-      <line id="line-active-bridge" x1="250" y1="250" x2="450" y2="250" className="split-connect-line active-bridge" />
-      {orbitOrder.map((id) => <line key={id} id={'line-' + id} x1="250" y1="250" x2="450" y2="250" className={'split-connect-line to-' + id} />)}
-      <circle id="hub-progress-arc" cx="250" cy="250" r="74" fill="none" strokeWidth="4" strokeLinecap="round" strokeDasharray="465" strokeDashoffset="465" transform="rotate(-90 250 250)" />
-    </svg>
-    <button type="button" className="brands-hub-center" id="brands-hub-center" title="Voltar ao início da rotação" onClick={() => onSelect('plaza')}>
-      <img className="hub-logo-white" src={asset('Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp')} alt="Logo Grupo Mais Barato" />
-    </button>
-    {orbitOrder.map((id) => {
-      const brand = brandData.find((item) => item.id === id);
-      if (!brand) return null;
-      const label = id === 'super' ? 'Supermercados +B' : id === 'wine' ? 'The Wine' : id === 'farma' ? '+B Farma' : id === 'park' ? 'Villa Plaza Park' : 'Villa Plaza';
-      return <button type="button" key={id} className={'network-node split-node carousel-node node-' + id + (id === active ? ' active' : '')} data-brand={id} role="button" aria-label={'Ver ' + label} onClick={() => onSelect(id)}>
-        <span className="node-logo-wrapper"><img src={asset('Icones Submarcas/' + brand.logo)} alt={'Logo ' + label} /></span>
-        <span className="node-label">{label}</span>
-      </button>;
-    })}
-  </div>;
+function getBaseAngle(id: string, activeId: string, isMobile: boolean) {
+  const count = orbitOrder.length;
+  const activeIdx = orbitOrder.indexOf(activeId);
+  const brandIdx = orbitOrder.indexOf(id);
+  const relIdx = (activeIdx - brandIdx + count) % count;
+  if (isMobile) {
+    if (id === activeId) return 90;
+    return 45 + (relIdx - 1) * 90;
+  }
+  return relIdx * (360 / count);
+}
+
+function getNextClockwiseAngle(currentAngle: number, targetBaseAngle: number) {
+  const currentMod = ((currentAngle % 360) + 360) % 360;
+  let diff = targetBaseAngle - currentMod;
+  if (diff < 0) diff += 360;
+  return currentAngle + diff;
+}
+
+function getPreviousCounterClockwiseAngle(currentAngle: number, targetBaseAngle: number) {
+  const currentMod = ((currentAngle % 360) + 360) % 360;
+  let diff = targetBaseAngle - currentMod;
+  if (diff > 0) diff -= 360;
+  return currentAngle + diff;
+}
+
+function getShortestPathAngle(currentAngle: number, targetBaseAngle: number) {
+  const currentMod = ((currentAngle % 360) + 360) % 360;
+  let diff = targetBaseAngle - currentMod;
+  if (diff > 180) diff -= 360;
+  else if (diff < -180) diff += 360;
+  return currentAngle + diff;
+}
+
+function BrandOrbit({
+  active,
+  onSelect,
+  isMobile,
+  nodeAngles,
+  lineAngles,
+  bridgeTransform,
+  progress,
+}: {
+  active: string;
+  onSelect: (id: string) => void;
+  isMobile: boolean;
+  nodeAngles: Record<string, number>;
+  lineAngles: Record<string, number>;
+  bridgeTransform: string;
+  progress: number;
+}) {
+  return (
+    <div
+      className="brands-orbit-box"
+      id="brands-orbit-box"
+      style={{
+        '--orbit-radius': isMobile ? '120px' : '200px',
+      } as React.CSSProperties}
+    >
+      <svg className="brands-orbit-svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" id="brands-orbit-svg" aria-hidden="true">
+        <circle cx="250" cy="250" r="200" className="network-orbit-line" />
+        <circle cx="250" cy="250" r="120" className="network-orbit-line orbit-inner" />
+        <line
+          id="line-active-bridge"
+          x1="250"
+          y1="250"
+          x2="450"
+          y2="250"
+          className="split-connect-line active-bridge"
+          style={{
+            transformOrigin: '250px 250px',
+            transform: bridgeTransform,
+            opacity: 1,
+            stroke: '#C89223',
+            strokeWidth: '2px',
+          }}
+        />
+        {orbitOrder.map((id) => {
+          const isActive = id === active;
+          const angle = lineAngles[id] ?? getBaseAngle(id, active, isMobile);
+          return (
+            <line
+              key={id}
+              id={'line-' + id}
+              x1="250"
+              y1="250"
+              x2="450"
+              y2="250"
+              className={'split-connect-line to-' + id}
+              style={{
+                transformOrigin: '250px 250px',
+                transform: `rotate(${angle}deg)`,
+                opacity: isActive ? 0 : 0.65,
+                stroke: '#C89223',
+              }}
+            />
+          );
+        })}
+        <circle
+          id="hub-progress-arc"
+          cx="250"
+          cy="250"
+          r="74"
+          fill="none"
+          stroke="#C89223"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray="465"
+          strokeDashoffset={String(465 * (1 - progress))}
+          transform="rotate(-90 250 250)"
+        />
+      </svg>
+      <button type="button" className="brands-hub-center" id="brands-hub-center" title="Voltar ao início da rotação" onClick={() => onSelect('plaza')}>
+        <img className="hub-logo-white" src={asset('Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp')} alt="Logo Grupo Mais Barato" />
+      </button>
+      {orbitOrder.map((id) => {
+        const brand = brandData.find((item) => item.id === id);
+        if (!brand) return null;
+        const label = id === 'super' ? 'Supermercados +B' : id === 'wine' ? 'The Wine' : id === 'farma' ? '+B Farma' : id === 'park' ? 'Villa Plaza Park' : 'Villa Plaza';
+        const isActive = id === active;
+        const angle = nodeAngles[id] ?? getBaseAngle(id, active, isMobile);
+        return (
+          <div
+            key={id}
+            className={'orbit-arm arm-' + id}
+            style={{
+              transform: `rotate(${angle}deg)`,
+            }}
+          >
+            <button
+              type="button"
+              className={'network-node split-node carousel-node node-' + id + (isActive ? ' active' : '')}
+              data-brand={id}
+              role="button"
+              aria-label={'Ver ' + label}
+              onClick={() => onSelect(id)}
+              style={{
+                transform: `translate(var(--orbit-radius, 200px), 0) rotate(-${angle}deg) translate(-50%, -50%)`,
+                opacity: isActive ? 0 : 1,
+                pointerEvents: isActive ? 'none' : 'auto',
+              }}
+            >
+              <span className="node-logo-wrapper" style={{ transform: 'scale(0.9)' }}>
+                <img src={asset('Icones Submarcas/' + brand.logo)} alt={'Logo ' + label} />
+              </span>
+              <span className="node-label" style={{ opacity: isActive ? 0 : 1 }}>{label}</span>
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export function BrandsSection() {
   const [active, setActive] = useState('plaza');
+  const [isMobile, setIsMobile] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [bridgeTransform, setBridgeTransform] = useState('rotate(0deg) scaleX(2.15)');
+  const [nodeAngles, setNodeAngles] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {};
+    orbitOrder.forEach((id) => { initial[id] = getBaseAngle(id, 'plaza', false); });
+    return initial;
+  });
+  const [lineAngles, setLineAngles] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {};
+    orbitOrder.forEach((id) => { initial[id] = getBaseAngle(id, 'plaza', false); });
+    return initial;
+  });
+
+  const isMobileRef = useRef(false);
+  const nodeAnglesRef = useRef(nodeAngles);
+  nodeAnglesRef.current = nodeAngles;
+  const lineAnglesRef = useRef(lineAngles);
+  lineAnglesRef.current = lineAngles;
+  const activeRef = useRef(active);
+  activeRef.current = active;
   const touchStartX = useRef<number | null>(null);
+
   const onBrandsMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     event.currentTarget.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
     event.currentTarget.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
   };
-  const activeIndex = brandData.findIndex((brand) => brand.id === active);
-  const selectBrand = (id: string, updateHash = true) => {
-    setActive(id);
-    if (updateHash && typeof window !== 'undefined') window.history.replaceState(null, '', '#marca-' + id);
+
+  const updateBridge = (mobile: boolean) => {
+    if (mobile) {
+      setBridgeTransform('rotate(90deg) scaleX(1.35)');
+      return;
+    }
+    const orbit = document.getElementById('brands-orbit-box');
+    const activeCard = document.querySelector<HTMLElement>('.brand-detail-card.active');
+    const logo = activeCard?.querySelector<HTMLElement>('.card-logo-overlap');
+    if (orbit && logo) {
+      const orbitRect = orbit.getBoundingClientRect();
+      const logoRect = logo.getBoundingClientRect();
+      if (orbitRect.width > 0) {
+        const orbitCenterX = orbitRect.left + orbitRect.width / 2;
+        const orbitCenterY = orbitRect.top + orbitRect.height / 2;
+        const logoCenterX = logoRect.left + logoRect.width / 2;
+        const logoCenterY = logoRect.top + logoRect.height / 2;
+        const dx = logoCenterX - orbitCenterX;
+        const dy = logoCenterY - orbitCenterY;
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const scaleX = (distance / orbitRect.width) * (500 / 200);
+        setBridgeTransform(`rotate(${angle.toFixed(2)}deg) scaleX(${scaleX.toFixed(2)})`);
+        return;
+      }
+    }
+    setBridgeTransform('rotate(0deg) scaleX(2.15)');
   };
-  const selectRelative = (offset: number) => selectBrand(brandData[(activeIndex + offset + brandData.length) % brandData.length].id);
+
+  const calculateNextAngles = (targetActive: string, direction?: 'next' | 'prev') => {
+    const mobile = isMobileRef.current;
+    const nextNode: Record<string, number> = {};
+    const nextLine: Record<string, number> = {};
+
+    orbitOrder.forEach((id) => {
+      const targetBase = getBaseAngle(id, targetActive, mobile);
+      const prevNodeAngle = nodeAnglesRef.current[id] ?? targetBase;
+      const prevLineAngle = lineAnglesRef.current[id] ?? targetBase;
+
+      if (mobile) {
+        nextNode[id] = getShortestPathAngle(prevNodeAngle, targetBase);
+        nextLine[id] = getShortestPathAngle(prevLineAngle, targetBase);
+      } else if (direction === 'prev') {
+        nextNode[id] = getPreviousCounterClockwiseAngle(prevNodeAngle, targetBase);
+        nextLine[id] = getPreviousCounterClockwiseAngle(prevLineAngle, targetBase);
+      } else {
+        nextNode[id] = getNextClockwiseAngle(prevNodeAngle, targetBase);
+        nextLine[id] = getNextClockwiseAngle(prevLineAngle, targetBase);
+      }
+    });
+
+    nodeAnglesRef.current = nextNode;
+    lineAnglesRef.current = nextLine;
+    setNodeAngles(nextNode);
+    setLineAngles(nextLine);
+  };
+
+  const selectBrand = (id: string, direction?: 'next' | 'prev', updateHash = true) => {
+    setActive(id);
+    setProgress(0);
+    calculateNextAngles(id, direction);
+    if (updateHash && typeof window !== 'undefined') window.history.replaceState(null, '', '#marca-' + id);
+    window.requestAnimationFrame(() => updateBridge(isMobileRef.current));
+  };
+
+  const activeIndex = brandData.findIndex((brand) => brand.id === active);
+  const selectRelative = (offset: number) => {
+    const nextIndex = (activeIndex + offset + brandData.length) % brandData.length;
+    selectBrand(brandData[nextIndex].id, offset < 0 ? 'prev' : 'next');
+  };
 
   useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 980;
+      const wasMobile = isMobileRef.current;
+      setIsMobile(mobile);
+      isMobileRef.current = mobile;
+      updateBridge(mobile);
+      if (mobile !== wasMobile) {
+        const nextNodes: Record<string, number> = {};
+        const nextLines: Record<string, number> = {};
+        orbitOrder.forEach((id) => {
+          nextNodes[id] = getBaseAngle(id, activeRef.current, mobile);
+          nextLines[id] = getBaseAngle(id, activeRef.current, mobile);
+        });
+        nodeAnglesRef.current = nextNodes;
+        lineAnglesRef.current = nextLines;
+        setNodeAngles(nextNodes);
+        setLineAngles(nextLines);
+      }
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const fromHash = window.location.hash.match(/^#marca-(super|farma|plaza|park|wine)$/)?.[1];
     if (fromHash) {
-      setActive(fromHash);
+      selectBrand(fromHash);
       window.requestAnimationFrame(() => document.getElementById('marcas')?.scrollIntoView({ block: 'start' }));
     }
     const onHashChange = () => {
       const next = window.location.hash.match(/^#marca-(super|farma|plaza|park|wine)$/)?.[1];
-      if (next) setActive(next);
+      if (next) selectBrand(next);
     };
     window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('hashchange', onHashChange);
+    };
   }, []);
 
   useEffect(() => {
-    const orbit = document.getElementById('brands-orbit-box');
-    const stage = document.querySelector('.brands-carousel-stage');
-    if (!orbit) return;
-    const nodes = Array.from(orbit.querySelectorAll<HTMLElement>('.carousel-node'));
-    const arc = document.getElementById('hub-progress-arc');
-    const bridge = document.getElementById('line-active-bridge');
-    const activeCard = document.querySelector<HTMLElement>('.brand-detail-card.active');
-    const logo = activeCard?.querySelector<HTMLElement>('.card-logo-overlap');
-    const radius = (orbit.offsetWidth || 500) * 0.4;
-    const activeIndex = orbitOrder.indexOf(active);
+    updateBridge(isMobile);
+  }, [active, isMobile]);
 
-    nodes.forEach((node) => {
-      const id = node.dataset.brand || '';
-      const brandIndex = orbitOrder.indexOf(id);
-      const relativeIndex = (activeIndex - brandIndex + orbitOrder.length) % orbitOrder.length;
-      const angle = relativeIndex * (360 / orbitOrder.length);
-      node.style.left = '50%';
-      node.style.top = '50%';
-      node.style.display = 'flex';
-      node.style.opacity = id === active ? '0' : '1';
-      node.style.pointerEvents = id === active ? 'none' : 'auto';
-      node.style.transform = 'translate(-50%, -50%) rotate(' + angle + 'deg) translate(' + radius + 'px) rotate(' + (-angle) + 'deg)';
-      const wrapper = node.querySelector<HTMLElement>('.node-logo-wrapper');
-      if (wrapper) wrapper.style.transform = id === active ? 'scale(0.4)' : 'scale(0.4)';
-      const label = node.querySelector<HTMLElement>('.node-label');
-      if (label) label.style.opacity = '0';
-    });
-
-    if (bridge && logo) {
-      const orbitRect = orbit.getBoundingClientRect();
-      const logoRect = logo.getBoundingClientRect();
-      const dx = logoRect.left + logoRect.width / 2 - (orbitRect.left + orbitRect.width / 2);
-      const dy = logoRect.top + logoRect.height / 2 - (orbitRect.top + orbitRect.height / 2);
-      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      bridge.style.stroke = '#C89223';
-      bridge.style.strokeWidth = '2px';
-      bridge.style.opacity = '1';
-      bridge.style.transform = 'rotate(' + angle + 'deg) scaleX(' + ((distance / orbitRect.width) * 500 / 200) + ')';
-    }
-
-    orbitOrder.forEach((id, index) => {
-      const line = document.getElementById('line-' + id);
-      if (!line) return;
-      const angle = ((activeIndex - index + orbitOrder.length) % orbitOrder.length) * (360 / orbitOrder.length);
-      line.style.stroke = '#C89223';
-      line.style.opacity = id === active ? '0' : '0.65';
-      line.style.transform = 'rotate(' + angle + 'deg)';
-    });
-
+  useEffect(() => {
     let paused = false;
     let accumulatedElapsed = 0;
     let lastTime = performance.now();
     let raf = 0;
-    const duration = 16000;
+    const duration = 9000;
+
+    const stage = document.querySelector('.brands-carousel-stage');
+    const orbit = document.getElementById('brands-orbit-box');
 
     const pause = () => { paused = true; };
-    const resume = () => { 
-      paused = false; 
-      lastTime = performance.now(); 
+    const resume = () => {
+      paused = false;
+      lastTime = performance.now();
     };
 
     stage?.addEventListener('mouseenter', pause);
@@ -262,25 +494,20 @@ export function BrandsSection() {
         accumulatedElapsed += delta;
       }
 
-      const progress = Math.min(accumulatedElapsed / duration, 1);
-      if (arc) arc.style.strokeDashoffset = String(465 * (1 - progress));
+      const p = Math.min(accumulatedElapsed / duration, 1);
+      setProgress(p);
 
-      nodes.forEach((node) => {
-        if (node.dataset.brand === active) return;
-        const wrapper = node.querySelector<HTMLElement>('.node-logo-wrapper');
-        const label = node.querySelector<HTMLElement>('.node-label');
-        if (wrapper) wrapper.style.transform = 'scale(' + (0.4 + progress * 0.45) + ')';
-        if (label) label.style.opacity = progress <= 0.12 ? '0' : '1';
-      });
-
-      if (!paused && progress >= 1) {
+      if (!paused && p >= 1) {
         accumulatedElapsed = 0;
-        setActive(orbitOrder[(activeIndex + 1) % orbitOrder.length]);
+        const currentIdx = orbitOrder.indexOf(activeRef.current);
+        const nextId = orbitOrder[(currentIdx + 1) % orbitOrder.length];
+        selectBrand(nextId, 'next', false);
         return;
       }
       raf = window.requestAnimationFrame(tick);
     };
     raf = window.requestAnimationFrame(tick);
+
     return () => {
       window.cancelAnimationFrame(raf);
       stage?.removeEventListener('mouseenter', pause);
@@ -309,7 +536,7 @@ export function BrandsSection() {
     window.dispatchEvent(new CustomEvent('store-locator-brand-select', { detail: { brandId } }));
   };
 
-  return <section className="brands-scroll-container" id="marcas"><div className="brands-sticky-wrapper"><div className="brands-black-block" onMouseMove={onBrandsMouseMove}><div className="brands-grid-overlay" /><div className="container brands-section-container"><div className="brands-section-head"><span className="eyebrow-gold">NOSSAS MARCAS</span><h2 className="brands-headline-title">Marcas que conectam, cuidam e fazem parte <span className="headline-highlight-italic">do dia a dia.</span></h2><div className="brands-subtitle-badge-wrapper"><p className="brands-subtitle-text">Cada marca conecta consumo, cuidado, gastronomia, lazer e experiências para o dia a dia.</p></div></div><div className="brands-carousel-stage" tabIndex={0} onKeyDown={onStageKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} aria-label="Carrossel de marcas" role="region"><div className="brands-layout-split"><div className="brands-layout-left"><BrandOrbit active={active} onSelect={selectBrand} /></div><div className="brands-layout-right"><button type="button" className="brands-nav-arrow arrow-left" aria-label="Marca anterior" onClick={() => selectRelative(-1)}><ChevronLeft size={22} /></button><button type="button" className="brands-nav-arrow arrow-right" aria-label="Próxima marca" onClick={() => selectRelative(1)}><ChevronRight size={22} /></button>{brandData.map((brand) => { const Watermark = brand.watermark; return <div className={'brand-detail-card theme-' + brand.theme + (brand.id === active ? ' active' : '')} data-brand={brand.id} id={'marca-' + brand.id} key={brand.id}><div className="card-top-gallery">{brand.images.map((image, index) => <div className="gallery-panel panel-image" key={image}><img src={asset('Fotografias/' + image)} alt={`${brand.id} imagem ${index + 1}`} /></div>)}</div><div className="card-details-body"><div className="card-logo-overlap"><img src={asset('Icones Submarcas/' + brand.logo)} alt={brand.id} /></div><div className="card-header-info"><span className="card-badge">MARCA EM DESTAQUE</span><h3 className={'card-brand-title' + (brand.serifTitle ? ' serif-font' : '')}>{brand.title}</h3><span className={'card-brand-keywords keyword-' + brand.id}>{brand.keywords}</span></div><p className="card-brand-description">{brand.description}</p><div className="card-actions"><a href="#store-locator-teaser" className="open-map-trigger btn-card-primary" onClick={(event) => openBrandLocation(event, brand.id)}><MapPin size={15} aria-hidden="true" /> Ver unidades & localização</a></div><Watermark className="card-watermark" size={120} strokeWidth={1.5} aria-hidden="true" /></div></div>; })}</div></div></div></div></div></div></section>;
+  return <section className="brands-scroll-container" id="marcas"><div className="brands-sticky-wrapper"><div className="brands-black-block" onMouseMove={onBrandsMouseMove}><div className="brands-grid-overlay" /><div className="container brands-section-container"><div className="brands-section-head"><span className="eyebrow-gold">NOSSAS MARCAS</span><h2 className="brands-headline-title">Marcas que conectam, cuidam e fazem parte <span className="headline-highlight-italic">do dia a dia.</span></h2><div className="brands-subtitle-badge-wrapper"><p className="brands-subtitle-text">Cada marca conecta consumo, cuidado, gastronomia, lazer e experiências para o dia a dia.</p></div></div><div className="brands-carousel-stage" tabIndex={0} onKeyDown={onStageKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} aria-label="Carrossel de marcas" role="region"><div className="brands-layout-split"><div className="brands-layout-left"><BrandOrbit active={active} onSelect={selectBrand} isMobile={isMobile} nodeAngles={nodeAngles} lineAngles={lineAngles} bridgeTransform={bridgeTransform} progress={progress} /></div><div className="brands-layout-right"><button type="button" className="brands-nav-arrow arrow-left" aria-label="Marca anterior" onClick={() => selectRelative(-1)}><ChevronLeft size={22} /></button><button type="button" className="brands-nav-arrow arrow-right" aria-label="Próxima marca" onClick={() => selectRelative(1)}><ChevronRight size={22} /></button>{brandData.map((brand) => { const Watermark = brand.watermark; return <div className={'brand-detail-card theme-' + brand.theme + (brand.id === active ? ' active' : '')} data-brand={brand.id} id={'marca-' + brand.id} key={brand.id}><div className="card-top-gallery">{brand.images.map((image, index) => <div className="gallery-panel panel-image" key={image}><img src={asset('Fotografias/' + image)} alt={`${brand.id} imagem ${index + 1}`} /></div>)}</div><div className="card-details-body"><div className="card-logo-overlap"><img src={asset('Icones Submarcas/' + brand.logo)} alt={brand.id} /></div><div className="card-header-info"><span className="card-badge">MARCA EM DESTAQUE</span><h3 className={'card-brand-title' + (brand.serifTitle ? ' serif-font' : '')}>{brand.title}</h3><span className={'card-brand-keywords keyword-' + brand.id}>{brand.keywords}</span></div><p className="card-brand-description">{brand.description}</p><div className="card-actions"><a href="#store-locator-teaser" className="open-map-trigger btn-card-primary" onClick={(event) => openBrandLocation(event, brand.id)}><MapPin size={15} aria-hidden="true" /> Ver unidades & localização</a></div><Watermark className="card-watermark" size={120} strokeWidth={1.5} aria-hidden="true" /></div></div>; })}</div></div></div></div></div></div></section>;
 }
 
 export { OpportunitiesSection, FaqSection };

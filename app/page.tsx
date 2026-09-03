@@ -33,6 +33,11 @@ export default async function HomePage() {
               <NewsCard key={article.id} article={article} />
             ))}
           </div>
+          <div className="news-bottom-actions">
+            <Link href="/noticias" className="btn-news-all">
+              VER TODAS AS NOTÍCIAS <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
       <FaqSectionExport />

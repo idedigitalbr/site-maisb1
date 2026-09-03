@@ -1210,3 +1210,69 @@ body.article-page-theme-light .article-related-section .news-card:hover .news-ca
     background-position: -200% 0;
   }
 }
+
+@media (max-width: 768px) {
+  .news-home-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .news-header-left {
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .news-header-left .eyebrow-gold {
+    margin: 0 auto 10px auto !important;
+    text-align: center !important;
+  }
+
+  .news-home-title {
+    text-align: center !important;
+    font-size: clamp(1.75rem, 6.2vw, 2.3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .news-header-right {
+    display: none !important;
+  }
+
+  .news-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Exibe somente 2 posts no mobile */
+  .news-cards-grid > .news-card:nth-child(n+3) {
+    display: none !important;
+  }
+
+  /* Botão vem depois dos cards de posts no mobile */
+  .news-bottom-actions {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 28px !important;
+  }
+
+  .btn-news-all {
+    width: 100% !important;
+    max-width: 290px !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    padding: 14px 24px !important;
+    touch-action: manipulation;
+  }
+}
+
+.news-bottom-actions {
+  display: none;
+}
+
+

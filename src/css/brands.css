@@ -443,12 +443,12 @@
 }
 
 /* Efeitos Hover temáticos por marca */
-.network-node:hover {
+.brands-network-wrapper .network-node:hover {
   transform: translateY(-6px);
   z-index: 200;
 }
 
-.network-node:hover .node-logo-wrapper {
+.brands-network-wrapper .network-node:hover .node-logo-wrapper {
   transform: scale(1.12);
   border-color: var(--color-yellow) !important;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
@@ -775,14 +775,35 @@
   100% { transform: translateY(0); }
 }
 
-.carousel-node {
+.orbit-arm {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  z-index: 15;
+}
+
+.carousel-node {
+  position: absolute;
+  left: 0;
+  top: 0;
   bottom: auto !important;
   right: auto !important;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: auto;
   transform-origin: center center;
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   z-index: 15;
 }
 
@@ -1359,7 +1380,9 @@
     width: 100% !important;
     height: auto !important;
     border-radius: 40px !important;
-    padding: 80px 24px 80px !important;
+    padding: 80px 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   
   .brands-section-head {
@@ -1379,7 +1402,8 @@
     transform: none !important;
     width: 360px;
     height: 360px;
-    margin: 0 auto;
+    margin: 10px auto !important;
+    --orbit-radius: 144px;
   }
   
   .brands-orbit-box .brands-hub-center {
@@ -1451,8 +1475,13 @@
     padding: 48px 2.5rem 24px !important;
   }
 
-  .brands-section-container {
-    padding: 0 16px !important; /* Reseta o padding no tablet/mobile */
+  .brands-section-container,
+  .brands-black-block .brands-section-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -1506,7 +1535,8 @@
     transform: none !important;
     width: 300px;
     height: 300px;
-    margin: -30px auto -20px;
+    margin: 10px auto 16px !important;
+    --orbit-radius: 120px;
   }
   
   .brands-orbit-box .brands-hub-center {

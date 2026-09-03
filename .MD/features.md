@@ -21,6 +21,12 @@
 - [x] S4 Álbum de Fotografias e Galeria Interativa por Categorias
 - [x] S5 Rodapé Institucional Minimalista
 
+## 📍 PÁGINA: LOCALIZADOR DE LOJAS (/ver-mapinha) [Concluída]
+- [x] S0 Mapa Interativo Leaflet com Marcadores Customizados (+B, The Wine, Farma)
+- [x] S1 Filtros por Submarca e Busca por Bairro/Endereço
+- [x] S2 Geolocalização com Cálculo de Distância em Km e Rotas Google Maps
+- [x] S3 Modais Responsivos com Horários de Funcionamento e Telefones
+
 ## 🛠️ INFRAESTRUTURA & VPS [Concluído]
 - [x] S0 Setup Docker Compose & VPS Nginx
 - [x] S1 Configuração DNS Cloudflare & SSL (grupomaisb.suporteide.digital)

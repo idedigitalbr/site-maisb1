@@ -20,8 +20,6 @@
     ['.trajetoria-prev-btn > svg:not(.lucide)', 'chevron-left'],
     ['.trajetoria-next-btn > svg:not(.lucide)', 'chevron-right'],
     ['.floating-card-icon > svg:not(.lucide)', 'sprout'],
-    ['.culture-card-missao .culture-icon:not(.lucide)', 'target'],
-    ['.culture-card-visao .culture-icon:not(.lucide)', 'eye'],
     ['#mute-icon:not(.lucide)', 'volume-x'],
     ['#unmute-icon:not(.lucide)', 'volume-2'],
     ['#fullscreen-enter-icon:not(.lucide)', 'maximize'],

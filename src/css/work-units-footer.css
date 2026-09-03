@@ -3474,17 +3474,31 @@
   }
 
   .store-locator-gold-section {
-    padding: 44px 0 36px;
+    padding: 48px 0 36px;
+  }
+
+  .store-left-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .store-left-col .eyebrow-gold {
+    margin: 0 auto 10px auto !important;
+    text-align: center !important;
   }
 
   .locator-gold-title {
-    font-size: 1.55rem;
-    margin-bottom: 6px;
+    font-size: clamp(1.65rem, 5.8vw, 2.1rem);
+    text-align: center !important;
+    margin-bottom: 8px;
   }
 
   .locator-gold-desc {
-    font-size: 0.85rem;
-    margin-bottom: 16px;
+    font-size: 0.88rem;
+    text-align: center !important;
+    margin-bottom: 18px;
   }
 
   .locator-search-box {
@@ -3536,7 +3550,8 @@
 
   .store-locator-gold-section .store-card-body h3,
   .unit-card-title {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
+    font-weight: 700;
     line-height: 1.25;
     white-space: normal;
     display: -webkit-box;
@@ -3548,41 +3563,55 @@
 
   .unit-card-rating,
   .store-rating-teaser {
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     flex-shrink: 0;
   }
 
   .unit-subbrands-inline-row {
-    font-size: 0.56rem;
-    line-height: 1.3;
-    margin: 1px 0 2px 0;
+    font-size: 0.70rem;
+    line-height: 1.4;
+    margin: 2px 0 3px 0;
     word-break: break-word;
+    color: var(--color-yellow, #C89223);
+    font-weight: 600;
   }
 
   .store-locator-gold-section .store-address-teaser,
   .unit-card-addr {
-    font-size: 0.72rem;
-    line-height: 1.25;
-    margin: 0 0 2px;
-    white-space: nowrap;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin: 0 0 4px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .store-locator-gold-section .store-card-footer {
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
   .store-locator-gold-section .btn-unit-ver-mais {
-    padding: 3px 8px;
-    font-size: 0.60rem;
-    letter-spacing: 0.02em;
-    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    border-radius: 6px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    touch-action: manipulation;
   }
 
   .gold-map-wrapper {
     height: 290px;
     border-radius: 14px;
+    position: relative;
+  }
+
+  .gold-map-wrapper iframe {
+    pointer-events: none;
   }
 }
 
@@ -3974,6 +4003,40 @@
     justify-self: center;
   }
 }
+
+/* Botão Direto de Rotas para Navegação Mobile */
+.mobile-map-directions-btn {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .mobile-map-directions-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: var(--color-yellow, #C89223);
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    min-height: 44px;
+    box-shadow: 0 4px 14px rgba(200, 146, 35, 0.35);
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-map-directions-btn:active {
+    transform: scale(0.98);
+    filter: brightness(1.1);
+  }
+}
+
 
 
 
