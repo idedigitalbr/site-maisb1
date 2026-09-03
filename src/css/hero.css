@@ -30,17 +30,17 @@
   pointer-events: none;
 }
 
-/* Overlay Gradiente Escuro Horizontal: Cobre o texto com conforto até o final de 'Mais Barato' e suaviza gradualmente */
+/* Overlay Gradiente Escuro Horizontal: Curva exata solicitada (0-30%: 100-94%, 30-40%: 94-60%, 45-50%: cai para 0%) */
 .slide-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
   background: linear-gradient(90deg, 
-                rgba(8, 8, 10, 0.96) 0%, 
-                rgba(8, 8, 10, 0.90) 30%, 
-                rgba(8, 8, 10, 0.70) 48%, 
-                rgba(8, 8, 10, 0.38) 58%, 
-                transparent 72%),
+                rgba(8, 8, 10, 1.0) 0%, 
+                rgba(8, 8, 10, 0.94) 30%, 
+                rgba(8, 8, 10, 0.60) 40%, 
+                rgba(8, 8, 10, 0.30) 45%, 
+                transparent 50%),
               linear-gradient(180deg, 
                 rgba(8, 8, 10, 0.45) 0%, 
                 transparent 20%, 
