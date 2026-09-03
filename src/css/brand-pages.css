@@ -39,7 +39,7 @@ body.theme-the-wine h1,
 body.theme-the-wine h2, 
 body.theme-the-wine h3,
 body.theme-the-wine .serif-font {
-  font-family: var(--font-primary, 'DM Sans', Arial, sans-serif);
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   letter-spacing: -0.02em;
 }
 .theme-the-wine .btn.primary {
@@ -316,21 +316,21 @@ body.theme-park .footer {
 body.theme-holding {
   background: var(--bg-gradient);
   color: #ffffff;
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
 }
 
 body.theme-holding h1, 
 body.theme-holding h2, 
 body.theme-holding h3,
 body.theme-holding .serif-font {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
 }
 
 body.theme-holding h1.serif-font,
 body.theme-holding h2.serif-font,
 body.theme-holding h3.serif-font,
 body.theme-holding .serif-accent {
-  font-family: var(--font-primary, 'DM Sans', Arial, sans-serif);
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-style: normal;
 }
 

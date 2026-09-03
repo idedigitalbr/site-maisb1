@@ -76,16 +76,17 @@
   margin: 0 0 18px;
 }
 
-/* "Mais Barato" com gradiente dourado nobre em DM Sans */
-.slide-headline-huge .headline-highlight {
+/* "Mais Barato" com DM Serif Display Itálico Dourado Oficial */
+.slide-headline-huge .headline-highlight,
+.slide-headline-huge .headline-highlight-italic {
   display: inline-block;
-  font-family: var(--font-primary, 'DM Sans', sans-serif);
-  font-style: normal;
-  font-weight: 800;
-  color: #d4a017;
-  background: linear-gradient(135deg, #fce09b 0%, #d4a017 60%, #b88308 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: var(--font-editorial, "DM Serif Display", Georgia, serif) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: var(--color-yellow, #C89223) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  margin-left: 6px;
 }
 
 .slide-headline-nowrap {

@@ -148,7 +148,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 }
 
 .timeline-pill-text {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-size: 0.74rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -158,7 +158,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 /* --- Título "Nossa Trajetória" com fontes mistas --- */
 .trajetoria-title {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-weight: 400;
   font-style: normal;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -229,7 +229,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 }
 
 .trajetoria-event-title {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--ink);
@@ -238,7 +238,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 }
 
 .trajetoria-event-desc {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-size: 0.92rem;
   line-height: 1.65;
   color: #666;
@@ -379,7 +379,7 @@ body.theme-holding #linha-tempo.trajetoria-section {
 
 /* Ano no nó */
 .trajetoria-node-year {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-size: 0.78rem;
   font-weight: 600;
   color: #999;

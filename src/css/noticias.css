@@ -824,7 +824,7 @@ body.news-list-page-theme .news-card-meta svg.lucide {
   background: #191616;
   border-left: 4px solid var(--color-yellow, #c89223);
   border-radius: 0 12px 12px 0;
-  font-family: var(--font-primary, 'DM Sans', Arial, sans-serif);
+  font-family: var(--font-primary, "DM Sans", sans-serif);
   font-size: 1.25rem;
   font-weight: 500;
   font-style: normal;

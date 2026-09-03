@@ -8,17 +8,19 @@
 4. Manter contraste, foco visível, teclado e reduced motion como requisitos funcionais.
 5. Compartilhar componentes e dados sem alterar URLs, conteúdo, slugs ou regras do CMS.
 
-## Tipografia (100% DM Sans Unificada)
+## Tipografia Oficial (Dupla Engrenagem Editorial)
+
+A identidade opera em regime de **dupla engrenagem editorial**: a sofisticada **DM Serif Display** em títulos expressivos e frases em itálico dourado, equilibrada pela clareza funcional da **DM Sans** para corpo, interface, menus e dados.
 
 | Papel | Fonte | Uso |
 | --- | --- | --- |
 | Headlines & Títulos | DM Sans (700 Bold) | Títulos de destaque, chamadas institucionais e nomes de marcas |
-| Destaques Dourados | DM Sans (700 Bold / Dourado #C89223) | Nomes de marcas ou termos em destaque nos títulos |
+| Destaques Nobres / Itálicos | DM Serif Display (400 Italic / Dourado #C89223) | Nomes de marcas ou termos em destaque nos títulos (`.headline-highlight-italic`, `.serif-accent`) |
 | Interface/corpo | DM Sans (400/500) | Navegação, corpo, cards, formulários e painel |
-| Eyebrow | DM Sans (700, uppercase) | Rótulos de seção e categoria |
+| Eyebrow | DM Sans (700, uppercase) | Rótulos de seção e categoria (`12px`, letter-spacing `0.14em`) |
 | Metadata | DM Sans (400/500) | Datas, status, endereço e informações auxiliares |
 
-Títulos devem usar `letter-spacing` negativo com parcimônia e line-height compacto. Corpo e metadata devem manter line-height confortável. O projeto opera 100% com a família DM Sans.
+Títulos devem usar `letter-spacing` negativo com parcimônia e line-height compacto. O nome da marca e termos de destaque recebem o toque nobre da **DM Serif Display** em itálico dourado.
 
 ## Tokens semânticos
 

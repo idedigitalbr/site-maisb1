@@ -59,7 +59,7 @@ body:has(.site-route-loading) .footer { display: none; }
   --color-success: #237A4A;
   --color-warning: #A87516;
   --font-primary: var(--font-dm-sans), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-editorial: var(--font-primary);
+  --font-editorial: var(--font-dm-serif), "DM Serif Display", Georgia, serif;
   --color-danger: #9F342D;
   --radius-control: 12px;
   --radius-panel: 16px;
@@ -81,6 +81,7 @@ body {
 .brands-eyebrow-tag,
 .faq-eyebrow,
 .locator-eyebrow,
+.news-hero-badge,
 .about-culture-header .eyebrow-gold,
 .trabalhe-card-content .eyebrow-gold,
 .news-header-left .eyebrow-gold {
@@ -102,6 +103,7 @@ body {
 .about-headline,
 .news-home-title,
 .news-header-title,
+.news-hero-title,
 .brands-headline-title,
 .trabalhe-card-headline,
 .faq-headline,
@@ -123,6 +125,7 @@ body {
 .section-dark .news-home-title,
 .brands-headline-title,
 .locator-gold-title,
+.news-hero-title,
 .about-premium-dark-section .about-headline {
   color: var(--color-white, #FDFAF6) !important;
 }
@@ -136,24 +139,34 @@ body {
   color: var(--color-black, #120E0E) !important;
 }
 
-/* 3. DESTAQUE DOURADO PADRONIZADO (DM Sans Gold) */
-.headline-highlight,
+/* 3. DESTAQUE DOURADO EDITORIAL (DM Serif Display Italic Gold) */
 .headline-highlight-italic,
 .serif-accent,
 .serif-font,
 .serif-title,
-.highlight-yellow,
+.trajetoria-title em,
+.trajetoria-title .serif-accent,
+.about-culture-title .headline-highlight-italic,
 .about-headline .headline-highlight-italic,
 .news-home-title .headline-highlight-italic,
-.brands-headline-title .headline-highlight,
-.brands-headline-title .highlight-yellow,
 .trabalhe-card-headline .headline-highlight-italic,
 .faq-headline .headline-highlight-italic,
 .locator-gold-title .headline-highlight-italic,
-.trajetoria-title .serif-accent,
-.about-culture-title .headline-highlight-italic {
-  font-family: var(--font-primary) !important;
-  font-style: normal !important;
+.news-hero-title .headline-highlight-italic {
+  font-family: var(--font-editorial, "DM Serif Display", serif) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: var(--color-yellow, #C89223) !important;
+  margin: 0 4px !important;
+  display: inline !important;
+}
+
+.headline-highlight,
+.highlight-yellow,
+.brands-headline-title .headline-highlight,
+.brands-headline-title .highlight-yellow {
+  font-family: inherit;
+  font-style: normal;
   font-weight: inherit !important;
   color: var(--color-yellow, #C89223) !important;
   margin: 0 4px !important;
@@ -166,6 +179,7 @@ body {
 .trabalhe-card-description,
 .locator-gold-desc,
 .brands-subtitle-text,
+.news-hero-subtitle,
 .section-copy p.lead {
   font-family: var(--font-primary) !important;
   font-size: 1.05rem !important; /* 17px padrão */
@@ -181,7 +195,8 @@ body {
 }
 
 .brands-subtitle-text,
-.locator-gold-desc {
+.locator-gold-desc,
+.news-hero-subtitle {
   color: var(--color-gray-light, #DED8D0) !important;
 }
 
@@ -299,15 +314,15 @@ body:has(#next-page-content > .design-system-shell) > .wf-modal { display: none;
 .gold-unit-card { position: relative; }
 .gold-unit-card:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
 .brands-orbit-box .network-node { border: 0; padding: 0; background: transparent; font: inherit; color: inherit; }
-.article-rich-html { color: #8e8780; font-family: "DM Sans", Arial, sans-serif; font-size: 16.32px; line-height: 1.65; }
+.article-rich-html { color: #8e8780; font-family: var(--font-primary, "DM Sans", sans-serif); font-size: 16.32px; line-height: 1.65; }
 .article-rich-html p { margin: 0 0 24px; }
-.article-rich-html h2, .article-rich-html h3 { color: #120e0e; font-family: "DM Sans", Arial, sans-serif; font-weight: 700; margin: 44px 0 20px; line-height: 1.25; }
+.article-rich-html h2, .article-rich-html h3 { color: #120e0e; font-family: var(--font-primary, "DM Sans", sans-serif); font-weight: 700; margin: 44px 0 20px; line-height: 1.25; }
 .article-rich-html h2 { border-bottom: 1px solid rgba(200,146,35,.3); padding-bottom: 12px; font-size: 32px; }
 .article-rich-html h3 { font-size: 25px; }
-.article-rich-html blockquote { margin: 36px 0; padding: 24px 32px; border-left: 4px solid #c89223; border-radius: 0 14px 14px 0; background: #fff4d6; color: #6f4f0f; font-family: "DM Sans", Arial, sans-serif; font-size: 1.15rem; font-weight: 500; }
+.article-rich-html blockquote { margin: 36px 0; padding: 24px 32px; border-left: 4px solid #c89223; border-radius: 0 14px 14px 0; background: #fff4d6; color: #6f4f0f; font-family: var(--font-primary, "DM Sans", sans-serif); font-size: 1.15rem; font-weight: 500; }
 .article-rich-html img { max-width: 100%; border-radius: 14px; }
 .article-gallery { margin: 48px 0; }
-.article-gallery-title { margin: 0 0 20px; color: #120e0e; font-family: "DM Sans", Arial, sans-serif; font-weight: 700; font-size: 32px; line-height: 1.2; }
+.article-gallery-title { margin: 0 0 20px; color: #120e0e; font-family: var(--font-primary, "DM Sans", sans-serif); font-weight: 700; font-size: 32px; line-height: 1.2; }
 .article-gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .article-gallery-item { overflow: hidden; margin: 0; border: 1px solid #e7d8b4; border-radius: 14px; background: #fff4d6; }
 .article-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
