@@ -1375,12 +1375,17 @@
     padding: 0 !important;
   }
   
+  .brands-scroll-container,
+  #marcas {
+    scroll-margin-top: 85px !important;
+  }
+
   .brands-black-block {
     position: relative !important;
     width: 100% !important;
     height: auto !important;
     border-radius: 40px !important;
-    padding: 80px 0 !important;
+    padding: 48px 0 60px !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
   }
@@ -1390,70 +1395,264 @@
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+  }
+
+  .brands-headline-title {
+    font-size: clamp(1.65rem, 5.8vw, 2.2rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .brands-subtitle-text {
+    font-size: clamp(0.85rem, 2.6vw, 0.95rem) !important;
+    line-height: 1.55 !important;
+    color: rgba(255, 255, 255, 0.78) !important;
   }
   
   .brands-layout-split {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
-  
-  .brands-orbit-box {
+
+  .brands-layout-left {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* ==========================================================================
+     MOBILE BRAND ORBIT (Diagrama em X com 5 slots fixos e Rotação Horária)
+     ========================================================================== */
+  .brands-orbit-box.brands-orbit-mobile {
+    position: relative !important;
+    width: clamp(285px, 86vw, 340px) !important;
+    height: clamp(285px, 86vw, 340px) !important;
+    margin: 4px auto 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     transform: none !important;
-    width: 360px;
-    height: 360px;
-    margin: 10px auto !important;
-    --orbit-radius: 144px;
+    flex-shrink: 0 !important;
+    overflow: visible !important;
   }
-  
-  .brands-orbit-box .brands-hub-center {
-    width: 106px !important;
-    height: 106px !important;
+
+  .brands-orbit-mobile .brands-orbit-svg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  .brands-orbit-mobile .network-orbit-line {
+    stroke: rgba(200, 146, 35, 0.35) !important;
+    stroke-width: 1.2px !important;
+    stroke-dasharray: 2 4 !important;
+    filter: none !important;
+  }
+
+  .brands-orbit-mobile .network-orbit-line.orbit-inner {
+    stroke: rgba(200, 146, 35, 0.22) !important;
+    stroke-width: 1px !important;
+  }
+
+  .brands-orbit-mobile .split-connect-line {
+    stroke: rgba(200, 146, 35, 0.45) !important;
+    stroke-width: 1.2px !important;
+    stroke-dasharray: 3 4 !important;
+    filter: none !important;
+    animation: none !important;
+    opacity: 0.8 !important;
+  }
+
+  .brands-orbit-mobile .mobile-vertical-bridge {
+    stroke: #C89223 !important;
+    stroke-width: 2px !important;
+    opacity: 1 !important;
+    stroke-dasharray: none !important;
+    filter: drop-shadow(0 0 4px rgba(200, 146, 35, 0.5)) !important;
+  }
+
+  .brands-orbit-mobile .mobile-brand-slot {
+    position: absolute !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: left 420ms cubic-bezier(0.25, 1, 0.5, 1),
+                top 420ms cubic-bezier(0.25, 1, 0.5, 1),
+                transform 420ms cubic-bezier(0.25, 1, 0.5, 1),
+                z-index 420ms step-end !important;
+  }
+
+  /* Hub Central Fixo (SEMPRE Grupo +B, igual Desktop, nunca muda) */
+  .brands-orbit-mobile .mobile-hub-center {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: clamp(76px, 21vw, 84px) !important;
+    height: clamp(76px, 21vw, 84px) !important;
     border-radius: 50% !important;
-    box-shadow: 0 0 25px rgba(255, 196, 0, 0.3) !important;
+    background: #0d0d0d !important;
+    border: 2px solid #C89223 !important;
+    box-shadow: 0 0 25px rgba(200, 146, 35, 0.45), 0 8px 22px rgba(0, 0, 0, 0.8) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
   }
-  
-  .brands-orbit-box .brands-hub-center img {
-    max-height: 40px !important;
+
+  .brands-orbit-mobile .mobile-hub-center img {
+    width: 85% !important;
+    height: auto !important;
+    max-height: 44px !important;
+    object-fit: contain !important;
   }
-  
-  .brands-orbit-box .node-logo-wrapper {
-    width: 68px !important;
-    height: 68px !important;
+
+  /* Nós dos Cantos (Top-Left, Top-Right, Bottom-Left, Bottom-Right) */
+  .brands-orbit-mobile .mobile-node-circle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    width: clamp(52px, 14vw, 58px) !important;
+    height: clamp(52px, 14vw, 58px) !important;
     padding: 8px !important;
+    background: rgba(18, 16, 16, 0.94) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1.5px solid rgba(253, 250, 246, 0.25) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.65) !important;
+    transition: all 350ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+  }
+
+  .brands-orbit-mobile .mobile-brand-slot:active .mobile-node-circle {
+    transform: scale(0.95);
+  }
+
+  .brands-orbit-mobile .mobile-brand-slot.active .mobile-node-circle {
+    border-color: #C89223 !important;
     border-width: 2px !important;
+    box-shadow: 0 0 20px rgba(200, 146, 35, 0.6), 0 6px 18px rgba(0, 0, 0, 0.8) !important;
+    background: #141210 !important;
   }
-  
-  .brands-orbit-box .node-label {
-    font-size: 0.62rem !important;
-    bottom: -20px !important;
+
+  .brands-orbit-mobile .mobile-node-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
   }
-  
+
+  /* Rótulo de Texto Abaixo de Cada Nó Externo */
+  .brands-orbit-mobile .mobile-node-label {
+    position: absolute !important;
+    top: calc(100% + 5px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: clamp(0.60rem, 1.8vw, 0.70rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    transition: opacity 250ms ease !important;
+    text-align: center !important;
+  }
+
+  .brands-orbit-mobile .mobile-brand-slot.active .mobile-node-label {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 8px rgba(200, 146, 35, 0.5), 0 2px 5px rgba(0, 0, 0, 0.95) !important;
+  }
+
+  /* ==========================================================================
+     CARD MARCA EM DESTAQUE (Mobile)
+     ========================================================================== */
+  .brands-layout-right {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
   .brand-detail-card {
-    transform: scale(1) !important;
-    height: auto;
-    min-height: 480px;
+    border-radius: 28px !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
   }
 
   .brand-detail-card.active:hover {
-    transform: scale(1) !important;
+    transform: none !important;
   }
 
+  /* Galeria de Fotos Superior */
+  .card-top-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    height: clamp(125px, 32vw, 155px) !important;
+    border-radius: 28px 28px 0 0 !important;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgba(253, 250, 246, 0.12) !important;
+    position: relative !important;
+  }
+
+  .gallery-panel {
+    height: 100% !important;
+    aspect-ratio: auto !important;
+  }
+
+  .gallery-panel.panel-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* Logo Sobreposto Flutuando na Linha Divisória entre Fotos e Conteúdo */
   .card-logo-overlap {
     position: absolute !important;
     top: 0 !important;
     bottom: auto !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 76px !important;
-    height: 76px !important;
-    min-width: 76px !important;
-    max-width: 76px !important;
-    min-height: 76px !important;
-    max-height: 76px !important;
+    width: clamp(68px, 18vw, 76px) !important;
+    height: clamp(68px, 18vw, 76px) !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    border-radius: 50% !important;
+    background: #0d0d0d !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    z-index: 110 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75) !important;
   }
 
-  /* Previne deslocamento/queda do ícone ao clicar ou tocar no mobile */
   .brand-detail-card.active:hover .card-logo-overlap,
   .brand-detail-card.active .card-logo-overlap,
   .card-logo-overlap:hover,
@@ -1462,17 +1661,112 @@
     transform: translate(-50%, -50%) !important;
   }
 
-  .card-top-gallery {
-    height: auto !important; /* Desativa altura fixa no responsivo */
+  .card-logo-overlap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
   }
 
-  .gallery-panel {
-    height: auto !important;
-    aspect-ratio: 3/4 !important; /* Restaura aspect-ratio no responsivo */
+  /* Corpo de Detalhes do Card */
+  .brand-detail-card .card-details-body {
+    padding: 44px 20px 24px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    gap: 4px !important;
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .card-details-body {
-    padding: 48px 2.5rem 24px !important;
+  .brand-detail-card .card-header-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Badge MARCA EM DESTAQUE - 100% Centralizado */
+  .brand-detail-card .card-badge {
+    margin: 0 auto 4px auto !important;
+    align-self: center !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    padding: 3px 14px !important;
+    border-radius: 999px !important;
+    width: fit-content !important;
+    color: #E5A93C !important;
+    background: rgba(200, 146, 35, 0.1) !important;
+    border: 1px solid rgba(200, 146, 35, 0.3) !important;
+  }
+
+  /* Título da Marca */
+  .brand-detail-card .card-brand-title {
+    font-size: clamp(1.55rem, 5.5vw, 2.05rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    margin: 2px auto 4px auto !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Palavras-chave / Categoria */
+  .brand-detail-card .card-brand-keywords {
+    font-size: clamp(0.65rem, 2.1vw, 0.74rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    color: #C89223 !important;
+    margin: 0 auto 8px auto !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Descrição */
+  .brand-detail-card .card-brand-description {
+    font-size: clamp(0.84rem, 2.5vw, 0.92rem) !important;
+    line-height: 1.55 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px auto !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Botão CTA */
+  .card-actions {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .btn-card-primary {
+    width: 100% !important;
+    max-width: 320px !important;
+    padding: 12px 18px !important;
+    border-radius: 12px !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    justify-content: center !important;
+    background: #FAF8F5 !important;
+    color: #111111 !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .card-watermark {
+    display: none !important;
   }
 
   .brands-section-container,
@@ -1482,96 +1776,6 @@
     padding: 0 16px !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .card-top-gallery {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-  
-  .card-top-gallery .gallery-panel:nth-child(3),
-  .card-top-gallery .gallery-panel:nth-child(4) {
-    display: block !important;
-  }
-  
-  .card-brand-description {
-    max-width: 100%;
-  }
-  
-  .card-logo-overlap {
-    position: absolute !important;
-    top: 0 !important;
-    bottom: auto !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 72px !important;
-    height: 72px !important;
-    min-width: 72px !important;
-    max-width: 72px !important;
-    min-height: 72px !important;
-    max-height: 72px !important;
-  }
-
-  .brand-detail-card.active:hover .card-logo-overlap,
-  .brand-detail-card.active .card-logo-overlap,
-  .card-logo-overlap:hover,
-  .card-logo-overlap:active,
-  .card-logo-overlap:focus {
-    transform: translate(-50%, -50%) !important;
-  }
-  
-  .card-details-body {
-    padding: 48px 2.5rem 24px !important;
-  }
-  
-  .card-brand-title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 620px) {
-  .brands-orbit-box {
-    transform: none !important;
-    width: 300px;
-    height: 300px;
-    margin: 10px auto 16px !important;
-    --orbit-radius: 120px;
-  }
-  
-  .brands-orbit-box .brands-hub-center {
-    width: 88px !important;
-    height: 88px !important;
-    border-radius: 50% !important;
-    box-shadow: 0 0 20px rgba(255, 196, 0, 0.3) !important;
-  }
-  
-  .brands-orbit-box .brands-hub-center img {
-    max-height: 32px !important;
-  }
-  
-  .brands-orbit-box .node-logo-wrapper {
-    width: 56px !important;
-    height: 56px !important;
-    padding: 6px !important;
-    border-width: 2px !important;
-  }
-  
-  .brands-orbit-box .node-label {
-    font-size: 0.58rem !important;
-    bottom: -18px !important;
-  }
-  
-  .card-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
-  
-  .btn-card-primary,
-  .btn-card-secondary {
-    justify-content: center;
-    width: 100%;
   }
 }
 

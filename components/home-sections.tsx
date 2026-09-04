@@ -201,6 +201,105 @@ function getShortestPathAngle(currentAngle: number, targetBaseAngle: number) {
   return currentAngle + diff;
 }
 
+function BrandOrbitMobile({
+  active,
+  onSelect,
+  progress,
+}: {
+  active: string;
+  onSelect: (id: string, direction?: 'next' | 'prev') => void;
+  progress: number;
+}) {
+  const activeIdx = orbitOrder.indexOf(active);
+
+  const cornerSlots = [
+    { left: '19%', top: '22%', name: 'top-left' },
+    { left: '81%', top: '22%', name: 'top-right' },
+    { left: '81%', top: '78%', name: 'bottom-right' },
+    { left: '19%', top: '78%', name: 'bottom-left' },
+  ];
+
+  return (
+    <div className="brands-orbit-box brands-orbit-mobile" id="brands-orbit-box">
+      <svg className="brands-orbit-svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="250" cy="250" r="209" className="network-orbit-line" />
+        <circle cx="250" cy="250" r="125" className="network-orbit-line orbit-inner" />
+        <line x1="250" y1="250" x2="95" y2="110" className="split-connect-line" />
+        <line x1="250" y1="250" x2="405" y2="110" className="split-connect-line" />
+        <line x1="250" y1="250" x2="405" y2="390" className="split-connect-line" />
+        <line x1="250" y1="250" x2="95" y2="390" className="split-connect-line" />
+        <line x1="250" y1="250" x2="250" y2="500" className="split-connect-line mobile-vertical-bridge" />
+        <circle
+          id="hub-progress-arc"
+          cx="250"
+          cy="250"
+          r="66"
+          fill="none"
+          stroke="#C89223"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+          strokeDasharray="415"
+          strokeDashoffset={String(415 * (1 - progress))}
+          transform="rotate(-90 250 250)"
+        />
+      </svg>
+
+      {/* Marca central da espiral: SEMPRE do Grupo +B, FIXO, igual desktop, NUNCA MUDA */}
+      <div className="mobile-hub-center" id="mobile-hub-center" aria-label="Grupo Mais Barato">
+        <img
+          className="hub-logo-white"
+          src={asset('Logo Marca Grupo MaisB/Logo Grupo Mais Barato (White Monoegativo).webp')}
+          alt="Logo Grupo Mais Barato"
+        />
+      </div>
+
+      {/* Nós satélites das marcas nos 4 cantos do X */}
+      {orbitOrder.map((id) => {
+        const brand = brandData.find((item) => item.id === id);
+        if (!brand) return null;
+        const brandIdx = orbitOrder.indexOf(id);
+        const diff = (brandIdx - activeIdx + 5) % 5;
+        const isVisible = diff !== 3;
+        let slotIdx = 0;
+        if (diff === 0) slotIdx = 1;
+        else if (diff === 1) slotIdx = 2;
+        else if (diff === 2) slotIdx = 3;
+        else if (diff === 4) slotIdx = 0;
+        else slotIdx = 3;
+
+        const slot = cornerSlots[slotIdx];
+        const isActive = id === active;
+        const label = id === 'super' ? 'Supermercados +B' : id === 'wine' ? 'The Wine' : id === 'farma' ? '+B Farma' : id === 'park' ? 'Villa Plaza Park' : 'Villa Plaza';
+
+        return (
+          <button
+            key={id}
+            type="button"
+            className={`mobile-brand-slot slot-${slot.name} brand-${id}${isActive ? ' active' : ''}`}
+            style={{
+              left: slot.left,
+              top: slot.top,
+              transform: `translate(-50%, -50%) scale(${isActive ? 1.08 : 1})`,
+              opacity: isVisible ? 1 : 0,
+              pointerEvents: isVisible ? 'auto' : 'none',
+              zIndex: isActive ? 20 : 15,
+            }}
+            onClick={() => onSelect(id)}
+            aria-label={isActive ? `${label} (marca ativa)` : `Ver ${label}`}
+          >
+            <div className="mobile-node-circle">
+              <img src={asset('Icones Submarcas/' + brand.logo)} alt={label} />
+            </div>
+            <span className="mobile-node-label">
+              {label}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function BrandOrbit({
   active,
   onSelect,
@@ -211,19 +310,23 @@ function BrandOrbit({
   progress,
 }: {
   active: string;
-  onSelect: (id: string) => void;
+  onSelect: (id: string, direction?: 'next' | 'prev') => void;
   isMobile: boolean;
   nodeAngles: Record<string, number>;
   lineAngles: Record<string, number>;
   bridgeTransform: string;
   progress: number;
 }) {
+  if (isMobile) {
+    return <BrandOrbitMobile active={active} onSelect={onSelect} progress={progress} />;
+  }
+
   return (
     <div
       className="brands-orbit-box"
       id="brands-orbit-box"
       style={{
-        '--orbit-radius': isMobile ? '120px' : '200px',
+        '--orbit-radius': '200px',
       } as React.CSSProperties}
     >
       <svg className="brands-orbit-svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" id="brands-orbit-svg" aria-hidden="true">
@@ -246,7 +349,7 @@ function BrandOrbit({
         />
         {orbitOrder.map((id) => {
           const isActive = id === active;
-          const angle = lineAngles[id] ?? getBaseAngle(id, active, isMobile);
+          const angle = lineAngles[id] ?? getBaseAngle(id, active, false);
           return (
             <line
               key={id}
@@ -287,7 +390,7 @@ function BrandOrbit({
         if (!brand) return null;
         const label = id === 'super' ? 'Supermercados +B' : id === 'wine' ? 'The Wine' : id === 'farma' ? '+B Farma' : id === 'park' ? 'Villa Plaza Park' : 'Villa Plaza';
         const isActive = id === active;
-        const angle = nodeAngles[id] ?? getBaseAngle(id, active, isMobile);
+        const angle = nodeAngles[id] ?? getBaseAngle(id, active, false);
         return (
           <div
             key={id}
@@ -416,10 +519,10 @@ export function BrandsSection() {
     window.requestAnimationFrame(() => updateBridge(isMobileRef.current));
   };
 
-  const activeIndex = brandData.findIndex((brand) => brand.id === active);
   const selectRelative = (offset: number) => {
-    const nextIndex = (activeIndex + offset + brandData.length) % brandData.length;
-    selectBrand(brandData[nextIndex].id, offset < 0 ? 'prev' : 'next');
+    const activeIndex = orbitOrder.indexOf(active);
+    const nextIndex = (activeIndex + offset + orbitOrder.length) % orbitOrder.length;
+    selectBrand(orbitOrder[nextIndex], offset < 0 ? 'prev' : 'next');
   };
 
   useEffect(() => {
