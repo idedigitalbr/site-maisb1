@@ -1,5 +1,13 @@
 # Changelog
 
+- **Página de Política de Privacidade & Termos de Uso (/termos-e-privacidade) e Faxina dos HTMLs Legados (04/09/2026)**:
+  - **Criação da Rota Nativa em Next.js (`app/termos-e-privacidade/page.tsx`)**: Rota estruturada no padrão Next.js 15, herdando `SiteHeader` e `SiteFooter`, com metadados completos de SEO e conformidade com a LGPD (Lei nº 13.709/2018).
+  - **Design System e Estilo Dedicado (`src/css/legal.css`)**: Hero institucional Dark Glow (`#120E0E` e `#C89223`), Breadcrumb interativo, Badge de conformidade, Card Central Clean (`#FFFFFF`) para leitura agradável e botão funcional de impressão (`components/print-button.tsx`) com folha de estilo `@media print` pronta para PDF.
+  - **Conteúdo Jurídico Institucional Completo**: 8 cláusulas detalhadas de Privacidade (coleta ética, cookies, direitos do titular e DPO) e 8 cláusulas de Termos de Uso (propriedade intelectual das marcas do grupo e foro na Comarca de Belém/PA).
+  - **Conexão no Rodapé (`components/site-footer.tsx`)**: Substituído o link placeholder por `<Link href="/termos-e-privacidade">`.
+  - **Limpeza dos Arquivos Estáticos Obsoletos**: Excluídos da raiz do projeto os 7 arquivos `.html` legados (`index.html`, `links.html`, `mapinha.html`, `noticia.html`, `noticias.html`, `rodape-separado.html`, `sobre-nos.html`), consolidando o projeto como 100% puro Next.js.
+
+
 - **Integração do Localizador Interativo de Lojas (`/ver-mapinha`) e Otimização Mobile da Home**:
   - **Página Interativa `/ver-mapinha`**: Implementado mapa interativo com Leaflet, filtros por bandeira (+B Supermercados, The Wine Experience, +B Farma), geolocalização do usuário, cálculo de proximidade e rotas no Google Maps.
   - **Banner Mobile Trabalhe Conosco**: Integração de assets mobile dedicados (`trabalhe-mobile-real.webp` e `trabalhe-mobile.webp`) com renderização proporcional e responsiva.

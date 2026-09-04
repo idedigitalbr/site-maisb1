@@ -27,6 +27,15 @@
 - [x] S2 Geolocalização com Cálculo de Distância em Km e Rotas Google Maps
 - [x] S3 Modais Responsivos com Horários de Funcionamento e Telefones
 
+## ⚖️ PÁGINA: POLÍTICA DE PRIVACIDADE & TERMOS DE USO (/termos-e-privacidade) [Concluída]
+- [x] S0 Rota Nativa Next.js 15 e Metadados SEO LGPD
+- [x] S1 Hero Institucional Dark com Breadcrumbs e Badge Oficial
+- [x] S2 Card Central Clean de Leitura com 8 Cláusulas de Privacidade
+- [x] S3 8 Cláusulas de Termos de Uso com Licença e Foro em Belém/PA
+- [x] S4 Botão Funcional de Impressão e Exportação em PDF (@media print)
+- [x] S5 Integração do Link Oficial no Rodapé Institucional
+- [x] S6 Limpeza e Exclusão dos Arquivos HTML Estáticos Legados na Raiz
+
 ## 🛠️ INFRAESTRUTURA & VPS [Concluído]
 - [x] S0 Setup Docker Compose & VPS Nginx
 - [x] S1 Configuração DNS Cloudflare & SSL (grupomaisb.suporteide.digital)
