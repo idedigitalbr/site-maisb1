@@ -41,7 +41,7 @@ const unitsData: UnitData[] = [
     reviewsCount: "1.240",
     subbrands: ["SUPERMERCADOS +B", "THE WINE EXPERIENCE", "+B FARMA"],
     thumbLocal: "/assets/Fotografias/Supermercado +B/00_CardHome/1-foto-supermercado.webp",
-    thumbOnline: "https://grupomaisb.suporteide.digital/assets/Fotografias/Supermercado%20+B/00_CardHome/1-foto-supermercado.webp",
+    thumbOnline: "https://www.grupomaisbarato.com.br/assets/Fotografias/Supermercado%20+B/00_CardHome/1-foto-supermercado.webp",
     schedule: {
       0: { label: "domingo", open: "07:00", close: "20:00", text: "07:00–20:00" },
       1: { label: "segunda-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },
@@ -63,7 +63,7 @@ const unitsData: UnitData[] = [
     reviewsCount: "850",
     subbrands: ["SUPERMERCADOS +B", "+B FARMA"],
     thumbLocal: "/assets/Fotografias/Supermercado +B/00_CardHome/2-foto-supermercado.webp",
-    thumbOnline: "https://grupomaisb.suporteide.digital/assets/Fotografias/Supermercado%20+B/00_CardHome/2-foto-supermercado.webp",
+    thumbOnline: "https://www.grupomaisbarato.com.br/assets/Fotografias/Supermercado%20+B/00_CardHome/2-foto-supermercado.webp",
     schedule: {
       0: { label: "domingo", open: "08:00", close: "14:00", text: "08:00–14:00" },
       1: { label: "segunda-feira", open: "07:00", close: "21:00", text: "07:00–21:00" },
@@ -85,7 +85,7 @@ const unitsData: UnitData[] = [
     reviewsCount: "6.740",
     subbrands: ["SUPERMERCADOS +B", "VILLA PLAZA", "VILLA PLAZA PARK", "+B FARMA"],
     thumbLocal: "/assets/Fotografias/Supermercado +B/00_CardHome/3-foto-supermercado.webp",
-    thumbOnline: "https://grupomaisb.suporteide.digital/assets/Fotografias/Supermercado%20+B/00_CardHome/3-foto-supermercado.webp",
+    thumbOnline: "https://www.grupomaisbarato.com.br/assets/Fotografias/Supermercado%20+B/00_CardHome/3-foto-supermercado.webp",
     schedule: {
       0: { label: "domingo", open: "07:30", close: "21:00", text: "07:30–21:00" },
       1: { label: "segunda-feira", open: "07:00", close: "22:00", text: "07:00–22:00" },

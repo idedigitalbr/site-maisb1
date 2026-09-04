@@ -47,7 +47,7 @@ services:
     labels:
       traefik.enable: "true"
       traefik.docker.network: proxy
-      traefik.http.routers.grupomaisb.rule: Host(`grupomaisb.suporteide.digital`)
+      traefik.http.routers.grupomaisb.rule: Host(`www.grupomaisbarato.com.br`) || Host(`grupomaisbarato.com.br`) || Host(`grupomaisb.suporteide.digital`)
       traefik.http.routers.grupomaisb.entrypoints: websecure
       traefik.http.routers.grupomaisb.tls: "true"
       traefik.http.routers.grupomaisb.tls.certresolver: letsencrypt
