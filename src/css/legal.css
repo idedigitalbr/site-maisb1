@@ -1,0 +1,530 @@
+/* ==========================================================================
+   PÁGINA LEGAL: POLÍTICA DE PRIVACIDADE & TERMOS DE USO
+   Grupo Mais Barato (Versão Next.js Oficial)
+   Tema Oficial: Fundo Geral Dark Premium com CONTAINER CENTRAL BRANCO (#FFFFFF)
+   ========================================================================== */
+
+.legal-page-wrapper {
+  background: radial-gradient(circle at 12% 0%, rgba(200, 146, 35, 0.12), transparent 40%),
+              radial-gradient(circle at 88% 14%, rgba(200, 146, 35, 0.06), transparent 30%),
+              var(--color-black, #120E0E);
+  min-height: 100vh;
+  color: var(--color-white, #FDFAF6);
+  font-family: var(--font-primary);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+/* ── Hero Legal (Dark Premium com Brilho Dourado) ── */
+.legal-hero {
+  padding: 64px 20px 40px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid var(--line, rgba(253, 250, 246, 0.12));
+  background: radial-gradient(circle at 50% -20%, rgba(200, 146, 35, 0.16), transparent 70%);
+}
+
+.legal-breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-gray-medium, #8E8780);
+  margin-bottom: 20px;
+}
+
+.legal-breadcrumbs a {
+  color: var(--color-gray-medium, #8E8780);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legal-breadcrumbs a:hover {
+  color: var(--color-yellow, #C89223);
+}
+
+.legal-breadcrumbs .separator {
+  opacity: 0.4;
+}
+
+.legal-breadcrumbs .current {
+  color: var(--color-yellow, #C89223);
+  font-weight: 600;
+}
+
+.legal-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(200, 146, 35, 0.12);
+  border: 1px solid rgba(200, 146, 35, 0.35);
+  color: var(--color-yellow, #C89223);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 15px rgba(200, 146, 35, 0.1);
+}
+
+.legal-hero-title {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legal-hero-title .title-amp {
+  color: var(--color-yellow, #C89223);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 4px;
+}
+
+.legal-hero-desc {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #C8C2BC;
+  padding: 0 16px;
+}
+
+/* ── Meta Info Bar (Data, Leitura, LGPD, Impressão) ── */
+.legal-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: rgba(25, 22, 22, 0.75);
+  border: 1px solid rgba(200, 146, 35, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.legal-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: #D2CBC3;
+}
+
+.legal-meta-item strong {
+  color: #FFFFFF;
+}
+
+.legal-meta-item svg {
+  color: var(--color-yellow, #C89223);
+  flex-shrink: 0;
+}
+
+.btn-print-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  background: var(--color-yellow, #C89223);
+  border: none;
+  color: #120E0E;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(200, 146, 35, 0.25);
+}
+
+.btn-print-page:hover {
+  background: #DC9F28;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(200, 146, 35, 0.35);
+}
+
+/* ── Container do Documento Central (Clean Card) ── */
+.legal-content-wrapper {
+  padding: 48px 20px 0;
+}
+
+.legal-document-card {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  color: #26221F;
+  border-radius: 24px;
+  padding: 56px 64px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35),
+              0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ── Seções Legais ── */
+.legal-section {
+  position: relative;
+}
+
+.legal-block-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+  border-bottom: 2px solid #EFEAE3;
+}
+
+.legal-block-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #FFF9ED;
+  border: 1px solid rgba(200, 146, 35, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow, #C89223);
+  flex-shrink: 0;
+}
+
+.legal-block-info h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #14110F;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.legal-block-info p {
+  font-size: 0.95rem;
+  color: #7A726A;
+  margin: 0;
+}
+
+/* ── Cláusulas ── */
+.legal-clause {
+  margin-bottom: 36px;
+}
+
+.legal-clause-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #14110F;
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+.legal-clause-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-yellow, #C89223);
+  color: #120E0E;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.legal-text {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #383430;
+  margin: 0 0 14px;
+}
+
+.legal-text strong {
+  color: #120E0E;
+  font-weight: 600;
+}
+
+.legal-text a {
+  color: var(--color-yellow, #C89223);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.legal-text a:hover {
+  color: #9C6E12;
+}
+
+/* ── Callout Box (Cookies, Destaques) ── */
+.legal-callout-box {
+  background: #FBF8F3;
+  border: 1px solid #EAE2D5;
+  border-left: 4px solid var(--color-yellow, #C89223);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 18px 0;
+}
+
+.legal-callout-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E1A17;
+  margin-bottom: 10px;
+}
+
+.legal-callout-title svg {
+  color: var(--color-yellow, #C89223);
+  flex-shrink: 0;
+}
+
+.legal-callout-box p {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #4C4640;
+  margin: 0 0 10px;
+}
+
+.legal-callout-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Lista de Compromissos (A, B, C) ── */
+.legal-commit-list {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.legal-commit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: #FAF7F2;
+  border: 1px solid #ECE4D8;
+  border-radius: 12px;
+}
+
+.legal-commit-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: #14110F;
+  color: var(--color-yellow, #C89223);
+  font-size: 0.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.legal-commit-desc {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #383430;
+}
+
+/* ── Lista de Restrições (Termos de Uso) ── */
+.legal-restriction-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+  display: grid;
+  gap: 12px;
+}
+
+.legal-restriction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #FFF6F5;
+  border: 1px solid #F5D3CF;
+  border-radius: 10px;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #423533;
+}
+
+.legal-restriction-item svg {
+  color: #BD3429;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Divisor Estilizado Dourado ── */
+.legal-section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 146, 35, 0.4), transparent);
+  margin: 56px 0;
+}
+
+/* ── Box do DPO / Encarregado de Dados ── */
+.legal-dpo-box {
+  background: linear-gradient(135deg, #FFFDF8, #FBF4E6);
+  border: 1px solid #EAD8B2;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-top: 24px;
+}
+
+.legal-dpo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.legal-dpo-header svg {
+  color: var(--color-yellow, #C89223);
+}
+
+.legal-dpo-header h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #14110F;
+  margin: 0;
+}
+
+.legal-dpo-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.legal-dpo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: #383430;
+}
+
+.legal-dpo-card svg {
+  color: var(--color-yellow, #C89223);
+}
+
+/* ── Badge de Vigência ── */
+.legal-effective-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background: #F4EEDB;
+  border: 1px solid #E2D4B3;
+  margin-top: 24px;
+}
+
+.legal-effective-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #594D2E;
+  font-weight: 600;
+}
+
+.legal-effective-text svg {
+  color: #237A4A;
+}
+
+.legal-effective-date {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1E1708;
+}
+
+/* ── Responsividade ── */
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 48px 16px 32px;
+  }
+
+  .legal-document-card {
+    padding: 32px 20px;
+    border-radius: 18px;
+  }
+
+  .legal-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .btn-print-page {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .legal-block-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* ── Impressão e Exportação em PDF (@media print) ── */
+@media print {
+  .site-header,
+  .footer,
+  .legal-meta-bar,
+  .btn-print-page,
+  .legal-breadcrumbs,
+  .mobile-menu-backdrop,
+  .main-menu {
+    display: none !important;
+  }
+
+  body,
+  .legal-page-wrapper {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  .legal-document-card {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .legal-hero {
+    border: none !important;
+    background: none !important;
+    padding: 0 0 24px !important;
+    text-align: left !important;
+  }
+
+  .legal-hero-title {
+    color: #000000 !important;
+    font-size: 24pt !important;
+  }
+
+  .legal-hero-desc {
+    color: #333333 !important;
+    padding: 0 !important;
+  }
+}

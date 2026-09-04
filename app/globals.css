@@ -15,6 +15,7 @@
 @import '../src/css/noticias.css';
 @import '../src/css/responsive.css';
 @import '../src/css/lucide.css';
+@import '../src/css/legal.css';
 
 /* O layout raiz mantém o rodapé montado durante o loading de uma rota. Evita
    que o localizador de unidades pareça ser o conteúdo temporário do post. */

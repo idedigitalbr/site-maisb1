@@ -131,7 +131,7 @@ function getStoreStatus(unit: UnitData) {
 
 export default function VerMapinhaPage() {
   const [query, setQuery] = useState('');
-  const [selectedUnitId, setSelectedUnitId] = useState<string>('alcindo');
+  const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
   const [openHours, setOpenHours] = useState<Record<string, boolean>>({});
 
   const filteredUnits = useMemo(() => {
@@ -145,14 +145,16 @@ export default function VerMapinhaPage() {
     );
   }, [query]);
 
-  const selectedUnit = unitsData.find(u => u.id === selectedUnitId) || unitsData[0];
+  const selectedUnit = selectedUnitId ? unitsData.find(u => u.id === selectedUnitId) || null : null;
 
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    `${selectedUnit.name} ${selectedUnit.address}, Belém - PA`
-  )}&output=embed`;
+  const mapSrc = selectedUnit
+    ? `https://www.google.com/maps?q=${encodeURIComponent(
+        `${selectedUnit.name} ${selectedUnit.address}, Belém - PA`
+      )}&output=embed`
+    : 'https://www.google.com/maps?q=Supermercados+Mais+B+Bel%C3%A9m+PA&output=embed';
 
   const handleSelectUnit = (unitId: string) => {
-    setSelectedUnitId(unitId);
+    setSelectedUnitId(prev => (prev === unitId ? null : unitId));
     const cardEl = document.getElementById(`card-${unitId}`);
     if (cardEl) {
       cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -180,7 +182,7 @@ export default function VerMapinhaPage() {
       </div>
 
       <section className="s-unidades" id="unidades">
-        <div className="container">
+        <div className="vmap-container">
           <div className="unid-header">
             <span className="eyebrow-gold">NOSSAS UNIDADES</span>
             <h2 className="locator-gold-title">
@@ -325,6 +327,9 @@ export default function VerMapinhaPage() {
           align-items: center;
           justify-content: space-between;
           font-family: var(--font-sans);
+          width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
         }
 
         .back-link {
@@ -354,12 +359,19 @@ export default function VerMapinhaPage() {
           padding: 60px 0 88px;
           font-family: var(--font-sans);
           min-height: 100vh;
+          width: 100%;
+          overflow-x: hidden;
+          box-sizing: border-box;
         }
 
-        .container {
+        .vmap-container {
+          width: 100%;
           max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 32px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 32px;
+          padding-right: 32px;
+          box-sizing: border-box;
         }
 
         .unid-header {
@@ -405,19 +417,27 @@ export default function VerMapinhaPage() {
 
         .unid-layout {
           display: grid;
-          grid-template-columns: 1fr 1.3fr;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
           gap: 28px;
           align-items: stretch;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
         }
 
         .unid-sidebar {
           display: flex;
           flex-direction: column;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
         }
 
         .search-box {
           position: relative;
           margin-bottom: 18px;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .search-box input {
@@ -452,7 +472,11 @@ export default function VerMapinhaPage() {
           gap: 14px;
           max-height: 480px;
           overflow-y: auto;
-          padding-right: 6px;
+          overflow-x: hidden;
+          padding-right: 4px;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
         }
 
         .units-list::-webkit-scrollbar {
@@ -471,9 +495,13 @@ export default function VerMapinhaPage() {
           padding: 14px;
           display: flex;
           gap: 14px;
+          align-items: center;
           cursor: pointer;
           transition: all var(--ease);
           box-sizing: border-box;
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
         }
 
         .unit-card:hover,
@@ -504,14 +532,17 @@ export default function VerMapinhaPage() {
           gap: 3px;
           justify-content: center;
           min-width: 0;
+          overflow: hidden;
         }
 
         .unit-card-title {
           display: flex;
           justify-content: space-between;
-          align-items: flex-start;
+          align-items: center;
           gap: 6px;
           margin: 0;
+          width: 100%;
+          min-width: 0;
         }
 
         .unit-card-title h3 {
@@ -523,6 +554,8 @@ export default function VerMapinhaPage() {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          flex: 1;
+          min-width: 0;
         }
 
         .unit-rating {
@@ -548,7 +581,10 @@ export default function VerMapinhaPage() {
           font-weight: 700;
           letter-spacing: 0.3px;
           margin: 0 0 2px;
-          line-height: 1.2;
+          line-height: 1.3;
+          white-space: normal;
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
 
         .unit-card .unit-address {
@@ -559,6 +595,8 @@ export default function VerMapinhaPage() {
           gap: 5px;
           margin: 0 0 2px !important;
           line-height: 1.3;
+          white-space: normal;
+          word-break: break-word;
         }
 
         .unit-card .unit-address svg {
@@ -708,36 +746,44 @@ export default function VerMapinhaPage() {
            RESPONSIVIDADE MASTER (MOBILE-FIRST POLISH)
            ────────────────────────────────────────────── */
         @media (max-width: 1100px) {
+          .vmap-container {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
           .unid-layout {
-            grid-template-columns: 1fr;
-            gap: 28px;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+            width: 100%;
           }
           .unid-map {
             min-height: 380px;
             height: 380px;
+            width: 100%;
           }
           .unid-map iframe {
             min-height: 380px;
             height: 380px;
+            width: 100%;
           }
         }
 
         @media (max-width: 768px) {
           .s-unidades {
-            padding: 44px 0 60px;
+            padding: 40px 0 54px;
           }
-          .container {
-            padding: 0 16px;
+          .vmap-container {
+            padding-left: 16px;
+            padding-right: 16px;
           }
           .unid-header {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
           }
           .locator-gold-title {
-            font-size: 1.75rem;
+            font-size: 1.65rem;
             line-height: 1.2;
           }
           .locator-gold-desc {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
           }
           .units-list {
             max-height: 440px;
@@ -749,21 +795,21 @@ export default function VerMapinhaPage() {
             border-radius: 14px;
           }
           .unit-card-thumb {
-            width: 82px;
-            height: 76px;
+            width: 78px;
+            height: 72px;
             border-radius: 8px;
           }
           .unit-card-title h3 {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
           }
           .unit-rating {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
           }
           .unid-map {
             min-height: 320px;
             height: 320px;
             border-radius: 16px;
-            margin-top: 10px;
+            margin-top: 8px;
           }
           .unid-map iframe {
             min-height: 320px;
@@ -779,21 +825,22 @@ export default function VerMapinhaPage() {
           .badge-preview {
             font-size: 0.62rem;
           }
-          .container {
-            padding: 0 12px;
+          .vmap-container {
+            padding-left: 14px;
+            padding-right: 14px;
           }
           .s-unidades {
-            padding: 32px 0 48px;
+            padding: 28px 0 44px;
           }
           .locator-gold-title {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
           }
           .locator-gold-title .headline-highlight-italic {
-            margin-left: 3px;
+            margin-left: 2px;
           }
           .search-box input {
-            padding: 11px 38px 11px 14px;
-            font-size: 0.85rem;
+            padding: 11px 36px 11px 12px;
+            font-size: 0.82rem;
           }
           .unit-card {
             padding: 10px;
@@ -801,35 +848,35 @@ export default function VerMapinhaPage() {
             border-radius: 12px;
           }
           .unit-card-thumb {
-            width: 74px;
-            height: 70px;
+            width: 70px;
+            height: 66px;
             border-radius: 6px;
           }
           .unit-card-title h3 {
-            font-size: 0.74rem;
+            font-size: 0.72rem;
           }
           .unit-tags {
-            font-size: 0.58rem;
+            font-size: 0.56rem;
             line-height: 1.25;
           }
           .unit-card .unit-address {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
           }
           .unit-hours-trigger {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
           }
           .unit-hours-panel {
-            padding-left: 12px;
+            padding-left: 10px;
           }
           .schedule-grid {
             padding: 4px 6px;
           }
           .schedule-row {
-            font-size: 0.64rem;
-            gap: 8px;
+            font-size: 0.62rem;
+            gap: 6px;
           }
           .btn-maps {
-            font-size: 0.64rem;
+            font-size: 0.62rem;
             padding: 3px 8px;
           }
           .unid-map {
