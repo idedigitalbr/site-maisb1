@@ -50,4 +50,13 @@ describe('AdminLogin', () => {
       body: JSON.stringify({ email: 'editor@empresa.com', password: 'senha123' }),
     }));
   });
+
+  it('keeps the branded video backdrop with the simplified login form', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(JSON.stringify({ configured: true, authenticated: false }), { status: 200 })));
+
+    render(<AdminLogin />);
+
+    expect(await screen.findByRole('heading', { name: 'Entrar no CMS' })).toBeTruthy();
+    expect(document.querySelector('video source')?.getAttribute('src')).toBe('/assets/Videos/Supermercado Mais B - Institucional.mp4');
+  });
 });

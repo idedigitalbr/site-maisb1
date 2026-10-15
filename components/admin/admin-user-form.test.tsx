@@ -14,7 +14,11 @@ vi.mock('lucide-react', async (importOriginal) => {
   };
 });
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
 
 describe('AdminUserForm permission switches', () => {
   it('shows the custom permission states and moves each switch handle within its track', () => {
@@ -56,5 +60,26 @@ describe('AdminUserForm permission switches', () => {
     expect(screen.getByLabelText('Confirmar senha').getAttribute('type')).toBe('text');
     expect(screen.getByRole('button', { name: 'Ocultar senha' }).querySelector('svg')?.getAttribute('data-icon')).toBe('Eye');
     expect(screen.getByRole('button', { name: 'Ocultar confirmação de senha' }).querySelector('svg')?.getAttribute('data-icon')).toBe('Eye');
+  });
+
+  it('describes a password reset without promising a forced password change', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        user: {
+          id: 'editor-1', name: 'Ana Silva', email: 'ana@example.invalid', role: 'EDITOR',
+          permissions: { posts: true, settings: false, access: false }, isActive: true, mustChangePassword: true,
+        },
+        history: [{
+          id: 'event-1', action: 'PASSWORD_RESET', details: { mustChangePassword: false },
+          createdAt: '2026-10-15T12:00:00.000Z', actor: { name: 'Admin', email: 'admin@example.invalid' },
+        }],
+      }),
+    }));
+
+    render(<AdminUserForm userId="editor-1" currentUserId="admin-1" />);
+
+    expect(await screen.findByText(/A senha foi redefinida e as sessões anteriores foram encerradas/)).toBeTruthy();
+    expect(screen.queryByText('Uma senha temporária foi definida. O usuário precisará escolher uma nova senha no próximo acesso.')).toBeNull();
   });
 });
