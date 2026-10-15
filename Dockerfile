@@ -31,6 +31,7 @@ COPY --from=builder /app/prisma ./prisma
 # (for example `effect`) are available in the standalone image.
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/docker/entrypoint.sh ./docker/entrypoint.sh
+COPY --from=builder /app/scripts/bootstrap-admin.mjs ./scripts/bootstrap-admin.mjs
 
 RUN mkdir -p /app/public/uploads \
   && chmod +x /app/docker/entrypoint.sh \

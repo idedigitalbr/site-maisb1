@@ -10,7 +10,7 @@ import { getRoleLabel, getRolePermissions, isSecurePassword, isValidAdminEmail, 
 
 type AccessUser = {
   id: string; name: string; email: string; role: AdminRole;
-  permissions: AdminPermissions; isActive: boolean; mustChangePassword: boolean;
+  permissions: AdminPermissions; isActive: boolean;
 };
 
 type AuditEvent = {
@@ -39,7 +39,7 @@ function eventSummary(event: AuditEvent) {
   if (event.action === 'PROFILE_UPDATED') return 'Informações básicas ou perfil foram atualizados.';
   if (event.action === 'ACCOUNT_DEACTIVATED') return 'A conta perdeu o acesso ao painel.';
   if (event.action === 'ACCOUNT_ACTIVATED') return 'A conta voltou a ter acesso ao painel.';
-  if (event.action === 'PASSWORD_RESET') return 'Uma nova senha temporária foi definida; a troca é obrigatória no próximo acesso.';
+  if (event.action === 'PASSWORD_RESET') return 'A senha foi redefinida e as sessões anteriores foram encerradas.';
   if (event.action === 'PASSWORD_CHANGED') return 'A senha da conta foi alterada.';
   return 'A conta de acesso foi criada.';
 }
@@ -199,8 +199,6 @@ export function AdminUserForm({ userId, currentUserId }: { userId?: string; curr
             {errors.permissions && <p role="alert" className="mt-2 text-sm text-[#9f342d]">{errors.permissions}</p>}
             {role !== 'CUSTOM' && <p className="mt-2 text-xs text-[#77716b]">As permissões ficam definidas pelo perfil selecionado.</p>}
           </section>
-
-          {editing && user?.mustChangePassword && <div className="rounded-xl border border-[#ead4a5] bg-[#fff9ed] px-4 py-3 text-sm text-[#6f5420]">Uma senha temporária foi definida. O usuário precisará escolher uma nova senha no próximo acesso.</div>}
 
           <div className="flex flex-col-reverse gap-2 border-t border-[#ece6de] pt-5 sm:flex-row sm:justify-end"><Button asChild variant="outline"><Link href="/admin/access">Cancelar</Link></Button><Button type="submit" variant="gold" disabled={saving}>{saving ? <LoaderCircle size={17} className="animate-spin" /> : <Check size={17} />}{editing ? 'Salvar alterações' : 'Cadastrar usuário'}</Button></div>
         </Card>
