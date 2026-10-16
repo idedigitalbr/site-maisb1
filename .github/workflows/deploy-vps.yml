@@ -65,8 +65,30 @@ jobs:
             fi
             sleep 5
           done
+          echo "=== VERIFY CONTAINER LOGIN CONTRACT ==="
+          login_status="$(docker exec grupomaisb-site node -e "fetch('http://127.0.0.1:3000/api/admin/session').then(async response => { if (!response.ok) throw new Error('bad status'); console.log(JSON.stringify(await response.json())); }).catch(() => process.exit(1))")"
+          if ! printf '%s' "$login_status" | grep -Eq '"configured"[[:space:]]*:[[:space:]]*true'; then
+            echo "Deployed container did not report a configured database." >&2
+            exit 1
+          fi
+          if printf '%s' "$login_status" | grep -Eq '"needsBootstrap"[[:space:]]*:'; then
+            echo "Deployed container still exposes the obsolete bootstrap flow." >&2
+            exit 1
+          fi
           echo "=== CONTAINER STATUS ==="
           docker compose -f docker-compose.prod.yml ps
           echo "=== WEB LOGS ==="
           docker compose -f docker-compose.prod.yml logs --tail 30 web
           REMOTE
+
+          echo "=== VERIFY PUBLIC LOGIN CONTRACT ==="
+          login_status="$(curl --silent --show-error --fail --max-time 15 "https://www.grupomaisbarato.com.br/api/admin/session?deploy=${GITHUB_SHA}")"
+          if ! printf '%s' "$login_status" | grep -Eq '"configured"[[:space:]]*:[[:space:]]*true'; then
+            echo "Production login endpoint did not report a configured database." >&2
+            exit 1
+          fi
+          if printf '%s' "$login_status" | grep -Eq '"needsBootstrap"[[:space:]]*:'; then
+            echo "Production login endpoint is still serving the obsolete bootstrap flow." >&2
+            exit 1
+          fi
+          echo "Production login endpoint uses the email-and-password session contract."
