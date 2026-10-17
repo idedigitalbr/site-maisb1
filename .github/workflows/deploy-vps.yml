@@ -21,10 +21,18 @@ jobs:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
         run: |
           set -euo pipefail
+          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then
+            echo "Refusing to deploy a ref other than main: $GITHUB_REF" >&2
+            exit 1
+          fi
+          if [[ ! "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "GITHUB_SHA is not a full commit SHA." >&2
+            exit 1
+          fi
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
           cat > ~/.ssh/known_hosts <<'EOF'
-          161.97.108.92 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF7OYxhEmbnF+vPFNivasqL7MGjc4JtVZgAPMcoyiZce
+          179.236.75.128 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrYzeqNeBFdRBsl46+ebNjChltxyvWVzJQ/GIOoDZw9
           EOF
           chmod 600 ~/.ssh/known_hosts
           eval "$(ssh-agent -s)"
@@ -32,18 +40,70 @@ jobs:
           ssh-add - <<< "$VPS_SSH_KEY"
           ssh -p 22 \
             -o BatchMode=yes \
+            -o PreferredAuthentications=publickey \
             -o StrictHostKeyChecking=yes \
             -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=120 \
             -o TCPKeepAlive=yes \
-            root@161.97.108.92 <<'REMOTE'
-          set -e
-          cd /opt/grupomaisb-site/app
-          git fetch origin main
-          git reset --hard origin/main
-          git clean -fd
-          docker compose -f docker-compose.prod.yml build --progress=plain
-          docker compose -f docker-compose.prod.yml up -d --remove-orphans
+            root@179.236.75.128 "bash -s -- '$GITHUB_SHA'" <<'REMOTE'
+          set -euo pipefail
+          DEPLOY_SHA="$1"
+          PROJECT_DIR="/opt/grupomaisb-site/app"
+          RESOLVED_DIR="$(realpath "$PROJECT_DIR")"
+          COMPOSE_FILE="/opt/migrated-stacks/grupomaisb-site/compose.json"
+
+          if [ "$RESOLVED_DIR" != "/opt/grupomaisb-site/app" ]; then
+            echo "Unexpected project directory: $RESOLVED_DIR" >&2
+            exit 1
+          fi
+          if [ ! -f "$COMPOSE_FILE" ]; then
+            echo "External Compose file was not found: $COMPOSE_FILE" >&2
+            exit 1
+          fi
+          if [ "$(git -C "$RESOLVED_DIR" remote get-url origin)" != "https://github.com/idedigitalbr/site-maisb1.git" ]; then
+            echo "The app checkout does not point to the expected repository." >&2
+            exit 1
+          fi
+          if [[ ! "$DEPLOY_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Invalid deployment commit SHA." >&2
+            exit 1
+          fi
+
+          dirty_files="$(git -C "$RESOLVED_DIR" status --porcelain --untracked-files=all)"
+          if [ -n "$dirty_files" ]; then
+            echo "Refusing to overwrite local changes in the app checkout:" >&2
+            printf '%s\n' "$dirty_files" >&2
+            exit 1
+          fi
+
+          git -C "$RESOLVED_DIR" fetch origin main
+          if ! git -C "$RESOLVED_DIR" merge-base --is-ancestor "$DEPLOY_SHA" FETCH_HEAD; then
+            echo "Deployment commit is not part of origin/main." >&2
+            exit 1
+          fi
+          git -C "$RESOLVED_DIR" reset --hard "$DEPLOY_SHA"
+
+          if ! docker compose -f "$COMPOSE_FILE" config --services | grep -Fxq web; then
+            echo "The production Compose file does not define the web service." >&2
+            exit 1
+          fi
+          db_container_id_before="$(docker inspect --format '{{.Id}}' grupomaisb-site-db)"
+          db_health_before="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' grupomaisb-site-db)"
+          if [ "$db_health_before" != "healthy" ]; then
+            echo "Refusing to deploy while grupomaisb-site-db is not healthy: $db_health_before" >&2
+            docker compose -f "$COMPOSE_FILE" ps >&2
+            exit 1
+          fi
+
+          image="migrated/grupomaisb-site-web:${DEPLOY_SHA}"
+          echo "=== BUILD IMAGE $image ==="
+          docker build --progress=plain --file Dockerfile --tag "$image" "$RESOLVED_DIR"
+
+          compose_override="$(mktemp --suffix=.yml /tmp/grupomaisb-site-compose.XXXXXX)"
+          trap 'rm -f "$compose_override"' EXIT
+          printf 'services:\n  web:\n    image: %s\n' "$image" > "$compose_override"
+          docker compose -f "$COMPOSE_FILE" -f "$compose_override" up -d --no-deps --force-recreate web
+
           for attempt in $(seq 1 24); do
             health="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' grupomaisb-site 2>/dev/null || true)"
             case "$health" in
@@ -53,32 +113,31 @@ jobs:
                 ;;
               unhealthy|dead|exited)
                 echo "grupomaisb-site failed health check with status: $health" >&2
-                docker compose -f docker-compose.prod.yml logs --tail 80 web >&2
+                docker compose -f "$COMPOSE_FILE" -f "$compose_override" logs --tail 80 web >&2
                 exit 1
                 ;;
             esac
             if [ "$attempt" -eq 24 ]; then
               echo "Timed out waiting for grupomaisb-site health; last status: $health" >&2
-              docker compose -f docker-compose.prod.yml ps >&2
-              docker compose -f docker-compose.prod.yml logs --tail 80 web >&2
+              docker compose -f "$COMPOSE_FILE" -f "$compose_override" ps >&2
+              docker compose -f "$COMPOSE_FILE" -f "$compose_override" logs --tail 80 web >&2
               exit 1
             fi
             sleep 5
           done
+
+          db_container_id_after="$(docker inspect --format '{{.Id}}' grupomaisb-site-db)"
+          db_health_after="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' grupomaisb-site-db)"
+          if [ "$db_container_id_after" != "$db_container_id_before" ] || [ "$db_health_after" != "healthy" ]; then
+            echo "The database container changed or became unhealthy during the web deploy." >&2
+            docker compose -f "$COMPOSE_FILE" -f "$compose_override" ps >&2
+            exit 1
+          fi
+
           echo "=== VERIFY CONTAINER LOGIN CONTRACT ==="
-          login_status="$(docker exec grupomaisb-site node -e "fetch('http://127.0.0.1:3000/api/admin/session').then(async response => { if (!response.ok) throw new Error('bad status'); console.log(JSON.stringify(await response.json())); }).catch(() => process.exit(1))")"
-          if ! printf '%s' "$login_status" | grep -Eq '"configured"[[:space:]]*:[[:space:]]*true'; then
-            echo "Deployed container did not report a configured database." >&2
-            exit 1
-          fi
-          if printf '%s' "$login_status" | grep -Eq '"needsBootstrap"[[:space:]]*:'; then
-            echo "Deployed container still exposes the obsolete bootstrap flow." >&2
-            exit 1
-          fi
+          docker exec grupomaisb-site node -e "fetch('http://127.0.0.1:3000/api/admin/session').then(async response => { const body = await response.json(); const hasBootstrap = Object.hasOwn(body, 'needsBootstrap'); console.log(JSON.stringify({ configured: body.configured === true, authenticated: body.authenticated === true, hasNeedsBootstrap: hasBootstrap })); if (!response.ok || body.configured !== true || hasBootstrap) process.exitCode = 1; }).catch(() => { process.exitCode = 1; })"
           echo "=== CONTAINER STATUS ==="
-          docker compose -f docker-compose.prod.yml ps
-          echo "=== WEB LOGS ==="
-          docker compose -f docker-compose.prod.yml logs --tail 30 web
+          docker compose -f "$COMPOSE_FILE" -f "$compose_override" ps
           REMOTE
 
           echo "=== VERIFY PUBLIC LOGIN CONTRACT ==="
