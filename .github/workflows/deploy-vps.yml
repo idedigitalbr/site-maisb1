@@ -29,19 +29,27 @@ jobs:
             echo "GITHUB_SHA is not a full commit SHA." >&2
             exit 1
           fi
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          cat > ~/.ssh/known_hosts <<'EOF'
+          : "${RUNNER_TEMP:?RUNNER_TEMP is not set}"
+          if [[ ! -d "$RUNNER_TEMP" || ! -w "$RUNNER_TEMP" ]]; then
+            echo "RUNNER_TEMP is not a writable directory: $RUNNER_TEMP" >&2
+            exit 1
+          fi
+          ssh_dir="$(mktemp -d "${RUNNER_TEMP%/}/grupomaisb-ssh.XXXXXX")"
+          chmod 700 "$ssh_dir"
+          known_hosts_file="$ssh_dir/known_hosts"
+          cat > "$known_hosts_file" <<'EOF'
           179.236.75.128 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrYzeqNeBFdRBsl46+ebNjChltxyvWVzJQ/GIOoDZw9
           EOF
-          chmod 600 ~/.ssh/known_hosts
+          chmod 600 "$known_hosts_file"
           eval "$(ssh-agent -s)"
-          trap 'ssh-agent -k >/dev/null' EXIT
+          trap 'ssh-agent -k >/dev/null 2>&1 || true; rm -f "$known_hosts_file"; rmdir "$ssh_dir" 2>/dev/null || true' EXIT
           ssh-add - <<< "$VPS_SSH_KEY"
-          ssh -p 22 \
+          HOME="$ssh_dir" ssh -F /dev/null -p 22 \
             -o BatchMode=yes \
             -o PreferredAuthentications=publickey \
             -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$known_hosts_file" \
+            -o GlobalKnownHostsFile=/dev/null \
             -o ServerAliveInterval=15 \
             -o ServerAliveCountMax=120 \
             -o TCPKeepAlive=yes \
