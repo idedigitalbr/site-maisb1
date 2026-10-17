@@ -107,7 +107,11 @@ jobs:
 
           image="migrated/grupomaisb-site-web:${DEPLOY_SHA}"
           echo "=== BUILD IMAGE $image ==="
-          docker build --progress=plain --file Dockerfile --tag "$image" "$RESOLVED_DIR"
+          if [ ! -f "$RESOLVED_DIR/Dockerfile" ]; then
+            echo "Dockerfile was not found in the resolved project directory: $RESOLVED_DIR/Dockerfile" >&2
+            exit 1
+          fi
+          docker build --progress=plain --file "$RESOLVED_DIR/Dockerfile" --tag "$image" "$RESOLVED_DIR"
 
           compose_override="$(mktemp --suffix=.yml /tmp/grupomaisb-site-compose.XXXXXX)"
           trap 'rm -f "$compose_override"' EXIT
