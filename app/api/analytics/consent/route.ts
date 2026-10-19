@@ -1,9 +1,11 @@
 import { randomUUID } from 'node:crypto';
 import { cookies } from 'next/headers';
+import { readBoundedRequestBody, RequestBodyTooLargeError } from '../../../../lib/bounded-request-body';
 import { analyticsCookieOptions, ANALYTICS_CONSENT_COOKIE, ANALYTICS_VISITOR_COOKIE, getAnalyticsVisitorDigest, isAnalyticsVisitorId, isSameOriginRequest } from '../../../../lib/analytics/privacy';
 import { db } from '../../../../lib/db';
 
 export const runtime = 'nodejs';
+const maxPayloadBytes = 1024;
 
 type ConsentTransaction = {
   analyticsConsentLog: { create(args: { data: { decisionId: string; decision: 'accepted' | 'rejected'; occurredAt: Date } }): Promise<unknown> };
@@ -54,7 +56,16 @@ export async function GET() {
 
 export async function POST(request: Request) {
   if (!isSameOriginRequest(request)) return Response.json({ error: 'Origem inválida.' }, { status: 403 });
-  const body = await request.json().catch(() => null) as { decision?: unknown; decisionId?: unknown } | null;
+  let body: { decision?: unknown; decisionId?: unknown } | null;
+  try {
+    const raw = await readBoundedRequestBody(request, maxPayloadBytes);
+    body = JSON.parse(raw.toString('utf8')) as { decision?: unknown; decisionId?: unknown } | null;
+  } catch (error) {
+    if (error instanceof RequestBodyTooLargeError) {
+      return Response.json({ error: 'Escolha de consentimento inválida.' }, { status: 413 });
+    }
+    return Response.json({ error: 'Escolha de consentimento inválida.' }, { status: 400 });
+  }
   if (!body || (body.decision !== 'accepted' && body.decision !== 'rejected') || typeof body.decisionId !== 'string' || !uuidPattern.test(body.decisionId)) {
     return Response.json({ error: 'Escolha de consentimento inválida.' }, { status: 400 });
   }

@@ -31,7 +31,7 @@ O dispositivo é classificado no servidor em desktop, mobile ou tablet. O user-a
 
 Sem consentimento não é criado identificador nem evento. Após o aceite, o servidor emite UUID aleatório em cookie first-party `HttpOnly`, `SameSite=Lax` e `Secure` em produção. O banco recebe somente HMAC-SHA-256 do UUID, com `ANALYTICS_HMAC_SECRET` estável, nunca o UUID. O UUID não é conta autenticada nem impressão digital do navegador.
 
-O modal de consentimento é renderizado globalmente por portal, fora do fluxo da página. O link “Preferências de cookies” no rodapé reabre as opções em qualquer rota pública. Fechar o modal não aceita nem recusa; a coleta continua bloqueada enquanto não existir decisão válida.
+O modal de consentimento é renderizado globalmente por portal, fora do fluxo da página. O controle Preferências de cookies no rodapé reabre as opções em qualquer rota pública. Fechar o modal não aceita nem recusa; a coleta continua bloqueada enquanto não existir decisão válida.
 
 Cada ação explícita de aceitar ou recusar grava uma linha minimizada em `analytics_consent_decisions`, com UUID de idempotência da ação, escolha e data. O UUID não é ligado a visitante, conta, IP ou evento. Reenvio da mesma ação não soma outra decisão; a pessoa pode gerar outra decisão escolhendo novamente nas preferências. O painel chama essas contagens de “Decisões registradas”: elas não identificam nem comprovam pessoas únicas. A taxa de aceitação/recusa usa somente ações aceitas/recusadas no período; quem ainda não respondeu não compõe o total. As linhas expiram após 90 dias e seguem os filtros de período do Analytics.
 
@@ -39,6 +39,6 @@ A recusa bloqueia imediatamente novos eventos no navegador, inclusive lotes pend
 
 ## Configuração operacional
 
-Defina `ANALYTICS_HMAC_SECRET` como um segredo aleatório de pelo menos 32 bytes no ambiente do servidor. O mesmo valor deve permanecer estável entre reinícios e réplicas e ser fornecido pelo responsável do deploy em `web.env.production`. Não coloque o valor em controle de versão, documentação ou logs. Sem o segredo, a coleta fica indisponível e o painel não recebe eventos novos.
+Defina `ANALYTICS_HMAC_SECRET` como um segredo aleatório de pelo menos 32 bytes no ambiente do servidor. Gere um valor com openssl rand -base64 32. O mesmo valor deve permanecer estável entre reinícios e réplicas e ser fornecido no arquivo env_file do serviço web; no Compose de produção versionado, o nome é `.env.web.production`. Não coloque o valor em controle de versão, documentação ou logs. O deploy valida que a configuração resolvida do serviço web contém ao menos 32 bytes e interrompe antes da recriação do container quando o segredo estiver ausente ou curto. Sem o segredo, a coleta fica indisponível e o painel não recebe eventos novos.
 
 A migration `20261009180000_analytics_events` é aditiva: cria eventos, estado mínimo de consentimento, índices e a permissão administrativa Analytics. Ela habilita a nova permissão para contas existentes com papel `ADMINISTRATOR` e para usuários que já tinham as três permissões administrativas, preservando o conceito existente de acesso completo.

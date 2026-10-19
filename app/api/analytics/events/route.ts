@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { recordAnalyticsEvent, type AnalyticsEventInput } from '../../../../lib/analytics/event-service';
+import { readBoundedRequestBody, RequestBodyTooLargeError } from '../../../../lib/bounded-request-body';
 import { ANALYTICS_CONSENT_COOKIE, ANALYTICS_VISITOR_COOKIE, isAnalyticsVisitorId, isSameOriginRequest } from '../../../../lib/analytics/privacy';
 
 export const runtime = 'nodejs';
@@ -22,14 +23,14 @@ function shortValue(value: unknown, max: number) {
 
 export async function POST(request: Request) {
   if (!isSameOriginRequest(request)) return Response.json({ error: 'Origem inválida.' }, { status: 403 });
-  const hintedLength = Number(request.headers.get('content-length'));
-  if (hintedLength > maxPayloadBytes) return Response.json({ error: 'Evento muito grande.' }, { status: 413 });
-  const raw = await request.text();
-  if (Buffer.byteLength(raw, 'utf8') > maxPayloadBytes) return Response.json({ error: 'Evento muito grande.' }, { status: 413 });
   let body: Record<string, unknown>;
   try {
-    body = JSON.parse(raw) as Record<string, unknown>;
-  } catch {
+    const raw = await readBoundedRequestBody(request, maxPayloadBytes);
+    body = JSON.parse(raw.toString('utf8')) as Record<string, unknown>;
+  } catch (error) {
+    if (error instanceof RequestBodyTooLargeError) {
+      return Response.json({ error: 'Evento muito grande.' }, { status: 413 });
+    }
     return Response.json({ error: 'Evento inválido.' }, { status: 400 });
   }
 

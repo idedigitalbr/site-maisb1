@@ -75,6 +75,14 @@ describe('analytics consent route', () => {
     expect(jar.has('analytics_visitor')).toBe(false);
   });
 
+  it('rejects oversized consent bodies before processing the decision', async () => {
+    const response = await POST(request('POST', { decision: 'accepted', decisionId, padding: 'x'.repeat(2048) }));
+
+    expect(response.status).toBe(413);
+    expect(decisionCreate).not.toHaveBeenCalled();
+    expect(visitorCreateTx).not.toHaveBeenCalled();
+  });
+
   it('does not duplicate an accepted decision when a request is retried', async () => {
     const conflict = Object.assign(new Error('duplicate'), { code: 'P2002' });
     decisionCreate.mockRejectedValueOnce(conflict);

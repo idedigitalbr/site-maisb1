@@ -2,6 +2,7 @@
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { AnalyticsConsent } from './analytics-consent';
+import { AnalyticsPreferencesLink } from './analytics-preferences-link';
 import { AnalyticsConsentProvider, useAnalyticsConsent } from './analytics-consent-provider';
 
 vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
@@ -17,8 +18,8 @@ function ConsentStatus() {
   return <span data-testid="consent-status">{consent.loading ? 'loading' : consent.decision}</span>;
 }
 
-function mount() {
-  return render(<AnalyticsConsentProvider><ConsentStatus /><AnalyticsConsent /></AnalyticsConsentProvider>);
+function mount(withPreferencesLink = false) {
+  return render(<AnalyticsConsentProvider><ConsentStatus />{withPreferencesLink && <AnalyticsPreferencesLink />}<AnalyticsConsent /></AnalyticsConsentProvider>);
 }
 
 describe('AnalyticsConsent', () => {
@@ -75,7 +76,7 @@ describe('AnalyticsConsent', () => {
     await waitFor(() => expect(screen.getByTestId('consent-status').textContent).toBe('accepted'));
     await act(async () => { await new Promise((resolve) => setTimeout(resolve, 0)); });
     await act(async () => { window.dispatchEvent(new Event('analytics-open-consent')); });
-    fireEvent.click(await screen.findByRole('button', { name: 'Recusar' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Revogar aceite' }));
     expect(screen.queryByRole('dialog')).toBeNull();
     await waitFor(() => expect(window.localStorage.getItem('analytics-consent-pending')).not.toBeNull());
     expect(JSON.parse(window.localStorage.getItem('analytics-consent-pending') || '{}')).toMatchObject({ decision: 'rejected', decisionId: expect.any(String) });
@@ -120,14 +121,15 @@ describe('AnalyticsConsent', () => {
     expect(window.localStorage.getItem('analytics-consent-pending')).toBeNull();
   });
 
-  it('opens from the global footer event and links to the privacy policy', async () => {
-    const fetchMock = vi.fn().mockResolvedValueOnce(response('rejected'));
+  it('opens from the preferences link and exposes revocation for accepted consent', async () => {
+    const fetchMock = vi.fn().mockResolvedValueOnce(response('accepted'));
     vi.stubGlobal('fetch', fetchMock);
-    mount();
-    await waitFor(() => expect(screen.getByTestId('consent-status').textContent).toBe('rejected'));
+    mount(true);
+    await waitFor(() => expect(screen.getByTestId('consent-status').textContent).toBe('accepted'));
     await act(async () => { await new Promise((resolve) => setTimeout(resolve, 0)); });
-    await act(async () => { window.dispatchEvent(new Event('analytics-open-consent')); });
+    fireEvent.click(screen.getByRole('button', { name: 'Preferências de cookies' }));
     const dialog = await screen.findByRole('dialog', { name: 'Sua privacidade importa' });
+    expect(within(dialog).getByRole('button', { name: 'Revogar aceite' })).toBeTruthy();
     expect(dialog.querySelector('a')?.getAttribute('href')).toBe('/termos-e-privacidade');
   });
 });

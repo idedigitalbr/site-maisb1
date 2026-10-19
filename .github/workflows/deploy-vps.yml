@@ -97,6 +97,18 @@ jobs:
             echo "The production Compose file does not define the web service." >&2
             exit 1
           fi
+          if ! docker compose -f "$COMPOSE_FILE" config --format json | python3 -c '
+          import json, sys
+          try:
+              environment = json.load(sys.stdin)["services"]["web"]["environment"]
+              secret = environment.get("ANALYTICS_HMAC_SECRET") if isinstance(environment, dict) else None
+          except (KeyError, TypeError, json.JSONDecodeError):
+              sys.exit(1)
+          sys.exit(0 if isinstance(secret, str) and len(secret.encode("utf-8")) >= 32 else 1)
+          '; then
+            echo "ANALYTICS_HMAC_SECRET must be configured with at least 32 bytes for the web service." >&2
+            exit 1
+          fi
           db_container_id_before="$(docker inspect --format '{{.Id}}' grupomaisb-site-db)"
           db_health_before="$(docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}' grupomaisb-site-db)"
           if [ "$db_health_before" != "healthy" ]; then

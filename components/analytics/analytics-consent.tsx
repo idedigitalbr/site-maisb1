@@ -131,7 +131,7 @@ export function AnalyticsConsent() {
           <p className={styles.privacyLink}>Saiba mais na nossa <a href="/termos-e-privacidade">Política de Privacidade</a>.</p>
           {error && <p role="alert" className={styles.error}>{error}</p>}
           <div className={styles.actions}>
-            <button type="button" onClick={() => void choose('rejected')} disabled={busy} className={styles.reject}>{busy ? 'Salvando…' : 'Recusar'}</button>
+            <button type="button" onClick={() => void choose('rejected')} disabled={busy} className={styles.reject}>{busy ? 'Salvando…' : decision === 'accepted' ? 'Revogar aceite' : 'Recusar'}</button>
             <button type="button" onClick={() => void choose('accepted')} disabled={busy} className={styles.accept}>{busy ? 'Salvando…' : 'Aceitar métricas'}</button>
           </div>
         </div>
