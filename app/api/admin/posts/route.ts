@@ -19,6 +19,7 @@ export async function POST(request: Request) {
   if (access.response) return access.response;
   try {
     const post = await createCmsPost(await request.json());
+    revalidatePath('/sitemap.xml');
     revalidatePath('/noticias');
     revalidatePath('/');
     return Response.json({ post }, { status: 201 });

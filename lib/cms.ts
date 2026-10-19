@@ -1,4 +1,4 @@
-import sanitizeHtml from 'sanitize-html';
+import { cleanArticleHtml, hasArticleContent } from './article-html';
 import { db } from './db';
 import type { GalleryImage } from './types';
 
@@ -30,7 +30,6 @@ export type CmsPost = CmsPostInput & {
   updatedAt?: string;
 };
 
-const normalizeHtmlSpaces = (html: string) => html.replace(/&nbsp;/gi, ' ').replace(/\u00a0/g, ' ');
 
 const normalizeGallery = (value: unknown): GalleryImage[] => {
   if (!Array.isArray(value)) return [];
@@ -48,13 +47,7 @@ const parseGallery = (value: string | null | undefined) => {
   try { return normalizeGallery(JSON.parse(value)); } catch { return []; }
 };
 
-export const cleanHtml = (html: string) => normalizeHtmlSpaces(sanitizeHtml(normalizeHtmlSpaces(html), {
-  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'h3', 'u', 'img']),
-  allowedAttributes: { ...sanitizeHtml.defaults.allowedAttributes, a: ['href', 'target', 'rel'], img: ['src', 'alt', 'width', 'height', 'loading', 'decoding'] },
-  transformTags: {
-    img: (tagName, attributes) => ({ tagName, attribs: { ...attributes, loading: 'lazy', decoding: 'async' } }),
-  },
-}));
+export const cleanHtml = cleanArticleHtml;
 
 export function cmsAvailable() {
   return Boolean(db);
@@ -65,20 +58,25 @@ function ensureInput(input: Partial<CmsPostInput>): CmsPostInput {
   const slug = String(input.slug || '').trim().toLowerCase();
   const excerpt = String(input.excerpt || '').trim();
   const category = String(input.category || '').trim();
-  if (title.length < 10 || title.length > 120) throw new Error('O título deve ter entre 10 e 120 caracteres.');
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('O slug deve conter apenas letras minúsculas, números e hífens.');
+  const status = input.status ?? 'draft';
+  if (status !== 'draft' && status !== 'published') throw new Error('Status de publicação inválido.');
+  if (!title || title.length > 120 || (status === 'published' && title.length < 10)) throw new Error(status === 'published' ? 'O título deve ter entre 10 e 120 caracteres.' : 'Informe um título de até 120 caracteres para o rascunho.');
+  if (slug.length > 160 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('O slug deve ter até 160 caracteres e conter apenas letras minúsculas, números e hífens.');
   if (!postCategories.includes(category as typeof postCategories[number])) throw new Error('Categoria inválida.');
-  if (excerpt.length < 20 || excerpt.length > 250) throw new Error('O resumo deve ter entre 20 e 250 caracteres.');
-  if (!input.bodyHtml?.trim()) throw new Error('O conteúdo da matéria é obrigatório.');
+  if (excerpt.length > 250 || (status === 'published' && excerpt.length < 20)) throw new Error('O resumo deve ter entre 20 e 250 caracteres para publicar.');
+  const bodyHtml = cleanHtml(String(input.bodyHtml || ''));
+  if (status === 'published' && !hasArticleContent(bodyHtml)) throw new Error('Escreva o conteúdo da matéria antes de publicar.');
+  const publishedAt = input.publishedAt || new Date().toISOString();
+  if (!Number.isFinite(new Date(publishedAt).getTime())) throw new Error('Informe uma data de publicação válida.');
   return {
     title,
     slug,
     category,
-    publishedAt: input.publishedAt || new Date().toISOString(),
+    publishedAt,
     excerpt,
     author: String(input.author || 'Assessoria de Comunicação Grupo +B').trim(),
-    bodyHtml: cleanHtml(input.bodyHtml),
-    status: input.status === 'draft' ? 'draft' : 'published',
+    bodyHtml,
+    status,
     seoTitle: String(input.seoTitle || title).trim().slice(0, 60),
     seoDescription: String(input.seoDescription || excerpt).trim().slice(0, 160),
     imagePath: input.imagePath ? String(input.imagePath) : undefined,

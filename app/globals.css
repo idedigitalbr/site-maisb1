@@ -435,3 +435,7 @@ body:has(#next-page-content > .design-system-shell) > .wf-modal { display: none;
 }
 
 
+
+.article-rich-html .ql-align-center { text-align: center; }
+.article-rich-html .ql-align-right { text-align: right; }
+.article-rich-html .ql-align-justify { text-align: justify; }

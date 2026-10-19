@@ -1,45 +1,10 @@
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getArticles, getSiteSettings } from '../../../lib/content';
-import type { SiteSettings } from '../../../lib/types';
+import { getPublicSiteOrigin } from '../../../lib/site-origin';
 import { ArticleView } from '../../../components/article-view';
 
 type ArticlePageProps = { params: Promise<{ slug: string }> };
-
-async function getPublicSiteOrigin(settings: SiteSettings) {
-  const configuredUrl = settings.canonicalUrl || process.env.NEXT_PUBLIC_SITE_URL;
-  if (configuredUrl) {
-    try {
-      const configuredOrigin = new URL(configuredUrl).origin;
-      const hostname = new URL(configuredOrigin).hostname;
-      if (hostname !== 'localhost' && hostname !== '127.0.0.1' && hostname !== '::1') return configuredOrigin;
-    } catch {
-      // Fall through to the origin of the current request when configuration is missing or local.
-    }
-  }
-
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get('x-forwarded-host') || requestHeaders.get('host') || '').split(',')[0].trim();
-  const forwardedProtocol = (requestHeaders.get('x-forwarded-proto') || '').split(',')[0].trim().toLowerCase();
-  const protocol = forwardedProtocol === 'https' || forwardedProtocol === 'http'
-    ? forwardedProtocol
-    : /^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/i.test(host) ? 'http' : 'https';
-  if (host) {
-    try {
-      return new URL(`${protocol}://${host}`).origin;
-    } catch {
-      // Fall back to the configured URL if the request does not include a valid host.
-    }
-  }
-
-  return new URL(configuredUrl || 'http://localhost:3000').origin;
-}
-
-export async function generateStaticParams() {
-  const articles = await getArticles();
-  return articles.map((article) => ({ slug: article.slug }));
-}
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
