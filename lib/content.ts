@@ -1,4 +1,5 @@
-import sanitizeHtml from 'sanitize-html';
+import { cleanArticleHtml } from './article-html';
+import { connection } from 'next/server';
 import { db } from './db';
 import type { GalleryImage, NewsArticle, SiteSettings } from './types';
 
@@ -14,7 +15,6 @@ const fallbackSettings: SiteSettings = { siteName: 'Grupo Mais Barato', defaultT
 
 const articleSelect = { id: true, slug: true, title: true, category: true, publishedAt: true, excerpt: true, author: true, bodyHtml: true, status: true, seoTitle: true, seoDescription: true, imagePath: true, imageCardPath: true, imageAlt: true, imageCaption: true, galleryJson: true, noIndex: true } as const;
 
-const normalizeHtmlSpaces = (html: string) => html.replace(/&nbsp;/gi, ' ').replace(/\u00a0/g, ' ');
 
 export function normalizeArticle(article: { id: string; slug: string; title: string; category: string; publishedAt: Date; excerpt: string; author: string; bodyHtml: string; status: string; seoTitle: string | null; seoDescription: string | null; imagePath: string | null; imageCardPath: string | null; imageAlt: string | null; imageCaption: string | null; galleryJson: string | null; noIndex: boolean }): NewsArticle {
   let gallery: GalleryImage[] = [];
@@ -28,18 +28,20 @@ export function normalizeArticle(article: { id: string; slug: string; title: str
       return [{ url: candidate.url, ...(Number.isSafeInteger(dimensions.width) && Number(dimensions.width) > 0 ? { width: Number(dimensions.width) } : {}), ...(Number.isSafeInteger(dimensions.height) && Number(dimensions.height) > 0 ? { height: Number(dimensions.height) } : {}), alt: typeof candidate.alt === 'string' ? candidate.alt : '', caption: typeof candidate.caption === 'string' ? candidate.caption : '' }];
     }) : [];
   } catch { gallery = []; }
-  return { id: article.id, slug: article.slug, title: article.title, category: article.category, publishedAt: article.publishedAt.toISOString(), excerpt: article.excerpt, imagePath: article.imagePath || undefined, imageCardPath: article.imageCardPath || undefined, author: article.author, imageAlt: article.imageAlt || undefined, imageCaption: article.imageCaption || undefined, gallery, body: [], bodyHtml: normalizeHtmlSpaces(sanitizeHtml(normalizeHtmlSpaces(article.bodyHtml), { allowedTags: sanitizeHtml.defaults.allowedTags.concat(['h1', 'h2', 'h3', 'u', 'img']), allowedAttributes: { ...sanitizeHtml.defaults.allowedAttributes, a: ['href', 'target', 'rel'], img: ['src', 'alt', 'width', 'height', 'loading', 'decoding'] }, transformTags: { img: (tagName, attributes) => ({ tagName, attribs: { ...attributes, loading: 'lazy', decoding: 'async' } }) } })), status: article.status === 'draft' ? 'draft' : 'published', seoTitle: article.seoTitle || undefined, seoDescription: article.seoDescription || undefined, noIndex: article.noIndex };
+  return { id: article.id, slug: article.slug, title: article.title, category: article.category, publishedAt: article.publishedAt.toISOString(), excerpt: article.excerpt, imagePath: article.imagePath || undefined, imageCardPath: article.imageCardPath || undefined, author: article.author, imageAlt: article.imageAlt || undefined, imageCaption: article.imageCaption || undefined, gallery, body: [], bodyHtml: cleanArticleHtml(article.bodyHtml), status: article.status === 'draft' ? 'draft' : 'published', seoTitle: article.seoTitle || undefined, seoDescription: article.seoDescription || undefined, noIndex: article.noIndex };
 }
 
 export async function getArticles(): Promise<NewsArticle[]> {
-  if (!db) return fallbackArticles;
+  await connection();
+  if (!db) return process.env.NODE_ENV === 'production' ? [] : fallbackArticles;
   try {
     const articles = await db.post.findMany({ where: { status: 'published', publishedAt: { lte: new Date() } }, orderBy: { publishedAt: 'desc' }, select: articleSelect });
     if (articles.length) return articles.map(normalizeArticle);
+    if (process.env.NODE_ENV === 'production') return [];
     return await db.post.count() ? [] : fallbackArticles;
   } catch (error) {
     console.error('Database news query failed; using fallback content.', error);
-    return fallbackArticles;
+    return process.env.NODE_ENV === 'production' ? [] : fallbackArticles;
   }
 }
 
@@ -49,6 +51,7 @@ export async function getArticleBySlug(slug: string): Promise<NewsArticle | null
 }
 
 export async function getSiteSettings(): Promise<SiteSettings> {
+  await connection();
   if (!db) return fallbackSettings;
   try {
     const settings = await db.siteSettings.findUnique({ where: { id: 1 } });

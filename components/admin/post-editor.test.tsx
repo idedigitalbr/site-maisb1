@@ -1,5 +1,5 @@
 /** @vitest-environment jsdom */
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PostEditor } from './post-editor';
 
@@ -40,6 +40,24 @@ afterEach(() => {
 });
 
 describe('PostEditor automatic image optimization', () => {
+  it('rejects an empty date without a request and keeps save buttons usable', async () => {
+    render(<PostEditor />);
+    fireEvent.change(screen.getByLabelText('Data de publicação'), { target: { value: '' } });
+    fireEvent.submit(document.querySelector('form')!);
+    expect(await screen.findByRole('alert')).toHaveProperty('textContent', 'Informe uma data de publicação válida.');
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(screen.getAllByRole('button', { name: 'Salvar rascunho' }).every((button) => !(button as HTMLButtonElement).disabled)).toBe(true);
+  });
+
+  it('recovers from a network failure without losing the typed title', async () => {
+    fetchMock.mockRejectedValue(new TypeError('Failed to fetch'));
+    render(<PostEditor />);
+    fireEvent.change(screen.getByLabelText('Título da matéria'), { target: { value: 'Meu texto preservado' } });
+    fireEvent.submit(document.querySelector('form')!);
+    await waitFor(() => expect(screen.getByRole('alert').textContent).toMatch(/Falha de conexão/));
+    expect((screen.getByLabelText('Título da matéria') as HTMLInputElement).value).toBe('Meu texto preservado');
+    expect(screen.getAllByRole('button', { name: 'Salvar rascunho' }).every((button) => !(button as HTMLButtonElement).disabled)).toBe(true);
+  });
   it('shows the optimization status and uploads a banner for the cover destination', async () => {
     let resolveUpload!: (response: Response) => void;
     fetchMock.mockReturnValue(new Promise<Response>((resolve) => { resolveUpload = resolve; }));
@@ -49,6 +67,7 @@ describe('PostEditor automatic image optimization', () => {
     });
 
     expect(screen.getByRole('status').textContent).toBe('Otimizando imagem...');
+    expect(screen.getAllByRole('button', { name: 'Salvar rascunho' }).every((button) => (button as HTMLButtonElement).disabled)).toBe(true);
     const form = fetchMock.mock.calls[0][1].body as FormData;
     expect(form.get('destination')).toBe('cover');
     await act(async () => resolveUpload(new Response(JSON.stringify({ asset: {

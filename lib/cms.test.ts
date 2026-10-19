@@ -2,9 +2,20 @@ import { describe, expect, it, vi } from 'vitest';
 
 const { createPostMock } = vi.hoisted(() => ({ createPostMock: vi.fn() }));
 vi.mock('./db', () => ({ db: { post: { create: createPostMock } } }));
-import { cleanHtml, createCmsPost } from './cms';
+import { cleanHtml, createCmsPost, validateCmsPost } from './cms';
 
 describe('CMS article HTML', () => {
+  const article = { title: 'Título da matéria', slug: 'titulo-da-materia', category: 'Institucional', excerpt: 'Resumo com mais de vinte caracteres.', publishedAt: '2026-10-19T12:00:00Z' };
+
+  it.each(['<p><br></p>', '<script>alert(1)</script>', '<p>Comece a escrever a matéria...</p>'])('blocks publication of content that is empty after sanitizing: %s', (bodyHtml) => {
+    expect(() => validateCmsPost({ ...article, bodyHtml, status: 'published' })).toThrow(/conteúdo/);
+  });
+
+  it('allows an incomplete draft while validating dates and publication status', () => {
+    expect(validateCmsPost({ ...article, title: 'Rascunho', excerpt: '', bodyHtml: '', status: 'draft' })).toBe(true);
+    expect(() => validateCmsPost({ ...article, bodyHtml: '<p>Texto</p>', publishedAt: 'invalid' })).toThrow(/data/);
+    expect(() => validateCmsPost({ ...article, status: 'invalid' as 'draft' })).toThrow(/Status/);
+  });
   it('retains image dimensions while setting lazy loading and removing unsafe handlers', () => {
     const html = cleanHtml('<p><img src="/uploads/photo.webp" width="900" height="450" onerror="alert(1)"></p>');
 

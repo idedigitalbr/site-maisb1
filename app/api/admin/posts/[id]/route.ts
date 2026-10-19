@@ -24,6 +24,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
       }
       const post = await updateCmsPostStatus(id, body.status);
       if (!post) return Response.json({ error: 'Post não encontrado.' }, { status: 404 });
+      revalidatePath('/sitemap.xml');
       revalidatePath('/noticias');
       revalidatePath(`/noticias/${post.slug}`);
       revalidatePath('/');
@@ -31,6 +32,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
     }
 
     const post = await updateCmsPost(id, body);
+    revalidatePath('/sitemap.xml');
     revalidatePath('/noticias');
     revalidatePath(`/noticias/${post.slug}`);
     revalidatePath('/');
@@ -46,6 +48,7 @@ export async function DELETE(_request: Request, context: { params: Promise<{ id:
   const { id } = await context.params;
   try {
     await deleteCmsPost(id);
+    revalidatePath('/sitemap.xml');
     revalidatePath('/noticias');
     revalidatePath('/');
     return Response.json({ deleted: true });
