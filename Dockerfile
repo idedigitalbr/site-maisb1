@@ -10,7 +10,7 @@ WORKDIR /app
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 RUN npx prisma generate
-RUN npm run build
+RUN npm run build && node scripts/verify-admin-rendering.mjs
 
 FROM node:22-alpine AS runner
 
