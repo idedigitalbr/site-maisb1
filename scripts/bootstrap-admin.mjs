@@ -24,7 +24,7 @@ try {
       throw new Error('INITIAL_ADMIN_ALREADY_CONFIGURED');
     }
 
-    const permissions = { posts: true, settings: true, access: true };
+    const permissions = { posts: true, settings: true, access: true, analytics: true };
     const admin = await transaction.adminUser.create({
       data: {
         name,
@@ -34,6 +34,7 @@ try {
         canManagePosts: permissions.posts,
         canManageSettings: permissions.settings,
         canManageAccess: permissions.access,
+        canManageAnalytics: permissions.analytics,
       },
     });
     const now = new Date();

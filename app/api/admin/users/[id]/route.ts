@@ -11,7 +11,7 @@ export const runtime = 'nodejs';
 type RouteContext = { params: Promise<{ id: string }> };
 
 function samePermissions(left: AdminPermissions, right: AdminPermissions) {
-  return left.posts === right.posts && left.settings === right.settings && left.access === right.access;
+  return left.posts === right.posts && left.settings === right.settings && left.access === right.access && left.analytics === right.analytics;
 }
 
 function isUniqueConstraint(error: unknown) {
@@ -64,7 +64,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   if (hasPasswordReset && password !== String(body.confirmPassword || '')) return Response.json({ error: 'As senhas não coincidem.' }, { status: 400 });
 
   const role = body.role === undefined ? current.role : String(body.role);
-  const currentPermissions = { posts: current.canManagePosts, settings: current.canManageSettings, access: current.canManageAccess };
+  const currentPermissions = { posts: current.canManagePosts, settings: current.canManageSettings, access: current.canManageAccess, analytics: current.canManageAnalytics };
   let permissions = currentPermissions;
   if (body.role !== undefined || body.permissions !== undefined) {
     try {
@@ -94,14 +94,14 @@ export async function PATCH(request: Request, context: RouteContext) {
       await transaction.$executeRaw`INSERT IGNORE INTO admin_bootstrap (id, usedAt) VALUES (1, NULL)`;
       await transaction.$queryRaw`SELECT id FROM admin_bootstrap WHERE id = 1 FOR UPDATE`;
       if (wasFullAdmin && !remainsFullAdmin) {
-        const fullAdmins = await transaction.adminUser.count({ where: { isActive: true, canManagePosts: true, canManageSettings: true, canManageAccess: true } });
+        const fullAdmins = await transaction.adminUser.count({ where: { isActive: true, canManagePosts: true, canManageSettings: true, canManageAccess: true, canManageAnalytics: true } });
         if (fullAdmins <= 1) throw new Error('LAST_FULL_ADMIN');
       }
 
       const saved = await transaction.adminUser.update({
         where: { id },
         data: {
-          name, email, role, canManagePosts: permissions.posts, canManageSettings: permissions.settings, canManageAccess: permissions.access, isActive,
+          name, email, role, canManagePosts: permissions.posts, canManageSettings: permissions.settings, canManageAccess: permissions.access, canManageAnalytics: permissions.analytics, isActive,
           ...(passwordHash ? { passwordHash, mustChangePassword: false } : {}),
         },
       });

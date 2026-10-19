@@ -5,6 +5,7 @@ const editor: PermissionCheckUser = {
   canManagePosts: true,
   canManageSettings: false,
   canManageAccess: false,
+  canManageAnalytics: false,
   mustChangePassword: false,
 };
 
@@ -23,5 +24,10 @@ describe('admin API authorization', () => {
 
   it('allows only the requested permission when it is enabled', () => {
     expect(authorizeAdminRequest(editor, 'posts')).toBe('allowed');
+  });
+
+  it('protects analytics behind its own permission', () => {
+    expect(authorizeAdminRequest(editor, 'analytics')).toBe('forbidden');
+    expect(authorizeAdminRequest({ ...editor, canManageAnalytics: true }, 'analytics')).toBe('allowed');
   });
 });

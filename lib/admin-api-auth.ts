@@ -1,13 +1,13 @@
 import type { AdminPermissions } from './admin-access';
 import { getCurrentAdmin, type AdminSessionUser } from './cms-auth';
 
-export type PermissionCheckUser = Pick<AdminSessionUser, 'canManagePosts' | 'canManageSettings' | 'canManageAccess' | 'mustChangePassword'>;
+export type PermissionCheckUser = Pick<AdminSessionUser, 'canManagePosts' | 'canManageSettings' | 'canManageAccess' | 'canManageAnalytics' | 'mustChangePassword'>;
 export type AdminPermission = keyof AdminPermissions;
 export type AuthorizationOutcome = 'allowed' | 'unauthenticated' | 'forbidden';
 
 export function authorizeAdminRequest(user: PermissionCheckUser | null, permission: AdminPermission): AuthorizationOutcome {
   if (!user) return 'unauthenticated';
-  const field = { posts: 'canManagePosts', settings: 'canManageSettings', access: 'canManageAccess' } as const;
+  const field = { posts: 'canManagePosts', settings: 'canManageSettings', access: 'canManageAccess', analytics: 'canManageAnalytics' } as const;
   return user[field[permission]] ? 'allowed' : 'forbidden';
 }
 

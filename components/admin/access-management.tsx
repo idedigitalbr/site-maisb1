@@ -9,7 +9,7 @@ import { hasFullAdminAccess } from '../../lib/admin-access';
 
 type AccessUser = {
   id: string; name: string; email: string; role: string; roleLabel: string;
-  permissions: { posts: boolean; settings: boolean; access: boolean };
+  permissions: { posts: boolean; settings: boolean; access: boolean; analytics: boolean };
   isActive: boolean; lastAccessAt: string | null; createdAt: string;
 };
 

@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 import { getAdminHomeHref, isValidAdminEmail } from '../../lib/admin-access';
 
 type SessionResponse = { configured: boolean; authenticated: boolean };
-type SessionUser = { permissions: { posts: boolean; settings: boolean; access: boolean } };
+type SessionUser = { permissions: { posts: boolean; settings: boolean; access: boolean; analytics: boolean } };
 
 export function AdminLogin() {
   const router = useRouter();
