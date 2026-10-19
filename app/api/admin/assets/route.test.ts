@@ -39,6 +39,7 @@ beforeEach(() => {
     canManagePosts: true,
     canManageSettings: true,
     canManageAccess: true,
+    canManageAnalytics: true,
     isActive: true,
     mustChangePassword: false,
     lastAccessAt: null,

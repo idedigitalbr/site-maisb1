@@ -12,6 +12,7 @@ Thumbs.db
 /backups/
 *.sql
 *.sql.gz
+!prisma/migrations/**/migration.sql
 
 # Índice local do CodeGraph
 .codegraph/
