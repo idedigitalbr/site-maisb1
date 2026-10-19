@@ -5,7 +5,7 @@ import path from 'node:path';
 const slug = 'grupo-mais-barato-celebra-10-anos-expansao-varejo-paraense';
 const oldPath = '/assets/Fotografias/Grupo Institucional +B/foto-grupo-b-em-fente-fachada_pessoas.png';
 const newPath = oldPath.replace(/\.png$/, '.webp');
-await access(path.join(process.cwd(), 'public', newPath.slice(1)));
+await access(path.join(process.cwd(), newPath.slice(1)));
 const prisma = new PrismaClient();
 try {
   const [cover, card] = await prisma.$transaction([
