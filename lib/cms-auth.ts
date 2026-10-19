@@ -52,9 +52,10 @@ export async function setAdminSessionCookie(token: string) {
 }
 
 export async function getCurrentAdmin(): Promise<AdminSessionUser | null> {
-  if (!db) return null;
+  // Read request cookies even when DATABASE_URL is absent during image builds.
+  // Otherwise Next can prerender an unauthenticated redirect permanently.
   const token = (await cookies()).get(CMS_COOKIE)?.value;
-  if (!token || token.length > 128) return null;
+  if (!db || !token || token.length > 128) return null;
 
   const session = await db.adminSession.findUnique({
     where: { tokenHash: hashSessionToken(token) },
