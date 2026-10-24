@@ -12,7 +12,7 @@
   position: relative;
   background-color: var(--color-black, #120e0e);
   color: var(--color-white, #fdfaf6);
-  padding: 100px 0 60px;
+  padding: 0;
   overflow: hidden;
   border-top: 1px solid rgba(200, 146, 35, 0.15);
   border-bottom: 1px solid rgba(200, 146, 35, 0.15);
@@ -246,6 +246,12 @@
 
 .news-card:hover .news-card-link-action {
   gap: 10px;
+}
+
+/* Sem espaçamento vertical na seção de notícias, inclusive no mobile. */
+.section.news-home-section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Tema claro da seção de notícias na home */
