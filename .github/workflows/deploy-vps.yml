@@ -12,7 +12,9 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, linux, x64, oracle-vps, docker]
+    # Runner hospedado pelo GitHub para contornar indisponibilidade do self-hosted oracle-vps-1.
+    # O script continua usando a chave SSH dos Secrets para alcançar a VPS.
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     timeout-minutes: 30
