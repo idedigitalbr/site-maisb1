@@ -439,3 +439,34 @@ body:has(#next-page-content > .design-system-shell) > .wf-modal { display: none;
 .article-rich-html .ql-align-center { text-align: center; }
 .article-rich-html .ql-align-right { text-align: right; }
 .article-rich-html .ql-align-justify { text-align: justify; }
+
+
+/* HOME_SPACING_99PX
+   Respiros verticais padronizados conforme referências aprovadas.
+   Um único lado de cada transição fornece os 99px para evitar
+   espaços duplos de 198px entre seções consecutivas. */
+#sobre.about-premium-section.section {
+  padding-top: 99px !important;
+  padding-bottom: 99px !important;
+}
+#sobre .about-main-grid {
+  margin-bottom: 0 !important;
+}
+
+#oportunidades.trabalhe-conosco-gold-section.section {
+  padding-top: 99px !important;
+  padding-bottom: 99px !important;
+}
+
+/* Oportunidades já fornece os 99px antes de Notícias. */
+#noticias.news-home-section.section {
+  padding-top: 0 !important;
+  padding-bottom: 99px !important;
+}
+
+/* Notícias já fornece os 99px até o título do FAQ. */
+#faq-secao.faq-gold-section.section {
+  padding-top: 0 !important;
+  padding-bottom: 99px !important;
+  margin-top: 0 !important;
+}
