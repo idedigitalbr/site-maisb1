@@ -274,3 +274,17 @@ export const storeUnits: readonly StoreUnit[] = [
 export function getStoreUnit(id: string): StoreUnit | undefined {
   return storeUnits.find((unit) => unit.id === id);
 }
+
+/* Site oficial de cada marca, pela categoria principal da unidade.
+   Usado no botão "Site" das ações da unidade no localizador. */
+export const categorySiteUrls: Record<string, string> = {
+  '+B Supermercados': 'https://maisbsupermercados.com.br/',
+  '+B Farma': 'https://maisbfarma.com.br/',
+  'Villa Plaza Park': 'https://villaplazapark.com.br/',
+  'Villa Plaza': 'https://villaplaza.com.br/',
+  'The Wine Experience': 'https://www.thewineexperience.com.br/',
+};
+
+export function getUnitSiteUrl(unit: StoreUnit): string | undefined {
+  return categorySiteUrls[unit.category];
+}

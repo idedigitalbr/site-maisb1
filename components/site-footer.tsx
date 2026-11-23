@@ -12,7 +12,7 @@ import {
   Search,
   X,
 } from 'lucide-react';
-import { StoreUnit, storeUnits } from '../lib/locations';
+import { StoreUnit, storeUnits, getUnitSiteUrl } from '../lib/locations';
 
 const asset = (path: string) => `/assets/${path}`;
 
@@ -343,7 +343,7 @@ export function SiteFooter() {
                             </div>
                           </div>
 
-                          {/* AÇÕES DA UNIDADE: VER ROTAS, INSTAGRAM, FB, COMPARTILHAR */}
+                          {/* AÇÕES DA UNIDADE: VER ROTAS, SITE, INSTAGRAM, FB, COMPARTILHAR */}
                           <div className="unit-actions">
                             <a
                               href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${unit.name}, ${unit.address}, Belém - PA`)}`}
@@ -362,6 +362,26 @@ export function SiteFooter() {
                               </div>
                               <span className="unit-action-label">Ver Rotas</span>
                             </a>
+
+                            {getUnitSiteUrl(unit) && (
+                              <a
+                                href={getUnitSiteUrl(unit)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="unit-action-item"
+                                onClick={(e) => e.stopPropagation()}
+                                aria-label={`Site de ${unit.shortName}`}
+                              >
+                                <div className="unit-action-circle">
+                                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#deb038" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
+                                  </svg>
+                                </div>
+                                <span className="unit-action-label">Site</span>
+                              </a>
+                            )}
 
                             <a
                               href={unit.instagramUrl || "https://www.instagram.com/maisbsupermercados"}
@@ -1105,7 +1125,7 @@ export function SiteFooter() {
           font-weight: 700;
         }
 
-        /* Ações da Unidade (Ver Rotas, Instagram, FB, Compartilhar) */
+        /* Ações da Unidade (Ver Rotas, Site, Instagram, FB, Compartilhar) */
         .unit-actions {
           display: flex;
           align-items: center;
