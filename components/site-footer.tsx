@@ -49,11 +49,13 @@ type BrandLocatorSelection = {
 };
 
 function unitMatchesBrand(unit: StoreUnit, brandId: string) {
+  // Só pela categoria: casar por subbrand duplicava a localização
+  // (ex.: Farma mostrava os supermercados do mesmo endereço junto).
   if (brandId === 'super') return unit.category === '+B Supermercados';
-  if (brandId === 'farma') return unit.category === '+B Farma' || unit.subbrands.includes('+B FARMA');
-  if (brandId === 'wine') return unit.category === 'The Wine Experience' || unit.subbrands.includes('THE WINE EXPERIENCE');
-  if (brandId === 'plaza') return unit.category === 'Villa Plaza' || unit.subbrands.includes('VILLA PLAZA');
-  if (brandId === 'park') return unit.category === 'Villa Plaza Park' || unit.subbrands.includes('VILLA PLAZA PARK');
+  if (brandId === 'farma') return unit.category === '+B Farma';
+  if (brandId === 'wine') return unit.category === 'The Wine Experience';
+  if (brandId === 'plaza') return unit.category === 'Villa Plaza';
+  if (brandId === 'park') return unit.category === 'Villa Plaza Park';
   return false;
 }
 
@@ -102,14 +104,22 @@ export function SiteFooter() {
   const lightboxTriggerRef = useRef<HTMLElement | null>(null);
 
   const visibleUnits = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    return storeUnits.filter((unit) => {
-      const matchesBrand = !brandFilter || unitMatchesBrand(unit, brandFilter);
-      const matchesQuery =
-        !normalized ||
-        `${unit.name} ${unit.address} ${unit.subbrands.join(' ')}`.toLowerCase().includes(normalized);
-      return matchesBrand && matchesQuery;
-    });
+    // Busca por palavras (tokens), ignorando acentos: todas as palavras
+    // precisam aparecer; quem casa pelo nome vem primeiro.
+    const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const tokens = fold(query).split(/\s+/).filter(Boolean);
+    const matchesTokens = (text: string) => tokens.every((t) => fold(text).includes(t));
+    return storeUnits
+      .filter((unit) => !brandFilter || unitMatchesBrand(unit, brandFilter))
+      .map((unit) => {
+        if (tokens.length === 0) return { unit, score: 0 };
+        const fullText = `${unit.name} ${unit.address} ${unit.subbrands.join(' ')}`;
+        if (!matchesTokens(fullText)) return null;
+        return { unit, score: matchesTokens(unit.name) ? 0 : 1 };
+      })
+      .filter((item): item is { unit: StoreUnit; score: number } => item !== null)
+      .sort((a, b) => a.score - b.score)
+      .map((item) => item.unit);
   }, [brandFilter, query]);
 
   const selectedUnit = selectedUnitId
